@@ -1,4 +1,5 @@
 import React, { useState, useRef } from 'react';
+import useAutoplay from '../hooks/useAutoplay';
 
 import { ArrowLeft, ArrowRight } from 'lucide-react';
 
@@ -315,6 +316,10 @@ const CaseStudies = ({ onNavigate }) => {
   };
 
 
+
+  // Auto-advance (pauses on hover / off-screen; restarts after manual navigation)
+  const carouselRef = useRef(null);
+  useAutoplay(carouselRef, handleNext, { delay: 4000, resetKey: activeIndex });
 
   /* =========================================================
 
@@ -637,6 +642,8 @@ lg:h-[530px]
 
         "
 
+        ref={carouselRef}
+
         onTouchStart={handleTouchStart}
 
         onTouchEnd={handleTouchEnd}
@@ -789,13 +796,13 @@ lg:h-[530px]
 
 
 
-                  bg-white dark:bg-[#171A18]
+                  bg-white dark:bg-[linear-gradient(160deg,rgba(34,52,40,0.95)_0%,rgba(20,29,23,0.97)_55%,rgba(16,22,18,1)_100%)] dark:backdrop-blur-md
 
 
 
                   border
 
-                  border-gray-100 dark:border-[#27302A]
+                  border-gray-100 dark:border-[#2F4034]
 
 
 
@@ -888,7 +895,8 @@ ${isActive
                     className="
                     relative
                     overflow-hidden
-                    shrink-0
+                    shrink
+                    min-h-[120px]
                     case-studies-card-img
                  h-[205px]
 sm:h-[255px]

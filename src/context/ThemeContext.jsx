@@ -21,7 +21,15 @@ export function ThemeProvider({ children }) {
   //   }
   //   return "light";
   // });
-  const [theme, setThemeState] = useState("light");
+  // Restore the user's last chosen theme; default to light on first visit.
+  const [theme, setThemeState] = useState(() => {
+    if (typeof window === "undefined") return "light";
+    try {
+      const saved = localStorage.getItem("theme");
+      if (saved === "dark" || saved === "light") return saved;
+    } catch (e) {}
+    return "light";
+  });
 
   useEffect(() => {
     const root = document.documentElement;

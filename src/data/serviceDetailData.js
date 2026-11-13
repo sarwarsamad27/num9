@@ -443,10 +443,10 @@ export const serviceDetailData = {
     locations: ["New York", "Texas", "California"],
     works: [
       {
-        title: "Jdot Fragrances",
+        title: "J.",
         image: jdotServiceImg,
         category: "Celebrity Commercial Production",
-        description: "Full-service commercial video production (DVC) for Jdot Fragrances' 'Ballin'' starring NBA legend Kobe Bryant.",
+        description: "Full-service commercial video production (DVC) for J.'s 'Ballin' starring NBA legend Kobe Bryant.",
         link: "case-study/jdot",
       },
       {

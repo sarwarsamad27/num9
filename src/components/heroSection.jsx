@@ -1,4 +1,5 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
+import useAutoplay from "../hooks/useAutoplay";
 import { ChevronLeft, ChevronRight, ArrowRight, X } from "lucide-react";
 
 
@@ -216,7 +217,7 @@ const slides = [
     id: 3,
     imageUrl: jdotHeroImg,
     mobileImageUrl: jdotMobileHeroImg,
-    brand: "Jdot Fragrances",
+    brand: "J.",
     logoUrl: jdotSymbol,
     logoClass:
       "h-[34px] min-[390px]:h-[38px] sm:h-[44px] md:h-[54px] lg:h-[64px] w-auto",
@@ -473,15 +474,18 @@ export default function HeroSection({
   const [touchStart, setTouchStart] = useState(null);
   const [touchEnd, setTouchEnd] = useState(null);
 
-  // Auto-play slider: automatically advances to next slide every 4.5s ONLY on mobile (< 640px)
-  useEffect(() => {
-    if (!isMobile || isShowreelOpen) return;
-    const timer = setInterval(() => {
+  // Auto-play slider on all screen sizes: advances every 5s.
+  // Pauses on hover, while off-screen / tab hidden, and while the showreel is open;
+  // restarts the countdown after any manual change.
+  const sliderRef = useRef(null);
+  useAutoplay(
+    sliderRef,
+    () => {
+      if (isShowreelOpen) return;
       setCurrentIndex((prev) => (prev + 1) % slides.length);
-    }, 4500);
-
-    return () => clearInterval(timer);
-  }, [isMobile, currentIndex, isShowreelOpen]);
+    },
+    { delay: 5000, resetKey: currentIndex }
+  );
 
   useEffect(() => {
     const handleResize = () => {
@@ -559,6 +563,7 @@ export default function HeroSection({
           onTouchStart={onTouchStart}
           onTouchMove={onTouchMove}
           onTouchEnd={onTouchEnd}
+          ref={sliderRef}
           className="hero-slider-container relative mx-auto w-full max-w-[1920px] overflow-hidden"
         >
           {slides.map((slide, index) => {
@@ -624,7 +629,7 @@ export default function HeroSection({
                 onClick={() => {
                   if (!isActive) setCurrentIndex(index);
                 }}
-                className={`hero-slide-card absolute left-1/2 top-1/2 overflow-hidden rounded-none sm:rounded-[22px] border-0 bg-[#121417] transition-[transform,opacity,filter] duration-700 ease-[cubic-bezier(.22,1,.36,1)] select-none ${isActive
+                className={`hero-slide-card absolute left-1/2 top-1/2 overflow-hidden rounded-none sm:rounded-[22px] border-0 bg-[#121417] transition-[transform,opacity,filter] duration-[950ms] ease-[cubic-bezier(.65,.05,.36,1)] will-change-transform select-none ${isActive
                     ? "z-30"
                     : distance === 1
                       ? "z-20 cursor-pointer"
@@ -667,7 +672,7 @@ export default function HeroSection({
                 {isActive && (
                   <>
                     {/* Top-left brand mark — all screen sizes, aligned with bottom-left glass box */}
-                    <div className="absolute z-40 left-4 min-[390px]:left-5 sm:left-[3.3%] bottom-5 min-[390px]:bottom-6 sm:bottom-auto sm:top-[5.5%] flex items-center">
+                    <div className="hero-content-in absolute z-40 left-4 min-[390px]:left-5 sm:left-[3.3%] bottom-5 min-[390px]:bottom-6 sm:bottom-auto sm:top-[5.5%] flex items-center">
                       {slide.logoUrl ? (
                         <img
                           src={slide.logoUrl}
@@ -689,7 +694,7 @@ export default function HeroSection({
                     </div>
 
                     {/* Top-right outlined labels — hidden on mobile to match reference */}
-                    <div className="hidden sm:flex absolute z-40 right-[4.5%] sm:right-[5.5%] top-[5%] sm:top-[6.5%] max-w-[48%] flex-wrap justify-end gap-1.5 sm:gap-2 lg:gap-3">
+                    <div className="hero-content-in hidden sm:flex absolute z-40 right-[4.5%] sm:right-[5.5%] top-[5%] sm:top-[6.5%] max-w-[48%] flex-wrap justify-end gap-1.5 sm:gap-2 lg:gap-3">
                       {slide.categories.map((category) => (
                         <span
                           key={category}
@@ -726,7 +731,7 @@ export default function HeroSection({
                     </button>
 
                     {/* Bottom-left glass project details — hidden on mobile to match reference */}
-                    <div className="hidden sm:block absolute z-40 bottom-[5%] sm:bottom-[6%] lg:bottom-[7%] left-[3%] sm:left-[3.3%] w-[38%] md:w-[35%] lg:w-[32%] max-w-[460px] rounded-[14px] lg:rounded-[18px] border border-white/65 bg-[#303030]/65 px-4 py-3 sm:px-5 sm:py-4 lg:px-7 lg:py-6 backdrop-blur-[12px] shadow-[0_12px_30px_rgba(0,0,0,.15)] text-white">
+                    <div className="hero-content-in hidden sm:block absolute z-40 bottom-[5%] sm:bottom-[6%] lg:bottom-[7%] left-[3%] sm:left-[3.3%] w-[38%] md:w-[35%] lg:w-[32%] max-w-[460px] rounded-[14px] lg:rounded-[18px] border border-white/65 bg-[#303030]/65 px-4 py-3 sm:px-5 sm:py-4 lg:px-7 lg:py-6 backdrop-blur-[12px] shadow-[0_12px_30px_rgba(0,0,0,.15)] text-white">
                       <div className="font-grift-medium text-[8px] sm:text-[9px] lg:text-[10px] tracking-[0.27em] uppercase text-white/85">
                         Featured Project
                       </div>
@@ -757,7 +762,7 @@ export default function HeroSection({
                           window.location.href = url.toString();
                         }
                       }}
-                      className="flex absolute z-40 bottom-5 min-[390px]:bottom-6 sm:bottom-[6%] right-4 min-[390px]:right-5 sm:right-[4%] items-center gap-2 min-[390px]:gap-2.5 sm:gap-5 lg:gap-8 rounded-full bg-[#22aa00] hover:bg-[#1c9000] px-4.5 py-2 min-[390px]:px-5 min-[390px]:py-2.5 sm:px-5 sm:py-3 lg:px-8 lg:py-4 text-white font-grift-medium text-[13px] min-[390px]:text-[14px] sm:text-[15px] lg:text-[20px] transition-all duration-200 cursor-pointer shadow-[0_4px_14px_rgba(34,170,0,0.4)] hover:shadow-[0_6px_20px_rgba(34,170,0,0.6)] active:scale-95"
+                      className="hero-content-in flex absolute z-40 bottom-5 min-[390px]:bottom-6 sm:bottom-[6%] right-4 min-[390px]:right-5 sm:right-[4%] items-center gap-2 min-[390px]:gap-2.5 sm:gap-5 lg:gap-8 rounded-full bg-[#22aa00] hover:bg-[#1c9000] px-4.5 py-2 min-[390px]:px-5 min-[390px]:py-2.5 sm:px-5 sm:py-3 lg:px-8 lg:py-4 text-white font-grift-medium text-[13px] min-[390px]:text-[14px] sm:text-[15px] lg:text-[20px] transition-all duration-200 cursor-pointer shadow-[0_4px_14px_rgba(34,170,0,0.4)] hover:shadow-[0_6px_20px_rgba(34,170,0,0.6)] active:scale-95"
                     >
                       Case Study{" "}
                       <ChevronRight

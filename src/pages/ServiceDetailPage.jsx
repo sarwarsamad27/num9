@@ -87,7 +87,7 @@ function getClientMeta(title, customLogo) {
   if (t.includes("nakamichi")) return { logo: clientNakamichiLogo, brand: "Nakamichi Car Audio", route: "case-study/nakamichi", logoClass: "h-[46px] sm:h-[54px] lg:h-[62px] xl:h-[70px] w-auto max-w-[280px]" };
   if (t.includes("scantech")) return { logo: clientScantechLogo, brand: "SCANTECH", route: "case-study/scantech", logoClass: "h-[46px] sm:h-[54px] lg:h-[62px] xl:h-[70px] w-auto max-w-[260px]" };
   if (t.includes("ssstc")) return { logo: clientSsstcLogo, brand: "SSSTC", route: "case-study/ssstc", logoClass: "h-[46px] sm:h-[54px] lg:h-[62px] xl:h-[70px] w-auto max-w-[240px]" };
-  if (t.includes("jdot") || t.includes("j.")) return { logo: clientJdotLogo, brand: "Jdot Fragrances", route: "case-study/jdot", logoClass: "h-[46px] sm:h-[54px] lg:h-[62px] xl:h-[70px] w-auto" };
+  if (t.includes("jdot") || t.includes("j.")) return { logo: clientJdotLogo, brand: "J.", route: "case-study/jdot", logoClass: "h-[46px] sm:h-[54px] lg:h-[62px] xl:h-[70px] w-auto" };
   if (t.includes("ymca")) return { logo: clientYmcaLogo, brand: "YMCA", route: "case-study/ymca", logoClass: "h-[50px] sm:h-[58px] lg:h-[68px] xl:h-[74px] w-auto" };
   if (t.includes("magellan")) return { logo: clientMagellanLogo, brand: "Magellan Health", route: "case-study/magellan", logoClass: "h-[44px] sm:h-[52px] lg:h-[60px] xl:h-[66px] w-auto max-w-[240px] sm:max-w-[280px]" };
   if (t.includes("nutrien")) return { logo: clientNutrienLogo, brand: "Nutrien", route: "case-study/nutrien", logoClass: "h-[42px] sm:h-[50px] lg:h-[58px] xl:h-[64px] w-auto max-w-[240px] sm:max-w-[280px]" };
@@ -601,6 +601,7 @@ export default function ServiceDetailPage({
 
     // Prioritize flagship case studies so premier projects lead the Work page showcase
     const FLAGSHIP_ORDER = [
+      "j.",
       "jdot fragrances",
       "scantech",
       "nakamichi car audio",

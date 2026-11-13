@@ -47,7 +47,7 @@ export const CLIENT_INDUSTRIES = {
   "Nakamichi Car Audio": ["Automotive", "Retail"],
   SCANTECH: ["Enterprise", "Automotive"],
   SSSTC: ["Enterprise"],
-  "Jdot Fragrances": ["Media & Entertainment", "Retail"],
+  "J.": ["Media & Entertainment", "Retail"],
 
   // Brands that appear only in service "work" cards
   "Shan Foods": ["Food & Beverage", "Retail"],

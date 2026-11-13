@@ -112,7 +112,7 @@ function GalleryRowItem({ item, index, caseStudyName, fit = "contain" }) {
   const currentSubtitle = current.subtitle || item.subtitle;
 
   return (
-    <div className="relative w-full min-h-0 overflow-hidden bg-[#20242A]">
+    <div className={`relative w-full min-h-0 overflow-hidden bg-[#20242A] ${fit === "natural" ? "aspect-[2/1] md:aspect-auto" : ""}`}>
       {images.map((imgObj, i) => {
         const src = imgObj.src || imgObj;
         const isActive = i === activeIdx;
@@ -122,7 +122,17 @@ function GalleryRowItem({ item, index, caseStudyName, fit = "contain" }) {
             className={`absolute inset-0 transition-opacity duration-700 ease-in-out ${isActive ? "opacity-100 z-10" : "opacity-0 pointer-events-none z-0"
               }`}
           >
-            {src && fit === "cover" ? (
+            {src && fit === "natural" ? (
+              // Fills the row edge to edge; focal point kept centered
+              <img
+                src={src}
+                alt={currentSubtitle || `${caseStudyName || "Project"} outcome visual`}
+                loading="lazy"
+                decoding="async"
+                className="w-full h-full object-cover"
+                style={{ objectPosition: imgObj.position || "center center" }}
+              />
+            ) : src && fit === "cover" ? (
               // Fill the whole row (no side gaps); focal point keeps faces in frame
               <img
                 src={src}
@@ -196,6 +206,68 @@ function GalleryRowItem({ item, index, caseStudyName, fit = "contain" }) {
           </div>
         </>
       )}
+    </div>
+  );
+}
+
+/* =========================================
+   GALLERY VIDEO ROW
+   - Same vertical reel in each row, each starting at a different point
+     (offset = index / total of the duration) so rows never look in sync
+   - Nothing is requested until the row nears the viewport; pauses off-screen
+   - object-contain keeps the full vertical frame; a blurred still fills the sides
+========================================= */
+
+function GalleryVideoRow({ src, poster, index, total, label, fit = "contain" }) {
+  const videoRef = useRef(null);
+  const [shouldLoad, setShouldLoad] = useState(false);
+
+  useEffect(() => {
+    const el = videoRef.current;
+    if (!el) return;
+    if (typeof IntersectionObserver === "undefined") {
+      setShouldLoad(true);
+      return;
+    }
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setShouldLoad(true);
+          const p = el.play();
+          if (p && p.catch) p.catch(() => {});
+        } else if (!el.paused) {
+          el.pause();
+        }
+      },
+      { rootMargin: "400px 0px", threshold: 0.05 }
+    );
+    observer.observe(el);
+    return () => observer.disconnect();
+  }, []);
+
+  const handleLoadedMetadata = (e) => {
+    const el = e.currentTarget;
+    if (Number.isFinite(el.duration) && el.duration > 0 && total > 1) {
+      el.currentTime = (el.duration * index) / total;
+    }
+    const p = el.play();
+    if (p && p.catch) p.catch(() => {});
+  };
+
+  return (
+    <div className="relative w-full min-h-0 overflow-hidden">
+      <video
+        ref={videoRef}
+        src={shouldLoad ? src : undefined}
+        aria-label={label}
+        muted
+        loop
+        playsInline
+        autoPlay
+        preload={shouldLoad ? "auto" : "none"}
+        onLoadedMetadata={handleLoadedMetadata}
+        className={`absolute inset-0 z-10 w-full h-full ${fit === "cover" ? "object-cover object-center" : "object-contain"}`}
+      />
     </div>
   );
 }
@@ -738,23 +810,34 @@ lg:pl-[85px] lg:pr-[55px]
               <div className="w-full min-w-0 flex justify-center items-center">
                 <div className="w-full min-w-0 flex justify-center items-center">
                   <div
-                    className="
+                    className={`
       w-full
       max-w-[382px]
       aspect-[382/452]
       overflow-hidden
       rounded-[18px]
-      border border-[#2F2F2F]
-      bg-white
-    "
+      grid
+      ${challenge.video ? "" : "border border-[#2F2F2F] bg-white"}
+    `}
                   >
-                    <img
-                      src={challenge.image || challenge.centerImage}
-                      alt={challenge.imageAlt || `${caseStudy.name} challenge`}
-                      loading="lazy"
-                      decoding="async"
-                      className="block w-full h-full object-cover object-center"
-                    />
+                    {challenge.video ? (
+                      <GalleryVideoRow
+                        src={challenge.video}
+                        poster={challenge.image || challenge.centerImage}
+                        index={1}
+                        total={4}
+                        fit="cover"
+                        label={challenge.imageAlt || `${caseStudy.name} challenge video`}
+                      />
+                    ) : (
+                      <img
+                        src={challenge.image || challenge.centerImage}
+                        alt={challenge.imageAlt || `${caseStudy.name} challenge`}
+                        loading="lazy"
+                        decoding="async"
+                        className="block w-full h-full object-cover object-center"
+                      />
+                    )}
                   </div>
                 </div>
               </div>
@@ -844,7 +927,7 @@ lg:pl-[85px] lg:pr-[55px]
         "
       >
  <div
-  className="
+  className={`
     w-full max-w-[1600px] mx-auto
     pl-[55px] pr-[30px]
     sm:pl-[75px] sm:pr-[50px]
@@ -855,7 +938,8 @@ lg:pl-[85px] lg:pr-[55px]
     lg:grid-cols-[minmax(0,0.85fr)_minmax(0,1.35fr)]
     gap-[45px] lg:gap-[80px] xl:gap-[90px]
     items-start
-  "
+    ${solution.video ? "lg:items-stretch" : ""}
+  `}
 >
   {/* LEFT — SOLUTION CONTENT */}
   <div className="min-w-0">
@@ -889,22 +973,48 @@ lg:pl-[85px] lg:pr-[55px]
   {/* RIGHT — IMAGE */}
   <div className="w-full min-w-0 flex justify-center lg:justify-end">
     {solution.image ? (
-      <div
-        className="
-          w-full max-w-[760px]
-          aspect-[760/450]
-          overflow-hidden
-          rounded-[20px]
-          border border-white/10
-        "
-      >
-        <img
-          src={solution.image}
-          alt={solution.imageAlt || `${caseStudy.name || "Brand"} solution`}
-          loading="lazy"
-          decoding="async"
-          className="w-full h-full object-cover object-center"
-        />
+      <div className="w-full max-w-[760px] flex flex-col items-center lg:h-full">
+        <div
+          className="
+            w-full
+            aspect-[760/450]
+            overflow-hidden
+            rounded-[20px]
+            border border-white/10
+          "
+        >
+          <img
+            src={solution.image}
+            alt={solution.imageAlt || `${caseStudy.name || "Brand"} solution`}
+            loading="lazy"
+            decoding="async"
+            className="w-full h-full object-cover object-center"
+          />
+        </div>
+
+        {/* Optional vertical reel filling the space beside the long solution copy */}
+        {solution.video && (
+          <div
+            className="
+              mt-[30px] sm:mt-[40px] lg:mt-[50px]
+              w-full
+              aspect-[4/5] sm:aspect-[1/1]
+              lg:aspect-auto lg:flex-1 lg:min-h-[420px]
+              grid
+              overflow-hidden
+              rounded-[20px]
+            "
+          >
+            <GalleryVideoRow
+              src={solution.video}
+              poster={solution.image}
+              index={1}
+              total={2}
+              fit="cover"
+              label={`${caseStudy.name || "Brand"} reel`}
+            />
+          </div>
+        )}
       </div>
     ) : (
       <CustomerInteractions
@@ -1006,7 +1116,12 @@ lg:pl-[85px] lg:pr-[55px]
         >
           {/* LEFT — IMAGE GALLERY */}
           <div
-            className={`
+            className={
+              outcome.galleryFit === "natural"
+                ? // Mobile: rows keep the wide image shape (no crop, no gaps).
+                  // md+: the three rows fill the full height beside the outcome copy.
+                  "w-full flex flex-col md:grid md:grid-rows-3 md:h-full overflow-hidden"
+                : `
               w-full
               grid grid-rows-3
               ${outcome.galleryFit === "cover"
@@ -1016,7 +1131,18 @@ lg:pl-[85px] lg:pr-[55px]
               overflow-hidden
             `}
           >
-            {outcome.galleryImages?.map((item, index) => (
+            {outcome.galleryVideo
+              ? outcome.galleryImages?.map((item, index, arr) => (
+                <GalleryVideoRow
+                  key={index}
+                  src={outcome.galleryVideo}
+                  poster={item.src}
+                  index={index}
+                  total={arr.length}
+                  label={`${caseStudy.name || "Project"} reel ${index + 1}`}
+                />
+              ))
+              : outcome.galleryImages?.map((item, index) => (
               <GalleryRowItem
                 key={index}
                 item={item}

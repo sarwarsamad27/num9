@@ -2,6 +2,55 @@ import React, { useState, useEffect, useRef } from "react";
 import { caseStudiesData } from "../data/caseStudiesData";
 
 /* ==========================================
+   SHOWCASE VIDEO
+   - Video file is only requested once the section nears the viewport
+   - Plays muted/inline while visible, pauses when scrolled away
+   - object-contain + native aspect ratio, so no frame is ever cropped
+========================================== */
+
+function ShowcaseVideo({ src, poster, label }) {
+  const videoRef = useRef(null);
+  const [shouldLoad, setShouldLoad] = useState(false);
+
+  useEffect(() => {
+    const el = videoRef.current;
+    if (!el || typeof IntersectionObserver === "undefined") {
+      setShouldLoad(true);
+      return;
+    }
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setShouldLoad(true);
+          const p = el.play();
+          if (p && p.catch) p.catch(() => {});
+        } else if (!el.paused) {
+          el.pause();
+        }
+      },
+      { rootMargin: "300px 0px", threshold: 0.15 }
+    );
+    observer.observe(el);
+    return () => observer.disconnect();
+  }, []);
+
+  return (
+    <video
+      ref={videoRef}
+      src={shouldLoad ? src : undefined}
+      poster={poster}
+      aria-label={label}
+      muted
+      loop
+      playsInline
+      controls
+      preload={shouldLoad ? "auto" : "none"}
+      className="w-full h-full object-contain object-center block bg-black"
+    />
+  );
+}
+
+/* ==========================================
    STATISTIC CIRCLE
 ========================================== */
 
@@ -413,15 +462,23 @@ export default function CaseStudyOverviewSections({
                 bg-[#F8F9FA] dark:bg-[#151816]
                 shadow-[0_8px_30px_rgba(0,0,0,0.06)] dark:shadow-[0_8px_30px_rgba(0,0,0,0.35)]
               "
-              style={{ aspectRatio: "2.65 / 1" }}
+              style={{ aspectRatio: overview.showcaseVideo ? "16 / 9" : "2.65 / 1" }}
             >
-              <img
-                src={overview.showcaseImage || caseStudy.hero?.bgImage}
-                alt={overview.showcaseAlt || `${caseStudy.name || 'Brand'} showcase`}
-                loading="lazy"
-                decoding="async"
-                className="w-full h-full object-cover object-center block"
-              />
+              {overview.showcaseVideo ? (
+                <ShowcaseVideo
+                  src={overview.showcaseVideo}
+                  poster={overview.showcaseImage || caseStudy.hero?.bgImage}
+                  label={overview.showcaseAlt || `${caseStudy.name || 'Brand'} showcase video`}
+                />
+              ) : (
+                <img
+                  src={overview.showcaseImage || caseStudy.hero?.bgImage}
+                  alt={overview.showcaseAlt || `${caseStudy.name || 'Brand'} showcase`}
+                  loading="lazy"
+                  decoding="async"
+                  className="w-full h-full object-cover object-center block"
+                />
+              )}
             </div>
 
             {/* OPTIONAL STATS (IF SPECIFICALLY CONFIGURED) */}

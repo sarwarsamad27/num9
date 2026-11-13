@@ -3,6 +3,7 @@ import { ArrowRight } from 'lucide-react';
 
 
 import { useEffect, useRef, useState } from 'react';
+import useAutoplay from '../hooks/useAutoplay';
 
 
 
@@ -44,6 +45,8 @@ import deltaLogoWhite from '../assets/caseStudies/Delta Light/deltaLogo_white.pn
 import dreoLogo from '../assets/caseStudies/DREO IHS 2025/dreoLogo_trimmed.png';
 import dreoLogoWhite from '../assets/caseStudies/DREO IHS 2025/dreoLogo_white.png';
 import finamillLogo from '../assets/caseStudies/Finamill IHS 2025/finamillLogo_trimmed.png';
+import finamillLogoDark from '../assets/caseStudies/Finamill IHS 2025/finamillLogo_dark.png';
+import lexusLogoDark from '../assets/lexusLogo_dark.png';
 import katjesLogo from '../assets/caseStudies/Katjes USA/Katjes.webp';
 import nakamichiLogo from '../assets/caseStudies/Nakamichi Car Audio/Nakamichi Logo on Transparent Background.png';
 import nakamichiLogoWhite from '../assets/caseStudies/Nakamichi Car Audio/nakamichi_white.png';
@@ -429,6 +432,7 @@ const testimonials = [
   },
   {
     logo: finamillLogo,
+    darkLogo: finamillLogoDark,
     logoAlt: 'Finamill',
     logoWidth: 175,
     logoHeight: 60,
@@ -489,6 +493,7 @@ const testimonials = [
   },
   {
     logo: layer7,
+    darkLogo: lexusLogoDark,
     logoAlt: 'Lexus',
     logoWidth: 120,
     logoHeight: 50,
@@ -1103,6 +1108,13 @@ export default function FifthSection({ onNavigate }) {
     setOffset((current) => current + 1);
   };
 
+  const carouselContainerRef = useRef(null);
+  // Auto-advance (pauses on hover, drag, off-screen; restarts after manual navigation)
+  useAutoplay(carouselContainerRef, () => {
+    if (isDraggingRef.current) return;
+    next();
+  }, { delay: 3500, resetKey: offset });
+
   const handleCarouselTransitionEnd = (e) => {
     if (e.target !== e.currentTarget || e.propertyName !== 'transform') return;
 
@@ -1141,7 +1153,6 @@ export default function FifthSection({ onNavigate }) {
     setOffset((current) => current + diff);
   };
 
-  const carouselContainerRef = useRef(null);
 
   const handleCardClick = (e, t) => {
     if (hasDragged.current) {
@@ -1394,7 +1405,7 @@ export default function FifthSection({ onNavigate }) {
 
 
                   onClick={(e) => handleCardClick(e, t)}
-                  className="shrink-0 bg-white dark:bg-[#171A18] border border-slate-100 dark:border-[#28322B] rounded-2xl flex flex-col justify-between cursor-pointer transition-all duration-300 hover:-translate-z-2 shadow-md hover:shadow-xl"
+                  className="shrink-0 bg-white dark:bg-[linear-gradient(160deg,#24362B_0%,#1B271F_60%,#161E19_100%)] border border-slate-100 dark:border-[#2F4034] rounded-2xl flex flex-col justify-between cursor-pointer transition-all duration-300 hover:-translate-z-2 shadow-md hover:shadow-xl"
 
 
 
@@ -1597,8 +1608,8 @@ export default function FifthSection({ onNavigate }) {
       >
         <div
           className="
-      relative overflow-hidden bg-black dark:bg-[#1E2320]
-      border border-transparent dark:border-[#2C352E]
+      relative overflow-hidden bg-black dark:bg-[linear-gradient(160deg,rgba(34,52,40,0.92)_0%,rgba(20,29,23,0.95)_55%,rgba(16,22,18,0.97)_100%)] dark:backdrop-blur-md
+      border border-transparent dark:border-[#2F4034]
       rounded-none sm:rounded-[24px]
       px-5 py-8
       sm:px-8 sm:py-12
@@ -1885,7 +1896,7 @@ export default function FifthSection({ onNavigate }) {
             xl:min-h-0
             xl:h-full
             rounded-[22px]
-            bg-black dark:bg-[#111412]
+            bg-black dark:bg-white/[0.03] dark:backdrop-blur-sm
             px-4 py-5
             sm:px-5 sm:py-6
             xl:px-[20px]

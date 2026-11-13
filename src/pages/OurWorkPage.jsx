@@ -408,7 +408,7 @@ const clients = [
     logo: clientJdotLogo,
     darkLogo: clientJdotLogoWhite,
     logoClass: "h-[46px] sm:h-[50px] xl:h-[56px] w-auto max-w-[200px]",
-    name: "Jdot Fragrances",
+    name: "J.",
     desc: "Celebrity commercial production (DVC) for the global fragrance launch of Ballin' starring NBA legend Kobe Bryant.",
     route: "case-study/jdot",
   },

@@ -189,6 +189,8 @@ import jdotBottleImg from "../assets/caseStudies/j/jdotBottle.webp";
 import jdotSpotlightBallImg from "../assets/caseStudies/j/jdotSpotlightBall.webp";
 import jdotUnboxingImg from "../assets/caseStudies/j/jdotUnboxing.webp";
 import jdotArenaCloudsImg from "../assets/caseStudies/j/jdotArenaClouds.webp";
+import jdotBallPortraitImg from "../assets/caseStudies/j/jdotBallPortrait.webp";
+import jdotContainerCloseUpImg from "../assets/caseStudies/j/jdotContainerCloseUp.webp";
 import jdot_triptych from "../assets/caseStudiesTriptych/jdot_triptych.webp";
 
 
@@ -4827,7 +4829,7 @@ export const caseStudiesData = {
   jdot: {
     id: "jdot",
     slug: "jdot",
-    name: "Jdot Fragrances",
+    name: "J.",
     breadcrumbName: "J. Fragrances",
     category: "Commercial Production / Celebrity Talent Management",
     hero: {
@@ -4854,8 +4856,9 @@ export const caseStudiesData = {
         "Number9 Creative & Media partnered with J. Fragrances to produce a premium direct-to-consumer commercial (DVC) for the launch of its upcoming fragrance, Ballin'. Our commercial production agency managed the end-to-end video production process, from pre-production logistics and VIP talent acquisition to on-site direction in Boston and comprehensive post-production editing. By securing NBA legend Kobe Bryant as the star and coordinating complex stakeholder reviews, this celebrity marketing campaign successfully delivered a high-end brand asset designed to capture market attention and drive global product sales.",
       logo: jdotLogo,
       darkLogo: jdotLogoWhite,
-      logoAlt: "Jdot Fragrances logo",
+      logoAlt: "J. logo",
       showcaseImage: jdotArenaCloudsImg,
+      showcaseVideo: "/videos/jdot-ballin.mp4",
       showcaseAlt: "J. Fragrances Ballin' stadium arena production environment",
       stats: [
         {
@@ -4896,6 +4899,7 @@ export const caseStudiesData = {
       challenge: {
         heading: "The challenge",
         image: jdotUnboxingImg,
+        video: "/videos/jdot-ballin-reel.mp4",
         imageAlt: "Custom Ballin' MVP Energy packaging and fragrance bottle presentation",
         leftParagraphs: [
           "Launching a flagship fragrance with an athlete of Kobe Bryant's stature involves navigating tight logistics, managing high-profile VIP talent, and coordinating multiple stakeholder teams.",
@@ -4907,6 +4911,7 @@ export const caseStudiesData = {
       solution: {
         heading: "The solution.",
         image: jdotAthleteImg,
+        video: "/videos/jdot-ballin-reel.mp4",
         imageAlt: "On-set commercial direction in Boston with NBA legend Kobe Bryant",
         description:
           "Number9 Creative & Media executed a full-service commercial production for the Ballin' DVC, managing the project entirely from creative concept to final video delivery. During pre-production, our agency developed comprehensive shot lists, generated and managed daily call sheets, secured the shooting venues in Boston, arranged top-tier camera equipment, sourced set props, booked professional makeup artists, and coordinated all crew scheduling and on-site logistics. We oversaw all celebrity talent acquisition, successfully negotiating and bringing NBA legend Kobe Bryant on board as the face of the marketing campaign, and custom-designed the athletic jersey he wore during filming.\n\nOn set in Boston, our in-house team directly produced and directed the shoot. While leading the creative direction on camera, we also actively managed communications between J. Fragrances' representatives and Bryant's personal team to ensure all VIP concerns were accommodated. Following the shoot, our post-production department handled all video editing, color grading, and audio production, systematically routing the deliverables through multiple rounds of rigorous review with both the client and the athlete's team to achieve a polished final commercial cut.",
@@ -4942,7 +4947,7 @@ export const caseStudiesData = {
         ],
         closing:
           "By seamlessly integrating high-level shoot logistics, hands-on production direction, celebrity talent management, and technical post-production, Number9 Creative & Media successfully produced a premier commercial video asset that positioned J. Fragrances for a powerful product launch.",
-        galleryFit: "cover",
+        galleryFit: "natural",
         galleryImages: [
           {
             src: jdotHeroImg,
@@ -4983,23 +4988,23 @@ export const caseStudiesData = {
             subtitle: "MVP ENERGY RETAIL BOX",
           },
           {
-            src: jdotAthleteImg,
+            src: jdotBallPortraitImg,
             images: [
               {
-                src: jdotAthleteImg,
+                src: jdotBallPortraitImg,
                 position: "center center",
-                title: "VIP Talent & Custom Wardrobe",
-                subtitle: "NBA LEGEND KOBE BRYANT",
+                title: "Signature Ballin' Basketball",
+                subtitle: "EAU DE PARFUM PORTRAIT",
               },
               {
-                src: jdotProductImg,
+                src: jdotContainerCloseUpImg,
                 position: "center center",
-                title: "Retail Launch & Brand Display",
-                subtitle: "J. LUXURY FRAGRANCE",
+                title: "Basketball Container Close-Up",
+                subtitle: "PREMIUM SCENT PACKAGING",
               },
             ],
-            title: "VIP Talent & Custom Wardrobe",
-            subtitle: "NBA LEGEND KOBE BRYANT",
+            title: "Signature Ballin' Basketball",
+            subtitle: "EAU DE PARFUM PORTRAIT",
           },
         ],
       },
