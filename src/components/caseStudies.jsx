@@ -4,31 +4,24 @@ import { ArrowLeft, ArrowRight } from 'lucide-react';
 
 
 
-import carImage from '../assets/ChatGPT Image Jun 19, 2026, 07_52_28 PM 1.png';
+// Case Studies Brand Assets
+import scantechImg1 from '../assets/caseStudies/SCANTECH The Battery Show North America 2024/scantech1.avif';
+import scantechSymbol from '../assets/caseStudies/SCANTECH The Battery Show North America 2024/scantechLogo.png';
 
-import microsoftImage from '../assets/ChatGPT Image Jun 19, 2026, 07_52_28 PM 1 (1).png';
+import nakamichiImg1 from '../assets/caseStudies/Nakamichi Car Audio/nakamichi1.avif';
+import nakamichiSymbol from '../assets/caseStudies/Nakamichi Car Audio/Nakamichi Red Geometric Symbol.png';
 
-import emiratesImage from '../assets/ChatGPT Image Jun 19, 2026, 07_52_28 PM 1 (2).png';
+import ssstcImg1 from '../assets/caseStudies/SSSTC Circleexhibit/ssstc1.webp';
+import ssstcSymbol from '../assets/caseStudies/SSSTC Circleexhibit/ssstcIcon.png';
 
+import finamillImg1 from '../assets/caseStudies/Finamill IHS 2025/finamill1.webp';
+import finamillLogo from '../assets/caseStudies/Finamill IHS 2025/finamillWordmark_clean.png';
 
+import dreoImg1 from '../assets/caseStudies/DREO IHS 2025/dreo1.avif';
+import dreoLogo from '../assets/caseStudies/DREO IHS 2025/dreoLogo_trimmed.png';
 
-import lexuslogo from '../assets/Logo (2).png';
-
-import msLogo from '../assets/mlogo 1.png';
-
-import emiratesLogo from '../assets/Logos/ClientsGrid_Logos/emirates.png';
-
-import msMobileLogo from '../assets/mlogo 1 (1).png';
-import lexusMobileLogo from '../assets/Lexus_Emblem_Transparent_Final.webp';
-import emiratesMobileLogo from '../assets/Red Arabic Emirates Emblem.webp';
-
-
-
-import electricCar from '../assets/electric-car 1.png';
-
-import building from '../assets/electric-car 1 (1).png';
-
-import plane from '../assets/electric-car 1 (2).png';
+import deltaImg1 from '../assets/caseStudies/Delta Light/delta1.jpg';
+import deltaSymbol from '../assets/caseStudies/Delta Light/deltaSymbol.png';
 
 
 
@@ -42,130 +35,156 @@ import plane from '../assets/electric-car 1 (2).png';
 
 const originalCaseStudies = [
 
+  // {
+
+  //   id: '01',
+
+  //   category: 'ENERGY & INDUSTRIAL',
+
+  //   titleLine1: 'SCANTECH Industrial',
+
+  //   titleLine2: 'Metrology Exhibit',
+
+  //   description:
+
+  //     'Massive 20x40 industrial 3D metrology exhibit with live battery scanning at The Battery Show 2024.',
+
+  //   image: scantechImg1,
+
+  //   logo: scantechSymbol,
+  //   mobileLogo: scantechSymbol,
+  //   logoDarkInvert: true,
+  //   logoClass: 'h-[32px] sm:h-[36px] lg:h-[34px] xl:h-[38px] 2xl:h-[48px] w-auto',
+  //   mobileLogoClass: 'h-8 w-auto',
+
+  //   route: 'case-study/scantech',
+
+  // },
+
   {
 
     id: '01',
 
-    category: 'AUTOMOTIVE',
+    category: 'AUTOMOTIVE & AUDIO',
 
-    titleLine1: 'Lexus Interactive',
+    titleLine1: 'Nakamichi Car Audio',
 
-    titleLine2: 'Experience',
+    titleLine2: 'SEMA Showcase',
 
     description:
 
-      'An immersive digital platform & configurator that redefines luxury vehicle exploration.',
+      'Disciplined 20x20 exhibition booth with perimeter interaction counters and precision audio display.',
 
-    icon: (
+    image: nakamichiImg1,
 
-      <img
+    logo: nakamichiSymbol,
+    mobileLogo: nakamichiSymbol,
+    logoClass: 'h-[30px] sm:h-[34px] lg:h-[32px] xl:h-[36px] 2xl:h-[46px] w-auto',
+    mobileLogoClass: 'h-7 w-auto',
 
-        src={electricCar}
-
-        className="w-[36px] h-[36px]"
-
-        alt="car icon"
-
-      />
-
-    ),
-
-    image: carImage,
-
-    logo: lexuslogo,
-    mobileLogo: lexusMobileLogo,
-    mobileLogoClass: 'w-8 h-8 object-contain',
-
-    logoClass:
-
-      '-ml-[15px] h-[70px] sm:h-[80px] w-[180px] sm:w-[210px]',
-    route: 'case-study/lexus',
+    route: 'case-study/nakamichi',
 
   },
-
-
 
   {
 
     id: '02',
 
-    category: 'ENTERPRISE',
+    category: 'ENTERPRISE STORAGE',
 
-    titleLine1: 'Microsoft Enterprise',
+    titleLine1: 'SSSTC Enterprise',
 
-    titleLine2: 'Solutions',
+    titleLine2: 'Storage Showcase',
 
     description:
 
-      'Enterprise-grade solutions and digital transformation for global teams and business units.',
+      'High-impact 10x10 custom inline booth optimizing aisle-facing flow and enterprise technology demos.',
 
-    icon: (
+    image: ssstcImg1,
 
-      <img
+    logo: ssstcSymbol,
+    mobileLogo: ssstcSymbol,
+    logoClass: 'h-[30px] sm:h-[34px] lg:h-[32px] xl:h-[36px] 2xl:h-[46px] w-auto',
+    mobileLogoClass: 'h-7 w-auto',
 
-        src={building}
-
-        className="w-[36px] h-[36px]"
-
-        alt="building icon"
-
-      />
-
-    ),
-
-    image: microsoftImage,
-
-    logo: msLogo,
-    mobileLogo: msMobileLogo,
-    mobileLogoClass: 'w-8 h-8 object-contain',
-
-    logoClass:
-
-        'h-[48px] w-[145px] sm:h-[80px] sm:w-[210px]',
-    route: 'case-study/microsoft',
+    route: 'case-study/ssstc',
 
   },
-
-
 
   {
 
     id: '03',
 
-    category: 'TRAVEL & HOSPITALITY',
+    category: 'CONSUMER APPLIANCES',
 
-    titleLine1: 'Emirates Digital',
+    titleLine1: 'Finamill Culinary',
 
-    titleLine2: 'Experience Platform',
+    titleLine2: 'Sampling Exhibit',
 
     description:
 
-      'Digital experience platform enhancing customer engagement across global touchpoints.',
+      'Award-winning spice grinder demonstration booth with hands-on pod sampling and retail displays at IHS 2025.',
 
-    icon: (
+    image: finamillImg1,
 
-      <img
+    logo: finamillLogo,
+    mobileLogo: finamillLogo,
+    logoClass: 'h-[20px] sm:h-[22px] lg:h-[21px] xl:h-[23px] 2xl:h-[30px] w-auto max-w-[85px] sm:max-w-[95px] 2xl:max-w-[125px]',
+    mobileLogoClass: 'h-[18px] w-auto max-w-[80px]',
 
-        src={plane}
+    route: 'case-study/finamill',
 
-        className="w-[36px] h-[36px]"
+  },
 
-        alt="plane icon"
+  {
 
-      />
+    id: '04',
 
-    ),
+    category: 'SMART HOME & RETAIL',
 
-    image: emiratesImage,
+    titleLine1: 'DREO Smart Home',
 
-    logo: emiratesLogo,
-    mobileLogo: emiratesMobileLogo,
-    mobileLogoClass: 'w-8 h-8 object-contain',
+    titleLine2: 'Retail Display',
 
-    logoClass:
+    description:
 
-      'w-[180px] sm:w-[210px] h-[75px] sm:h-[90px]',
-    route: 'case-study/emirates',
+      'Custom 20x30 retail product booth with sampling zones, interactive displays, and buyer lounge at IHS 2025.',
+
+    image: dreoImg1,
+
+    logo: dreoLogo,
+    mobileLogo: dreoLogo,
+    logoDarkInvert: true,
+    logoClass: 'h-[18px] sm:h-[20px] lg:h-[19px] xl:h-[21px] 2xl:h-[26px] w-auto max-w-[70px] sm:max-w-[80px] 2xl:max-w-[100px]',
+    mobileLogoClass: 'h-[16px] w-auto max-w-[65px]',
+
+    route: 'case-study/dreo',
+
+  },
+
+  {
+
+    id: '05',
+
+    category: 'ARCHITECTURAL LIGHTING',
+
+    titleLine1: 'Delta Light Modern',
+
+    titleLine2: 'Rental Exhibit',
+
+    description:
+
+      'Austere architectural rental exhibit engineered with light-blocking ceiling to highlight premium fixtures.',
+
+    image: deltaImg1,
+
+    logo: deltaSymbol,
+    mobileLogo: deltaSymbol,
+    logoDarkInvert: true,
+    logoClass: 'h-[32px] sm:h-[36px] lg:h-[34px] xl:h-[38px] 2xl:h-[48px] w-auto',
+    mobileLogoClass: 'h-8 w-auto',
+
+    route: 'case-study/delta-light',
 
   },
 
@@ -175,71 +194,13 @@ const originalCaseStudies = [
 
 /* =========================================================
 
-   DUPLICATED CARDS
+   CASE STUDIES LIST
 
 ========================================================= */
 
 
 
-const caseStudies = [
-
-  {
-
-    ...originalCaseStudies[0],
-
-    id: '01',
-
-  },
-
-  {
-
-    ...originalCaseStudies[1],
-
-    id: '02',
-
-  },
-
-  {
-
-    ...originalCaseStudies[2],
-
-    id: '03',
-
-  },
-
-  {
-
-    ...originalCaseStudies[0],
-
-    id: '04',
-
-  },
-
-  {
-
-    ...originalCaseStudies[1],
-
-    id: '05',
-
-  },
-
-  {
-
-    ...originalCaseStudies[2],
-
-    id: '06',
-
-  },
-
-  // {
-
-  //   ...originalCaseStudies[0],
-
-  //   id: '07',
-
-  // },
-
-];
+const caseStudies = originalCaseStudies;
 
 
 
@@ -248,8 +209,14 @@ const CaseStudies = ({ onNavigate }) => {
     e?.preventDefault?.();
     e?.stopPropagation?.();
     if (!targetPage) return;
+    try {
+      sessionStorage.setItem("caseStudyOrigin", "home");
+      sessionStorage.removeItem("serviceOrigin");
+      sessionStorage.removeItem("lastWwdCardId");
+      sessionStorage.removeItem("lastWwdSlug");
+    } catch (err) {}
     if (onNavigate) {
-      onNavigate(targetPage);
+      onNavigate(targetPage, { from: "home" });
     } else if (typeof window !== 'undefined') {
       window.location.href = targetPage === 'home' ? '/' : `/${targetPage}`;
     }
@@ -870,7 +837,7 @@ ${isActive
                   {/* 2. Middle: Title + Brand Logo (right) + Description */}
                   <div className="my-auto py-1">
                     <div className="flex items-start justify-between gap-3 mb-2">
-                      <h3 className="leading-[1.15] flex-1">
+                      <h3 className="leading-[1.15] flex-1 min-w-0">
                         <span className="block text-[20px] font-bold tracking-tight text-gray-900 dark:text-white">
                           {study.titleLine1}
                         </span>
@@ -879,28 +846,33 @@ ${isActive
                         </span>
                       </h3>
 
-                      <div className="w-9 h-9 shrink-0 flex items-center justify-center">
+                      <div className="shrink-0 flex items-center justify-end h-9">
                         <img
                           src={study.mobileLogo || study.logo}
                           alt={`${study.titleLine1} Logo`}
-                          className={`max-w-full max-h-full object-contain ${study.mobileLogoClass || ''}`}
+                          className={`block w-auto object-contain object-right ${
+                            study.logoDarkInvert ? 'dark:invert' : ''
+                          } ${study.mobileLogoClass || 'h-7'}`}
                         />
                       </div>
                     </div>
 
-                    <p className="text-[13px] leading-[1.4] text-gray-600 dark:text-[#A1A1AA] line-clamp-3">
+                    <p className="text-[13px] leading-[1.4] text-gray-600 dark:text-[#E5E7EB] line-clamp-3">
                       {study.description}
                     </p>
                   </div>
 
                   {/* 3. Bottom Action Row: View Case Study + Round Arrow Button */}
-                  <div className="pt-1 flex items-center justify-between">
+                  <div
+                    onClick={(e) => handleNavigateClick(e, study.route)}
+                    className="pt-1 flex items-center justify-between cursor-pointer group"
+                  >
                     <span className="text-[14px] font-semibold text-gray-900 dark:text-white">
                       View Case Study
                     </span>
 
-                    <div className="w-9 h-9 rounded-full border border-[#28B023] flex items-center justify-center text-[#28B023] shrink-0 transition-transform active:scale-95">
-                      <ArrowRight className="w-4 h-4 text-[#28B023]" strokeWidth={2.2} />
+                    <div className="w-9 h-9 rounded-full border border-[#28B023] flex items-center justify-center text-[#28B023] shrink-0 transition-transform active:scale-95 group-hover:bg-[#28B023] group-hover:text-white">
+                      <ArrowRight className="w-4 h-4 text-[#28B023] group-hover:text-white" strokeWidth={2.2} />
                     </div>
                   </div>
                 </div>
@@ -909,11 +881,11 @@ ${isActive
                     DESKTOP CARD VIEW (>= 640px)
                 ================================================= */}
                 <div className="hidden sm:flex flex-col h-full">
-                {/* =================================================
+                  {/* =================================================
                     IMAGE
                 ================================================= */}
-                <div
-                  className="
+                  <div
+                    className="
                     relative
                     overflow-hidden
                     shrink-0
@@ -924,17 +896,17 @@ lg:h-[220px]
                     xl:h-[225px]
                     2xl:h-[375px]
                   "
-                >
+                  >
 
-                  <img
+                    <img
 
-                    src={study.image}
-                    loading="lazy"
-                    decoding="async"
+                      src={study.image}
+                      loading="lazy"
+                      decoding="async"
 
-                    alt={`${study.titleLine1} ${study.titleLine2}`}
+                      alt={`${study.titleLine1} ${study.titleLine2}`}
 
-                    className="
+                      className="
 
                       w-full
 
@@ -950,11 +922,11 @@ lg:h-[220px]
 
                     "
 
-                  />
+                    />
 
 
 
-                  {/* =================================================
+                    {/* =================================================
 
                       NUMBER + LOGO
 
@@ -962,9 +934,9 @@ lg:h-[220px]
 
 
 
-                  <div
+                    <div
 
-                    className="
+                      className="
 
                       absolute
 
@@ -996,11 +968,11 @@ lg:h-[220px]
 
                     "
 
-                  >
+                    >
 
-                    <span
+                      <span
 
-                      className="
+                        className="
 
                         flex
 
@@ -1046,27 +1018,27 @@ lg:h-[220px]
 
                       "
 
-                    >
+                      >
 
-                      {study.id}
+                        {study.id}
 
-                    </span>
-
-
-
-                <img
-  src={study.mobileLogo || study.logo}
-  loading="lazy"
-  decoding="async"
-  alt={`${study.titleLine1} Logo`}
-  className="w-12 h-12 sm:w-14 sm:h-14 lg:w-16 lg:h-16 2xl:w-20 2xl:h-20 object-contain drop-shadow-lg"
-/>
-
-                  </div>
+                      </span>
 
 
 
-                  {/* =================================================
+                      {/* <img
+                        src={study.mobileLogo || study.logo}
+                        loading="lazy"
+                        decoding="async"
+                        alt={`${study.titleLine1} Logo`}
+                        className="w-12 h-12 sm:w-14 sm:h-14 lg:w-16 lg:h-16 2xl:w-20 2xl:h-20 object-contain drop-shadow-lg"
+                      /> */}
+
+                    </div>
+
+
+
+                    {/* =================================================
 
                       TOP IMAGE ARROW
 
@@ -1075,11 +1047,11 @@ lg:h-[220px]
 
 
 
-                  <button
-                    type="button"
-                    aria-label={`View ${study.titleLine1} Case Study`}
-                    onClick={(e) => handleNavigateClick(e, study.route)}
-                    className="
+                    <button
+                      type="button"
+                      aria-label={`View ${study.titleLine1} Case Study`}
+                      onClick={(e) => handleNavigateClick(e, study.route)}
+                      className="
     absolute bottom-4 right-4
     w-[44px] h-[44px]
     lg:w-[62px] lg:h-[62px]
@@ -1092,22 +1064,22 @@ lg:h-[220px]
     cursor-pointer z-20
     opacity-100 translate-y-0
   "
-                  >
-                    <ArrowRight
-                      className="
+                    >
+                      <ArrowRight
+                        className="
       text-[#17A229]
       w-5 h-5
       lg:w-8 lg:h-8
     "
-                    />
-                  </button>
+                      />
+                    </button>
 
 
-                </div>
+                  </div>
 
 
 
-                {/* =================================================
+                  {/* =================================================
 
                     CONTENT
 
@@ -1115,96 +1087,102 @@ lg:h-[220px]
 
 
 
-                <div
+                  <div
 
-                  className={`p-5 sm:p-6 ${isActive
+                    className={`p-5 sm:p-6 ${isActive
                       ? 'lg:p-4.5 xl:p-5 2xl:p-8'
                       : 'lg:p-4 xl:p-4.5 2xl:p-7'
-                    } flex flex-col justify-between flex-1 transition-all duration-300`}
+                      } flex flex-col justify-between flex-1 transition-all duration-300`}
 
-                >
-                  {/* 1. CATEGORY BADGE (Top) */}
-                  <span
-                    className={`self-start inline-flex items-center rounded-full border border-[#28B023] text-[#28B023] font-medium transition-all duration-300 text-[12px] sm:text-[13px] ${isActive
-                      ? 'lg:text-[13px] xl:text-[13.5px] 2xl:text-[18px] px-3.5 xl:px-3.5 2xl:px-5 py-0.5 xl:py-1 2xl:py-2'
-                      : 'lg:text-[11.5px] xl:text-[12px] 2xl:text-[14px] px-3 xl:px-3 2xl:px-4 py-[4px] 2xl:py-[6px]'
-                      }`}
                   >
-                    {study.category}
-                  </span>
+                    {/* 1. CATEGORY BADGE (Top) */}
+                    <span
+                      className={`self-start inline-flex items-center rounded-full border border-[#28B023] text-[#28B023] font-medium transition-all duration-300 text-[12px] sm:text-[13px] ${isActive
+                        ? 'lg:text-[13px] xl:text-[13.5px] 2xl:text-[18px] px-3.5 xl:px-3.5 2xl:px-5 py-0.5 xl:py-1 2xl:py-2'
+                        : 'lg:text-[11.5px] xl:text-[12px] 2xl:text-[14px] px-3 xl:px-3 2xl:px-4 py-[4px] 2xl:py-[6px]'
+                        }`}
+                    >
+                      {study.category}
+                    </span>
 
-                  {/* 2. MIDDLE GROUP: TITLE + ICON + DESCRIPTION (Centered) */}
-                  <div
-                    className={`flex flex-col ${isActive ? 'gap-1.5 sm:gap-2.5 lg:gap-2 xl:gap-2 2xl:gap-3.5' : 'gap-1.5 sm:gap-2.5 lg:gap-2 xl:gap-2 2xl:gap-4'
-                      } my-3 sm:my-auto py-1 sm:py-1.5 xl:py-1.5 2xl:py-3`}
-                  >
-                    {/* TITLE + ICON */}
-                    <div className="flex justify-between items-start gap-3 xl:gap-4">
-                      <h3 className="leading-[1.12] flex-1">
-                        <span
-                          className={`block whitespace-nowrap text-[22px] sm:text-[24px] ${isActive ? 'lg:text-[24px] xl:text-[26px] 2xl:text-[42px]' : 'lg:text-[20px] xl:text-[22px] 2xl:text-[34px]'
-                            } font-semibold tracking-[-0.02em] text-gray-900 dark:text-white transition-all duration-300`}
-                        >
-                          {study.titleLine1}
-                        </span>
+                    {/* 2. MIDDLE GROUP: TITLE + ICON + DESCRIPTION (Centered) */}
+                    <div
+                      className={`flex flex-col ${isActive ? 'gap-1.5 sm:gap-2.5 lg:gap-2 xl:gap-2 2xl:gap-3.5' : 'gap-1.5 sm:gap-2.5 lg:gap-2 xl:gap-2 2xl:gap-4'
+                        } my-3 sm:my-auto py-1 sm:py-1.5 xl:py-1.5 2xl:py-3`}
+                    >
+                      {/* TITLE + ICON */}
+                      <div className="flex justify-between items-start gap-3 xl:gap-4">
+                        <h3 className="leading-[1.12] flex-1 min-w-0">
+                          <span
+                            className={`block truncate text-[22px] sm:text-[24px] ${isActive ? 'lg:text-[24px] xl:text-[26px] 2xl:text-[42px]' : 'lg:text-[20px] xl:text-[22px] 2xl:text-[34px]'
+                              } font-semibold tracking-[-0.02em] text-gray-900 dark:text-white transition-all duration-300`}
+                          >
+                            {study.titleLine1}
+                          </span>
 
-                        <span
-                          className={`block text-[22px] sm:text-[24px] ${isActive ? 'lg:text-[24px] xl:text-[26px] 2xl:text-[42px]' : 'lg:text-[20px] xl:text-[22px] 2xl:text-[34px]'
-                            } font-semibold tracking-[-0.02em] text-[#1DC16A] transition-all duration-300`}
-                        >
-                          {study.titleLine2}
-                        </span>
-                      </h3>
+                          <span
+                            className={`block truncate text-[22px] sm:text-[24px] ${isActive ? 'lg:text-[24px] xl:text-[26px] 2xl:text-[42px]' : 'lg:text-[20px] xl:text-[22px] 2xl:text-[34px]'
+                              } font-semibold tracking-[-0.02em] text-[#1DC16A] transition-all duration-300`}
+                          >
+                            {study.titleLine2}
+                          </span>
+                        </h3>
 
-                      {/* Icon */}
-                      <div
-                        className={`flex-shrink-0 ${isActive
-                          ? 'w-[44px] h-[44px] sm:w-[52px] sm:h-[52px] lg:w-[44px] lg:h-[44px] xl:w-[46px] xl:h-[46px] 2xl:w-[68px] 2xl:h-[68px] p-2 xl:p-2.5 2xl:p-3.5'
-                          : 'w-[36px] h-[36px] sm:w-[44px] sm:h-[44px] lg:w-[38px] lg:h-[38px] xl:w-[40px] xl:h-[40px] 2xl:w-[52px] 2xl:h-[52px] p-2 xl:p-2 2xl:p-3'
-                          } rounded-full flex items-center justify-center bg-[#E1F5ED] transition-all duration-300`}
-                      >
-                        {study.icon}
+                        {/* Icon */}
+
+                        {/* Brand Logo */}
+                        <div className="shrink-0 flex items-center justify-end h-[36px] sm:h-[44px] lg:h-[40px] xl:h-[44px] 2xl:h-[56px]">
+                          <img
+                            src={study.mobileLogo || study.logo}
+                            alt={`${study.titleLine1} logo`}
+                            loading="lazy"
+                            decoding="async"
+                            className={`block w-auto object-contain object-right ${
+                              study.logoDarkInvert ? 'dark:invert' : ''
+                            } ${study.logoClass || 'h-[28px] sm:h-[32px]'}`}
+                          />
+                        </div>
+
                       </div>
-                    </div>
 
-                    {/* DESCRIPTION */}
-                    <p
-                      className={`text-[14px] sm:text-[15px] ${isActive
-                        ? 'lg:text-[13px] xl:text-[13.5px] 2xl:text-[20px] leading-[1.38] 2xl:leading-[1.45] text-gray-800 dark:text-[#D1D5DB]'
-                        : 'lg:text-[12px] xl:text-[12.5px] 2xl:text-[16px] leading-[1.38] 2xl:leading-[1.55] text-gray-600 dark:text-[#A1A1AA]'
-                        } transition-all duration-300`}
-                    >
-                      {study.description}
-                    </p>
-                  </div>
-
-                  {/* 3. VIEW CASE STUDY (Bottom) */}
-                  <div className="pt-1.5 sm:pt-2 xl:pt-2 2xl:pt-3">
-                    <a
-                      href={study.route ? `/${study.route}` : '#'}
-                      onClick={(e) => handleNavigateClick(e, study.route)}
-                      className="flex items-center justify-between group/link"
-                    >
-                      <span
-                        className={`text-[15px] sm:text-[16px] ${isActive
-                          ? 'lg:text-[15px] xl:text-[16px] 2xl:text-[21px] font-semibold text-gray-900 dark:text-white'
-                          : 'lg:text-[13px] xl:text-[14px] 2xl:text-[17px] font-medium text-gray-600 dark:text-[#CCCCCC]'
+                      {/* DESCRIPTION */}
+                      <p
+                        className={`text-[14px] sm:text-[15px] ${isActive
+                          ? 'lg:text-[13px] xl:text-[13.5px] 2xl:text-[20px] leading-[1.38] 2xl:leading-[1.45] text-gray-800 dark:text-[#F3F4F6]'
+                          : 'lg:text-[12px] xl:text-[12.5px] 2xl:text-[16px] leading-[1.38] 2xl:leading-[1.55] text-gray-600 dark:text-[#E5E7EB]'
                           } transition-all duration-300`}
                       >
-                        View Case Study
-                      </span>
+                        {study.description}
+                      </p>
+                    </div>
 
-                      <div
-                        className={`border border-[#1DC16A] rounded-full ${isActive
-                          ? 'w-[40px] h-[40px] sm:w-[46px] sm:h-[46px] lg:w-[40px] lg:h-[40px] xl:w-[42px] xl:h-[42px] 2xl:w-[58px] 2xl:h-[58px]'
-                          : 'w-[34px] h-[34px] sm:w-[38px] sm:h-[38px] lg:w-[34px] lg:h-[34px] xl:w-[36px] xl:h-[36px] 2xl:w-[44px] 2xl:h-[44px]'
-                          } flex items-center justify-center shrink-0 text-[#17A229] transition-all duration-300 group-hover/link:translate-x-1`}
+                    {/* 3. VIEW CASE STUDY (Bottom) */}
+                    <div className="pt-1.5 sm:pt-2 xl:pt-2 2xl:pt-3">
+                      <a
+                        href={study.route ? `/${study.route}` : '#'}
+                        onClick={(e) => handleNavigateClick(e, study.route)}
+                        className="flex items-center justify-between group/link"
                       >
-                        <ArrowRight className={`${isActive ? 'w-4.5 h-4.5 sm:w-5 sm:h-5 lg:w-4.5 lg:h-4.5 xl:w-5 xl:h-5 2xl:w-7 2xl:h-7' : 'w-3.5 h-3.5 sm:w-4 sm:h-4 lg:w-4 lg:h-4 2xl:w-5 2xl:h-5'} transition-all duration-300`} />
-                      </div>
-                    </a>
+                        <span
+                          className={`text-[15px] sm:text-[16px] ${isActive
+                            ? 'lg:text-[15px] xl:text-[16px] 2xl:text-[21px] font-semibold text-gray-900 dark:text-white'
+                            : 'lg:text-[13px] xl:text-[14px] 2xl:text-[17px] font-medium text-gray-600 dark:text-[#CCCCCC]'
+                            } transition-all duration-300`}
+                        >
+                          View Case Study
+                        </span>
+
+                        <div
+                          className={`border border-[#1DC16A] rounded-full ${isActive
+                            ? 'w-[40px] h-[40px] sm:w-[46px] sm:h-[46px] lg:w-[40px] lg:h-[40px] xl:w-[42px] xl:h-[42px] 2xl:w-[58px] 2xl:h-[58px]'
+                            : 'w-[34px] h-[34px] sm:w-[38px] sm:h-[38px] lg:w-[34px] lg:h-[34px] xl:w-[36px] xl:h-[36px] 2xl:w-[44px] 2xl:h-[44px]'
+                            } flex items-center justify-center shrink-0 text-[#17A229] transition-all duration-300 group-hover/link:translate-x-1`}
+                        >
+                          <ArrowRight className={`${isActive ? 'w-4.5 h-4.5 sm:w-5 sm:h-5 lg:w-4.5 lg:h-4.5 xl:w-5 xl:h-5 2xl:w-7 2xl:h-7' : 'w-3.5 h-3.5 sm:w-4 sm:h-4 lg:w-4 lg:h-4 2xl:w-5 2xl:h-5'} transition-all duration-300`} />
+                        </div>
+                      </a>
+                    </div>
                   </div>
-                </div>
                 </div>
 
               </div>
@@ -1407,9 +1385,9 @@ lg:h-[220px]
 
       <div className="flex items-center justify-center gap-2 sm:gap-2.5 mt-8 sm:mt-10 lg:mt-12">
 
-        {[0, 1, 2].map((index) => {
+        {caseStudies.map((_, index) => {
 
-          const isActiveDot = index === activeIndex % 3;
+          const isActiveDot = index === activeIndex;
 
           return (
 
@@ -1437,7 +1415,7 @@ lg:h-[220px]
 
                   ? 'w-7 sm:w-8 h-2 sm:h-2.5 bg-[#28B023]'
 
-                  : 'w-2 sm:w-2.5 h-2 sm:h-2.5 bg-gray-300 hover:bg-gray-400'
+                  : 'w-2 sm:w-2.5 h-2 sm:h-2.5 bg-gray-300 dark:bg-gray-700 hover:bg-gray-400 dark:hover:bg-gray-600'
 
                 }
 

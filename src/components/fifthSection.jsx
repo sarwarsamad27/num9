@@ -15,6 +15,7 @@ import emiratesLogo from '../assets/Group 132.png';
 
 
 import microsoftLogo from '../assets/Logos/Updated_Logos/Microsoft_logo__282012_29.png';
+import microsoftLogoWhite from '../assets/Microsoft_logo__White.png';
 
 
 
@@ -37,6 +38,19 @@ import pepsicoLogo from '../assets/pepsicoLogo.png';
 import citibankLogo from '../assets/citibankLogo.png';
 
 
+
+import deltaLogo from '../assets/caseStudies/Delta Light/deltaLogo_transparent.png';
+import deltaLogoWhite from '../assets/caseStudies/Delta Light/deltaLogo_white.png';
+import dreoLogo from '../assets/caseStudies/DREO IHS 2025/dreoLogo_trimmed.png';
+import dreoLogoWhite from '../assets/caseStudies/DREO IHS 2025/dreoLogo_white.png';
+import finamillLogo from '../assets/caseStudies/Finamill IHS 2025/finamillLogo_trimmed.png';
+import katjesLogo from '../assets/caseStudies/Katjes USA/Katjes.webp';
+import nakamichiLogo from '../assets/caseStudies/Nakamichi Car Audio/Nakamichi Logo on Transparent Background.png';
+import nakamichiLogoWhite from '../assets/caseStudies/Nakamichi Car Audio/nakamichi_white.png';
+import scantechLogo from '../assets/caseStudies/SCANTECH The Battery Show North America 2024/scantechLogo.svg';
+import ssstcLogo from '../assets/caseStudies/SSSTC Circleexhibit/ssstcLogoUpdated.png';
+import ssstcLogoBlack from '../assets/caseStudies/SSSTC Circleexhibit/ssstcLogoUpdatedBlack.png';
+import skinnyLogo from '../assets/caseStudies/skinny/Jordan_s_Skinny_Mixes_Logo_f5994884-b437-492f-aa4a-b5debcc1c695_1543x_copy_copy.png';
 
 
 
@@ -72,11 +86,17 @@ import retailMarketingIcon from '../assets/speaker 1 (2).png';
 // Layer logo assets — swapped to colored versions from ClientsGrid_Logos
 
 import layer4 from '../assets/Logos/ClientsGrid_Logos/pepsico.png';
+import pepsicoLogoWhite from '../assets/Logos/ClientsGrid_Logos/pepsico_white.png';
 import layer6 from '../assets/Logos/ClientsGrid_Logos/citibank.png';
+import citibankLogoWhite from '../assets/Logos/ClientsGrid_Logos/citibank_white.png';
 import layer7 from '../assets/Logos/ClientsGrid_Logos/lexus.png';
 import layer11 from '../assets/Logos/ClientsGrid_Logos/safeway.png';
+import safewayLogoWhite from '../assets/Logos/ClientsGrid_Logos/safeway_white.png';
 import layer12 from '../assets/Logos/ClientsGrid_Logos/emirates.png';
+import emiratesLogoWhite from '../assets/Emirates-Logo_White.png';
 import nutrienLogo from '../assets/Logos/ClientsGrid_Logos/nutrien.png';
+import nutrienLogoWhite from '../assets/Logos/ClientsGrid_Logos/nutrien_white.png';
+import skinnyLogoWhite from '../assets/caseStudies/skinny/skinny_white.png';
 
 
 
@@ -389,8 +409,78 @@ const impactStats = [
 
 
 const testimonials = [
+    {
+    logo: deltaLogo,
+    darkLogo: deltaLogoWhite,
+    logoAlt: 'Delta Light',
+    logoWidth: 210,
+    logoHeight: 55,
+    text: 'Austere architectural rental exhibit with light-blocking ceiling for high-end lighting fixtures.',
+    route: 'case-study/delta-light',
+  },
+  {
+    logo: dreoLogo,
+    darkLogo: dreoLogoWhite,
+    logoAlt: 'DREO',
+    logoWidth: 165,
+    logoHeight: 55,
+    text: '20x30 retail product display booth with live sampling, interactive appliances, and buyer lounge at IHS 2025.',
+    route: 'case-study/dreo',
+  },
+  {
+    logo: finamillLogo,
+    logoAlt: 'Finamill',
+    logoWidth: 175,
+    logoHeight: 60,
+    text: 'Award-winning spice grinder demonstration booth with hands-on pod sampling and retail displays at IHS 2025.',
+    route: 'case-study/finamill',
+  },
+  {
+    logo: katjesLogo,
+    logoAlt: 'Katjes USA',
+    logoWidth: 160,
+    logoHeight: 60,
+    text: 'Multi-year brand activation and experiential event staffing for 100% plant-based European confectionery across North America.',
+    route: 'case-study/katjes',
+  },
+  {
+    logo: nakamichiLogo,
+    darkLogo: nakamichiLogoWhite,
+    logoAlt: 'Nakamichi Car Audio',
+    logoWidth: 220,
+    logoHeight: 60,
+    text: 'Disciplined 20x20 exhibition booth with perimeter interaction counters and anti-glare illumination at SEMA 2024.',
+    route: 'case-study/nakamichi',
+  },
+  // {
+  //   logo: scantechLogo,
+  //   logoAlt: 'SCANTECH',
+  //   logoWidth: 205,
+  //   logoHeight: 60,
+  //   text: 'Imposing 20x40 industrial 3D metrology booth with live battery scanning and illuminated meeting tunnel at The Battery Show 2024.',
+  //   route: 'case-study/scantech',
+  // },
+  {
+    logo: ssstcLogoBlack,
+    darkLogo: ssstcLogo,
+    logoAlt: 'SSSTC',
+    logoWidth: 180,
+    logoHeight: 55,
+    text: 'High-density 10x10 enterprise storage inline booth with precision product vitrines and tension fabric backwall at Circleexhibit.',
+    route: 'case-study/ssstc',
+  },
+  {
+    logo: skinnyLogo,
+    darkLogo: skinnyLogoWhite,
+    logoAlt: 'Skinny Mixes',
+    logoWidth: 135,
+    logoHeight: 60,
+    text: 'Experiential marketing and high-impact street sampling campaign launching Skinnyccino across Manhattan.',
+    route: 'case-study/skinny',
+  },
   {
     logo: layer4,
+    darkLogo: pepsicoLogoWhite,
     logoAlt: 'PepsiCo',
     logoWidth: 180,
     logoHeight: 42,
@@ -407,6 +497,7 @@ const testimonials = [
   },
   {
     logo: layer6,
+    darkLogo: citibankLogoWhite,
     logoAlt: 'Citibank',
     logoWidth: 160,
     logoHeight: 42,
@@ -415,6 +506,7 @@ const testimonials = [
   },
   {
     logo: layer11,
+    darkLogo: safewayLogoWhite,
     logoAlt: 'Safeway',
     logoWidth: 190,
     logoHeight: 35,
@@ -423,6 +515,7 @@ const testimonials = [
   },
   {
     logo: layer12,
+    darkLogo: emiratesLogoWhite,
     logoAlt: 'Emirates',
     logoWidth: 82,
     logoHeight: 56,
@@ -431,6 +524,7 @@ const testimonials = [
   },
   {
     logo: microsoftLogo,
+    darkLogo: microsoftLogoWhite,
     logoAlt: 'Microsoft',
     logoWidth: 178,
     logoHeight: 38,
@@ -439,12 +533,16 @@ const testimonials = [
   },
   {
     logo: nutrienLogo,
+    darkLogo: nutrienLogoWhite,
     logoAlt: 'Nutrien',
     logoWidth: 160,
     logoHeight: 42,
     text: 'Number9 delivered a comprehensive brand activation strategy that resonated deeply with our agricultural and retail audiences.',
     route: 'case-study/nutrien',
   },
+
+
+
 ];
 
 
@@ -781,8 +879,14 @@ export default function FifthSection({ onNavigate }) {
 
   const handleNavigateClick = (targetPage) => {
     if (!targetPage) return;
+    try {
+      sessionStorage.setItem("caseStudyOrigin", "home");
+      sessionStorage.removeItem("serviceOrigin");
+      sessionStorage.removeItem("lastWwdCardId");
+      sessionStorage.removeItem("lastWwdSlug");
+    } catch (err) {}
     if (onNavigate) {
-      onNavigate(targetPage);
+      onNavigate(targetPage, { from: "home" });
     } else if (typeof window !== 'undefined') {
       const url = new URL(window.location.href);
       if (targetPage === 'home') {
@@ -856,7 +960,7 @@ export default function FifthSection({ onNavigate }) {
           setIsDragging(true);
           try {
             e.currentTarget.setPointerCapture(e.pointerId);
-          } catch (_) {}
+          } catch (_) { }
         } else {
           dragDirectionLocked.current = 'vertical';
           isDraggingRef.current = false;
@@ -875,8 +979,8 @@ export default function FifthSection({ onNavigate }) {
       hasDragged.current = true;
     }
 
-   dragDeltaX.current = dx;
-// Drag ke waqt track ko move nahi karna
+    dragDeltaX.current = dx;
+    // Drag ke waqt track ko move nahi karna
   };
 
   const handlePointerUp = (e) => {
@@ -889,7 +993,7 @@ export default function FifthSection({ onNavigate }) {
       if (e.currentTarget.hasPointerCapture(e.pointerId)) {
         e.currentTarget.releasePointerCapture(e.pointerId);
       }
-    } catch (_) {}
+    } catch (_) { }
 
     const dx = dragDeltaX.current;
     const step = cardW + rowGap;
@@ -898,12 +1002,12 @@ export default function FifthSection({ onNavigate }) {
     setDragOffset(0);
 
     if (Math.abs(dx) >= threshold) {
-    isSliding.current = true;
+      isSliding.current = true;
 
-    const direction = dx < 0 ? 1 : -1;
+      const direction = dx < 0 ? 1 : -1;
 
-    setOffset((curr) => curr + direction);
-}
+      setOffset((curr) => curr + direction);
+    }
 
     if (hasDragged.current) {
       setTimeout(() => {
@@ -923,7 +1027,7 @@ export default function FifthSection({ onNavigate }) {
       if (e.currentTarget.hasPointerCapture(e.pointerId)) {
         e.currentTarget.releasePointerCapture(e.pointerId);
       }
-    } catch (_) {}
+    } catch (_) { }
 
     setTimeout(() => {
       hasDragged.current = false;
@@ -1201,7 +1305,7 @@ export default function FifthSection({ onNavigate }) {
 
 
 
-            <p className="text-black dark:text-[#B4BCB6] font-grift-light text-[18px] sm:text-[20px] leading-relaxed mt-0 max-w-[800px]">
+            <p className="text-black dark:text-[#E5E7EB] font-grift-light text-[18px] sm:text-[20px] leading-relaxed mt-0 max-w-[800px]">
 
 
 
@@ -1222,7 +1326,7 @@ export default function FifthSection({ onNavigate }) {
               onClick={() => handleNavigateClick('our-work')}
               className="group flex items-center gap-18 font-medium text-[14px] sm:text-[22px] text-black dark:text-white border-b-2 border-black dark:border-white pb-2 w-fit hover:text-[#11C911] dark:hover:text-[#15B83E] hover:border-[#11C911] dark:hover:border-[#15B83E] transition-colors duration-300 mt-5 sm:mt-6 cursor-pointer"
             >
-              View Our Work
+              View Our Clients
               <ArrowRight className="w-4 h-4 xl:w-8 xl:h-8 group-hover:translate-x-1 transition-transform" />
             </button>
 
@@ -1244,10 +1348,10 @@ export default function FifthSection({ onNavigate }) {
 
 
 
-    
-{/* ══ CARDS ROW ══ */}
 
-<div className="w-full py-2 lg:absolute lg:top-[45%] lg:left-0 lg:z-20">
+        {/* ══ CARDS ROW ══ */}
+
+        <div className="w-full py-2 lg:absolute lg:top-[45%] lg:left-0 lg:z-20">
 
 
 
@@ -1261,9 +1365,8 @@ export default function FifthSection({ onNavigate }) {
 
 
             <div
-              className={`flex w-max ease-in-out ${isMobile ? 'px-0' : 'px-4 lg:px-0'} select-none touch-pan-y cursor-grab active:cursor-grabbing ${
-                isDragging || isLoopResetting ? 'transition-none' : 'transition-transform duration-500'
-              }`}
+              className={`flex w-max ease-in-out ${isMobile ? 'px-0' : 'px-4 lg:px-0'} select-none touch-pan-y cursor-grab active:cursor-grabbing ${isDragging || isLoopResetting ? 'transition-none' : 'transition-transform duration-500'
+                }`}
               onPointerDown={handlePointerDown}
               onPointerMove={handlePointerMove}
               onPointerUp={handlePointerUp}
@@ -1271,7 +1374,7 @@ export default function FifthSection({ onNavigate }) {
               onTransitionEnd={handleCarouselTransitionEnd}
               style={{
                 gap: `${rowGap}px`,
-             transform: `translateX(${centerOffset - offset * (cardW + rowGap)}px)`,
+                transform: `translateX(${centerOffset - offset * (cardW + rowGap)}px)`,
                 width: 'max-content',
               }}
             >
@@ -1328,20 +1431,53 @@ export default function FifthSection({ onNavigate }) {
                   <div>
                     {/* Fixed-height logo container: bottom-aligns logos and guarantees uniform start line for text */}
                     <div className="h-[52px] sm:h-[62px] flex items-end justify-start mb-4 sm:mb-6 shrink-0">
-                      <img
-                        src={t.logo}
-                        loading="lazy"
-                        decoding="async"
-                        alt={t.logoAlt}
-                        draggable={false}
-                        className={`object-contain pointer-events-none select-none transition-all duration-300 ${t.logoAlt === 'Lexus' ? 'dark:invert' : ''}`}
-                        style={{
-                          width: `${Math.round(t.logoWidth * logoScale)}px`,
-                          height: `${Math.round(t.logoHeight * logoScale)}px`,
-                          objectFit: 'contain',
-                          objectPosition: 'left bottom',
-                        }}
-                      />
+                      {t.darkLogo ? (
+                        <>
+                          <img
+                            src={t.logo}
+                            loading="lazy"
+                            decoding="async"
+                            alt={t.logoAlt}
+                            draggable={false}
+                            className="block dark:hidden object-contain pointer-events-none select-none transition-all duration-300"
+                            style={{
+                              width: `${Math.round(t.logoWidth * logoScale)}px`,
+                              height: `${Math.round(t.logoHeight * logoScale)}px`,
+                              objectFit: 'contain',
+                              objectPosition: 'left bottom',
+                            }}
+                          />
+                          <img
+                            src={t.darkLogo}
+                            loading="lazy"
+                            decoding="async"
+                            alt={t.logoAlt}
+                            draggable={false}
+                            className="hidden dark:block object-contain pointer-events-none select-none transition-all duration-300"
+                            style={{
+                              width: `${Math.round(t.logoWidth * logoScale)}px`,
+                              height: `${Math.round(t.logoHeight * logoScale)}px`,
+                              objectFit: 'contain',
+                              objectPosition: 'left bottom',
+                            }}
+                          />
+                        </>
+                      ) : (
+                        <img
+                          src={t.logo}
+                          loading="lazy"
+                          decoding="async"
+                          alt={t.logoAlt}
+                          draggable={false}
+                          className={`object-contain pointer-events-none select-none transition-all duration-300 ${t.logoAlt === 'Lexus' ? 'dark:invert' : ''}`}
+                          style={{
+                            width: `${Math.round(t.logoWidth * logoScale)}px`,
+                            height: `${Math.round(t.logoHeight * logoScale)}px`,
+                            objectFit: 'contain',
+                            objectPosition: 'left bottom',
+                          }}
+                        />
+                      )}
                     </div>
 
 
@@ -1351,7 +1487,7 @@ export default function FifthSection({ onNavigate }) {
 
 
                     <p
-                      className="leading-[1.5] text-[17px] min-[390px]:text-[18px] sm:text-[20px] text-[#414141] dark:text-[#D1D5DB]"
+                      className="leading-[1.5] text-[17px] min-[390px]:text-[18px] sm:text-[20px] text-[#414141] dark:text-[#E5E7EB]"
                     >
 
 
@@ -1461,7 +1597,8 @@ export default function FifthSection({ onNavigate }) {
       >
         <div
           className="
-      relative overflow-hidden bg-black
+      relative overflow-hidden bg-black dark:bg-[#1E2320]
+      border border-transparent dark:border-[#2C352E]
       rounded-none sm:rounded-[24px]
       px-5 py-8
       sm:px-8 sm:py-12
@@ -1471,6 +1608,7 @@ export default function FifthSection({ onNavigate }) {
       2xl:px-16
       2xl:py-16
       xl:min-h-[820px]
+      transition-colors duration-300
     "
         >
           <div
@@ -1550,7 +1688,7 @@ export default function FifthSection({ onNavigate }) {
       2xl:mt-12
       max-w-[340px]
       2xl:max-w-[380px]
-      text-white/70
+      text-white/85 dark:text-[#E5E7EB]
       text-[18px]
       sm:text-[17px]
       md:text-[18px]
@@ -1747,7 +1885,7 @@ export default function FifthSection({ onNavigate }) {
             xl:min-h-0
             xl:h-full
             rounded-[22px]
-            bg-black
+            bg-black dark:bg-[#111412]
             px-4 py-5
             sm:px-5 sm:py-6
             xl:px-[20px]
@@ -1803,7 +1941,7 @@ export default function FifthSection({ onNavigate }) {
                       <p
                         className="
               mt-1
-              text-white/65
+              text-white/85 dark:text-[#E5E7EB]
               text-[13px]
               sm:text-[15px]
               xl:text-[18px]

@@ -6,12 +6,52 @@ export default function CaseStudyHeroSection({
   caseStudy = caseStudiesData.lexus,
   onNavigate,
   onSubmit,
+  onBack,
+  previousPage,
 }) {
   const [email, setEmail] = useState("");
   const [isSent, setIsSent] = useState(false);
 
   const hero = caseStudy?.hero || caseStudiesData.lexus.hero;
   const breadcrumbName = caseStudy?.breadcrumbName || caseStudy?.name || "Lexus";
+
+  const isFromHome = React.useMemo(() => {
+    if (previousPage === "home") return true;
+    if (previousPage && previousPage !== "home") return false;
+    if (typeof window !== "undefined") {
+      try {
+        const origin = sessionStorage.getItem("caseStudyOrigin");
+        if (origin === "home") return true;
+        if (origin && origin !== "home") return false;
+        const stateFrom = window.history.state?.from;
+        if (stateFrom === "home") return true;
+        if (stateFrom && stateFrom !== "home") return false;
+      } catch (e) {}
+    }
+    return true; // Default: treat as home when no prior state
+  }, [previousPage]);
+
+  const handleHomeClick = (e) => {
+    e?.preventDefault?.();
+    if (isFromHome && onBack) {
+      onBack("home");
+    } else if (onNavigate) {
+      onNavigate("home");
+    } else if (typeof window !== "undefined") {
+      window.location.href = "/";
+    }
+  };
+
+  const handleParentClick = (e) => {
+    e?.preventDefault?.();
+    if (onBack && previousPage && previousPage !== "home") {
+      onBack(previousPage);
+    } else if (onNavigate) {
+      onNavigate(previousPage || "our-work");
+    } else if (typeof window !== "undefined") {
+      window.history.back();
+    }
+  };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -42,12 +82,12 @@ export default function CaseStudyHeroSection({
             loading="eager"
             fetchPriority="high"
             decoding="async"
-            className="
+            className={`
               h-full w-full object-cover
-              object-[58%_center]
-              sm:object-center
-              lg:object-[center_35%]
-            "
+              ${hero.objectPosition ? "" : "object-[58%_center] sm:object-center lg:object-[center_35%]"}
+              brightness-[0.6]
+            `}
+            style={hero.objectPosition ? { objectPosition: hero.objectPosition } : undefined}
           />
         )}
 
@@ -90,14 +130,11 @@ export default function CaseStudyHeroSection({
         >
           <button
             type="button"
-            onClick={(e) => {
-              e.preventDefault();
-              if (onNavigate) onNavigate("home");
-            }}
+            onClick={handleHomeClick}
             className="
               cursor-pointer
               text-white
-              hover:text-white/75
+              hover:text-[#32c400]
               transition-colors
               inline-flex
               items-center
@@ -109,23 +146,27 @@ export default function CaseStudyHeroSection({
             </svg>
           </button>
 
-          <ChevronRight
-            size={19}
-            strokeWidth={3}
-            className="shrink-0"
-          />
+          {!isFromHome && (
+            <>
+              <ChevronRight
+                size={19}
+                strokeWidth={3}
+                className="shrink-0"
+              />
 
-          <button
-            type="button"
-            onClick={() => onNavigate?.("our-work")}
-            className="
-              cursor-pointer
-              hover:text-white/75
-              transition-colors
-            "
-          >
-            Our Clients
-          </button>
+              <button
+                type="button"
+                onClick={handleParentClick}
+                className="
+                  cursor-pointer
+                  hover:text-[#32c400]
+                  transition-colors
+                "
+              >
+                Our Clients
+              </button>
+            </>
+          )}
 
           <ChevronRight
             size={19}

@@ -6,6 +6,7 @@ import FourthSection from './components/fourthSection'
 import WhatWeDo from './components/whatWeDo'
 import FifthSection from './components/fifthSection'
 import WhyWorkWithUs from './components/contact'
+import FAQSection from './components/FAQSection'
 import AccelerateBusinessSection from './components/AccelerateBusinessSection'
 import Footer from './components/footer'
 import MarqueeSection from './components/marqueeSection'
@@ -20,13 +21,13 @@ import servicesHeroImg from './assets/Overlapping Circles Office Collaboration C
 import workHeroImg from './assets/workCar.webp'
 import homeHeroImg from './assets/Metallic Blue Lexus in a Warehouse 1.webp'
 import lexusHeroImg from './assets/lexus/lexusHeroImg.webp'
+import jdotHeroImg from './assets/caseStudies/j/jdotHero.webp'
 
 const BASE_PATH = import.meta.env.BASE_URL; // '/' in local root builds, '/num9dev/' in production
 const BASE_PREFIX = BASE_PATH.replace(/\/$/, '');
 const toPagePath = (page) => page === 'home' ? BASE_PATH : `${BASE_PATH}${page.replace(/^\/+/, '')}`;
 
-const KNOWN_PAGES = new Set(['home', 'services', 'about', 'contact', 'our-work', 'work']);
-
+const KNOWN_PAGES = new Set(['home', 'services', 'about', 'contact', 'clients', 'work']);
 // The "Our Work" page (/work) reuses this service detail layout.
 const OUR_WORK_SERVICE_SLUG = 'all';
 
@@ -44,8 +45,8 @@ function resolvePageFromLocation() {
   // Aliases
   if (cleanPath === 'about-us') cleanPath = 'about';
   if (cleanPath === 'contact-us') cleanPath = 'contact';
-  if (cleanPath === 'case-studies') cleanPath = 'our-work';
-
+if (cleanPath === 'case-studies') cleanPath = 'clients';
+if (cleanPath === 'our-work') cleanPath = 'clients';
   if (!cleanPath || cleanPath === 'home') {
     // 2. Query param fallback (?page=about, etc.)
     const params = new URLSearchParams(window.location.search);
@@ -54,7 +55,8 @@ function resolvePageFromLocation() {
       let cleanQueryPage = queryPage;
       if (cleanQueryPage === 'about-us') cleanQueryPage = 'about';
       if (cleanQueryPage === 'contact-us') cleanQueryPage = 'contact';
-      if (cleanQueryPage === 'case-studies') cleanQueryPage = 'our-work';
+     if (cleanQueryPage === 'case-studies') cleanQueryPage = 'clients';
+if (cleanQueryPage === 'our-work') cleanQueryPage = 'clients';
 
       if (KNOWN_PAGES.has(cleanQueryPage)) return cleanQueryPage;
       if (cleanQueryPage.startsWith('case-study/') || cleanQueryPage.startsWith('service/')) return cleanQueryPage;
@@ -75,8 +77,9 @@ function preloadHeroForPage(targetPage) {
     if (targetPage === 'home') heroSrc = homeHeroImg;
     else if (targetPage === 'about' || targetPage === 'contact') heroSrc = aboutHeroImg;
     else if (targetPage === 'services') heroSrc = servicesHeroImg;
-    else if (targetPage === 'our-work') heroSrc = workHeroImg;
+    else if (targetPage === 'clients') heroSrc = workHeroImg;
     else if (targetPage === 'case-study/lexus') heroSrc = lexusHeroImg;
+    else if (targetPage === 'case-study/jdot' || targetPage === 'case-study/j') heroSrc = jdotHeroImg;
 
     if (heroSrc) {
       const existing = document.querySelector(`link[rel="preload"][href="${heroSrc}"]`);
@@ -145,10 +148,7 @@ export default function App() {
     pendingScrollRef.current = null;
 
     // If returning to a WhatWeDo card on the home page, let the card scroll effect handle it
-    const hasCardTarget = page === 'home' && (
-      pendingCardScrollRef.current ||
-      (typeof window !== 'undefined' && sessionStorage.getItem('lastWwdCardId'))
-    );
+    const hasCardTarget = page === 'home' && !!pendingCardScrollRef.current;
 
     if (typeof target !== 'number' || target <= 0) {
       if (!hasCardTarget) {
@@ -182,39 +182,46 @@ export default function App() {
     };
   }, [page]);
 
-  // Scroll to exact WhatWeDo card when returning to home page
+  // Scroll to exact WhatWeDo card ONLY when returning from a WhatWeDo card
   useEffect(() => {
     if (typeof window === 'undefined') return;
     if (page !== 'home') return;
 
-    let targetCardId = pendingCardScrollRef.current;
-    if (!targetCardId) {
-      try {
-        targetCardId = sessionStorage.getItem('lastWwdCardId');
-      } catch (e) {}
-    }
+    // Must be explicitly targeted for WhatWeDo card navigation
+    const targetCardId = pendingCardScrollRef.current;
+    pendingCardScrollRef.current = null;
     if (!targetCardId) return;
 
-    pendingCardScrollRef.current = null;
+    // Start at top 0 immediately so the scroll down to the card is an animated glide
+    window.scrollTo({ top: 0, left: 0, behavior: 'instant' });
 
     let cancelled = false;
     let attempts = 0;
-    const maxAttempts = 35;
+    const maxAttempts = 100;
     let secondCheckTimer = null;
 
     const stop = () => {
       cancelled = true;
     };
-    const userEvents = ['wheel', 'touchstart', 'mousedown'];
-    userEvents.forEach((ev) => window.addEventListener(ev, stop, { passive: true, once: true }));
+    const userEvents = ['wheel', 'touchmove'];
+    // Delay attaching user interrupt listeners so the user's click/tap that triggered
+    // the back navigation doesn't instantly cancel the auto-scroll.
+    const listenerTimer = setTimeout(() => {
+      userEvents.forEach((ev) => window.addEventListener(ev, stop, { passive: true, once: true }));
+    }, 150);
 
     const findCardElement = () => {
+      if (!targetCardId) return null;
+      const raw = String(targetCardId).trim();
+      const padded = raw.padStart(2, '0');
       return (
-        document.getElementById(targetCardId) ||
-        document.querySelector(`[data-service-id="${targetCardId}"]`) ||
-        document.querySelector(`[data-service-slug="${targetCardId}"]`) ||
-        document.getElementById(`wwd-card-${targetCardId}`) ||
-        document.querySelector(`[id*="${targetCardId}"]`)
+        document.getElementById(`wwd-card-${raw}`) ||
+        document.getElementById(`wwd-card-${padded}`) ||
+        document.querySelector(`[data-service-id="${raw}"]`) ||
+        document.querySelector(`[data-service-id="${padded}"]`) ||
+        document.querySelector(`[data-service-slug="${raw}"]`) ||
+        document.querySelector(`[data-card-id="${raw}"]`) ||
+        document.getElementById(raw)
       );
     };
 
@@ -249,20 +256,27 @@ export default function App() {
               window.scrollTo({ top: reTargetY, behavior: 'smooth' });
             }
           }
-        }, 350);
+        }, 400);
       } else if (attempts < maxAttempts) {
         attempts++;
         requestAnimationFrame(performScroll);
+      } else {
+        // Fallback cleanup if card was never found after max attempts
+        try {
+          sessionStorage.removeItem('lastWwdCardId');
+          sessionStorage.removeItem('lastWwdSlug');
+        } catch (e) {}
       }
     };
 
     const mountTimer = setTimeout(() => {
       requestAnimationFrame(performScroll);
-    }, 50);
+    }, 80);
 
     return () => {
       cancelled = true;
       clearTimeout(mountTimer);
+      clearTimeout(listenerTimer);
       if (secondCheckTimer) clearTimeout(secondCheckTimer);
       userEvents.forEach((ev) => window.removeEventListener(ev, stop));
     };
@@ -271,13 +285,18 @@ export default function App() {
   useEffect(() => {
     const handlePopState = (event) => {
       const savedY = event && event.state && event.state.scrollY;
-      const targetCardId =
-        (event && event.state && event.state.wwdCardId) ||
-        (typeof window !== 'undefined' ? sessionStorage.getItem('lastWwdCardId') : null);
+      const cardOrigin = event && event.state && event.state.cardOrigin;
+      const isFromWwd = cardOrigin === 'wwd' && !!(event && event.state && event.state.wwdCardId);
 
-      if (targetCardId) {
+      const targetCardId = isFromWwd
+        ? event.state.wwdCardId
+        : (pendingCardScrollRef.current || null);
+
+      if (targetCardId && isFromWwd) {
         pendingCardScrollRef.current = targetCardId;
+        pendingScrollRef.current = null;
       } else {
+        pendingCardScrollRef.current = null;
         pendingScrollRef.current = typeof savedY === 'number' ? savedY : null;
       }
       const newPage = resolvePageFromLocation();
@@ -302,7 +321,7 @@ export default function App() {
     const target = newPage || 'home';
     if (target === page) return;
 
-    if (options && options.fromWwdCard) {
+    if (options && (options.fromWwdCard || options.fromWwdSlug)) {
       if (typeof window !== 'undefined') {
         try {
           window.history.replaceState(
@@ -310,17 +329,40 @@ export default function App() {
               ...(window.history.state || {}),
               page,
               scrollY: window.scrollY,
-              wwdCardId: options.fromWwdCard,
+              cardOrigin: 'wwd',
+              wwdCardId: options.fromWwdCard || options.fromWwdSlug,
             },
             '',
             window.location.href
           );
         } catch (e) {}
       }
+    } else {
+      pendingCardScrollRef.current = null;
+      if (typeof window !== 'undefined') {
+        try {
+          sessionStorage.removeItem('lastWwdCardId');
+          sessionStorage.removeItem('lastWwdSlug');
+          if (window.history.state && window.history.state.wwdCardId) {
+            const cleanState = { ...(window.history.state || {}) };
+            delete cleanState.wwdCardId;
+            delete cleanState.cardOrigin;
+            window.history.replaceState(cleanState, '', window.location.href);
+          }
+        } catch (e) {}
+      }
     }
 
     if (options && options.returnToWwdCard) {
       pendingCardScrollRef.current = options.returnToWwdCard;
+    } else {
+      pendingCardScrollRef.current = null;
+      if (target === 'home') {
+        try {
+          sessionStorage.removeItem('lastWwdCardId');
+          sessionStorage.removeItem('lastWwdSlug');
+        } catch (e) {}
+      }
     }
 
     if (options && options.replace) {
@@ -351,8 +393,16 @@ export default function App() {
     // Remember where the user was on the current page so Back can return there
     if (typeof window !== 'undefined') {
       try {
+        const stateToSave = {
+          page,
+          scrollY: window.scrollY,
+        };
+        if (options && (options.fromWwdCard || options.fromWwdSlug)) {
+          stateToSave.cardOrigin = 'wwd';
+          stateToSave.wwdCardId = options.fromWwdCard || options.fromWwdSlug;
+        }
         window.history.replaceState(
-          { ...(window.history.state || {}), page, scrollY: window.scrollY },
+          stateToSave,
           '',
           window.location.href
         );
@@ -384,13 +434,12 @@ export default function App() {
 
   const handleBack = (fallback = 'home', options = {}) => {
     if (typeof window !== 'undefined') {
-      const targetCardId =
-        (options && options.returnToWwdCard) ||
-        sessionStorage.getItem('lastWwdCardId') ||
-        (window.history.state && window.history.state.wwdCardId);
+      const targetCardId = options && options.returnToWwdCard ? options.returnToWwdCard : null;
 
       if (targetCardId) {
         pendingCardScrollRef.current = targetCardId;
+      } else {
+        pendingCardScrollRef.current = null;
       }
 
       const hasHistoryStack = historyStackRef.current.length > 1;
@@ -478,8 +527,7 @@ export default function App() {
 
       {page === 'contact' && <ContactPage {...sharedNavProps} />}
 
-      {page === 'our-work' && <OurWorkPage {...sharedNavProps} />}
-
+{page === 'clients' && <OurWorkPage {...sharedNavProps} />}
       {page === 'work' && (
         <ServiceDetailPage
           key="work"
@@ -523,6 +571,8 @@ export default function App() {
           {/* <MarqueeSection /> */}
           {/* Fifth Section — testimonials + awards */}
           <FifthSection onNavigate={handleNavigate} />
+          {/* FAQ Section */}
+          <FAQSection onNavigate={handleNavigate} />
           <WhyWorkWithUs />
           <AccelerateBusinessSection onScheduleClick={() => handleNavigate('contact')} />
           {/* Footer */}

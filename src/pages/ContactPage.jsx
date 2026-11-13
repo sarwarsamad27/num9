@@ -3,6 +3,7 @@ import { Check, AlertCircle } from 'lucide-react';
 import AppNav from '../components/nav';
 import WhyWorkWithUs from '../components/contact';
 import AccelerateBusinessSection from '../components/AccelerateBusinessSection';
+import FAQSection from '../components/FAQSection';
 import Footer from '../components/footer';
 import ReCaptcha from '../components/ReCaptcha';
 import contactHeroImg from '../assets/contactHeroImg.webp';
@@ -67,7 +68,7 @@ mb-[12px] sm:mb-12 lg:mb-[35px]
                   lg:text-[20px]
                   tracking-[0.28em]
                   uppercase
-                  text-[#606060]
+                  text-[#606060] dark:text-[#D1D5DB]
                 "
               >
                 Contact Us
@@ -166,7 +167,7 @@ mb-[12px] sm:mb-12 lg:mb-[35px]
 
                 leading-[1.4]
                 tracking-[-0.015em]
-                text-[#626262]
+                text-[#626262] dark:text-[#E5E7EB]
               "
             >
             
@@ -179,7 +180,7 @@ Tell us about it.
         </div>
 
         {/* BOTTOM DIVIDER */}
-        <div className="w-full h-[2px] bg-[#C9C9C9]" />
+        <div className="w-full h-[2px] bg-[#C9C9C9] dark:bg-[#202722]" />
       </div>
     </section>
   );
@@ -422,12 +423,12 @@ function ContactFormSection() {
         group inline-flex items-center justify-between
         w-[190px] sm:w-[235px] xl:w-[260px]
         pb-[8px] lg:pb-[10px]
-        border-b-2 border-black
+        border-b-2 border-black dark:border-white
         font-grift-medium
         text-[14px] sm:text-[18px] xl:text-[21px]
-        text-[#111]
-        hover:text-[#159E0D]
-        hover:border-[#159E0D]
+        text-[#111] dark:text-white
+        hover:text-[#159E0D] dark:hover:text-[#159E0D]
+        hover:border-[#159E0D] dark:hover:border-[#159E0D]
         transition-all duration-200
       "
     >
@@ -895,7 +896,7 @@ function ProcessMapSection() {
       {/* =========================================
           TOP — PROCESS STEPS
       ========================================= */}
-      <div className="w-full bg-[#DAFADB]">
+      <div className="w-full bg-[#DAFADB] dark:bg-[#141A16] border-y border-transparent dark:border-[#223026] transition-colors duration-300">
         <div
           className="
             w-full max-w-[1920px] mx-auto
@@ -928,7 +929,7 @@ function ProcessMapSection() {
                 text-[10.56px] sm:text-[15px] lg:text-[21px]
                 tracking-[0.28em]
                 uppercase
-                text-[#606060]
+                text-[#606060] dark:text-[#D1D5DB]
               "
             >
               A clear start. A shared direction.
@@ -962,7 +963,7 @@ function ProcessMapSection() {
 
                  
 ${index > 0
-  ? "lg:border-l lg:border-[#A9C9AB] pt-0 lg:pt-0"
+  ? "lg:border-l lg:border-[#A9C9AB] dark:lg:border-[#253528] pt-0 lg:pt-0"
   : ""
 }
 
@@ -981,7 +982,7 @@ ${index > 0
 
                     leading-[0.95]
                     tracking-[-0.045em]
-                    text-[#16A20B]
+                    text-[#16A20B] dark:text-[#2BD520]
                   "
                 >
                   {step.num}
@@ -1015,7 +1016,7 @@ ${index > 0
                       xl:text-[25px]
 
                       leading-[1.3]
-                      text-[#626262]
+                      text-[#626262] dark:text-[#E5E7EB]
                       max-w-[345px]
                       m-0
                     "
@@ -1282,6 +1283,7 @@ export default function ContactPage({ onNavigate, activeDropdown, setActiveDropd
       <ContactHero />
       <ContactFormSection />
       <ProcessMapSection />
+      <FAQSection onNavigate={onNavigate} />
 
       <AccelerateBusinessSection onScheduleClick={() => onNavigate && onNavigate('contact')} />
       <Footer onNavigate={onNavigate} />

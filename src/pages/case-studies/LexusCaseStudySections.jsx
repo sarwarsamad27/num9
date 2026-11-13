@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useRef } from "react";
 
-import lexusLogo from "../../assets/lexus/lexus_PNG22 1.jpg";
+import lexusLogo from "../../assets/Logos/ClientsGrid_Logos/lexus.png";
+import lexusLogoWhite from "../../assets/Logos/ClientsGrid_Logos/lexus_white.png";
 import lexusCar from "../../assets/lexus/Blue Lexus Coupe in Architectural Triptych.webp";
 
 const projectTags = [
@@ -336,7 +337,28 @@ export default function LexusCaseStudySections() {
     alt="Lexus logo"
     loading="lazy"
     className="
-      block
+      block dark:hidden
+      w-[90%]
+      h-auto
+      max-w-none
+      max-h-[175px]
+
+      sm:w-[75%]
+      sm:max-h-[210px]
+
+      md:w-[55%]
+      md:max-h-[60%]
+
+      object-contain
+      object-center
+    "
+  />
+  <img
+    src={lexusLogoWhite}
+    alt="Lexus logo"
+    loading="lazy"
+    className="
+      hidden dark:block
       w-[90%]
       h-auto
       max-w-none

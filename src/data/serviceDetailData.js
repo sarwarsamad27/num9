@@ -15,7 +15,7 @@ import img10 from "../assets/workEmirates.webp";
 import img11 from "../assets/bussinesAcltImage.webp";
 import img12 from "../assets/homeHeroSectionImages/PwC_Enterprise_Dashboard_in_Executive_Office 1.webp";
 import img13 from "../assets/homeHeroSectionImages/PwC_Enterprise_Dashboard_in_Executive_Office 1.webp";
-import img14 from "../assets/homeHeroSectionImages/PwC_Enterprise_Dashboard_in_Executive_Office 1.webp";
+import img14 from "../assets/homeHeroSectionImages/hf_20261016_162448_549b8ec4-b231-4ab6-8341-ad5a5b8ffe63 1.webp";
 import img15 from "../assets/homeHeroSectionImages/PwC_Enterprise_Dashboard_in_Executive_Office 1.webp";
 import img16 from "../assets/trade-show-activation.jpg";
 import img17 from "../assets/aboutus3rdSect.webp";
@@ -30,6 +30,7 @@ import katjesServiceImg from "../assets/caseStudies/Katjes USA/katjes-3.avif";
 import nakamichiServiceImg from "../assets/caseStudies/Nakamichi Car Audio/nakamichi3.webp";
 import scantechServiceImg from "../assets/caseStudies/SCANTECH The Battery Show North America 2024/scantech3.webp";
 import ssstcServiceImg from "../assets/caseStudies/SSSTC Circleexhibit/ssstc3.webp";
+import jdotServiceImg from "../assets/caseStudies/j/jdotHero.webp";
 
 import ahmedFoodsVideoImg from "../assets/caseStudies/elipse/digitalVideo/ahmedFoods.webp";
 import bikeVideoImg from "../assets/caseStudies/elipse/digitalVideo/bike.webp";
@@ -442,6 +443,13 @@ export const serviceDetailData = {
     locations: ["New York", "Texas", "California"],
     works: [
       {
+        title: "Jdot Fragrances",
+        image: jdotServiceImg,
+        category: "Celebrity Commercial Production",
+        description: "Full-service commercial video production (DVC) for Jdot Fragrances' 'Ballin'' starring NBA legend Kobe Bryant.",
+        link: "case-study/jdot",
+      },
+      {
         title: "Rooh Afza",
         image: roohAfzaVideoImg,
         category: "3D Anamorphic Billboard",
@@ -504,7 +512,7 @@ export const serviceDetailData = {
       },
       {
         title: "PwC Dashboard",
-        image: img5,
+        image: img12,
         category: "Enterprise Analytics Marketing",
         description: "B2B executive acquisition funnels and digital thought-leadership campaigns.",
       },

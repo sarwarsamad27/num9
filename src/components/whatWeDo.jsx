@@ -1,12 +1,12 @@
 import React from "react";
 import { ArrowRight } from "lucide-react";
-import tradeShowImage from "../assets/Star-Cut Exhibition Booth Scene.webp";
+import tradeShowImage from "../assets/Futuristic Star-Shaped Exhibition Booth.webp";
 import dialImage from "../assets/whatWeDoImages/Finger pressing a brushed silver dial 1.webp";
 import suvConfiguratorImage from "../assets/whatWeDoImages/Touchscreen SUV configurator 1.webp";
 import beigeFabricImage from "../assets/whatWeDoImages/Hand Lifting Textured Beige Fabric 1.webp";
 import cinematicCollageImage from "../assets/whatWeDoImages/Cinematic Filmmaking Blob Collage.webp";
 import mobileImageDigitalVideo from "../assets/mobileImageDigitalVideo.png";
-import laptopImage from "../assets/laptopImage.webp";
+import laptopImage from "../assets/Marketing Analytics Dashboard 1.png";
 
 /* =========================================================
    STAR PATHS (for cards 01 & 03)
@@ -455,9 +455,14 @@ const CircleDecoration = ({ image }) => {
 const ServiceCard = ({ service, onNavigate }) => {
   const { dark, decoration, accentLine2 } = service;
   const isCross = decoration === "cross";
+  const slug = service.route ? service.route.replace(/^service\//, "") : "";
 
   return (
     <div
+      id={`wwd-card-${service.id}`}
+      data-service-id={service.id}
+      data-service-slug={slug}
+      data-card-id={service.id}
       data-wwd-card="true"
       className={`
         relative
@@ -468,14 +473,14 @@ const ServiceCard = ({ service, onNavigate }) => {
         rounded-[18px]
         min-[390px]:rounded-[20px]
         md:rounded-[18px]
-        ${decoration === "star"
-          ? "overflow-hidden md:overflow-visible"
+   ${decoration === "star"
+          ? "overflow-visible"
           : "overflow-visible"
         }
 ${decoration === "star"
-  ? "min-h-[445px] min-[360px]:min-h-[455px] min-[390px]:min-h-[465px] sm:min-h-[490px] md:min-h-[420px]"
-  : "min-h-[415px] min-[360px]:min-h-[425px] min-[390px]:min-h-[435px] sm:min-h-[460px] md:min-h-[420px]"
-}
+          ? "min-h-[445px] min-[360px]:min-h-[455px] min-[390px]:min-h-[465px] sm:min-h-[490px] md:min-h-[420px]"
+          : "min-h-[415px] min-[360px]:min-h-[425px] min-[390px]:min-h-[435px] sm:min-h-[460px] md:min-h-[420px]"
+        }
         lg:min-h-[460px]
         xl:min-h-[500px]
         2xl:min-h-[530px]
@@ -681,7 +686,20 @@ ${decoration === "star"
           href={`/${service.route || "services"}`}
           onClick={(e) => {
             e.preventDefault();
-            if (onNavigate) onNavigate(service.route || "services");
+            if (typeof window !== "undefined") {
+              try {
+                sessionStorage.setItem("serviceOrigin", "home");
+                sessionStorage.setItem("lastWwdCardId", service.id);
+                sessionStorage.setItem("lastWwdSlug", slug);
+              } catch (err) { }
+            }
+            if (onNavigate) {
+              onNavigate(service.route || "services", {
+                from: "home",
+                fromWwdCard: service.id,
+                fromWwdSlug: slug,
+              });
+            }
           }}
           className={`
             mt-3.5
@@ -766,6 +784,38 @@ ${decoration === "star"
       </div>
 
       {/* ── Mobile-only Graphic Containers (< md): exact mockup alignment ── */}
+
+      {decoration === "star" && (
+        <div className="md:hidden absolute inset-0 overflow-hidden rounded-[18px] pointer-events-none z-10">
+          <div className="
+      absolute
+      w-[360px] h-[360px]
+      right-[-25px]
+   top-[175px]
+min-[360px]:top-[180px]
+min-[390px]:top-[190px]
+sm:top-[200px]
+      min-[360px]:right-[-28px]
+      min-[360px]:w-[380px] min-[360px]:h-[380px]
+      min-[390px]:right-[-30px]
+      min-[390px]:w-[410px] min-[390px]:h-[410px]
+      sm:right-[-35px] sm:w-[450px] sm:h-[450px]
+    ">
+            <svg viewBox="0 0 640 640" className="w-full h-full overflow-visible">
+              <g transform="translate(396 238) scale(1.27) translate(-376 -308) translate(-14 38)">
+                <path
+                  d={STAR_PATH}
+                  fill="none"
+                  stroke="rgba(255,255,255,0.45)"
+                  strokeWidth="1.2"
+                  vectorEffect="non-scaling-stroke"
+                />
+              </g>
+            </svg>
+          </div>
+        </div>
+      )}
+
       {decoration === "star" && (
         <div
           className="
@@ -774,11 +824,11 @@ ${decoration === "star"
             z-10
             pointer-events-none
             right-[-25px]
-            top-[195px]
             w-[360px] h-[360px]
-            min-[360px]:top-[200px]
-            min-[390px]:top-[210px]
-            sm:top-[220px]
+       top-[175px]
+min-[360px]:top-[180px]
+min-[390px]:top-[190px]
+sm:top-[200px]
             min-[360px]:right-[-28px]
             min-[360px]:w-[380px]
             min-[360px]:h-[380px]
@@ -797,24 +847,7 @@ ${decoration === "star"
             aria-hidden="true"
           >
             {/* White outline - vector based, clean rounded corners */}
-            <g
-              transform="
-                translate(396 238)
-                scale(1.27)
-                translate(-376 -308)
-                translate(-14 38)
-              "
-            >
-              <path
-                d={STAR_PATH}
-                fill="none"
-                stroke="rgba(255,255,255,0.45)"
-                strokeWidth="1.2"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                vectorEffect="non-scaling-stroke"
-              />
-            </g>
+
 
             {/* Star Image */}
             <image
@@ -882,9 +915,9 @@ ${decoration === "star"
       )}
 
 
-{decoration === "circles" && (
-  <div
-    className="
+      {decoration === "circles" && (
+        <div
+          className="
       md:hidden
       absolute
       pointer-events-none
@@ -903,54 +936,55 @@ ${decoration === "star"
       items-end
       justify-end
     "
-  >
-    <img
-      src={service.mobileImage || service.image}
-      alt="Digital Video Productions"
-      loading="lazy"
-      decoding="async"
-      draggable={false}
-      className="
+        >
+          <img
+            src={service.mobileImage || service.image}
+            alt="Digital Video Productions"
+            loading="lazy"
+            decoding="async"
+            draggable={false}
+            className="
         block
         w-full
         h-auto
         object-contain
         object-bottom-right
       "
-    />
-  </div>
-)}
+          />
+        </div>
+      )}
 
 
-{decoration === "laptop" && (
-  <div
-    className="
+      {decoration === "laptop" && (
+        <div
+          className="
       md:hidden
       absolute
       pointer-events-none
       overflow-visible
       z-10
 
-  bottom-[-16px]
-right-[-2%]
 
-w-[100%]
-min-[360px]:w-[102%]
-min-[390px]:w-[105%]
-sm:w-[100%]
+bottom-[-32px]
+right-[-14%]
 
+
+w-[86%]
+min-[360px]:w-[88%]
+min-[390px]:w-[90%]
+sm:w-[92%]
       flex
       items-end
       justify-end
     "
-  >
-    <img
-      src={service.image}
-      alt="Digital Marketing Dashboard"
-      loading="lazy"
-      decoding="async"
-      draggable={false}
-      className="
+        >
+          <img
+            src={service.image}
+            alt="Digital Marketing Dashboard"
+            loading="lazy"
+            decoding="async"
+            draggable={false}
+            className="
         block
         w-full
         h-auto
@@ -958,9 +992,9 @@ sm:w-[100%]
         object-bottom-right
         drop-shadow-xl
       "
-    />
-  </div>
-)}
+          />
+        </div>
+      )}
 
       {/* ── Desktop-only decorations (md+) — perfectly preserved as original ── */}
       <div className="hidden md:block pointer-events-none">
@@ -975,57 +1009,71 @@ sm:w-[100%]
         )}
 
         {/* Decoration: STAR (card 01 only) */}
-        {decoration === "star" && (
-          <svg
-            viewBox="0 0 640 640"
-            preserveAspectRatio="xMidYMid meet"
-            className="
-              absolute
-              pointer-events-none
-              overflow-visible
-              z-10
-              md:w-[460px] md:h-[460px]
-              md:right-[-40px] md:top-[-20px]
-              lg:w-[540px] lg:h-[540px]
-              lg:right-[-50px] lg:top-[-30px]
-              xl:w-[620px] xl:h-[620px]
-              xl:right-[-60px] xl:top-[-30px]
-              2xl:w-[780px] 2xl:h-[780px]
-              2xl:right-[-80px] 2xl:top-[-40px]
-            "
-            aria-hidden="true"
-          >
-            {/* White outline - vector based, cleaner corners */}
-            <g
-              transform="
-                translate(396 238)
-                scale(1.37)
-                translate(-376 -308)
-                translate(-14 38)
-              "
-            >
-              <path
-                d={STAR_PATH}
-                fill="none"
-                stroke="rgba(255,255,255,0.42)"
-                strokeWidth="1.1"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                vectorEffect="non-scaling-stroke"
-              />
-            </g>
 
-            {/* Existing star image */}
-            <image
-              href={service.image}
-              x="140"
-              y="0"
-              width="600"
-              height="500"
+        {/* Decoration: STAR (card 01 only) */}
+        {decoration === "star" && (
+          <>
+            {/* White outline: green card ke andar clipped */}
+            <div className="absolute inset-0 z-10 overflow-hidden rounded-[18px] pointer-events-none">
+              <svg
+                viewBox="0 0 640 640"
+                preserveAspectRatio="xMidYMid meet"
+                className="
+          absolute overflow-visible
+          md:w-[460px] md:h-[460px]
+          md:right-[-40px] md:top-[-20px]
+          lg:w-[540px] lg:h-[540px]
+          lg:right-[-50px] lg:top-[-30px]
+          xl:w-[620px] xl:h-[620px]
+          xl:right-[-60px] xl:top-[-30px]
+          2xl:w-[880px] 2xl:h-[980px]
+          2xl:right-[-80px] 2xl:top-[-110px]
+        "
+                aria-hidden="true"
+              >
+                <g transform="translate(396 238) scale(1.37) translate(-376 -308) translate(-14 38)">
+                  <path
+                    d={STAR_PATH}
+                    fill="none"
+                    stroke="rgba(255,255,255,0.42)"
+                    strokeWidth="1.1"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    vectorEffect="non-scaling-stroke"
+                  />
+                </g>
+              </svg>
+            </div>
+
+            {/* Star image: green card ke bahar bhi visible */}
+            <svg
+              viewBox="0 0 640 640"
               preserveAspectRatio="xMidYMid meet"
-            />
-          </svg>
+              className="
+        absolute pointer-events-none overflow-visible z-[11]
+        md:w-[460px] md:h-[460px]
+        md:right-[-40px] md:top-[-20px]
+        lg:w-[540px] lg:h-[540px]
+        lg:right-[-50px] lg:top-[-30px]
+        xl:w-[620px] xl:h-[620px]
+        xl:right-[-60px] xl:top-[-30px]
+        2xl:w-[880px] 2xl:h-[980px]
+        2xl:right-[-80px] 2xl:top-[-110px]
+      "
+              aria-hidden="true"
+            >
+              <image
+                href={service.image}
+                x="140"
+                y="0"
+                width="600"
+                height="500"
+                preserveAspectRatio="xMidYMid meet"
+              />
+            </svg>
+          </>
         )}
+
 
         {/* ── Decoration: CIRCLES (card 03) ── */}
         {decoration === "circles" && <CircleDecoration image={service.image} />}
@@ -1035,23 +1083,25 @@ sm:w-[100%]
         {decoration === "laptop" && (
           <div
             className="
-      absolute
-      bottom-0
+    absolute
+top-[55%]
+-translate-y-1/2
 
-      md:right-2
-      lg:right-2
-      xl:right-4
-      2xl:right-4
+md:right-[-4%]
+lg:right-[-4%]
+xl:right-[-4%]
+2xl:right-[-4%]
 
-      md:w-[48%]
-      lg:w-[49%]
-      xl:w-[56%]
-      2xl:w-[60%]
+md:w-[54%]
+lg:w-[54%]
+xl:w-[54%]
+2xl:w-[54%]
 
-      md:max-w-[520px]
-      lg:max-w-[620px]
-      xl:max-w-[850px]
-      2xl:max-w-[1000px]
+
+    md:max-w-none
+lg:max-w-none
+xl:max-w-none
+2xl:max-w-none
 
       pointer-events-none
       z-10
@@ -1126,7 +1176,7 @@ const WhatWeDo = ({ onNavigate }) => {
         </div>
 
         {/* Service Cards */}
-     <div className="flex flex-col gap-8 min-[360px]:gap-10 min-[390px]:gap-12 sm:gap-14 md:gap-[54px] lg:gap-[54px] xl:gap-[54px]">
+        <div className="flex flex-col gap-8 min-[360px]:gap-10 min-[390px]:gap-12 sm:gap-14 md:gap-[54px] lg:gap-[54px] xl:gap-[54px]">
           {services.map((service) => (
             <ServiceCard key={service.id} service={service} onNavigate={onNavigate || handleNavigateClick} />
           ))}

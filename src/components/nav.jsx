@@ -105,8 +105,8 @@ export default function AppNav({
     return true;
   }, [currentPage]);
 
-  const isTransparentOnMobile =
-    isMobile && isHomePage && !isScrolled && !isMenuOpen;
+  const isTransparent =
+    isHomePage && !isScrolled && !isMenuOpen;
 
   const lastScrollY = useRef(0);
   const scrollDirectionDistance = useRef(0);
@@ -239,7 +239,7 @@ export default function AppNav({
     { label: "About Us", href: "/about", isPage: "about" },
     { label: "Services", href: "/services", isPage: "services" },
     { label: "Work", href: "/work", isPage: "work" },
-    { label: "Clients", href: "/our-work", isPage: "our-work" },
+   { label: "Clients", href: "/clients", isPage: "clients" },
     { label: "Contact", href: "/contact", isPage: "contact" },
   ];
 
@@ -263,7 +263,7 @@ export default function AppNav({
             : "-translate-y-full"
           }
           ${
-            isTransparentOnMobile
+            isTransparent
               ? "bg-transparent border-transparent"
               : "bg-white/95 dark:bg-[#0B0D0C]/95 backdrop-blur-md border-b border-black/5 dark:border-[#202722] shadow-[0_1px_3px_rgba(0,0,0,0.04)] dark:shadow-[0_1px_3px_rgba(0,0,0,0.2)]"
           }
@@ -294,14 +294,24 @@ export default function AppNav({
 
           {/* Right: Schedule a Call + ThemeToggle + Hamburger */}
           <div className="flex items-center">
-            <ThemeToggle
-              variant="navbar"
-              className={`mr-2 sm:mr-4 ${
-                isTransparentOnMobile
-                  ? "!bg-black/40 !border-white/40 !text-white"
-                  : ""
-              }`}
-            />
+            
+
+
+<ThemeToggle
+  variant="navbar"
+  className={`mr-2 sm:mr-4 ${
+    isDark
+      ? "!bg-transparent !border-white !border-[1.5px] !text-white"
+      : isTransparent
+        ? "!bg-transparent !border-white !border-[1.5px] !text-white sm:!bg-white sm:!border-[#CBD5E1] sm:!text-slate-800"
+        : "!bg-white !border-[#CBD5E1] !border-[1.5px] !text-slate-800"
+  }`}
+/>
+
+
+
+
+
 
             <a
               href="/contact"
@@ -310,9 +320,17 @@ export default function AppNav({
                 if (onNavigate) onNavigate("contact");
               }}
               className={`nav-schedule-call-btn px-4 sm:px-6 py-1.5 sm:py-2.5 rounded-full border-[1.5px] text-[12px] sm:text-[15px] font-semibold transition-all duration-200 shadow-[0_1px_2px_rgba(0,0,0,0.04)] whitespace-nowrap mr-2.5 sm:mr-5 ${
-                isTransparentOnMobile
-                  ? "border-white/40 text-white bg-black/40 backdrop-blur-sm hover:border-white"
-                  : "border-slate-300 dark:border-[#28322B] bg-white dark:bg-[#171A18] hover:border-slate-900 dark:hover:border-[#15B83E] hover:text-black dark:hover:text-white text-black dark:text-[#E5E7EB]"
+         
+
+
+
+isDark
+  ? "border-white text-white bg-transparent hover:bg-white/10"
+  : isTransparent
+    ? "border-white text-white bg-transparent hover:bg-white/10 sm:border-[#D1D5DB] sm:text-slate-900 sm:bg-white sm:hover:bg-gray-100"
+    : "border-slate-300 bg-white text-black hover:border-slate-900"
+
+
               }`}
             >
               Schedule a Call
@@ -329,9 +347,13 @@ export default function AppNav({
               <img
                 src={menuIcon}
                 alt=""
-                className={`nav-toggle-icon w-6 h-6 object-contain transition-all ${
-                  isTransparentOnMobile ? "brightness-0 invert" : "dark:invert"
-                }`}
+               
+className={`nav-toggle-icon w-6 h-6 object-contain transition-all ${
+  isTransparent
+    ? "brightness-0 invert sm:brightness-100 sm:invert-0 dark:sm:brightness-0 dark:sm:invert"
+    : "dark:brightness-0 dark:invert"
+}`}
+
               />
             </button>
 
@@ -469,7 +491,7 @@ export default function AppNav({
           <div className="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-5 sm:gap-8">
             {/* Theme Switcher inside Fullscreen Menu */}
             <div className="shrink-0">
-              <ThemeToggle variant="menu" />
+               <ThemeToggle variant="menu" /> 
             </div>
 
             {/* Social links in place of the old bottom-right Contact button */}

@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { ChevronDown, Menu, X } from 'lucide-react';
 import logo from '../assets/Black Logo.png';
 import servicesHeroImg from '../assets/servicesHeroImg.webp';
@@ -162,9 +162,23 @@ function CodeBracketIcon() {
   );
 }
 
-function ServiceCard({ title, text }) {
+function ServiceCard({ title, text, route, onNavigate }) {
+  const handleClick = (e) => {
+    if (e.metaKey || e.ctrlKey) return;
+    if (route && onNavigate) {
+      e.preventDefault();
+      try {
+        sessionStorage.setItem("serviceOrigin", "services");
+        sessionStorage.removeItem("lastWwdCardId");
+      } catch (err) {}
+      onNavigate(route, { from: "services" });
+    }
+  };
+
   return (
-    <div
+    <a
+      href={route ? `/${route}` : "#"}
+      onClick={handleClick}
       className="
         group
         bg-white dark:bg-[#171A18]
@@ -173,29 +187,50 @@ function ServiceCard({ title, text }) {
         px-7 sm:px-8 lg:px-9 pt-7 sm:pt-8 lg:pt-9 pb-8 sm:pb-9 lg:pb-10
         flex flex-col justify-start
         transition-all duration-300
-        hover:border-[#BFC5CE]
-        hover:shadow-[0_10px_28px_rgba(0,0,0,0.04)]
-        hover:-translate-y-0.5
+        hover:border-[#15B83E] dark:hover:border-[#32c400]
+        hover:shadow-[0_12px_30px_rgba(21,184,62,0.08)] dark:hover:shadow-[0_12px_30px_rgba(50,196,0,0.12)]
+        hover:-translate-y-1
+        cursor-pointer
+        block
+        no-underline
       "
     >
-      <h3 className="font-grift-semibold text-[18px] sm:text-[25px] text-[#111827] dark:text-[#F3F4F6] tracking-[-0.015em] mb-3.5 sm:mb-4 leading-[1.3] group-hover:text-black dark:group-hover:text-white transition-colors">
+      <h3 className="font-grift-semibold text-[18px] sm:text-[25px] text-[#111827] dark:text-[#F3F4F6] tracking-[-0.015em] mb-3.5 sm:mb-4 leading-[1.3] group-hover:text-[#15B83E] dark:group-hover:text-[#32c400] transition-colors">
         {title}
       </h3>
-      <p className="font-grift-regular text-[15px] sm:text-[21px] leading-[1.55] text-[#555E6D] dark:text-[#A1A1AA]">
+      <p className="font-grift-regular text-[15px] sm:text-[21px] leading-[1.55] text-[#555E6D] dark:text-[#E5E7EB]">
         {text}
       </p>
-    </div>
+    </a>
   );
 }
 
-function ServiceCategorySection({ title, items }) {
+function ServiceCategorySection({ title, route, items, onNavigate }) {
+  const handleHeaderClick = (e) => {
+    if (e.metaKey || e.ctrlKey) return;
+    if (route && onNavigate) {
+      e.preventDefault();
+      try {
+        sessionStorage.setItem("serviceOrigin", "services");
+        sessionStorage.removeItem("lastWwdCardId");
+      } catch (err) {}
+      onNavigate(route, { from: "services" });
+    }
+  };
+
   return (
     <section className="w-full">
       <div className="mb-7 sm:mb-9 lg:mb-10">
         <CodeBracketIcon />
-        <h2 className="font-grift-medium text-[28px] sm:text-[38px] lg:text-[44px] text-[#111827] dark:text-white tracking-[-0.03em] leading-tight">
-          {title}
-        </h2>
+        <a
+          href={route ? `/${route}` : "#"}
+          onClick={handleHeaderClick}
+          className="inline-block group cursor-pointer no-underline"
+        >
+          <h2 className="font-grift-medium text-[28px] sm:text-[38px] lg:text-[44px] text-[#111827] dark:text-white tracking-[-0.03em] leading-tight group-hover:text-[#15B83E] dark:group-hover:text-[#32c400] transition-colors">
+            {title}
+          </h2>
+        </a>
       </div>
 
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-7 lg:gap-[32px]">
@@ -204,6 +239,8 @@ function ServiceCategorySection({ title, items }) {
             key={`${item.title}-${idx}`}
             title={item.title}
             text={item.text}
+            route={route}
+            onNavigate={onNavigate}
           />
         ))}
       </div>
@@ -356,7 +393,7 @@ return (
         <svg className="w-3 h-3 text-slate-400 shrink-0" fill="none" stroke="currentColor" strokeWidth={2} viewBox="0 0 24 24">
           <path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" />
         </svg>
-        <span className="font-grift-semibold text-[21.6px] sm:text-[15px] lg:text-[18px] text-[#141414] dark:text-white">Solutions</span>
+        <span className="font-grift-semibold text-[21.6px] sm:text-[15px] lg:text-[18px] text-[#141414] dark:text-white">Services</span>
       </div>
 
       {/* Eyebrow Label */}
@@ -385,7 +422,7 @@ return (
       </h1>
 
       {/* Subtitle */}
-      <p className="font-grift-medium text-[21.12px] sm:text-[18px] lg:text-[21px] leading-[1.55] text-[#6B7280] max-w-full sm:max-w-[500px]">
+      <p className="font-grift-medium text-[21.12px] sm:text-[18px] lg:text-[21px] leading-[1.55] text-[#6B7280] dark:text-[#E5E7EB] max-w-full sm:max-w-[500px]">
         We build scalable software, craft exceptional experiences, and turn
         innovative ideas into digital products that grow businesses and delight
         users.
@@ -415,12 +452,38 @@ return (
       max-w-none
       flex items-center justify-center
       select-none
+      overflow-visible
     "
   >
+    {/* SVG filter definitions for pixel-perfect outline */}
+    <svg width="0" height="0" className="absolute pointer-events-none" aria-hidden="true">
+      <defs>
+        <filter id="services-hero-border-light" x="-10%" y="-10%" width="120%" height="120%">
+          <feMorphology in="SourceAlpha" operator="dilate" radius="1" result="dilated" />
+          <feFlood floodColor="rgba(0,0,0,0.15)" result="color" />
+          <feComposite in="color" in2="dilated" operator="in" result="outline" />
+          <feMerge>
+            <feMergeNode in="outline" />
+            <feMergeNode in="SourceGraphic" />
+          </feMerge>
+        </filter>
+        <filter id="services-hero-border-dark" x="-10%" y="-10%" width="120%" height="120%">
+          <feMorphology in="SourceAlpha" operator="dilate" radius="1" result="dilated" />
+          <feFlood floodColor="rgba(255,255,255,0.6)" result="color" />
+          <feComposite in="color" in2="dilated" operator="in" result="outline" />
+          <feMerge>
+            <feMergeNode in="outline" />
+            <feMergeNode in="SourceGraphic" />
+          </feMerge>
+        </filter>
+      </defs>
+    </svg>
+
     <img
       src={servicesHeroImg}
       alt="Team collaboration in modern office"
       className="
+        services-hero-image-border
         block
         w-full
         h-auto
@@ -458,7 +521,7 @@ return (
 Yes, we cover everything you need to build, market & grow your brand
 <span className="text-[#F25C22]">.</span>
 </h2>
-<p className="font-grift-medium text-[16px] sm:text-[14px] md:text-[14px] lg:text-[17px] xl:text-[20px] text-[#4B5563] dark:text-[#A1A1AA] leading-[1.45] mt-7 sm:mt-8 md:mt-9 lg:mt-10 max-w-[1050px] mx-auto">
+<p className="font-grift-medium text-[16px] sm:text-[14px] md:text-[14px] lg:text-[17px] xl:text-[20px] text-[#4B5563] dark:text-[#E5E7EB] leading-[1.45] mt-7 sm:mt-8 md:mt-9 lg:mt-10 max-w-[1050px] mx-auto">
 From strategy and creative to technology and activation
 <br className="hidden sm:inline" />
 {' '}we bring all the pieces together to deliver real results.
@@ -539,7 +602,14 @@ MAIN SERVICES PAGE
 ========================================================= */
 
 export default function ServicesPage({ onNavigate, activeDropdown, setActiveDropdown, currentPage }) {
-return (
+  useEffect(() => {
+    try {
+      sessionStorage.setItem("serviceOrigin", "services");
+      sessionStorage.removeItem("lastWwdCardId");
+    } catch (err) {}
+  }, []);
+
+  return (
 <div className="bg-white dark:bg-[#0B0D0C] min-h-screen text-[#141414] dark:text-[#F3F4F6] font-grift antialiased selection:bg-[#15B83E]/20 selection:text-black transition-colors duration-300">
 {/* 1. Header Navigation — same AppNav as Home page */}
 <AppNav
@@ -569,22 +639,30 @@ space-y-10 sm:space-y-24 lg:space-y-32
 
     <ServiceCategorySection
       title="TRADE SHOWS / EXPERIENTIAL MARKETING"
+      route="service/trade-shows-experiential-marketing"
       items={strategyServices}
+      onNavigate={onNavigate}
     />
 
     <ServiceCategorySection
       title="INTERACTIVE DIGITAL EXPERIENCES"
+      route="service/interactive-digital-experiences"
       items={vrServices}
+      onNavigate={onNavigate}
     />
 
     <ServiceCategorySection
       title="DIGITAL VIDEO PRODUCTIONS"
+      route="service/digital-video-productions"
       items={configuratorServices}
+      onNavigate={onNavigate}
     />
 
     <ServiceCategorySection
       title="DIGITAL MARKETING / SPECIALTY DISTRIBUTION"
+      route="service/digital-marketing"
       items={marketingServices}
+      onNavigate={onNavigate}
     />
   </div>
 

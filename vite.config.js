@@ -52,7 +52,7 @@ export default defineConfig({
       },
     }),
   ],
-  base: "/num9dev/",
+  base: "/",
   server: {
     host: '0.0.0.0',
     allowedHosts: ['.trycloudflare.com'],

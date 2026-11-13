@@ -5,16 +5,24 @@ import Footer from "../components/footer";
 import aboutHeroImage from "../assets/Collaborative Design in a Warm Studio 1.webp";
 import aboutus3rdSect from "../assets/aboutus3rdSect.webp";
 
-/* ─── Brand logos — colored versions from ClientsGrid_Logos (same as Services page) ── */
+/* ─── Brand logos — light and dark versions ── */
 import pepsicoLogo from "../assets/Logos/ClientsGrid_Logos/pepsico.png";
+import pepsicoLogoWhite from "../assets/Logos/ClientsGrid_Logos/pepsico_white.png";
 import lexusLogo from "../assets/Logos/ClientsGrid_Logos/lexus.png";
 import citibankLogo from "../assets/Logos/ClientsGrid_Logos/citibank.png";
+import citibankLogoWhite from "../assets/Logos/ClientsGrid_Logos/citibank_white.png";
 import emiratesLogo from "../assets/Logos/ClientsGrid_Logos/emirates.png";
+import emiratesLogoWhite from "../assets/Emirates-Logo_White.png";
 import microsoftLogo from "../assets/Logos/ClientsGrid_Logos/microsoft.png";
+import microsoftLogoWhite from "../assets/Microsoft_logo__White.png";
 import safewayLogo from "../assets/Logos/ClientsGrid_Logos/safeway.png";
+import safewayLogoWhite from "../assets/Logos/ClientsGrid_Logos/safeway_white.png";
 import magellanLogo from "../assets/Logos/ClientsGrid_Logos/magellan.png";
+import magellanLogoWhite from "../assets/Logos/ClientsGrid_Logos/magellan_white.png";
 import argoLogo from "../assets/Logos/ClientsGrid_Logos/argo.png";
+import argoLogoWhite from "../assets/Logos/ClientsGrid_Logos/argo_white.png";
 import nutrienLogo from "../assets/Logos/ClientsGrid_Logos/nutrien.png";
+import nutrienLogoWhite from "../assets/Logos/ClientsGrid_Logos/nutrien_white.png";
 
 /* ─── About Hero ─────────────────────────────────────────── */
 
@@ -262,7 +270,7 @@ function WhoWeAre() {
             {/* Eyebrow */}
             <div className="flex items-center gap-2 mb-4 sm:mb-0 ">
               <span className="w-[7px] h-[7px] rounded-full bg-[#15B83E] shrink-0" />
-              <span className="font-grift-semibold text-[11.62px] sm:text-[12px] lg:text-[19px] tracking-[0.26em] uppercase text-[#555]">
+              <span className="font-grift-semibold text-[11.62px] sm:text-[12px] lg:text-[19px] tracking-[0.26em] uppercase text-[#555] dark:text-[#D1D5DB]">
                 Who we are
               </span>
             </div>
@@ -273,7 +281,7 @@ function WhoWeAre() {
             </p>
 
             {/* Label */}
-            <p className="font-grift-semibold text-[16px] sm:text-[16px] lg:text-[27px] text-[#5E5B5B] leading-snug">
+            <p className="font-grift-semibold text-[16px] sm:text-[16px] lg:text-[27px] text-[#5E5B5B] dark:text-[#E5E7EB] leading-snug">
               Years of industry experience
             </p>
           </div>
@@ -289,11 +297,11 @@ function WhoWeAre() {
 
             {/* Paragraphs — hidden on mobile (shown below) */}
             <div className="hidden sm:block space-y-4 max-w-[680px]">
-              <p className="text-[14px] sm:text-[15px] lg:text-[22px] leading-[1.4] text-[#818282]">
+              <p className="text-[14px] sm:text-[15px] lg:text-[22px] leading-[1.4] text-[#818282] dark:text-[#E5E7EB]">
                 Based in Dallas, Texas, Number9 Media &amp; Creative Inc. is a
                 full-service digital and brand activation agency.
               </p>
-              <p className="text-[14px] sm:text-[15px] lg:text-[22px] leading-[1.4] text-[#818282]">
+              <p className="text-[14px] sm:text-[15px] lg:text-[22px] leading-[1.4] text-[#818282] dark:text-[#E5E7EB]">
                 We work with business, marketing, and technology teams to create
                 integrated experiences across digital and physical touchpoints.
               </p>
@@ -303,11 +311,11 @@ function WhoWeAre() {
 
         {/* Paragraphs — mobile only, full width below the top row */}
         <div className="sm:hidden space-y-4 mt-6">
-          <p className="font-grift-medium text-[22.99px] leading-[1.25] text-[#818282]">
+          <p className="font-grift-medium text-[22.99px] leading-[1.25] text-[#818282] dark:text-[#E5E7EB]">
             Based in Dallas, Texas, Number9 Media &amp; Creative Inc. is a
             full-service digital and brand activation agency.
           </p>
-          <p className="font-grift-medium text-[22.99px] leading-[1.25] text-[#818282]">
+          <p className="font-grift-medium text-[22.99px] leading-[1.25] text-[#818282] dark:text-[#E5E7EB]">
             We work with business, marketing, and technology teams to create
             integrated experiences across digital and physical touchpoints.
           </p>
@@ -358,7 +366,7 @@ function ThinkingSection() {
 
             {/* Image caption */}
 
-            <p className="hidden sm:block mt-4 font-grift-medium text-[13px] sm:text-[15px] lg:text-[22px] text-[#858585]">
+            <p className="hidden sm:block mt-4 font-grift-medium text-[13px] sm:text-[15px] lg:text-[22px] text-[#858585] dark:text-[#E5E7EB]">
               Strategy. Design. Technology. Execution.
             </p>
 
@@ -399,7 +407,7 @@ function ThinkingSection() {
     xl:text-[25px]
     leading-[1.15]
     sm:leading-[1.4]
-    text-[#818282]
+    text-[#818282] dark:text-[#E5E7EB]
   "
               >
                 Great brand experiences bring strategy, creativity, and
@@ -415,7 +423,7 @@ function ThinkingSection() {
     xl:text-[25px]
     leading-[1.15]
     sm:leading-[1.4]
-    text-[#818282]
+    text-[#818282] dark:text-[#E5E7EB]
   "
               >
                 Based in Dallas, Texas, we bring over 20 years of industry
@@ -457,7 +465,7 @@ function ThinkingSection() {
                   lg:text-[16px]
                   xl:text-[22px]
                   leading-[1.4]
-                  text-[#858585]
+                  text-[#858585] dark:text-[#E5E7EB]
                 "
                 >
                   Websites, applications, dashboards, and e-commerce.
@@ -489,7 +497,7 @@ function ThinkingSection() {
                   lg:text-[16px]
                   xl:text-[22px]
                   leading-[1.4]
-                  text-[#858585]
+                  text-[#858585] dark:text-[#E5E7EB]
                 "
                 >
                   Retail activations, campaigns, and coordinated delivery.
@@ -505,15 +513,15 @@ function ThinkingSection() {
 
 /* ─── Brand Partnerships ─────────────────────────────────── */
 const brandLogos = [
-  { src: pepsicoLogo, alt: "PepsiCo", cls: "h-[23px] sm:h-[28px] lg:h-[34px] xl:h-[38px] max-w-[82%] w-auto" },
+  { src: pepsicoLogo, darkSrc: pepsicoLogoWhite, alt: "PepsiCo", cls: "h-[23px] sm:h-[28px] lg:h-[34px] xl:h-[38px] max-w-[82%] w-auto" },
   { src: lexusLogo, alt: "Lexus", cls: "h-[36px] sm:h-[44px] lg:h-[52px] xl:h-[58px] max-w-[80%] w-auto" },
-  { src: citibankLogo, alt: "Citibank", cls: "h-[24px] sm:h-[30px] lg:h-[36px] xl:h-[40px] max-w-[80%] w-auto" },
-  { src: emiratesLogo, alt: "Emirates", cls: "h-[48px] sm:h-[58px] lg:h-[68px] xl:h-[76px] max-w-[72%] w-auto" },
-  { src: microsoftLogo, alt: "Microsoft", cls: "h-[22px] sm:h-[28px] lg:h-[34px] xl:h-[38px] max-w-[84%] w-auto" },
-  { src: safewayLogo, alt: "Safeway", cls: "h-[20px] sm:h-[24px] lg:h-[30px] xl:h-[34px] max-w-[88%] w-auto" },
-  { src: magellanLogo, alt: "Magellan Health", cls: "h-[28px] sm:h-[34px] lg:h-[40px] xl:h-[44px] max-w-[80%] w-auto" },
-  { src: argoLogo, alt: "Argo", cls: "h-[17px] sm:h-[21px] lg:h-[25px] xl:h-[28px] max-w-[65%] w-auto" },
-  { src: nutrienLogo, alt: "Nutrien", cls: "h-[22px] sm:h-[27px] lg:h-[32px] xl:h-[36px] max-w-[80%] w-auto" },
+  { src: citibankLogo, darkSrc: citibankLogoWhite, alt: "Citibank", cls: "h-[24px] sm:h-[30px] lg:h-[36px] xl:h-[40px] max-w-[80%] w-auto" },
+  { src: emiratesLogo, darkSrc: emiratesLogoWhite, alt: "Emirates", cls: "h-[48px] sm:h-[58px] lg:h-[68px] xl:h-[76px] max-w-[72%] w-auto" },
+  { src: microsoftLogo, darkSrc: microsoftLogoWhite, alt: "Microsoft", cls: "h-[22px] sm:h-[28px] lg:h-[34px] xl:h-[38px] max-w-[84%] w-auto" },
+  { src: safewayLogo, darkSrc: safewayLogoWhite, alt: "Safeway", cls: "h-[20px] sm:h-[24px] lg:h-[30px] xl:h-[34px] max-w-[88%] w-auto" },
+  { src: magellanLogo, darkSrc: magellanLogoWhite, alt: "Magellan Health", cls: "h-[28px] sm:h-[34px] lg:h-[40px] xl:h-[44px] max-w-[80%] w-auto" },
+  { src: argoLogo, darkSrc: argoLogoWhite, alt: "Argo", cls: "h-[17px] sm:h-[21px] lg:h-[25px] xl:h-[28px] max-w-[65%] w-auto" },
+  { src: nutrienLogo, darkSrc: nutrienLogoWhite, alt: "Nutrien", cls: "h-[22px] sm:h-[27px] lg:h-[32px] xl:h-[36px] max-w-[80%] w-auto" },
 ];
 
 function BrandPartnerships({ onNavigate }) {
@@ -554,7 +562,7 @@ function BrandPartnerships({ onNavigate }) {
                 text-[11.62px] sm:text-[13px]
                 lg:text-[14px] xl:text-[16px]
                 tracking-[0.3em]
-                uppercase text-[#666]
+                uppercase text-[#666] dark:text-[#D1D5DB]
                 mb-6 lg:mb-8
                 whitespace-nowrap
               "
@@ -598,7 +606,7 @@ function BrandPartnerships({ onNavigate }) {
     xl:text-[23px]
     leading-[1.15]
     sm:leading-[1.5]
-    text-[#858585]
+    text-[#858585] dark:text-[#E5E7EB]
     max-w-[510px]
     mb-9 lg:mb-10
   "
@@ -614,7 +622,7 @@ function BrandPartnerships({ onNavigate }) {
                 onClick={(e) => {
                   if (onNavigate) {
                     e.preventDefault();
-                    onNavigate("our-work");
+                 onNavigate("clients")
                   }
                 }}
                 className="
@@ -687,18 +695,49 @@ function BrandPartnerships({ onNavigate }) {
                           transition-all duration-300
                         "
                       >
-                        <img
-                          src={brand.src}
-                          alt={brand.alt}
-                          loading="lazy"
-                          decoding="async"
-                          className={`
-                            object-contain
-                            max-w-full
-                            max-h-full
-                            ${brand.cls || ""}
-                          `}
-                        />
+                        {brand.darkSrc ? (
+                          <>
+                            <img
+                              src={brand.src}
+                              alt={brand.alt}
+                              loading="lazy"
+                              decoding="async"
+                              className={`
+                                block dark:hidden
+                                object-contain
+                                max-w-full
+                                max-h-full
+                                ${brand.cls || ""}
+                              `}
+                            />
+                            <img
+                              src={brand.darkSrc}
+                              alt={brand.alt}
+                              loading="lazy"
+                              decoding="async"
+                              className={`
+                                hidden dark:block
+                                object-contain
+                                max-w-full
+                                max-h-full
+                                ${brand.cls || ""}
+                              `}
+                            />
+                          </>
+                        ) : (
+                          <img
+                            src={brand.src}
+                            alt={brand.alt}
+                            loading="lazy"
+                            decoding="async"
+                            className={`
+                              object-contain
+                              max-w-full
+                              max-h-full
+                              ${brand.cls || ""}
+                            `}
+                          />
+                        )}
                       </div>
                     );
                   })}
@@ -901,7 +940,7 @@ function ConnectedCapabilities() {
                       xl:text-[21px]
                       2xl:text-[23px]
                       leading-[1.5]
-                      text-[#858585]
+                      text-[#858585] dark:text-[#E5E7EB]
                     "
                   >
                     {cap.desc}
@@ -939,7 +978,7 @@ function ConnectedCapabilities() {
                       leading-[1.45]
                       tracking-[0.1em]
                       uppercase
-                      text-[#858585]
+                      text-[#858585] dark:text-[#D1D5DB]
                       break-words
                     "
                   >

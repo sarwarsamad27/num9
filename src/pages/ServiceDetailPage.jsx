@@ -10,14 +10,14 @@ import number9Logo from "../assets/logoWhite.webp";
 /* ─── Client Logos for Work Cards ────────────────────────── */
 import clientMicrosoftLogo from "../assets/Logos/ClientsGrid_Logos/microsoft.png";
 import clientPepsicoLogo from "../assets/Logos/ClientsGrid_Logos/pepsico.png";
-import clientNutrienLogo from "../assets/Logos/ClientsGrid_Logos/nutrien.png";
+import clientNutrienLogo from "../assets/Logos/ClientsGrid_Logos/nutrien_white.png";
 import clientCitibankLogo from "../assets/Logos/ClientsGrid_Logos/citibank.png";
 import clientLexusLogo from "../assets/Logos/ClientsGrid_Logos/lexus.png";
 import clientArgoLogo from "../assets/Logos/ClientsGrid_Logos/argo.png";
 import clientMedimpactLogo from "../assets/Logos/ClientsGrid_Logos/medimpact.png";
 import clientJcpenneyLogo from "../assets/Logos/ClientsGrid_Logos/jcpenney.png";
 import clientEmiratesLogo from "../assets/Logos/ClientsGrid_Logos/emirates.png";
-import clientSafewayLogo from "../assets/Logos/hero_logos/safeway.png";
+import clientSafewayLogo from "../assets/Logos/ClientsGrid_Logos/safeway_white.png";
 import clientYmcaLogo from "../assets/Logos/ClientsGrid_Logos/ymca.png";
 import clientMagellanLogo from "../assets/Logos/ClientsGrid_Logos/magellan.png";
 
@@ -31,19 +31,20 @@ import clientFairviewLogo from "../assets/Logos/ClientsGrid_Logos/Logos/Fairview
 import clientLifegiveLogo from "../assets/Logos/ClientsGrid_Logos/Logos/LifeGive Oval Leaf Logo_trimmed.png";
 import clientShanLogo from "../assets/Logos/hero_logos/White Shan Logo on Black Oval.png";
 
-import clientGenesisLogo from "../assets/Logos/Updated_Logos/GENESIS.Logo.032218_Site_PNG_RevB.webp";
+import clientGenesisLogo from "../assets/Logos/Updated_Logos/genesis_white.png";
 import clientIcomLogo from "../assets/Logos/Updated_Logos/Clean restored ICOM network logo.webp";
 import clientStandardCharteredLogo from "../assets/Logos/Updated_Logos/Standard_Chartered__282021_29.webp";
 import clientSkinnyLogo from "../assets/caseStudies/skinny/Jordan_s_Skinny_Mixes_Logo_f5994884-b437-492f-aa4a-b5debcc1c695_1543x_copy_copy.png";
-import clientMezanLogo from "../assets/caseStudies/meezan/mezanLogo.png";
+import clientMezanLogo from "../assets/caseStudies/meezan/mezanLogo_white.png";
 import clientDeltaLogo from "../assets/caseStudies/Delta Light/deltaLogo_transparent.png";
 import clientDreoLogo from "../assets/caseStudies/DREO IHS 2025/dreoLogo_trimmed.png";
 import clientFinamillLogo from "../assets/caseStudies/Finamill IHS 2025/finamillLogo_trimmed.png";
-import clientKatjesLogo from "../assets/caseStudies/Katjes USA/katjesLogo.svg";
-import clientNakamichiLogo from "../assets/caseStudies/Nakamichi Car Audio/nakamichiLogo.svg";
+import clientKatjesLogo from "../assets/caseStudies/Katjes USA/katjesLogo_white.png";
+import clientNakamichiLogo from "../assets/caseStudies/Nakamichi Car Audio/nakamichi_white.png";
 import clientScantechLogo from "../assets/caseStudies/SCANTECH The Battery Show North America 2024/scantechLogo.svg";
-import clientSsstcLogo from "../assets/caseStudies/SSSTC Circleexhibit/ssstcLogo.svg";
-
+import clientSsstcLogo from "../assets/caseStudies/SSSTC Circleexhibit/ssstcLogoUpdated.png";
+import clientJdotLogo from "../assets/caseStudies/j/logo_black_-_wania_saleem.svg";
+// C:\Users\Pc\Desktop\num9\src\assets\caseStudies\Nakamichi Car Audio
 function getClientMeta(title, customLogo) {
   if (customLogo) {
     const isCustomShan = String(customLogo).toLowerCase().includes("shan");
@@ -78,14 +79,15 @@ function getClientMeta(title, customLogo) {
   if (t.includes("icom")) return { logo: clientIcomLogo, brand: "ICOM", route: "case-study/icom", logoClass: "h-[46px] sm:h-[54px] lg:h-[62px] xl:h-[68px] w-auto max-w-[240px] sm:max-w-[280px]" };
   if (t.includes("standard chartered")) return { logo: clientStandardCharteredLogo, brand: "Standard Chartered", route: "case-study/standard-chartered", logoClass: "h-[46px] sm:h-[54px] lg:h-[62px] xl:h-[68px] w-auto max-w-[250px] sm:max-w-[290px]" };
   if (t.includes("skinny")) return { logo: clientSkinnyLogo, brand: "Skinny Mixes", route: "case-study/skinny", logoClass: "h-[74px] sm:h-[90px] lg:h-[106px] xl:h-[118px] w-auto max-w-[240px] sm:max-w-[280px]" };
-  if (t.includes("mezan") || t.includes("meezan")) return { logo: clientMezanLogo, brand: "Mezan Global", route: "case-study/mezan", isColored: true, logoClass: "h-[50px] sm:h-[60px] lg:h-[72px] xl:h-[80px] w-auto max-w-[240px] sm:max-w-[280px]" };
+  if (t.includes("mezan") || t.includes("meezan")) return { logo: clientMezanLogo, brand: "Mezan Global", route: "case-study/mezan", logoClass: "h-[50px] sm:h-[60px] lg:h-[72px] xl:h-[80px] w-auto max-w-[240px] sm:max-w-[280px]" };
   if (t.includes("delta light") || t.includes("delta")) return { logo: clientDeltaLogo, brand: "Delta Light", route: "case-study/delta-light", logoClass: "h-[38px] sm:h-[46px] lg:h-[54px] xl:h-[60px] w-auto max-w-[240px]" };
   if (t.includes("dreo")) return { logo: clientDreoLogo, brand: "DREO", route: "case-study/dreo", logoClass: "h-[46px] sm:h-[54px] lg:h-[62px] xl:h-[70px] w-auto max-w-[240px]" };
   if (t.includes("finamill")) return { logo: clientFinamillLogo, brand: "Finamill", route: "case-study/finamill", logoClass: "h-[46px] sm:h-[54px] lg:h-[62px] xl:h-[70px] w-auto max-w-[240px]" };
-  if (t.includes("katjes")) return { logo: clientKatjesLogo, brand: "Katjes USA", route: "case-study/katjes", isColored: true, logoClass: "h-[48px] sm:h-[56px] lg:h-[64px] xl:h-[72px] w-auto max-w-[240px]" };
+  if (t.includes("katjes")) return { logo: clientKatjesLogo, brand: "Katjes USA", route: "case-study/katjes", logoClass: "h-[48px] sm:h-[56px] lg:h-[64px] xl:h-[72px] w-auto max-w-[240px]" };
   if (t.includes("nakamichi")) return { logo: clientNakamichiLogo, brand: "Nakamichi Car Audio", route: "case-study/nakamichi", logoClass: "h-[46px] sm:h-[54px] lg:h-[62px] xl:h-[70px] w-auto max-w-[280px]" };
   if (t.includes("scantech")) return { logo: clientScantechLogo, brand: "SCANTECH", route: "case-study/scantech", logoClass: "h-[46px] sm:h-[54px] lg:h-[62px] xl:h-[70px] w-auto max-w-[260px]" };
   if (t.includes("ssstc")) return { logo: clientSsstcLogo, brand: "SSSTC", route: "case-study/ssstc", logoClass: "h-[46px] sm:h-[54px] lg:h-[62px] xl:h-[70px] w-auto max-w-[240px]" };
+  if (t.includes("jdot") || t.includes("j.")) return { logo: clientJdotLogo, brand: "Jdot Fragrances", route: "case-study/jdot", logoClass: "h-[46px] sm:h-[54px] lg:h-[62px] xl:h-[70px] w-auto" };
   if (t.includes("ymca")) return { logo: clientYmcaLogo, brand: "YMCA", route: "case-study/ymca", logoClass: "h-[50px] sm:h-[58px] lg:h-[68px] xl:h-[74px] w-auto" };
   if (t.includes("magellan")) return { logo: clientMagellanLogo, brand: "Magellan Health", route: "case-study/magellan", logoClass: "h-[44px] sm:h-[52px] lg:h-[60px] xl:h-[66px] w-auto max-w-[240px] sm:max-w-[280px]" };
   if (t.includes("nutrien")) return { logo: clientNutrienLogo, brand: "Nutrien", route: "case-study/nutrien", logoClass: "h-[42px] sm:h-[50px] lg:h-[58px] xl:h-[64px] w-auto max-w-[240px] sm:max-w-[280px]" };
@@ -307,6 +309,12 @@ const WorkCard = ({ title, image, category, description, index = 1, link, onNavi
         {/* Ambient Dark Gradient Overlay */}
         <div className="absolute inset-0 bg-gradient-to-t from-black/65 via-black/30 to-black/50 pointer-events-none transition-opacity duration-300 group-hover:opacity-90" />
 
+        {/* Card border overlay - silver shader matching home page hero section */}
+        <div
+          aria-hidden="true"
+          className="absolute inset-0 z-20 pointer-events-none rounded-[inherit] border border-black/15 dark:border-white/60"
+        />
+
         {/* Top-Right: Number 9 Logo */}
         <div className="absolute top-3 right-3.5 sm:top-5 sm:right-6 lg:top-6 lg:right-7 z-10 pointer-events-none">
           <img
@@ -358,7 +366,7 @@ const WorkCard = ({ title, image, category, description, index = 1, link, onNavi
 
         {/* Description / Subtitle */}
         {description && (
-          <p className="font-grift-medium text-[14px] sm:text-[16px] leading-[1.5] text-[#666666] mt-2 sm:mt-2.5">
+          <p className="font-grift-medium text-[14px] sm:text-[16px] leading-[1.5] text-[#666666] dark:text-[#E5E7EB] mt-2 sm:mt-2.5">
             {description}
           </p>
         )}
@@ -385,7 +393,10 @@ const WorkCard = ({ title, image, category, description, index = 1, link, onNavi
         onClick={(e) => {
           if (onNavigate) {
             e.preventDefault();
-            onNavigate(cleanRoute);
+            try {
+              sessionStorage.setItem("caseStudyOrigin", "our-work");
+            } catch (err) {}
+            onNavigate(cleanRoute, { from: "our-work" });
           }
         }}
         className={baseClass + " cursor-pointer no-underline block"}
@@ -507,6 +518,53 @@ export default function ServiceDetailPage({
     ? "Work"
     : data?.heading || currentCapability?.name || "Services";
 
+  const isFromServices = React.useMemo(() => {
+    if (previousPage === "services") return true;
+    if (previousPage === "home") return false;
+    if (typeof window !== "undefined") {
+      try {
+        const origin = sessionStorage.getItem("serviceOrigin");
+        if (origin === "services") return true;
+        if (origin === "home") return false;
+        const stateFrom = window.history.state?.from;
+        if (stateFrom === "services") return true;
+        if (stateFrom === "home") return false;
+      } catch (e) {}
+    }
+    return false;
+  }, [previousPage]);
+
+  const handleBackToServices = (e) => {
+    e?.preventDefault?.();
+    if (onBack) {
+      onBack("services");
+    } else if (onNavigate) {
+      onNavigate("services");
+    } else if (typeof window !== "undefined") {
+      window.history.back();
+    }
+  };
+
+  const handleBackToHome = (e) => {
+    e?.preventDefault?.();
+    let cardId = null;
+    if (typeof window !== "undefined") {
+      try {
+        cardId = sessionStorage.getItem("lastWwdCardId") || sessionStorage.getItem("lastWwdSlug");
+      } catch (err) {}
+    }
+    if (!cardId && slug) {
+      cardId = slug;
+    }
+    if (onBack) {
+      onBack("home", { returnToWwdCard: cardId });
+    } else if (onNavigate) {
+      onNavigate("home", { returnToWwdCard: cardId });
+    } else if (typeof window !== "undefined") {
+      window.location.href = "/";
+    }
+  };
+
   const allCapabilitiesWorks = React.useMemo(() => {
     const combined = [];
     const seenTitles = new Set();
@@ -540,6 +598,35 @@ export default function ServiceDetailPage({
         }
       }
     }
+
+    // Prioritize flagship case studies so premier projects lead the Work page showcase
+    const FLAGSHIP_ORDER = [
+      "jdot fragrances",
+      "scantech",
+      "nakamichi car audio",
+      "ssstc",
+      "finamill",
+      "dreo",
+      "delta light",
+      "katjes usa",
+      "shan launch event",
+      "mezan global",
+      "skinny mixes",
+      "lexus",
+    ];
+
+    combined.sort((a, b) => {
+      const aTitle = (a.title || "").toLowerCase();
+      const bTitle = (b.title || "").toLowerCase();
+      const aIdx = FLAGSHIP_ORDER.findIndex((f) => aTitle.includes(f));
+      const bIdx = FLAGSHIP_ORDER.findIndex((f) => bTitle.includes(f));
+
+      if (aIdx !== -1 && bIdx !== -1) return aIdx - bIdx;
+      if (aIdx !== -1) return -1;
+      if (bIdx !== -1) return 1;
+      return 0;
+    });
+
     return combined;
   }, []);
 
@@ -731,36 +818,30 @@ export default function ServiceDetailPage({
 
           {/* Eyebrow Breadcrumb: "01 / THIS IS OUR PROCESS" on mobile, Back to Case Studies on desktop */}
 
-          {/* Breadcrumb: Home icon > Page Name */}
+          {/* Breadcrumb: Back button (when from Services) or Home icon (when from Home) > Page Name */}
           <div className="flex items-center gap-3 sm:gap-4 mb-4 sm:mb-6 lg:mb-8">
-            <button
-              type="button"
-              onClick={(e) => {
-                e.preventDefault();
-                let cardId = null;
-                if (typeof window !== "undefined") {
-                  try {
-                    cardId = sessionStorage.getItem("lastWwdCardId");
-                  } catch (err) {}
-                }
-                if (!cardId && slug) {
-                  cardId = slug;
-                }
-                if (onBack) {
-                  onBack("home", { returnToWwdCard: cardId });
-                } else if (onNavigate) {
-                  onNavigate("home", { returnToWwdCard: cardId });
-                } else if (typeof window !== "undefined") {
-                  window.location.href = "/";
-                }
-              }}
-              className="text-black dark:text-white hover:text-[#32c400] transition-colors cursor-pointer inline-flex items-center"
-              aria-label="Home"
-            >
-              <svg className="w-[20px] h-[20px] shrink-0" fill="none" stroke="currentColor" strokeWidth="1.5" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" d="M3.75 11.25 12 3l8.25 8.25M5.25 9.75v10.5h13.5V9.75M9 20.25v-6h6v6" />
-              </svg>
-            </button>
+            {isFromServices ? (
+              <button
+                type="button"
+                onClick={handleBackToServices}
+                className="inline-flex items-center gap-1.5 text-black dark:text-white hover:text-[#15B83E] dark:hover:text-[#32c400] transition-colors cursor-pointer group font-grift-medium text-[16px] sm:text-[18px]"
+                aria-label="Back to Services"
+              >
+                <ArrowLeft className="w-[18px] h-[18px] sm:w-[20px] sm:h-[20px] shrink-0 text-[#15B83E] dark:text-[#32c400] transition-transform duration-200 group-hover:-translate-x-1" />
+                <span className="leading-none">Back</span>
+              </button>
+            ) : (
+              <button
+                type="button"
+                onClick={handleBackToHome}
+                className="text-[#15B83E] dark:text-[#32c400] hover:text-[#119e34] dark:hover:text-[#45e610] transition-colors cursor-pointer inline-flex items-center"
+                aria-label="Home"
+              >
+                <svg className="w-[20px] h-[20px] shrink-0" fill="none" stroke="currentColor" strokeWidth="1.5" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M3.75 11.25 12 3l8.25 8.25M5.25 9.75v10.5h13.5V9.75M9 20.25v-6h6v6" />
+                </svg>
+              </button>
+            )}
             <svg className="w-[13px] h-[13px] text-[#444] dark:text-[#9CA3AF] shrink-0" fill="none" stroke="currentColor" strokeWidth="1.6" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" d="m9 5 7 7-7 7" />
             </svg>
@@ -830,7 +911,7 @@ export default function ServiceDetailPage({
               </p>
 
               {/* Description */}
-              <p className="font-grift-medium text-[16px] sm:text-[18px] lg:text-[19px] xl:text-[21px] leading-[1.5] text-[#555555] dark:text-[#B4BCB6] max-w-[700px]">
+              <p className="font-grift-medium text-[16px] sm:text-[18px] lg:text-[19px] xl:text-[21px] leading-[1.5] text-[#555555] dark:text-[#E5E7EB] max-w-[700px]">
                 {isAllCapabilities || isOurWorkPage
                   ? "Bringing brands to life through immersive trade shows, interactive digital experiences, compelling video productions, and strategic marketing. Every project combines creativity, technology, and thoughtful execution to create lasting impressions and meaningful impact."
                   : (data?.description || "")}
@@ -928,7 +1009,7 @@ export default function ServiceDetailPage({
               ))}
             </div>
           ) : (
-            <p className="font-grift-medium text-[16px] text-[#777777] mt-5">
+            <p className="font-grift-medium text-[16px] text-[#777777] dark:text-[#E5E7EB] mt-5">
               No projects found.
             </p>
           )}

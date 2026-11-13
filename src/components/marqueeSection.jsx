@@ -16,7 +16,7 @@ export default function MarqueeSection() {
           Yes, we cover everything you need to build, market &amp; grow your brand
           <span className="text-[#F25C22]">.</span>
         </h3>
-        <p className="font-grift-medium text-[16px] sm:text-[20px] md:text-[24px] lg:text-[27px] xl:text-[30px] text-[#4B5563] dark:text-[#A1A1AA] leading-[1.45] mt-7 sm:mt-8 md:mt-9 lg:mt-10 max-w-[1050px] mx-auto">
+        <p className="font-grift-medium text-[16px] sm:text-[20px] md:text-[24px] lg:text-[27px] xl:text-[30px] text-[#4B5563] dark:text-[#E5E7EB] leading-[1.45] mt-7 sm:mt-8 md:mt-9 lg:mt-10 max-w-[1050px] mx-auto">
           From strategy and creative to technology and activation
           <br className="hidden sm:inline" />
           {' '}we bring all the pieces together to deliver real results.

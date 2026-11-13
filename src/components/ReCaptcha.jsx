@@ -1,8 +1,28 @@
 import React, { forwardRef, useEffect, useImperativeHandle, useRef } from "react";
+import { useTheme } from "../context/ThemeContext";
 
-// Public site key (safe to ship in frontend code). Override with VITE_RECAPTCHA_SITE_KEY.
-export const RECAPTCHA_SITE_KEY =
+// Public production site key
+const PROD_SITE_KEY =
   import.meta.env.VITE_RECAPTCHA_SITE_KEY || "6LeyOA4uAAAAAPimUMTFD3yFf8nHfC6EERSgG6gA";
+
+// Google's official reCAPTCHA v2 test site key
+// Works on localhost / 127.0.0.1, never blocks, supports dark theme natively, loads instantly without validation delay
+const DEV_TEST_SITE_KEY = "6LeIxAcTAAAAAJcZVRqyHh71UMIEGNQ_MXjiZKhI";
+
+export function getRecaptchaSiteKey() {
+  if (import.meta.env.VITE_RECAPTCHA_SITE_KEY) {
+    return import.meta.env.VITE_RECAPTCHA_SITE_KEY;
+  }
+  if (typeof window !== "undefined") {
+    const host = window.location.hostname;
+    if (host === "localhost" || host === "127.0.0.1" || host.endsWith(".local")) {
+      return DEV_TEST_SITE_KEY;
+    }
+  }
+  return PROD_SITE_KEY;
+}
+
+export const RECAPTCHA_SITE_KEY = PROD_SITE_KEY;
 
 const SCRIPT_ID = "google-recaptcha-v2";
 const ONLOAD_CB = "__number9RecaptchaOnLoad";
@@ -15,7 +35,24 @@ function loadRecaptcha() {
   if (loadPromise) return loadPromise;
 
   loadPromise = new Promise((resolve, reject) => {
-    window[ONLOAD_CB] = () => resolve(window.grecaptcha);
+    window[ONLOAD_CB] = () => {
+      if (window.grecaptcha && window.grecaptcha.render) {
+        resolve(window.grecaptcha);
+      } else {
+        const interval = setInterval(() => {
+          if (window.grecaptcha && window.grecaptcha.render) {
+            clearInterval(interval);
+            resolve(window.grecaptcha);
+          }
+        }, 50);
+        setTimeout(() => {
+          clearInterval(interval);
+          if (window.grecaptcha) resolve(window.grecaptcha);
+          else reject(new Error("reCAPTCHA render unavailable"));
+        }, 3000);
+      }
+    };
+
     if (!document.getElementById(SCRIPT_ID)) {
       const script = document.createElement("script");
       script.id = SCRIPT_ID;
@@ -35,19 +72,33 @@ function loadRecaptcha() {
 
 /**
  * Google reCAPTCHA v2 ("I'm not a robot" checkbox).
+ * Supports light & dark themes, auto-syncing with app theme.
  * onChange(token) fires with the token, or with "" when it expires / errors.
  * ref.reset() clears the widget (call after a submit attempt).
  */
-const ReCaptcha = forwardRef(function ReCaptcha({ onChange, className = "" }, ref) {
+const ReCaptcha = forwardRef(function ReCaptcha(
+  { onChange, theme: explicitTheme, className = "" },
+  ref
+) {
   const containerRef = useRef(null);
   const widgetIdRef = useRef(null);
   const onChangeRef = useRef(onChange);
   onChangeRef.current = onChange;
 
+  const themeContext = useTheme();
+  const isDark =
+    themeContext?.isDark ??
+    (typeof document !== "undefined" &&
+      document.documentElement.classList.contains("dark"));
+
+  const activeTheme = explicitTheme || (isDark ? "dark" : "light");
+
   useImperativeHandle(ref, () => ({
     reset() {
       if (widgetIdRef.current !== null && window.grecaptcha) {
-        window.grecaptcha.reset(widgetIdRef.current);
+        try {
+          window.grecaptcha.reset(widgetIdRef.current);
+        } catch (e) {}
       }
       onChangeRef.current?.("");
     },
@@ -58,26 +109,42 @@ const ReCaptcha = forwardRef(function ReCaptcha({ onChange, className = "" }, re
 
     loadRecaptcha()
       .then((grecaptcha) => {
-        if (cancelled || !containerRef.current || widgetIdRef.current !== null) return;
-        widgetIdRef.current = grecaptcha.render(containerRef.current, {
-          sitekey: RECAPTCHA_SITE_KEY,
-          callback: (token) => onChangeRef.current?.(token),
-          "expired-callback": () => onChangeRef.current?.(""),
-          "error-callback": () => onChangeRef.current?.(""),
-        });
+        if (cancelled || !containerRef.current) return;
+        try {
+          containerRef.current.innerHTML = "";
+          const siteKey = getRecaptchaSiteKey();
+          widgetIdRef.current = grecaptcha.render(containerRef.current, {
+            sitekey: siteKey,
+            theme: activeTheme,
+            callback: (token) => onChangeRef.current?.(token),
+            "expired-callback": () => onChangeRef.current?.(""),
+            "error-callback": () => onChangeRef.current?.(""),
+          });
+        } catch (e) {
+          console.warn("reCAPTCHA render notice:", e);
+        }
       })
       .catch(() => onChangeRef.current?.(""));
 
     return () => {
       cancelled = true;
+      widgetIdRef.current = null;
     };
-  }, []);
+  }, [activeTheme]);
 
-return (
-  <div className={`recaptcha-wrapper ${className}`}>
-    <div ref={containerRef} className="recaptcha-widget" />
-  </div>
-);
+  return (
+    <div
+      className={`recaptcha-wrapper inline-block bg-transparent ${className}`}
+      style={{ width: "fit-content", maxWidth: "100%", background: "transparent" }}
+    >
+      <div
+        ref={containerRef}
+        key={activeTheme}
+        className="recaptcha-widget bg-transparent"
+        style={{ background: "transparent" }}
+      />
+    </div>
+  );
 });
 
 export default ReCaptcha;

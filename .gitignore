@@ -43,3 +43,6 @@ hostinger-deploy/**/.env
 hostinger-deploy/**/.env.*
 !hostinger-deploy/**/.env.example
 hostinger-deploy.zip
+
+# Separate frontend/backend GitHub working copies
+/repositories/

@@ -1,7 +1,9 @@
 import React, { useState, useRef } from "react";
 import ReCaptcha from "./ReCaptcha";
-import { Check, AlertCircle } from "lucide-react";
+import { Check, AlertCircle, Mail, Phone } from "lucide-react";
 import contactBg from "../assets/Contact Container.jpg";
+import contactBgDark from "../assets/Contact Container Dark.jpg";
+import { useTheme } from "../context/ThemeContext";
 const benefits = [
   {
     title: "The right people",
@@ -27,6 +29,7 @@ const fieldClass = `
 `;
 
 const WhyWorkWithUs = () => {
+  const { isDark } = useTheme();
   const [formData, setFormData] = useState({
     firstName: "",
     lastName: "",
@@ -204,9 +207,9 @@ const WhyWorkWithUs = () => {
       </div> */}
 
       {/* Contact section — kept as supplied (pt added to maintain proper breathing room from black section above when benefits is commented) */}
-      <div className="mx-auto w-full max-w-[1180px] min-[1300px]:max-w-[1520px] px-4 sm:px-8 lg:px-10 pt-14 sm:pt-20 lg:pt-28 pb-16 sm:pb-24 lg:pb-28">
+      <div className="contact-section-layout mx-auto w-full max-w-[1180px] min-[1300px]:max-w-[1520px] px-4 sm:px-8 lg:px-10 pt-14 sm:pt-20 lg:pt-28 pb-16 sm:pb-24 lg:pb-28">
         <div
-          className="
+          className="contact-card
     relative
     overflow-hidden
     rounded-[20px]
@@ -217,6 +220,7 @@ const WhyWorkWithUs = () => {
     border border-transparent dark:border-[#243328]
     bg-none
     xl:bg-[image:var(--contact-bg)]
+    dark:xl:bg-[image:var(--contact-bg-dark)]
     xl:bg-cover
     xl:bg-center
     xl:bg-no-repeat
@@ -234,27 +238,28 @@ const WhyWorkWithUs = () => {
     lg:p-10
   "
           style={{
-            '--contact-bg': `url("${contactBg}")`,
+            '--contact-bg': `url("${isDark ? contactBgDark : contactBg}")`,
+            '--contact-bg-dark': `url("${contactBgDark}")`,
           }}
         >
-          <div className="relative z-10 flex flex-col justify-between items-center text-center xl:items-stretch xl:text-left pr-0 xl:pr-10">
+          <div className="contact-details relative z-10 flex flex-col justify-between items-center text-center xl:items-stretch xl:text-left pr-0 xl:pr-10">
             <div>
               <h2 className="text-[32px] sm:text-[40px] lg:text-[48px] xl:text-[64px] leading-[1.08] sm:leading-[1.02] tracking-[-0.04em] font-medium text-[#242424] dark:text-white min-[1300px]:max-w-[720px]">
                 We’re here to help,
                 <br />
-                contact us anytime!
+                contact us <span className="contact-accent">anytime!</span>
               </h2>
-              <p className="mt-4 sm:mt-5 max-w-[500px] min-[1300px]:max-w-[640px] mx-auto xl:mx-0 text-[16px] sm:text-[15px] lg:text-[16px] leading-[1.55] text-black/60 dark:text-[#B4BCB6]">
+              <p className="mt-4 sm:mt-5 max-w-[500px] min-[1300px]:max-w-[640px] mx-auto xl:mx-0 text-[16px] sm:text-[15px] lg:text-[16px] leading-[1.55] text-black/60 dark:text-[#E5E7EB]">
                 Feel free to reach out to us anytime! Whether you have
                 questions, need assistance, or simply want more information
                 about our products, our team is always here to help. We’re just
                 a call or message away!
               </p>
             </div>
-            <div className="mt-8 xl:mt-0 grid grid-cols-1 sm:grid-cols-2 gap-5 sm:gap-8 max-w-[390px] mx-auto xl:mx-0">
+            <div className="contact-links mt-8 xl:mt-0 grid grid-cols-1 sm:grid-cols-2 gap-5 sm:gap-8 max-w-[390px] mx-auto xl:mx-0">
               <div className="min-w-0">
-                <p className="text-[16px] sm:text-[16px] text-black/50 dark:text-[#888888]">
-                  Email
+                <p className="text-[16px] sm:text-[16px] text-black/50 dark:text-[#D1D5DB]">
+                  <Mail className="contact-icon" aria-hidden="true" /> Email
                 </p>
                 <a
                   href="mailto:info@number9.us"
@@ -264,8 +269,8 @@ const WhyWorkWithUs = () => {
                 </a>
               </div>
               <div className="min-w-0">
-                <p className="text-[16px] sm:text-[16px] text-black/50 dark:text-[#888888]">
-                  Phone
+                <p className="text-[16px] sm:text-[16px] text-black/50 dark:text-[#D1D5DB]">
+                  <Phone className="contact-icon" aria-hidden="true" /> Phone
                 </p>
                 <a
                   href="tel:+14693597107"
@@ -277,7 +282,7 @@ const WhyWorkWithUs = () => {
             </div>
           </div>
 
-          <div className="relative z-10 mt-8 xl:mt-0 bg-[#F8FDEB] dark:bg-[#18201A] border border-transparent dark:border-[#2A372E] rounded-[20px] sm:rounded-[26px] p-4 sm:p-6 lg:p-7 transition-colors">
+          <div className="contact-form-panel relative z-10 mt-8 xl:mt-0 bg-[#F8FDEB] dark:bg-[#18201A] border border-transparent dark:border-[#2A372E] rounded-[20px] sm:rounded-[26px] p-4 sm:p-6 lg:p-7 transition-colors">
             <form onSubmit={handleSubmit} className="grid grid-cols-1 md:grid-cols-2 gap-x-4 gap-y-4" noValidate>
               {/* Status Message Alerts */}
               {status.type === "success" && (

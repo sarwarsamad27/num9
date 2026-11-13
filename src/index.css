@@ -2,6 +2,122 @@
 
 @custom-variant dark (&:where(.dark, .dark *));
 
+/* Contact card: the dark design has a black canvas and luminous green accents. */
+.contact-icon {
+  display: none;
+}
+
+html.dark .contact-card {
+  background: #000;
+  border: 2px solid #659c24;
+  box-shadow: inset 0 0 0 1px #244a0b, 0 0 12px #58a80014;
+  border-radius: 32px;
+}
+
+html.dark .contact-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: var(--contact-bg-dark) center / cover no-repeat;
+  filter: contrast(1.3) brightness(.8) saturate(2.5);
+  pointer-events: none;
+}
+
+html.dark .contact-accent {
+  color: #76e600;
+}
+
+html.dark .contact-form-panel {
+  min-width: 0;
+  background: linear-gradient(125deg, #191c19ed, #101310f5);
+  border: 1px solid #333833;
+  box-shadow: inset 0 0 0 1px #ffffff05;
+}
+
+html.dark .contact-details {
+  min-width: 0;
+}
+
+html.dark .contact-form-panel :is(input:not([type="hidden"]), select, textarea) {
+  background: linear-gradient(110deg, #252825, #1b1e1b);
+  border-color: #454945;
+  box-shadow: inset 0 0 0 1px #ffffff06;
+}
+
+html.dark .contact-form-panel :is(input, select, textarea):focus {
+  border-color: #76e600;
+}
+
+html.dark .contact-form-panel select option {
+  background: #1b1e1b;
+}
+
+html.dark .contact-form-panel button[type="submit"] {
+  background: linear-gradient(#54df00, #28bf00);
+  min-width: 104px;
+  height: 42px;
+}
+
+html.dark .contact-form-panel button[type="submit"]:hover {
+  background: #43d000;
+}
+
+html.dark .contact-icon {
+  display: inline-block;
+  width: 22px;
+  height: 22px;
+  margin-right: 10px;
+  vertical-align: middle;
+  color: #83c923;
+}
+
+@media (min-width: 1280px) {
+  html.dark .contact-section-layout {
+    max-width: 1440px;
+  }
+
+  html.dark .contact-card {
+    grid-template-columns: .95fr 1.05fr;
+    padding: 36px 32px 36px 44px;
+    min-height: 543px;
+  }
+
+  html.dark .contact-details {
+    padding: 20px 28px 10px 0;
+  }
+
+  html.dark .contact-details h2 {
+    font-size: clamp(40px, 3.65vw, 54px);
+    line-height: 1.15;
+    letter-spacing: -.035em;
+  }
+
+  html.dark .contact-details > div > p {
+    font-size: 14px;
+    line-height: 1.65;
+    margin-top: 26px;
+  }
+
+  html.dark .contact-links {
+    max-width: 440px;
+    gap: 32px;
+  }
+
+  html.dark .contact-links > div + div {
+    border-left: 1px solid #203014;
+    padding-left: 32px;
+  }
+
+  html.dark .contact-links a {
+    font-size: 18px;
+    white-space: nowrap;
+  }
+
+  html.dark .contact-form-panel {
+    padding: 28px;
+  }
+}
+
 /* ═══════════════════════════════════════════════════════════
    GLOBAL DESIGN TOKENS (LIGHT & DARK THEME)
    Dark background: #0B0D0C
@@ -46,11 +162,64 @@ html.dark {
 
 /* Smooth Theme Transitions */
 html.theme-transition,
-html.theme-transition *,
+html.theme-transition *:not(iframe):not(iframe *),
 html.theme-transition *::before,
 html.theme-transition *::after {
   transition: background-color 0.28s ease, color 0.22s ease, border-color 0.28s ease, fill 0.22s ease, stroke 0.22s ease !important;
   transition-delay: 0s !important;
+}
+
+html.theme-transition iframe {
+  transition: none !important;
+}
+
+/* reCAPTCHA — remove dark background box and clip white border lines */
+.recaptcha-wrapper,
+.recaptcha-widget {
+  background: transparent !important;
+  border: none !important;
+  outline: none !important;
+  box-shadow: none !important;
+  width: fit-content !important;
+  max-width: 100% !important;
+}
+
+.recaptcha-widget iframe {
+  border: 0 !important;
+  outline: none !important;
+  box-shadow: none !important;
+}
+
+html.dark .recaptcha-wrapper,
+html.dark .recaptcha-widget {
+  background: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+}
+
+html.dark .recaptcha-widget iframe {
+  border: 0 !important;
+  outline: none !important;
+  box-shadow: none !important;
+  clip-path: inset(2px 2px 2px 2px round 4px) !important;
+}
+
+/* Services hero cutout image border - subtle grey border matching hero section */
+.services-hero-image-border {
+  filter: drop-shadow(1px 0 0 rgba(0, 0, 0, 0.15))
+          drop-shadow(-1px 0 0 rgba(0, 0, 0, 0.15))
+          drop-shadow(0 1px 0 rgba(0, 0, 0, 0.15))
+          drop-shadow(0 -1px 0 rgba(0, 0, 0, 0.15));
+  filter: url(#services-hero-border-light);
+  transition: filter 0.28s ease;
+}
+
+html.dark .services-hero-image-border {
+  filter: drop-shadow(1px 0 0 rgba(255, 255, 255, 0.6))
+          drop-shadow(-1px 0 0 rgba(255, 255, 255, 0.6))
+          drop-shadow(0 1px 0 rgba(255, 255, 255, 0.6))
+          drop-shadow(0 -1px 0 rgba(255, 255, 255, 0.6));
+  filter: url(#services-hero-border-dark);
 }
 
 html.dark {
@@ -100,22 +269,91 @@ html.dark :where(
   .text-\[\#525252\],
   .text-\[\#555\],
   .text-\[\#555555\],
+  .text-\[\#555E6D\],
   .text-\[\#575757\],
   .text-\[\#5E5B5B\],
   .text-\[\#5f5f5f\],
+  .text-\[\#606060\],
   .text-\[\#626262\],
   .text-\[\#666\],
+  .text-\[\#666666\],
   .text-\[\#6B7280\],
   .text-\[\#737373\],
+  .text-\[\#777\],
+  .text-\[\#777777\],
   .text-\[\#818282\],
   .text-\[\#858585\],
+  .text-\[\#888\],
+  .text-\[\#888888\],
+  .text-\[\#929292\],
+  .text-\[\#9CA3AF\],
+  .text-\[\#A1A1AA\],
+  .text-\[\#B4BCB6\],
+  .text-black\/50,
+  .text-black\/60,
+  .text-black\/70,
   .text-gray-800,
   .text-gray-700,
   .text-gray-600,
+  .text-gray-500,
   .text-slate-800,
-  .text-slate-700
+  .text-slate-700,
+  .text-slate-600,
+  .text-slate-500,
+  .text-zinc-600,
+  .text-zinc-500
 ):not([data-wwd-card]):not([data-wwd-card] *):not(.keep-light):not(.keep-light *) {
-  color: #D1D5DB !important;
+  color: #E5E7EB !important;
+}
+
+/* Ensure all paragraphs in dark mode with muted/grey tones render in crisp, readable soft-white */
+html.dark p:not([data-wwd-card] *):not(.keep-light *):not(.keep-light):where(
+  .text-\[\#3f3f3f\],
+  .text-\[\#414141\],
+  .text-\[\#414A55\],
+  .text-\[\#444\],
+  .text-\[\#444444\],
+  .text-\[\#4A4A4A\],
+  .text-\[\#4A5568\],
+  .text-\[\#4B5563\],
+  .text-\[\#525252\],
+  .text-\[\#555\],
+  .text-\[\#555555\],
+  .text-\[\#555E6D\],
+  .text-\[\#575757\],
+  .text-\[\#5E5B5B\],
+  .text-\[\#5f5f5f\],
+  .text-\[\#606060\],
+  .text-\[\#626262\],
+  .text-\[\#666\],
+  .text-\[\#666666\],
+  .text-\[\#6B7280\],
+  .text-\[\#737373\],
+  .text-\[\#777\],
+  .text-\[\#777777\],
+  .text-\[\#818282\],
+  .text-\[\#858585\],
+  .text-\[\#888\],
+  .text-\[\#888888\],
+  .text-\[\#929292\],
+  .text-\[\#9CA3AF\],
+  .text-\[\#A1A1AA\],
+  .text-\[\#B4BCB6\],
+  .text-black\/50,
+  .text-black\/60,
+  .text-black\/70,
+  .text-gray-800,
+  .text-gray-700,
+  .text-gray-600,
+  .text-gray-500,
+  .text-slate-800,
+  .text-slate-700,
+  .text-slate-600,
+  .text-slate-500,
+  .text-zinc-600,
+  .text-zinc-500
+) {
+  color: #E5E7EB !important;
 }
 
 html.dark :where(
@@ -660,3 +898,4 @@ body {
     height: 61px;
   }
 }
+

@@ -329,28 +329,73 @@ export default function CaseStudyOverviewSections({
                 "
               >
                 {overview.logo && (
-                  <img
-                    src={overview.logo}
-                    alt={overview.logoAlt || `${caseStudy.name || "Brand"} logo`}
-                    loading="lazy"
-                    decoding="async"
-                    className={`
-                      block
-                      w-[68%] sm:w-[62%]
-                      h-auto
-                      max-w-[280px]
-                      sm:max-w-[320px]
-                      lg:max-w-[360px]
-                      max-h-[120px]
-                      sm:max-h-[140px]
-                      md:max-h-[160px]
-                      lg:max-h-[180px]
+                  overview.darkLogo ? (
+                    <>
+                      <img
+                        src={overview.logo}
+                        alt={overview.logoAlt || `${caseStudy.name || "Brand"} logo`}
+                        loading="lazy"
+                        decoding="async"
+                        className="
+                          block dark:hidden
+                          w-[68%] sm:w-[62%]
+                          h-auto
+                          max-w-[280px]
+                          sm:max-w-[320px]
+                          lg:max-w-[360px]
+                          max-h-[120px]
+                          sm:max-h-[140px]
+                          md:max-h-[160px]
+                          lg:max-h-[180px]
+                          object-contain
+                          object-center
+                        "
+                      />
+                      <img
+                        src={overview.darkLogo}
+                        alt={overview.logoAlt || `${caseStudy.name || "Brand"} logo`}
+                        loading="lazy"
+                        decoding="async"
+                        className="
+                          hidden dark:block
+                          w-[68%] sm:w-[62%]
+                          h-auto
+                          max-w-[280px]
+                          sm:max-w-[320px]
+                          lg:max-w-[360px]
+                          max-h-[120px]
+                          sm:max-h-[140px]
+                          md:max-h-[160px]
+                          lg:max-h-[180px]
+                          object-contain
+                          object-center
+                        "
+                      />
+                    </>
+                  ) : (
+                    <img
+                      src={overview.logo}
+                      alt={overview.logoAlt || `${caseStudy.name || "Brand"} logo`}
+                      loading="lazy"
+                      decoding="async"
+                      className={`
+                        block
+                        w-[68%] sm:w-[62%]
+                        h-auto
+                        max-w-[280px]
+                        sm:max-w-[320px]
+                        lg:max-w-[360px]
+                        max-h-[120px]
+                        sm:max-h-[140px]
+                        md:max-h-[160px]
+                        lg:max-h-[180px]
 
-                      object-contain
-                      object-center
-                      ${caseStudy?.slug === 'lexus' || overview.logoAlt === 'Lexus' || caseStudy?.slug === 'delta-light' || caseStudy?.slug === 'dreo' ? 'dark:invert' : ''}
-                    `}
-                  />
+                        object-contain
+                        object-center
+                        ${caseStudy?.slug === 'lexus' || overview.logoAlt === 'Lexus' || caseStudy?.slug === 'delta-light' || caseStudy?.slug === 'dreo' || caseStudy?.slug === 'jdot' || caseStudy?.slug === 'j' || caseStudy?.slug === 'scantech' || overview.logoAlt === 'SCANTECH' || overview.logoAlt === 'SCANTECH logo' ? 'dark:invert' : ''}
+                      `}
+                    />
+                  )
                 )}
               </div>
             </div>

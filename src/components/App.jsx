@@ -6,6 +6,7 @@ import FourthSection from './components/fourthSection'
 import WhatWeDo from './components/whatWeDo'
 import FifthSection from './components/fifthSection'
 import WhyWorkWithUs from './components/contact'
+import FAQSection from './components/FAQSection'
 import AccelerateBusinessSection from './components/AccelerateBusinessSection'
 import Footer from './components/footer'
 import MarqueeSection from './components/marqueeSection'
@@ -21,7 +22,14 @@ import workHeroImg from './assets/workCar.webp'
 import homeHeroImg from './assets/Metallic Blue Lexus in a Warehouse 1.webp'
 import lexusHeroImg from './assets/lexus/lexusHeroImg.webp'
 
-const KNOWN_PAGES = new Set(['home', 'services', 'about', 'contact', 'our-work', 'work']);
+const KNOWN_PAGES = new Set([
+  'home',
+  'services',
+  'about',
+  'contact',
+  'clients',
+  'work'
+]);
 
 // The "Our Work" page (/work) reuses this service detail layout.
 const OUR_WORK_SERVICE_SLUG = 'all';
@@ -43,8 +51,11 @@ function resolvePageFromLocation() {
   // Aliases
   if (cleanPath === 'about-us') cleanPath = 'about';
   if (cleanPath === 'contact-us') cleanPath = 'contact';
-  if (cleanPath === 'case-studies') cleanPath = 'our-work';
-
+if (cleanPath === 'case-studies') cleanPath = 'clients';
+if (cleanPath === 'our-work') {
+  window.history.replaceState({}, '', import.meta.env.BASE_URL);
+  return 'home';
+}
   if (!cleanPath || cleanPath === 'home') {
     // 2. Query param fallback (?page=about, etc.)
     const params = new URLSearchParams(window.location.search);
@@ -53,7 +64,7 @@ function resolvePageFromLocation() {
       let cleanQueryPage = queryPage;
       if (cleanQueryPage === 'about-us') cleanQueryPage = 'about';
       if (cleanQueryPage === 'contact-us') cleanQueryPage = 'contact';
-      if (cleanQueryPage === 'case-studies') cleanQueryPage = 'our-work';
+if (cleanQueryPage === 'case-studies') cleanQueryPage = 'clients';
 
       if (KNOWN_PAGES.has(cleanQueryPage)) return cleanQueryPage;
       if (cleanQueryPage.startsWith('case-study/') || cleanQueryPage.startsWith('service/')) return cleanQueryPage;
@@ -74,7 +85,7 @@ function preloadHeroForPage(targetPage) {
     if (targetPage === 'home') heroSrc = homeHeroImg;
     else if (targetPage === 'about' || targetPage === 'contact') heroSrc = aboutHeroImg;
     else if (targetPage === 'services') heroSrc = servicesHeroImg;
-    else if (targetPage === 'our-work') heroSrc = workHeroImg;
+else if (targetPage === 'clients') heroSrc = workHeroImg;
     else if (targetPage === 'case-study/lexus') heroSrc = lexusHeroImg;
 
     if (heroSrc) {
@@ -389,6 +400,8 @@ export default function App() {
           {/* <MarqueeSection /> */}
           {/* Fifth Section — testimonials + awards */}
           <FifthSection onNavigate={handleNavigate} />
+          {/* FAQ Section */}
+          <FAQSection onNavigate={handleNavigate} />
           <WhyWorkWithUs />
           <AccelerateBusinessSection onScheduleClick={() => handleNavigate('contact')} />
           {/* Footer */}

@@ -1,12 +1,15 @@
-import lexusHeroBg from "../assets/lexus/lexusHeroImg.webp";
-import lexusLogo from "../assets/lexus/lexus_PNG22 1.jpg";
+import lexusHeroBg from "../assets/lexus/2ndimg.webp";
+import lexusLogo from "../assets/Logos/ClientsGrid_Logos/lexus.png";
+import lexusLogoWhite from "../assets/Logos/ClientsGrid_Logos/lexus_white.png";
 import lexusCar from "../assets/lexus/Blue Lexus Coupe in Architectural Triptych.webp";
 import lexusImg1 from "../assets/lexus/1stimg.webp";
 import lexusImg2 from "../assets/lexus/2ndimg.webp";
 import lexusImg3 from "../assets/lexus/3rdimg.webp";
 import lexusWarehouse from "../assets/Metallic Blue Lexus in a Warehouse 1.webp";
+import lexusSolutionImg from "../assets/lexus/solutionImg.webp";
 
-import microsoftLogo from "../assets/Logos/Updated_Logos/Microsoft_logo__282012_29.png";
+import microsoftLogo from "../assets/Logos/ClientsGrid_Logos/microsoft.png";
+import microsoftLogoWhite from "../assets/Microsoft_logo__White.png";
 import workLaptop from "../assets/workLaptop.webp";
 import paperCutWorkspace from "../assets/Paper-Cut Web Design Workspace.png";
 import digitalExperience from "../assets/digital-experience.jpg";
@@ -14,30 +17,36 @@ import sentralBg from "../assets/homeHeroSectionImages/Sunlit Sentral Education 
 import dataAnalysis from "../assets/data-analysis.jpg";
 import interactiveTech from "../assets/interactive-tech.jpg";
 
-import pepsicoLogo from "../assets/pepsicoLogo.png";
+import pepsicoLogo from "../assets/Logos/ClientsGrid_Logos/pepsico.png";
+import pepsicoLogoWhite from "../assets/Logos/ClientsGrid_Logos/pepsico_white.png";
 import bussinesAcltImage from "../assets/bussinesAcltImage.webp";
 import neonPrismStage from "../assets/Neon_Prism_Stage_Star.webp";
 import tradeShowActivation from "../assets/trade-show-activation.jpg";
 import aboutus3rdSect from "../assets/aboutus3rdSect.webp";
 
-import nutrienLogo from "../assets/nutrienLogo.png";
+import nutrienLogo from "../assets/Logos/ClientsGrid_Logos/nutrien.png";
+import nutrienLogoWhite from "../assets/Logos/ClientsGrid_Logos/nutrien_white.png";
 import businessStrategy from "../assets/business-strategy-meeting-using-interactive-world-2026-09-15-20-11-11-utc 1.jpg";
 import pwcDashboard from "../assets/homeHeroSectionImages/PwC_Enterprise_Dashboard_in_Executive_Office 1.webp";
 import overlappingCircles from "../assets/Overlapping Circles Corporate Meeting.webp";
 
 import citibankLogo from "../assets/Logos/ClientsGrid_Logos/citibank.png";
+import citibankLogoWhite from "../assets/Logos/ClientsGrid_Logos/citibank_white.png";
 import fintechSunset1 from "../assets/Fintech Dashboard at Sunset 1 (1).webp";
 
 import fintechSunset2 from "../assets/Fintech Dashboard at Sunset 1.webp";
 import officeCollab from "../assets/Overlapping Circles Office Collaboration Cutout.webp";
 import webDesign from "../assets/web-design.jpg";
 
-import argoLogo from "../assets/argoLogo.jpg";
+import argoLogo from "../assets/Logos/ClientsGrid_Logos/argo.png";
+import argoLogoWhite from "../assets/Logos/ClientsGrid_Logos/argo_white.png";
 import laptopImage from "../assets/laptopImage.webp";
 
-import medimpactLogo from "../assets/mediImpactLogo.jpg";
+import medimpactLogo from "../assets/Logos/ClientsGrid_Logos/medimpact.png";
+import medimpactLogoWhite from "../assets/Logos/ClientsGrid_Logos/medimpact_white.png";
 
-import jcpenneyLogo from "../assets/jcpenneyLogo.png";
+import jcpenneyLogo from "../assets/Logos/ClientsGrid_Logos/jcpenney.png";
+import jcpenneyLogoWhite from "../assets/Logos/ClientsGrid_Logos/jcpenney_white.png";
 import neonStageStar from "../assets/Neon Star-Shaped Exhibition Stage.webp";
 
 import emiratesLogo from "../assets/Logos/ClientsGrid_Logos/emirates.png";
@@ -50,28 +59,40 @@ import heroImg2 from "../assets/heroImg2.webp";
 import heroImg3 from "../assets/heroImg3.webp";
 
 import safewayLogo from "../assets/Logos/ClientsGrid_Logos/safeway.png";
+import safewayLogoWhite from "../assets/Logos/ClientsGrid_Logos/safeway_white.png";
 import ymcaLogo from "../assets/Logos/ClientsGrid_Logos/ymca.png";
 import magellanLogo from "../assets/Logos/ClientsGrid_Logos/magellan.png";
+import magellanLogoWhite from "../assets/Logos/ClientsGrid_Logos/magellan_white.png";
 
 import shanLogo from "../assets/homeHeroSectionImages/hero_Logos/shan.png";
-import zee5Logo from "../assets/Logos/ClientsGrid_Logos/Logos/ZEE5-Logo (1).png";
-import snacksLogo from "../assets/Logos/ClientsGrid_Logos/Logos/Snack.com.png";
-import sentralLogo from "../assets/Logos/ClientsGrid_Logos/Logos/Sentral Education Ribbon Logo.png";
-import pwcLogo from "../assets/Logos/ClientsGrid_Logos/Logos/PwC Logo with Layered Warm Blocks.png";
-import empireLogo from "../assets/Logos/ClientsGrid_Logos/Logos/Empire Cinemas Crown Emblem.png";
-import almazaLogo from "../assets/Logos/ClientsGrid_Logos/Logos/Almaza Gem Crest Logo.png";
-import fairviewLogo from "../assets/Logos/ClientsGrid_Logos/Logos/Fairview Geometric Architecture Logo.png";
-import lifegiftLogo from "../assets/Logos/ClientsGrid_Logos/Logos/LifeGive Oval Leaf Logo.png";
+import zee5Logo from "../assets/Logos/ClientsGrid_Logos/Logos/ZEE5-Logo (1)_trimmed.png";
+import zee5LogoWhite from "../assets/Logos/ClientsGrid_Logos/zee5_white.png";
+import snacksLogo from "../assets/Logos/ClientsGrid_Logos/Logos/Snack.com_trimmed.png";
+import sentralLogo from "../assets/Logos/ClientsGrid_Logos/Logos/Sentral Education Ribbon Logo_trimmed.png";
+import sentralLogoWhite from "../assets/Logos/ClientsGrid_Logos/sentral_white.png";
+import pwcLogo from "../assets/Logos/ClientsGrid_Logos/Logos/PwC Logo with Layered Warm Blocks_trimmed.png";
+import pwcLogoWhite from "../assets/Logos/ClientsGrid_Logos/pwc_white.png";
+import empireLogo from "../assets/Logos/ClientsGrid_Logos/Logos/Empire Cinemas Crown Emblem_trimmed.png";
+import empireLogoWhite from "../assets/Logos/ClientsGrid_Logos/empire_white.png";
+import almazaLogo from "../assets/Logos/ClientsGrid_Logos/Logos/Almaza Gem Crest Logo_trimmed.png";
+import almazaLogoWhite from "../assets/Logos/ClientsGrid_Logos/almaza_white.png";
+import fairviewLogo from "../assets/Logos/ClientsGrid_Logos/Logos/Fairview Geometric Architecture Logo_trimmed.png";
+import fairviewLogoWhite from "../assets/Logos/ClientsGrid_Logos/fairview_white.png";
+import lifegiftLogo from "../assets/Logos/ClientsGrid_Logos/Logos/LifeGive Oval Leaf Logo_trimmed.png";
+import lifegiftLogoWhite from "../assets/Logos/ClientsGrid_Logos/lifegive_white.png";
 import lifeGiveBg from "../assets/homeHeroSectionImages/LifeGive Mediterranean Supplement Showcase 1.webp";
 import fairviewBg from "../assets/homeHeroSectionImages/hf_20261016_161338_d8b119f9-4b93-4517-95ad-49bb6319981e 1.webp";
 import snacksBg from "../assets/homeHeroSectionImages/hf_20261016_162448_549b8ec4-b231-4ab6-8341-ad5a5b8ffe63 1.webp";
 import almazaBg from "../assets/homeHeroSectionImages/PwC_Enterprise_Dashboard_in_Executive_Office 1 (1).webp";
 
 import icomLogo from "../assets/Logos/Updated_Logos/Clean restored ICOM network logo.webp";
-import genesisLogo from "../assets/Logos/Updated_Logos/GENESIS.Logo.032218_Site_PNG_RevB.webp";
+import icomLogoWhite from "../assets/Logos/Updated_Logos/icom_white.png";
+import genesisLogo from "../assets/Logos/Updated_Logos/genesis_dark.png";
+import genesisLogoWhite from "../assets/Logos/Updated_Logos/genesis_white.png";
 import standardCharteredLogo from "../assets/Logos/Updated_Logos/Standard_Chartered__282021_29.webp";
 
 import skinnyLogo from "../assets/caseStudies/skinny/Jordan_s_Skinny_Mixes_Logo_f5994884-b437-492f-aa4a-b5debcc1c695_1543x_copy_copy.png";
+import skinnyLogoWhite from "../assets/caseStudies/skinny/skinny_white.png";
 import skinnyHeroBg from "../assets/caseStudies/skinny/Updated_Image (2).png";
 import skinnyMixesAmbassador from "../assets/caseStudies/skinny/skinny-mixes-7.avif";
 import skinnyImg1 from "../assets/caseStudies/skinny/skinny-mixes-1.avif";
@@ -83,6 +104,7 @@ import skinnyImg6 from "../assets/caseStudies/skinny/skinny-mixes-6.avif";
 import skinnyImg7 from "../assets/caseStudies/skinny/Pink Coffee Activation Cutout.webp";
 
 import mezanLogo from "../assets/caseStudies/meezan/mezanLogo.png";
+import mezanLogoWhite from "../assets/caseStudies/meezan/mezanLogo_white.png";
 import mezanHeroBg from "../assets/caseStudies/meezan/mezanHeroBg.jpg";
 import mezanShowcase from "../assets/caseStudies/meezan/mezanShowcase.jpg";
 import mezanEmptyFloor from "../assets/caseStudies/meezan/mezanEmptyFloor.jpg";
@@ -96,6 +118,7 @@ import mezanCrowd from "../assets/caseStudies/meezan/mezanCrowd.jpg";
 
 // Delta Light
 import deltaLogo from "../assets/caseStudies/Delta Light/deltaLogo_transparent.png";
+import deltaLogoWhite from "../assets/caseStudies/Delta Light/deltaLogo_white.png";
 import deltaImg1 from "../assets/caseStudies/Delta Light/delta1.jpg";
 import deltaImg2 from "../assets/caseStudies/Delta Light/delta2.jpg";
 import deltaImg3 from "../assets/caseStudies/Delta Light/delta3.jpg";
@@ -104,6 +127,7 @@ import deltaImg5 from "../assets/caseStudies/Delta Light/delta5.jpg";
 
 // DREO IHS 2025
 import dreoLogo from "../assets/caseStudies/DREO IHS 2025/dreoLogo_trimmed.png";
+import dreoLogoWhite from "../assets/caseStudies/DREO IHS 2025/dreoLogo_white.png";
 import dreoImg1 from "../assets/caseStudies/DREO IHS 2025/dreo1.avif";
 import dreoImg2 from "../assets/caseStudies/DREO IHS 2025/dreo2.avif";
 import dreoImg3 from "../assets/caseStudies/DREO IHS 2025/dreo3.webp";
@@ -118,7 +142,8 @@ import finamillImg4 from "../assets/caseStudies/Finamill IHS 2025/finamill4.avif
 import finamillImg5 from "../assets/caseStudies/Finamill IHS 2025/finamill5.webp";
 
 // Katjes USA
-import katjesLogo from "../assets/caseStudies/Katjes USA/katjesLogo.svg";
+import katjesLogo from "../assets/caseStudies/Katjes USA/Katjes.webp";
+import katjesLogoWhite from "../assets/caseStudies/Katjes USA/katjesLogo_white.png";
 import katjesImg1 from "../assets/caseStudies/Katjes USA/katjes-1.avif";
 import katjesImg2 from "../assets/caseStudies/Katjes USA/katjes-2.avif";
 import katjesImg3 from "../assets/caseStudies/Katjes USA/katjes-3.avif";
@@ -129,7 +154,8 @@ import katjesImg7 from "../assets/caseStudies/Katjes USA/katjes-7.avif";
 import katjesImg8 from "../assets/caseStudies/Katjes USA/katjes-8.avif";
 
 // Nakamichi Car Audio
-import nakamichiLogo from "../assets/caseStudies/Nakamichi Car Audio/nakamichiLogo.svg";
+import nakamichiLogo from "../assets/caseStudies/Nakamichi Car Audio/Nakamichi Logo on Transparent Background.png";
+import nakamichiLogoWhite from "../assets/caseStudies/Nakamichi Car Audio/nakamichi_white.png";
 import nakamichiImg1 from "../assets/caseStudies/Nakamichi Car Audio/nakamichi1.avif";
 import nakamichiImg2 from "../assets/caseStudies/Nakamichi Car Audio/nakamichi2.webp";
 import nakamichiImg3 from "../assets/caseStudies/Nakamichi Car Audio/nakamichi3.webp";
@@ -139,6 +165,7 @@ import nakamichiImg6 from "../assets/caseStudies/Nakamichi Car Audio/nakamichi6.
 
 // SCANTECH The Battery Show North America 2024
 import scantechLogo from "../assets/caseStudies/SCANTECH The Battery Show North America 2024/scantechLogo.svg";
+import scantechLogoWhite from "../assets/caseStudies/SCANTECH The Battery Show North America 2024/scantechLogo_white.svg";
 import scantechImg1 from "../assets/caseStudies/SCANTECH The Battery Show North America 2024/scantech1.avif";
 import scantechImg2 from "../assets/caseStudies/SCANTECH The Battery Show North America 2024/scantech2.webp";
 import scantechImg3 from "../assets/caseStudies/SCANTECH The Battery Show North America 2024/scantech3.webp";
@@ -146,10 +173,23 @@ import scantechImg4 from "../assets/caseStudies/SCANTECH The Battery Show North 
 import scantechImg5 from "../assets/caseStudies/SCANTECH The Battery Show North America 2024/scantech5.avif";
 
 // SSSTC Circleexhibit
-import ssstcLogo from "../assets/caseStudies/SSSTC Circleexhibit/ssstcLogo.svg";
+import ssstcLogo from "../assets/caseStudies/SSSTC Circleexhibit/ssstcLogoUpdatedBlack.png";
+import ssstcLogoWhite from "../assets/caseStudies/SSSTC Circleexhibit/ssstcLogoUpdated.png";
 import ssstcImg1 from "../assets/caseStudies/SSSTC Circleexhibit/ssstc1.webp";
 import ssstcImg2 from "../assets/caseStudies/SSSTC Circleexhibit/ssstc2.avif";
 import ssstcImg3 from "../assets/caseStudies/SSSTC Circleexhibit/ssstc3.webp";
+
+// Jdot Fragrances Ballin'
+import jdotLogo from "../assets/caseStudies/j/logo_black_-_wania_saleem.svg";
+import jdotLogoWhite from "../assets/caseStudies/j/logo_white_-_wania_saleem.svg";
+import jdotHeroImg from "../assets/caseStudies/j/Website_Thumb.png";
+import jdotProductImg from "../assets/caseStudies/j/jdotProduct.webp";
+import jdotAthleteImg from "../assets/caseStudies/j/Website_Thumb.png";
+import jdotBottleImg from "../assets/caseStudies/j/jdotBottle.webp";
+import jdotSpotlightBallImg from "../assets/caseStudies/j/jdotSpotlightBall.webp";
+import jdotUnboxingImg from "../assets/caseStudies/j/jdotUnboxing.webp";
+import jdotArenaCloudsImg from "../assets/caseStudies/j/jdotArenaClouds.webp";
+import jdot_triptych from "../assets/caseStudiesTriptych/jdot_triptych.webp";
 
 
 // Architectural Triptych Quote Graphics for all Case Studies
@@ -215,6 +255,7 @@ export const caseStudiesData = {
       summaryText:
         "Lexus partnered with us to develop an interactive platform that allows customers to build and customize their vehicles while accessing premium multimedia content. By combining intuitive navigation, high readability, and luxury-focused design, we created a seamless digital experience that enhances dealership engagement and strengthens the Lexus customer journey.",
       logo: lexusLogo,
+      darkLogo: lexusLogoWhite,
       logoAlt: "Lexus logo",
       showcaseImage: lexusWarehouse,
       showcaseAlt: "Lexus vehicle customization showcase",
@@ -257,8 +298,8 @@ export const caseStudiesData = {
       },
       challenge: {
         heading: "The challenge",
-        image: skinnyMixesAmbassador,
-        imageAlt: "Skinny Mixes Manhattan street sampling challenge",
+        image: lexusWarehouse,
+        imageAlt: "Lexus interactive dealership platform challenge",
         leftParagraphs: [
           "Lexus wanted to empower its dealerships with an interactive platform that would allow customers to build and customize their vehicles from scratch while exploring available accessories and premium features.",
           "The platform also needed to serve as a central multimedia hub, providing access to Lexus International content including promotional videos, product showcases, and TV commercials.",
@@ -269,8 +310,8 @@ export const caseStudiesData = {
       },
       solution: {
         heading: "The solution.",
-        image: skinnyHeroBg,
-        imageAlt: "Skinny Mixes brand ambassadors and interactive activation in NYC",
+        image: lexusSolutionImg,
+        imageAlt: "Lexus interactive dealership platform solution",
         description:
           "We created an interactive Lexus dealership platform that allows customers to build and customize vehicles, explore accessories, and engage with premium multimedia content. Designed with intuitive navigation, high readability, and a luxury-focused user experience, the solution simplifies customer interactions while supporting dealerships with a powerful sales and presentation tool.",
         customerInteractions: {
@@ -344,6 +385,7 @@ export const caseStudiesData = {
       summaryText:
         "Microsoft partnered with Number9 to modernize enterprise digital touchpoints and streamline development workflows across globally distributed product divisions. By engineering scalable component architecture, accessible UI design standards, and high-performance tooling, we empowered engineering teams to deliver mission-critical software with greater speed, consistency, and customer confidence.",
       logo: microsoftLogo,
+      darkLogo: microsoftLogoWhite,
       logoAlt: "Microsoft logo",
       stats: [
         {
@@ -396,7 +438,7 @@ export const caseStudiesData = {
       },
       solution: {
         heading: "The solution.",
-        image: lexusHeroBg,
+        image: lexusSolutionImg,
         imageAlt: "Lexus interactive dealership platform solution",
         description:
           "We engineered an extensible design system and optimized application frameworks that unified interaction patterns across enterprise tools. With comprehensive documentation, accessibility compliance, and optimized bundle delivery, we enabled faster development cycles and cohesive digital experiences.",
@@ -471,6 +513,7 @@ export const caseStudiesData = {
       summaryText:
         "PepsiCo collaborated with Number9 to craft high-impact shopper marketing campaigns and experiential brand activations across key retail channels. Combining data-driven consumer insights with immersive digital storytelling, we designed interactive touchpoints that bridged physical store shelves and digital engagement, driving measurable brand loyalty and sales velocity.",
       logo: pepsicoLogo,
+      darkLogo: pepsicoLogoWhite,
       logoAlt: "PepsiCo logo",
       stats: [
         {
@@ -523,7 +566,7 @@ export const caseStudiesData = {
       },
       solution: {
         heading: "The solution.",
-        image: lexusHeroBg,
+        image: lexusSolutionImg,
         imageAlt: "Lexus interactive dealership platform solution",
         description:
           "We engineered dynamic digital campaign platforms, interactive QR-activated microsites, and automated regional marketing toolkits. Designed for rapid deployment and maximum visual punch, these assets connected in-store displays with engaging digital incentives and loyalty rewards.",
@@ -650,7 +693,7 @@ export const caseStudiesData = {
       },
       solution: {
         heading: "The solution.",
-        image: lexusHeroBg,
+        image: lexusSolutionImg,
         imageAlt: "Lexus interactive dealership platform solution",
         description:
           "We designed high-conversion booking workflows, interactive cabin exploration interfaces, and responsive journey dashboards. By emphasizing swift page loads, clear hierarchy, and elegant visual polish, the platform elevated customer satisfaction and accelerated direct digital bookings.",
@@ -728,6 +771,7 @@ export const caseStudiesData = {
         "Citibank collaborated with us to build enterprise-grade data visualization dashboards that capture complex financial landscapes and empower internal collaboration. Using React and a cohesive design system, we transformed raw banking metrics into actionable insights.",
 
       logo: citibankLogo,
+      darkLogo: citibankLogoWhite,
       logoAlt: "Citibank logo",
 
       stats: [
@@ -788,7 +832,7 @@ export const caseStudiesData = {
 
       solution: {
         heading: "The solution.",
-        image: lexusHeroBg,
+        image: lexusSolutionImg,
         imageAlt: "Lexus interactive dealership platform solution",
         description:
           "We created an interactive Citibank analytics platform that allows analysts to track portfolio performance, monitor risk metrics, and engage with real-time financial data visualizations. Designed with intuitive navigation, high readability, and an enterprise-focused user experience, the solution simplifies complex banking data while supporting executives with a powerful strategic decision and presentation tool.",
@@ -870,6 +914,7 @@ export const caseStudiesData = {
       summaryText:
         "Nutrien collaborated with Number9 to engineer a centralized enterprise operations platform that streamlines agricultural supply chain management and field analytics. By synthesizing complex agronomic datasets into intuitive operational dashboards, we enabled distribution managers and agronomists to make faster, data-driven decisions that enhance global food production efficiency.",
       logo: nutrienLogo,
+      darkLogo: nutrienLogoWhite,
       logoAlt: "Nutrien logo",
       stats: [
         {
@@ -922,7 +967,7 @@ export const caseStudiesData = {
       },
       solution: {
         heading: "The solution.",
-        image: lexusHeroBg,
+        image: lexusSolutionImg,
         imageAlt: "Lexus interactive dealership platform solution",
         description:
           "We built a unified enterprise web platform featuring responsive geographic map overlays, predictive inventory forecasting, and real-time shipping tracking. Optimized for quick glanceability, the platform gave managers complete operational control from any screen.",
@@ -997,6 +1042,7 @@ export const caseStudiesData = {
       summaryText:
         "Argo selected Number9 as their core design and engineering partner to architect, build, and launch a next-generation software platform. Through modular component architecture, robust API integrations, and intuitive SaaS UX, we delivered a resilient web application that scaled gracefully alongside Argo's rapid customer adoption.",
       logo: argoLogo,
+      darkLogo: argoLogoWhite,
       logoAlt: "Argo logo",
       stats: [
         {
@@ -1049,7 +1095,7 @@ export const caseStudiesData = {
       },
       solution: {
         heading: "The solution.",
-        image: lexusHeroBg,
+        image: lexusSolutionImg,
         imageAlt: "Lexus interactive dealership platform solution",
         description:
           "We partnered closely with Argo leadership to engineer a modern web application powered by clean component architecture, optimized state management, and responsive layouts. The result was a fast, robust product that delighted early adopters and enabled rapid commercialization.",
@@ -1124,6 +1170,7 @@ export const caseStudiesData = {
       summaryText:
         "MedImpact teamed with Number9 to modernize digital healthcare portals and pharmacy benefit analytics. Prioritizing accessibility, empathetic human-centered design, and strict HIPAA security, we transformed complex healthcare administrative workflows into clear, reassuring digital experiences for patients and providers alike.",
       logo: medimpactLogo,
+      darkLogo: medimpactLogoWhite,
       logoAlt: "MedImpact logo",
       stats: [
         {
@@ -1176,7 +1223,7 @@ export const caseStudiesData = {
       },
       solution: {
         heading: "The solution.",
-        image: lexusHeroBg,
+        image: lexusSolutionImg,
         imageAlt: "Lexus interactive dealership platform solution",
         description:
           "We designed an accessible, responsive patient web application featuring clear cost calculators, automated claims tracking, and direct digital prescription management. With streamlined provider workflows, the platform reduced friction across the entire healthcare ecosystem.",
@@ -1232,8 +1279,8 @@ export const caseStudiesData = {
     category: "Retail",
     hero: {
       subheading: "JCPENNEY CASE STUDY - RETAIL COMMERCE",
-      titleLine1: "Retail Commerce &",
-      titleLine2: "Omnichannel Growth",
+      titleLine1: "Omnichannel Retail",
+      titleLine2: "Accelerated",
       bgImage: tradeShowActivation,
       accentColor: "#3FC000",
       tags: [
@@ -1251,6 +1298,7 @@ export const caseStudiesData = {
       summaryText:
         "JCPenney partnered with Number9 to modernize digital shopping journeys and connect in-store customer experiences with omnichannel e-commerce. By redesigning promotional merchandising, streamlining mobile checkout, and integrating rewards programs, we helped JCPenney deepen customer engagement and accelerate digital revenue growth.",
       logo: jcpenneyLogo,
+      darkLogo: jcpenneyLogoWhite,
       logoAlt: "JCPenney logo",
       stats: [
         {
@@ -1303,7 +1351,7 @@ export const caseStudiesData = {
       },
       solution: {
         heading: "The solution.",
-        image: lexusHeroBg,
+        image: lexusSolutionImg,
         imageAlt: "Lexus interactive dealership platform solution",
         description:
           "We re-engineered the mobile product detail pages, streamlined one-tap coupon redemption, and optimized the buy-online-pickup-in-store (BOPIS) experience. The result was a modern, intuitive shopping experience that drove substantial digital revenue growth.",
@@ -1362,7 +1410,7 @@ export const caseStudiesData = {
     hero: {
       subheading: "SAFEWAY CASE STUDY - RETAIL & E-COMMERCE",
       titleLine1: "Digital Grocery",
-      titleLine2: "Experience Redefined",
+      titleLine2: "Redefined",
       bgImage: fintechSunset1,
       accentColor: "#3FC000",
       tags: [
@@ -1381,6 +1429,7 @@ export const caseStudiesData = {
         "Safeway partnered with us to redesign their digital customer touchpoints, optimizing grocery shopping and checkout flows across web and mobile browsers. By combining robust user research with iterative usability testing, we eliminated friction points to enhance customer retention.",
 
       logo: safewayLogo,
+      darkLogo: safewayLogoWhite,
       logoAlt: "Safeway logo",
 
       stats: [
@@ -1441,7 +1490,7 @@ export const caseStudiesData = {
 
       solution: {
         heading: "The solution.",
-        image: lexusHeroBg,
+        image: lexusSolutionImg,
         imageAlt: "Lexus interactive dealership platform solution",
         description:
           "We created an interactive Safeway grocery platform that allows customers to browse products, manage prescriptions, and engage with flexible delivery scheduling. Designed with intuitive navigation, high readability, and a convenience-focused user experience, the solution simplifies online shopping while supporting supermarkets with a powerful digital sales and fulfillment tool.",
@@ -1507,8 +1556,8 @@ export const caseStudiesData = {
 
     hero: {
       subheading: "YMCA CASE STUDY - COMMUNITY & MEMBERSHIP SERVICES",
-      titleLine1: "Streamlining Member",
-      titleLine2: "Access On-The-Go",
+      titleLine1: "Member Experience",
+      titleLine2: "Streamlined",
       bgImage: overlappingCircles,
       accentColor: "#3FC000",
       tags: [
@@ -1587,7 +1636,7 @@ export const caseStudiesData = {
 
       solution: {
         heading: "The solution.",
-        image: lexusHeroBg,
+        image: lexusSolutionImg,
         imageAlt: "Lexus interactive dealership platform solution",
         description:
           "We created an interactive YMCA mobile application that allows members to display digital membership passes, verify entry status, and engage with facility updates. Designed with intuitive navigation, high readability, and a community-focused mobile experience, the solution simplifies front-desk entry while supporting facilities with a powerful digital member management tool.",
@@ -1669,6 +1718,7 @@ export const caseStudiesData = {
       summaryText:
         "Magellan Health teamed with Number9 to build intelligent, data-driven healthcare technology solutions that optimize behavioral health delivery, complex care coordination, and clinical decision support. By synthesizing clinical data, streamlining provider workflows, and humanizing patient navigation, we helped Magellan Health accelerate time-to-care and improve outcomes for millions of individuals.",
       logo: magellanLogo,
+      darkLogo: magellanLogoWhite,
       logoAlt: "Magellan Health logo",
       stats: [
         {
@@ -1721,7 +1771,7 @@ export const caseStudiesData = {
       },
       solution: {
         heading: "The solution.",
-        image: lexusHeroBg,
+        image: lexusSolutionImg,
         imageAlt: "Lexus interactive dealership platform solution",
         description:
           "We developed an enterprise clinical optimization platform featuring automated care pathway triage, unified provider dashboards, and low-friction patient onboarding. Secure data integrations provided real-time insights into treatment efficacy and patient health trajectories.",
@@ -1859,7 +1909,7 @@ export const caseStudiesData = {
 
       solution: {
         heading: "The solution.",
-        image: lexusHeroBg,
+        image: lexusSolutionImg,
         imageAlt: "Lexus interactive dealership platform solution",
         description:
           "We created an interactive Shaan Foods retail activation platform that allows shoppers to taste authentic recipes, explore spice products, and engage with live cooking demonstrations. Designed with intuitive presentation, high visibility, and a culture-focused consumer experience, the solution simplifies in-store discovery while supporting retailers with a powerful promotional and sales tool.",
@@ -1925,8 +1975,8 @@ export const caseStudiesData = {
 
     hero: {
       subheading: "ZEE5 CASE STUDY - OTT STREAMING & MEDIA",
-      titleLine1: "Bridging In-Store and",
-      titleLine2: "Digital Entertainment",
+      titleLine1: "Digital Streaming",
+      titleLine2: "in Retail",
       bgImage: zee5Bg,
       accentColor: "#3FC000",
       tags: [
@@ -1945,6 +1995,7 @@ export const caseStudiesData = {
         "To strengthen ZEE5’s presence in North America, we deployed targeted offline affiliate marketing through interactive digital screens in key grocery stores, connecting physical retail traffic with digital streaming.",
 
       logo: zee5Logo,
+      darkLogo: zee5LogoWhite,
       logoAlt: "ZEE5 logo",
 
       stats: [
@@ -2005,7 +2056,7 @@ export const caseStudiesData = {
 
       solution: {
         heading: "The solution.",
-        image: lexusHeroBg,
+        image: lexusSolutionImg,
         imageAlt: "Lexus interactive dealership platform solution",
         description:
           "We created an interactive ZEE5 digital signage platform that allows shoppers to view content trailers, explore streaming options, and engage with local store cross-promotions. Designed with intuitive navigation, high visual contrast, and an entertainment-focused user experience, the solution simplifies media discovery while supporting grocery partners with a powerful promotional and presentation tool.",
@@ -2150,7 +2201,7 @@ export const caseStudiesData = {
 
       solution: {
         heading: "The solution.",
-        image: lexusHeroBg,
+        image: lexusSolutionImg,
         imageAlt: "Lexus interactive dealership platform solution",
         description:
           "We created an interactive Frito-Lay e-commerce platform that allows customers to build custom snack boxes, select delivery frequencies, and engage with social media campaigns. Designed with intuitive navigation, high visual engagement, and a flavor-focused user experience, the solution simplifies direct ordering while supporting brand growth with a powerful digital sales and presentation tool.",
@@ -2215,8 +2266,8 @@ export const caseStudiesData = {
 
     hero: {
       subheading: "SENTRAL CASE STUDY - EDUCATIONAL TECHNOLOGY",
-      titleLine1: "Connecting Parents,",
-      titleLine2: "Schools, and Students",
+      titleLine1: "Connected Education",
+      titleLine2: "Platform",
       bgImage: sentralBg,
       accentColor: "#3FC000",
       tags: [
@@ -2235,6 +2286,7 @@ export const caseStudiesData = {
         "We designed Sentral for Parents, an all-in-one educational platform and mobile app empowering parents to monitor student progress, track homework, and handle instant fee payments.",
 
       logo: sentralLogo,
+      darkLogo: sentralLogoWhite,
       logoAlt: "Sentral Education logo",
 
       stats: [
@@ -2295,7 +2347,7 @@ export const caseStudiesData = {
 
       solution: {
         heading: "The solution.",
-        image: lexusHeroBg,
+        image: lexusSolutionImg,
         imageAlt: "Lexus interactive dealership platform solution",
         description:
           "We created an interactive Sentral educational platform that allows parents to track student homework, communicate with teachers, and engage with instant school fee payments. Designed with intuitive navigation, high readability, and a family-focused user experience, the solution simplifies school communication while supporting institutions with a powerful digital administration and presentation tool.",
@@ -2358,8 +2410,8 @@ export const caseStudiesData = {
 
     hero: {
       subheading: "PWC CASE STUDY - PROFESSIONAL SERVICES & ENTERPRISE",
-      titleLine1: "Enterprise Tax &",
-      titleLine2: "Engagement Command Center",
+      titleLine1: "Enterprise Tax",
+      titleLine2: "Command Center",
       bgImage: pwcDashboard,
       accentColor: "#3FC000",
       tags: [
@@ -2378,6 +2430,7 @@ export const caseStudiesData = {
         "We designed and prototyped specialized internal B2B dashboards for PwC, streamlining tax policy tracking, active engagements, and resource allocation across teams.",
 
       logo: pwcLogo,
+      darkLogo: pwcLogoWhite,
       logoAlt: "PwC logo",
 
       stats: [
@@ -2438,7 +2491,7 @@ export const caseStudiesData = {
 
       solution: {
         heading: "The solution.",
-        image: lexusHeroBg,
+        image: lexusSolutionImg,
         imageAlt: "Lexus interactive dealership platform solution",
         description:
           "We created an interactive PwC enterprise dashboard that allows advisors to track tax policies, manage active engagements, and engage with real-time workflow analytics. Designed with intuitive navigation, high readability, and a data-focused user experience, the solution simplifies complex corporate operations while supporting advisors with a powerful workflow management and presentation tool.",
@@ -2504,8 +2557,8 @@ export const caseStudiesData = {
 
     hero: {
       subheading: "EMPIRE CINEMAS CASE STUDY - ENTERTAINMENT & TICKETING",
-      titleLine1: "Immersive Cinema",
-      titleLine2: "Discovery & Booking",
+      titleLine1: "Cinema Discovery",
+      titleLine2: "& Booking",
       bgImage: empireBg,
       accentColor: "#3FC000",
       tags: [
@@ -2524,6 +2577,7 @@ export const caseStudiesData = {
         "We crafted an immersive web platform for Empire Cinemas, integrating dynamic movie trailers, box office listings, loyalty point redemption, and seamless online ticket reservations into a high-octane visual experience.",
 
       logo: empireLogo,
+      darkLogo: empireLogoWhite,
       logoAlt: "Empire Cinemas logo",
 
       stats: [
@@ -2584,7 +2638,7 @@ export const caseStudiesData = {
 
       solution: {
         heading: "The solution.",
-        image: lexusHeroBg,
+        image: lexusSolutionImg,
         imageAlt: "Lexus interactive dealership platform solution",
         description:
           "We created an interactive Empire Cinemas ticketing platform that allows moviegoers to browse showtimes, reserve seats, and engage with blockbuster video trailers. Designed with intuitive navigation, high visual contrast, and a cinematic-focused user experience, the solution simplifies online booking while supporting theatres with a powerful digital sales and presentation tool.",
@@ -2650,8 +2704,8 @@ export const caseStudiesData = {
 
     hero: {
       subheading: "ALMAZA CASE STUDY - BEVERAGE & HERITAGE BRAND",
-      titleLine1: "Heritage, Craft,",
-      titleLine2: "and Social Storytelling",
+      titleLine1: "Heritage Craft",
+      titleLine2: "Storytelling",
       bgImage: almazaBg,
       accentColor: "#3FC000",
       tags: [
@@ -2670,6 +2724,7 @@ export const caseStudiesData = {
         "We designed an engaging digital brand experience for Almaza, blending rich heritage storytelling, transparent brewing process breakdowns, and user-generated social moments into an interactive web destination.",
 
       logo: almazaLogo,
+      darkLogo: almazaLogo,
       logoAlt: "Almaza logo",
 
       stats: [
@@ -2730,7 +2785,7 @@ export const caseStudiesData = {
 
       solution: {
         heading: "The solution.",
-        image: lexusHeroBg,
+        image: lexusSolutionImg,
         imageAlt: "Lexus interactive dealership platform solution",
         description:
           "We created an interactive Almaza brand website that allows consumers to explore heritage timelines, view brewing processes, and engage with social media storytelling. Designed with intuitive navigation, high visual richness, and a heritage-focused user experience, the solution simplifies brand discovery while supporting marketing teams with a powerful digital storytelling and presentation tool.",
@@ -2816,6 +2871,7 @@ export const caseStudiesData = {
         "Fairview partnered with us to redesign their digital platform and architectural portfolio showcase, making it easier for architects and builders to request product samples and explore building materials across responsive web and mobile devices.",
 
       logo: fairviewLogo,
+      darkLogo: fairviewLogoWhite,
       logoAlt: "Fairview logo",
 
       stats: [
@@ -2876,7 +2932,7 @@ export const caseStudiesData = {
 
       solution: {
         heading: "The solution.",
-        image: lexusHeroBg,
+        image: lexusSolutionImg,
         imageAlt: "Lexus interactive dealership platform solution",
         description:
           "We created an interactive Fairview architectural platform that allows professionals to browse cladding products, view completed project showcases, and engage with rapid sample requests. Designed with intuitive navigation, high technical readability, and an industry-focused user experience, the solution simplifies material specification while supporting manufacturers with a powerful digital sales and presentation tool.",
@@ -2941,8 +2997,8 @@ export const caseStudiesData = {
 
     hero: {
       subheading: "LIFEGIVE CASE STUDY - HEALTH & WELLNESS E-COMMERCE",
-      titleLine1: "Passionate About",
-      titleLine2: "Plant-Derived Health",
+      titleLine1: "Plant-Derived Health",
+      titleLine2: "E-Commerce",
       bgImage: lifeGiveBg,
       accentColor: "#3FC000",
       tags: [
@@ -2961,6 +3017,7 @@ export const caseStudiesData = {
         "LifeGive partnered with us to redesign their direct-to-consumer e-commerce platform and supplement catalog, helping health-conscious consumers easily discover plant-derived vitamins, minerals, and wellness categories.",
 
       logo: lifegiftLogo,
+      darkLogo: lifegiftLogoWhite,
       logoAlt: "LifeGive logo",
 
       stats: [
@@ -3021,7 +3078,7 @@ export const caseStudiesData = {
 
       solution: {
         heading: "The solution.",
-        image: lexusHeroBg,
+        image: lexusSolutionImg,
         imageAlt: "Lexus interactive dealership platform solution",
         description:
           "We created an interactive LifeGive e-commerce platform that allows customers to explore wellness categories, review vegan supplement benefits, and engage with rapid slide-out checkout. Designed with intuitive navigation, high visual clarity, and a health-focused user experience, the solution simplifies online supplement shopping while supporting brand growth with a powerful digital sales and presentation tool.",
@@ -3095,6 +3152,7 @@ export const caseStudiesData = {
       summaryAccentDot: ".",
       summaryText: "ICOM partnered with Number9 to reimagine their global digital presence, connecting over 40,000 museum professionals worldwide through an intuitive platform that fosters collaboration, knowledge sharing, and cultural exchange.",
       logo: icomLogo,
+      darkLogo: icomLogoWhite,
       logoAlt: "ICOM logo",
       stats: [{ targetValue: 10, suffix: "+", label: "Team size", subtext: null }, { targetValue: 5, suffix: "", label: "Engagement length", subtext: "months" }],
       projectTags: ["Global Network", "Museum Platform", "Community Hub", "Digital Strategy", "Content Architecture"],
@@ -3128,6 +3186,7 @@ export const caseStudiesData = {
       summaryAccentDot: ".",
       summaryText: "GENESIS Exhibits collaborated with Number9 to elevate their digital presence and showcase capabilities, helping them win more enterprise clients through compelling digital storytelling and interactive portfolio experiences.",
       logo: genesisLogo,
+      darkLogo: genesisLogoWhite,
       logoAlt: "GENESIS Exhibits logo",
       stats: [{ targetValue: 8, suffix: "+", label: "Team size", subtext: null }, { targetValue: 4, suffix: "", label: "Engagement length", subtext: "months" }],
       projectTags: ["Portfolio Platform", "3D Showcase", "Client Acquisition", "Digital Storytelling", "Interactive Experience"],
@@ -3183,8 +3242,8 @@ export const caseStudiesData = {
     category: "Beverage / Experiential Marketing",
     hero: {
       subheading: "SKINNY MIXES CASE STUDY — EXPERIENTIAL BRAND ACTIVATION",
-      titleLine1: "NYC Street Sampling &",
-      titleLine2: "Experiential Brand Activation",
+      titleLine1: "Street Sampling",
+      titleLine2: "Activated",
       bgImage: skinnyHeroBg,
       accentColor: "#E4007D",
       tags: [
@@ -3200,6 +3259,7 @@ export const caseStudiesData = {
       summaryText:
         "Number9 Creative & Media partnered with Skinny Mixes to execute a high-impact street sampling and experiential marketing activation across Manhattan. Our creative agency deployed branded street teams, interactive photo opportunities, and live consumer interviews to distribute Skinnyccino beverages directly to New York City consumers. This media production and physical activation campaign successfully placed the product into thousands of hands, generating organic social media engagement and authentic consumer feedback.",
       logo: skinnyLogo,
+      darkLogo: skinnyLogoWhite,
       logoAlt: "Skinny Mixes logo",
       stats: [
         {
@@ -3356,8 +3416,8 @@ export const caseStudiesData = {
     category: "Food & Beverage / Trade Show Exhibition",
     hero: {
       subheading: "MEZAN GLOBAL CASE STUDY — SUMMER FANCY FOOD SHOW",
-      titleLine1: "From an empty show floor to a",
-      titleLine2: "fully realized brand experience.",
+      titleLine1: "Brand Experience",
+      titleLine2: "Fully Realized",
       bgImage: mezanEmptyFloor,
       accentColor: "#ED1C24",
       tags: [
@@ -3375,6 +3435,7 @@ export const caseStudiesData = {
       summaryText:
         "Number9 Creative & Media partnered with Mezan Global to bring its brand to life at the Specialty Food Association's Summer Fancy Food Show. From exhibition design and logistics to product sampling, staffing, and on-site management, the agency led every stage of the three-day experience. The result was a fully operational branded space that showcased Mezan Global's beverage portfolio, attracted attention from industry professionals and representatives of major retail chains, and created valuable opportunities for product discovery and business connections.",
       logo: mezanLogo,
+      darkLogo: mezanLogoWhite,
       logoAlt: "Mezan Global logo",
       showcaseImage: mezanShowcase,
       showcaseAlt: "Mezan Global Summer Fancy Food Show branded exhibition space",
@@ -3537,8 +3598,8 @@ export const caseStudiesData = {
     category: "Industrial, Manufacturing & Engineering / Custom Trade Show Rental Exhibit",
     hero: {
       subheading: "Delta Light — Custom Trade Show Rental Exhibit",
-      titleLine1: "Engineering an Immersive, High-End Space",
-      titleLine2: "for Premium Lighting Fixtures.",
+      titleLine1: "Architectural Lighting",
+      titleLine2: "Environments",
       bgImage: deltaImg1,
       accentColor: "#D4AF37",
       tags: [
@@ -3555,6 +3616,7 @@ export const caseStudiesData = {
       summaryText:
         "Number9 Creative & Media partnered with Delta Light to design and fabricate a premium small rental exhibit tailored for the industrial, manufacturing, and engineering sector. Our trade show design agency engineered a custom immersive space that perfectly supported the brand's high-end, austere aesthetic. By integrating controlled lighting environments and striking structural lines, this custom rental solution allowed Delta Light's premium fixtures to command attention on the show floor.",
       logo: deltaLogo,
+      darkLogo: deltaLogoWhite,
       logoAlt: "Delta Light logo",
       showcaseImage: deltaImg2,
       showcaseAlt: "Delta Light architectural exhibition showcase",
@@ -3710,8 +3772,8 @@ export const caseStudiesData = {
     category: "Technology / IHS Trade Show Retail Product Display Booth",
     hero: {
       subheading: "DREO — IHS Trade Show Retail Product Display Booth",
-      titleLine1: "Engineering a 20x30 Custom Exhibit for Product Discovery",
-      titleLine2: "and Buyer Engagement in Las Vegas.",
+      titleLine1: "Product Discovery",
+      titleLine2: "Engineered",
       bgImage: dreoImg1,
       accentColor: "#0066FF",
       tags: [
@@ -3730,6 +3792,7 @@ export const caseStudiesData = {
       summaryText:
         "Number9 Creative & Media partnered with DREO to design and build a 20x30 retail product display booth for the IHS trade show in Las Vegas. Our experiential marketing agency engineered a custom exhibition space centered around product sampling, retail display shelves, bold branded surfaces, and dedicated buyer conversation areas. This custom booth design successfully maximized aisle visibility, guiding retail buyers, distributors, and brand partners seamlessly from first glance to hands-on product discovery and buyer conversations.",
       logo: dreoLogo,
+      darkLogo: dreoLogoWhite,
       logoAlt: "DREO logo",
       showcaseImage: dreoImg2,
       showcaseAlt: "DREO 20x30 retail product display booth at IHS trade show in Las Vegas",
@@ -3856,6 +3919,25 @@ export const caseStudiesData = {
             title: "Interactive Demonstration",
             subtitle: "SMART APPLIANCES",
           },
+          {
+            src: dreoImg2,
+            images: [
+              {
+                src: dreoImg2,
+                position: "center center",
+                title: "Brand Presentation Architecture",
+                subtitle: "PREMIUM EXHIBIT PRESENCE",
+              },
+              {
+                src: dreoImg1,
+                position: "center center",
+                title: "Smart Home Innovation",
+                subtitle: "TRADE SHOW EXCELLENCE",
+              },
+            ],
+            title: "Brand Presentation Architecture",
+            subtitle: "PREMIUM EXHIBIT PRESENCE",
+          },
         ],
       },
     },
@@ -3868,8 +3950,8 @@ export const caseStudiesData = {
     category: "Food & Consumer Products / IHS 2025 Custom Retail & Sampling Exhibit",
     hero: {
       subheading: "Finamill — IHS 2025 Custom Retail & Sampling Exhibit",
-      titleLine1: "Designing a 20x30 High-Volume",
-      titleLine2: "Product Discovery Space in Las Vegas.",
+      titleLine1: "Culinary Sampling",
+      titleLine2: "Experience",
       bgImage: finamillImg1,
       accentColor: "#E31B23",
       tags: [
@@ -4043,8 +4125,8 @@ export const caseStudiesData = {
     category: "Food & Beverage / Trade Show Experiential",
     hero: {
       subheading: "KATJES USA CASE STUDY — SWEETS & SNACKS TRADE SHOW",
-      titleLine1: "European Candy Excellence &",
-      titleLine2: "Multi-Year Brand Activation.",
+      titleLine1: "Confectionery Brand",
+      titleLine2: "Activation",
       bgImage: katjesImg1,
       accentColor: "#E6007E",
       tags: [
@@ -4062,6 +4144,7 @@ export const caseStudiesData = {
       summaryText:
         "Number9 Creative & Media partnered with Katjes USA Inc. to execute high-impact brand activation and sampling staffing across premier confectionery expos, spanning four consecutive years at the Sweets & Snacks Trade Show in Chicago and Indianapolis, as well as KeHE Summer Show and Expo West. Providing expertly trained brand ambassadors, seamless inventory logistics, and vibrant sampling counters, the activation engaged tens of thousands of buyers and attendees, firmly establishing Katjes' 100% plant-based European gummy candies in the North American market.",
       logo: katjesLogo,
+      darkLogo: katjesLogoWhite,
       logoAlt: "Katjes USA logo",
       showcaseImage: katjesImg2,
       showcaseAlt: "Katjes USA trade show sampling activation and brand ambassadors",
@@ -4219,8 +4302,8 @@ export const caseStudiesData = {
     category: "Mobile Electronics & Car Audio / SEMA Show 2024 Trade Show Booth",
     hero: {
       subheading: "Nakamichi Car Audio — SEMA Show 2024 Trade Show Booth",
-      titleLine1: "Architecting a 20x20 Product-First",
-      titleLine2: "Audio Electronics Exhibit in Las Vegas.",
+      titleLine1: "Precision Audio",
+      titleLine2: "Showcase",
       bgImage: nakamichiImg1,
       accentColor: "#E21836",
       tags: [
@@ -4238,6 +4321,7 @@ export const caseStudiesData = {
       summaryText:
         "Number9 Creative & Media collaborated with Nakamichi Car Audio to architect a highly specialized 20x20 exhibition space for the 2024 SEMA Show. Tasked with cutting through the intense visual clutter of the Las Vegas Convention Center, our production team delivered a product-centric environment driven by stark visual hierarchy, precision lighting, and strategic edge-based interactions. The resulting custom booth elevated the brand's compact automotive tech into a premium, easily readable showcase that commanded attendee attention.",
       logo: nakamichiLogo,
+      darkLogo: nakamichiLogoWhite,
       logoAlt: "Nakamichi Car Audio logo",
       showcaseImage: nakamichiImg2,
       showcaseAlt: "Nakamichi Car Audio 20x20 trade show booth at SEMA Show 2024",
@@ -4395,8 +4479,8 @@ export const caseStudiesData = {
     category: "Energy & Industrial / The Battery Show North America Trade Show Booth",
     hero: {
       subheading: "SCANTECH — The Battery Show North America Trade Show Booth",
-      titleLine1: "Engineering a 20x40 High-Tech Industrial Exhibit",
-      titleLine2: "for Battery Manufacturing Innovations in Detroit.",
+      titleLine1: "High-Tech Exhibit",
+      titleLine2: "Engineered",
       bgImage: scantechImg1,
       accentColor: "#0072CE",
       tags: [
@@ -4413,6 +4497,7 @@ export const caseStudiesData = {
       summaryText:
         "Number9 Creative & Media partnered with SCANTECH to engineer a massive 20x40 industrial product booth for The Battery Show North America in Detroit. Tasked with translating complex battery manufacturing systems into an accessible physical space, our trade show fabrication agency developed a layout that balanced heavy equipment displays with dedicated technical explanation zones. The resulting custom exhibit empowered technical buyers and industrial decision-makers to effortlessly navigate from initial product discovery to deep-dive application conversations.",
       logo: scantechLogo,
+      darkLogo: scantechLogoWhite,
       logoAlt: "SCANTECH logo",
       showcaseImage: scantechImg2,
       showcaseAlt: "SCANTECH 20x40 industrial product booth at The Battery Show North America in Detroit",
@@ -4569,8 +4654,8 @@ export const caseStudiesData = {
     category: "Small Inline / Circle Exhibit 2023 Trade Show Booth Design",
     hero: {
       subheading: "SSSTC — Circle Exhibit 2023 Trade Show Booth Design",
-      titleLine1: "Maximizing Brand Impact with a",
-      titleLine2: "10x10 Custom Inline Booth in Las Vegas.",
+      titleLine1: "Enterprise Storage",
+      titleLine2: "Showcase",
       bgImage: ssstcImg1,
       accentColor: "#00A86B",
       tags: [
@@ -4588,6 +4673,7 @@ export const caseStudiesData = {
       summaryText:
         "Number9 Creative & Media partnered with SSSTC to design, build, and manage a high-impact 10x10 small inline booth at Circle Exhibit 2023 in Las Vegas. Our trade show fabrication agency engineered a space centered on compact product displays, striking branded backwall graphics, and efficient aisle-facing visitor flow. This custom booth design successfully optimized a smaller footprint, keeping visitor access clear while fully supporting interactive technology demonstrations and critical buyer conversations.",
       logo: ssstcLogo,
+      darkLogo: ssstcLogoWhite,
       logoAlt: "SSSTC logo",
       showcaseImage: ssstcImg2,
       showcaseAlt: "SSSTC 10x10 small inline booth at Circle Exhibit 2023",
@@ -4714,6 +4800,207 @@ export const caseStudiesData = {
             title: "Branded Tension Fabric Backwall",
             subtitle: "CLEAN AISLE VISIBILITY",
           },
+          {
+            src: ssstcImg2,
+            images: [
+              {
+                src: ssstcImg2,
+                position: "center center",
+                title: "Technical Consultation & Meetings",
+                subtitle: "STORAGE ARCHITECTURE",
+              },
+              {
+                src: ssstcImg3,
+                position: "center center",
+                title: "High-Performance Solid State Storage",
+                subtitle: "ENTERPRISE SOLUTIONS",
+              },
+            ],
+            title: "Technical Consultation & Meetings",
+            subtitle: "STORAGE ARCHITECTURE",
+          },
+        ],
+      },
+    },
+  },
+
+  jdot: {
+    id: "jdot",
+    slug: "jdot",
+    name: "Jdot Fragrances",
+    breadcrumbName: "J. Fragrances",
+    category: "Commercial Production / Celebrity Talent Management",
+    hero: {
+      subheading: "J. Fragrances — Celebrity Commercial Production for Ballin'",
+      titleLine1: "Celebrity Campaign",
+      titleLine2: "for Ballin'",
+      bgImage: jdotHeroImg,
+      objectPosition: "center 18%",
+      accentColor: "#E06D28",
+      tags: [
+        "Commercial Production",
+        "Social Media Content",
+        "Motion Graphics & Animation",
+        "Creative Direction",
+        "Brand Films & Storytelling",
+        "Post-Production & Editing",
+      ],
+      pdfCardText: "Get this case study in PDF to your inbox.",
+    },
+    overviewSection: {
+      summaryHeading: "The summary",
+      summaryAccentDot: ".",
+      summaryText:
+        "Number9 Creative & Media partnered with J. Fragrances to produce a premium direct-to-consumer commercial (DVC) for the launch of its upcoming fragrance, Ballin'. Our commercial production agency managed the end-to-end video production process, from pre-production logistics and VIP talent acquisition to on-site direction in Boston and comprehensive post-production editing. By securing NBA legend Kobe Bryant as the star and coordinating complex stakeholder reviews, this celebrity marketing campaign successfully delivered a high-end brand asset designed to capture market attention and drive global product sales.",
+      logo: jdotLogo,
+      darkLogo: jdotLogoWhite,
+      logoAlt: "Jdot Fragrances logo",
+      showcaseImage: jdotArenaCloudsImg,
+      showcaseAlt: "J. Fragrances Ballin' stadium arena production environment",
+      stats: [
+        {
+          targetValue: 1,
+          suffix: "",
+          label: "Commercial Video Production",
+          subtext: "Full-Service DVC",
+        },
+        {
+          targetValue: 5,
+          suffix: "+",
+          label: "Rounds of Review",
+          subtext: "Multi-Stakeholder Approval",
+        },
+      ],
+      projectTags: [
+        "Commercial Production",
+        "Celebrity Talent Management",
+        "DVC Video Production",
+        "Post-Production",
+      ],
+      quoteSection: {
+        graphicImage: jdot_triptych,
+        graphicAlt: "J. Fragrances Ballin' packaging and commercial production showcase",
+        quote:
+          "J. Fragrances is a major global brand specializing in premium lifestyle products and luxury scents. Number9 Creative & Media delivered a seamless video production process matching the high-profile nature of Ballin' and its celebrity talent, executing a dynamic commercial designed to capture market attention globally.",
+        attributionTitle: "Celebrity Commercial Production",
+        attributionCompany: "J. Fragrances",
+      },
+    },
+    storySection: {
+      about: {
+        title: "About",
+        clientName: "J. Fragrances",
+        description:
+          "J. Fragrances is a major global brand specializing in premium lifestyle products and luxury scents. To launch its highly anticipated new fragrance, Ballin', the company required a dynamic product commercial that would immediately resonate with its target audience.\n\nJ. Fragrances hired Number9 Creative & Media to handle the complete execution of the launch commercial, demanding a seamless video production process that matched the high-profile nature of the product and its celebrity talent.",
+      },
+      challenge: {
+        heading: "The challenge",
+        image: jdotUnboxingImg,
+        imageAlt: "Custom Ballin' MVP Energy packaging and fragrance bottle presentation",
+        leftParagraphs: [
+          "Launching a flagship fragrance with an athlete of Kobe Bryant's stature involves navigating tight logistics, managing high-profile VIP talent, and coordinating multiple stakeholder teams.",
+          "J. Fragrances needed a video production agency capable of translating the Ballin' brand identity into a compelling visual narrative while handling the rigorous demands of a celebrity commercial shoot. The core objective was to deliver a flawless promotional video that met the standards of a major product launch.",
+        ],
+        rightParagraph:
+          "Our challenge at Number9 Creative & Media was to orchestrate every moving part, from securing Boston filming venues and specialized equipment to managing VIP talent relations, production schedules, and facilitating swift creative approval cycles, ensuring the brand's vision was fully realized on screen.",
+      },
+      solution: {
+        heading: "The solution.",
+        image: jdotAthleteImg,
+        imageAlt: "On-set commercial direction in Boston with NBA legend Kobe Bryant",
+        description:
+          "Number9 Creative & Media executed a full-service commercial production for the Ballin' DVC, managing the project entirely from creative concept to final video delivery. During pre-production, our agency developed comprehensive shot lists, generated and managed daily call sheets, secured the shooting venues in Boston, arranged top-tier camera equipment, sourced set props, booked professional makeup artists, and coordinated all crew scheduling and on-site logistics. We oversaw all celebrity talent acquisition, successfully negotiating and bringing NBA legend Kobe Bryant on board as the face of the marketing campaign, and custom-designed the athletic jersey he wore during filming.\n\nOn set in Boston, our in-house team directly produced and directed the shoot. While leading the creative direction on camera, we also actively managed communications between J. Fragrances' representatives and Bryant's personal team to ensure all VIP concerns were accommodated. Following the shoot, our post-production department handled all video editing, color grading, and audio production, systematically routing the deliverables through multiple rounds of rigorous review with both the client and the athlete's team to achieve a polished final commercial cut.",
+        customerInteractions: {
+          stat: "Turn-Key",
+          label: "DVC Commercial Production",
+        },
+      },
+      services: {
+        heading: "Key Services Delivered.",
+        items: [
+          "Commercial Video Production",
+          "Commercial Directing",
+          "Production Management",
+          "Celebrity Talent Management",
+          "Wardrobe Design",
+          "On-Set Direction",
+          "Post-Production Editing",
+          "Audio Production",
+        ],
+      },
+      outcome: {
+        heading: "The outcome",
+        intro:
+          "The Number9 Creative & Media campaign successfully delivered the flagship commercial for the Ballin' fragrance, providing J. Fragrances with a premium digital asset backed by global star power. Our creative and media production teams achieved the following results:",
+        bullets: [
+          "Managed end-to-end commercial video production, from initial Boston venue scouting and equipment sourcing to final DVC delivery.",
+          "Produced and directed the full-scale commercial shoot on location, strictly managing shot lists, daily call sheets, technical crews, set props, makeup artists, and catering logistics.",
+          "Secured and directed NBA legend Kobe Bryant as the lead talent, including designing a custom wardrobe specific to the creative brief.",
+          "Facilitated seamless on-site coordination between J. Fragrances executives and VIP talent representatives to ensure a highly professional filming experience.",
+          "Executed comprehensive post-production services, including video editing and audio engineering, to finalize the brand commercial.",
+          "Navigated complex, multi-stakeholder review cycles, ensuring the final digital video met the exacting standards of both the brand and the celebrity team.",
+        ],
+        closing:
+          "By seamlessly integrating high-level shoot logistics, hands-on production direction, celebrity talent management, and technical post-production, Number9 Creative & Media successfully produced a premier commercial video asset that positioned J. Fragrances for a powerful product launch.",
+        galleryFit: "cover",
+        galleryImages: [
+          {
+            src: jdotHeroImg,
+            images: [
+              {
+                src: jdotHeroImg,
+                position: "center 18%",
+                title: "Flagship Commercial Visual",
+                subtitle: "BALLIN' GLOBAL DVC",
+              },
+              {
+                src: jdotArenaCloudsImg,
+                position: "center center",
+                title: "Cinematic Arena Environment",
+                subtitle: "STADIUM OVERHEAD VISUAL",
+              },
+            ],
+            title: "Flagship Commercial Visual",
+            subtitle: "BALLIN' GLOBAL DVC",
+          },
+          {
+            src: jdotUnboxingImg,
+            images: [
+              {
+                src: jdotUnboxingImg,
+                position: "center center",
+                title: "Custom Packaging Unboxing",
+                subtitle: "MVP ENERGY RETAIL BOX",
+              },
+              {
+                src: jdotSpotlightBallImg,
+                position: "center center",
+                title: "Product Scent Bottle Spotlight",
+                subtitle: "BASKETBALL EAU DE PARFUM",
+              },
+            ],
+            title: "Custom Packaging Unboxing",
+            subtitle: "MVP ENERGY RETAIL BOX",
+          },
+          {
+            src: jdotAthleteImg,
+            images: [
+              {
+                src: jdotAthleteImg,
+                position: "center center",
+                title: "VIP Talent & Custom Wardrobe",
+                subtitle: "NBA LEGEND KOBE BRYANT",
+              },
+              {
+                src: jdotProductImg,
+                position: "center center",
+                title: "Retail Launch & Brand Display",
+                subtitle: "J. LUXURY FRAGRANCE",
+              },
+            ],
+            title: "VIP Talent & Custom Wardrobe",
+            subtitle: "NBA LEGEND KOBE BRYANT",
+          },
         ],
       },
     },
@@ -4732,6 +5019,10 @@ caseStudiesData["nakamichi-car-audio"] = caseStudiesData.nakamichi;
 caseStudiesData["scantech-battery-show-2024"] = caseStudiesData.scantech;
 caseStudiesData["scantech-the-battery-show-north-america-2024"] = caseStudiesData.scantech;
 caseStudiesData["ssstc-circleexhibit"] = caseStudiesData.ssstc;
+caseStudiesData["j"] = caseStudiesData.jdot;
+caseStudiesData["jdot-fragrances"] = caseStudiesData.jdot;
+caseStudiesData["j-fragrances"] = caseStudiesData.jdot;
+caseStudiesData["ballin"] = caseStudiesData.jdot;
 
 
 
@@ -4756,5 +5047,6 @@ export function getCaseStudy(slug) {
   if (key === "nakamichi" || key === "nakamichi-car-audio") return caseStudiesData.nakamichi;
   if (key === "scantech" || key === "scantech-battery-show-2024" || key === "scantech-the-battery-show-north-america-2024") return caseStudiesData.scantech;
   if (key === "ssstc" || key === "ssstc-circleexhibit") return caseStudiesData.ssstc;
+  if (key === "jdot" || key === "j" || key === "jdot-fragrances" || key === "j-fragrances" || key === "ballin") return caseStudiesData.jdot;
   return caseStudiesData[key] || caseStudiesData.lexus;
 }

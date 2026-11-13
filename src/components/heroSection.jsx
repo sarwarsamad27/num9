@@ -6,6 +6,36 @@ import lexusHeroImg from "../assets/Metallic Blue Lexus in a Warehouse 1.webp";
 import citibankHeroImg from "../assets/Fintech Dashboard at Sunset 1.webp";
 import safewayHeroImg from "../assets/Fintech Dashboard at Sunset 1 (1).webp";
 
+// Latest Case Studies Assets (SCANTECH, Nakamichi, SSSTC, Finamill, DREO, Delta Light)
+import scantechHeroImg from "../assets/caseStudies/SCANTECH The Battery Show North America 2024/scantech1.avif";
+import scantechMobileHeroImg from "../assets/heroMobileImages/scantechMobile.webp";
+import scantechSymbol from "../assets/caseStudies/SCANTECH The Battery Show North America 2024/scantechLogo_white.png";
+
+import nakamichiHeroImg from "../assets/caseStudies/Nakamichi Car Audio/nakamichi1.avif";
+import nakamichiMobileHeroImg from "../assets/heroMobileImages/nakamichiMobile.webp";
+import nakamichiSymbol from "../assets/caseStudies/Nakamichi Car Audio/Nakamichi Red Geometric Symbol.png";
+
+import ssstcHeroImg from "../assets/caseStudies/SSSTC Circleexhibit/ssstc1.webp";
+import ssstcMobileHeroImg from "../assets/heroMobileImages/ssstcMobile.webp";
+import ssstcSymbol from "../assets/caseStudies/SSSTC Circleexhibit/ssstcIcon.png";
+
+import finamillHeroImg from "../assets/caseStudies/Finamill IHS 2025/finamill1.webp";
+import finamillMobileHeroImg from "../assets/heroMobileImages/finamillMobile.webp";
+import finamillLogo from "../assets/caseStudies/Finamill IHS 2025/finamillWordmark_clean.png";
+
+import dreoHeroImg from "../assets/caseStudies/DREO IHS 2025/dreo1.avif";
+import dreoMobileHeroImg from "../assets/heroMobileImages/dreoMobile.webp";
+import dreoLogo from "../assets/caseStudies/DREO IHS 2025/dreoLogo_trimmed.png";
+
+import deltaHeroImg from "../assets/caseStudies/Delta Light/delta1.jpg";
+import deltaLightMobileHeroImg from "../assets/heroMobileImages/deltaLightMobile.webp";
+import deltaSymbol from "../assets/caseStudies/Delta Light/deltaSymbol.png";
+
+// Jdot Fragrances Ballin'
+import jdotHeroImg from "../assets/caseStudies/j/Website_Thumb.png";
+import jdotMobileHeroImg from "../assets/heroMobileImages/jdotMobile.webp";
+import jdotSymbol from "../assets/caseStudies/j/logo_black_-_wania_saleem.svg";
+
 import empireHeroImg from "../assets/homeHeroSectionImages/Empire Cinemas Grand Lobby 1 (1).webp";
 import lifegiveHeroImg from "../assets/homeHeroSectionImages/LifeGive Mediterranean Supplement Showcase 1.webp";
 import pwcHeroImg from "../assets/homeHeroSectionImages/PwC_Enterprise_Dashboard_in_Executive_Office 1.webp";
@@ -45,7 +75,7 @@ import fairviewLogo from "../assets/homeHeroSectionImages/hero_Logos/fairview.pn
 import shanLogo from "../assets/homeHeroSectionImages/hero_Logos/shan.png";
 
 // Rule:
-// - Colored logos: Logos appearing in original colors (homeHeroSectionImages, snacks, almaza)
+// - Colored logos: Logos appearing in original colors (homeHeroSectionImages, snacks, almaza, scantech, nakamichi, ssstc, finamill)
 // - White logos: All other logos used in the hero section appear white.
 const COLORED_LOGOS = new Set([
   empireLogo,
@@ -56,6 +86,9 @@ const COLORED_LOGOS = new Set([
   shanLogo,
   snacksLogo,
   almazaLogo,
+  nakamichiSymbol,
+  ssstcSymbol,
+  finamillLogo,
 ]);
 
 const isColoredLogo = (logoUrl) => {
@@ -66,7 +99,10 @@ const isColoredLogo = (logoUrl) => {
       logoUrl.includes("homeHeroSectionImages") ||
       logoUrl.includes("hero_Logos") ||
       logoUrl.includes("Snack") ||
-      logoUrl.includes("Almaza")
+      logoUrl.includes("Almaza") ||
+      logoUrl.includes("nakamichiSymbol") ||
+      logoUrl.includes("ssstcSymbol") ||
+      logoUrl.includes("finamill")
     );
   }
   return false;
@@ -75,16 +111,24 @@ const isColoredLogo = (logoUrl) => {
 
 // Prioritized preload: immediately decode active and adjacent visible slides on load
 const PRIMARY_HERO_IMAGES = [
-  lexusHeroImg,
-  citibankHeroImg,
+  scantechHeroImg,
+  nakamichiHeroImg,
   almazaHeroImg,
-  lexusMobileHeroImg,
-  citibankMobileHeroImg,
+  scantechMobileHeroImg,
+  nakamichiMobileHeroImg,
   almazaMobileHeroImg,
-  lexusLogo,
+  scantechSymbol,
 ];
 
 const SECONDARY_HERO_IMAGES = [
+  jdotHeroImg,
+  jdotMobileHeroImg,
+  ssstcHeroImg,
+  finamillHeroImg,
+  dreoHeroImg,
+  deltaHeroImg,
+  lexusHeroImg,
+  citibankHeroImg,
   safewayHeroImg,
   empireHeroImg,
   lifegiveHeroImg,
@@ -94,6 +138,12 @@ const SECONDARY_HERO_IMAGES = [
   fairviewHeroImg,
   shanHeroImg,
   snacksHeroImg,
+  ssstcMobileHeroImg,
+  finamillMobileHeroImg,
+  dreoMobileHeroImg,
+  deltaLightMobileHeroImg,
+  lexusMobileHeroImg,
+  citibankMobileHeroImg,
   safewayMobileHeroImg,
   empireMobileHeroImg,
   pwcMobileHeroImg,
@@ -135,8 +185,101 @@ if (typeof window !== "undefined") {
 }
 
 const slides = [
+
   {
     id: 1,
+    imageUrl: scantechHeroImg,
+    mobileImageUrl: scantechMobileHeroImg,
+    brand: "SCANTECH",
+    logoUrl: scantechSymbol,
+    logoClass:
+      "h-[34px] min-[390px]:h-[38px] sm:h-[44px] md:h-[54px] lg:h-[64px] w-auto",
+    categories: ["Energy & Industrial", "3D Metrology"],
+    description:
+      "Massive 20x40 industrial 3D metrology exhibit with live battery scanning at The Battery Show 2024.",
+    route: "case-study/scantech",
+  },
+  {
+    id: 2,
+    imageUrl: nakamichiHeroImg,
+    mobileImageUrl: nakamichiMobileHeroImg,
+    brand: "Nakamichi",
+    logoUrl: nakamichiSymbol,
+    logoClass:
+      "h-[32px] min-[390px]:h-[36px] sm:h-[42px] md:h-[50px] lg:h-[60px] w-auto",
+    categories: ["Automotive & Audio", "Exhibition Booth"],
+    description:
+      "Disciplined 20x20 exhibition booth with perimeter interaction counters and precision audio display.",
+    route: "case-study/nakamichi",
+  },
+    {
+    id: 3,
+    imageUrl: jdotHeroImg,
+    mobileImageUrl: jdotMobileHeroImg,
+    brand: "Jdot Fragrances",
+    logoUrl: jdotSymbol,
+    logoClass:
+      "h-[34px] min-[390px]:h-[38px] sm:h-[44px] md:h-[54px] lg:h-[64px] w-auto",
+    categories: ["Commercial Production", "Celebrity Campaign"],
+    objectPosition: "center 25%",
+    description:
+      "Producing a high-impact DVC for a global fragrance launch with NBA legend Kobe Bryant.",
+    route: "case-study/jdot",
+  },
+  {
+    id: 4,
+    imageUrl: ssstcHeroImg,
+    mobileImageUrl: ssstcMobileHeroImg,
+    brand: "SSSTC",
+    logoUrl: ssstcSymbol,
+    logoClass:
+      "h-[32px] min-[390px]:h-[36px] sm:h-[42px] md:h-[50px] lg:h-[60px] w-auto",
+    categories: ["Enterprise Storage", "Custom Booth"],
+    description:
+      "High-impact 10x10 custom inline booth optimizing aisle-facing flow and enterprise technology demos.",
+    route: "case-study/ssstc",
+  },
+  {
+    id: 5,
+    imageUrl: finamillHeroImg,
+    mobileImageUrl: finamillMobileHeroImg,
+    brand: "Finamill",
+    logoUrl: finamillLogo,
+    logoClass:
+      "h-[22px] min-[390px]:h-[26px] sm:h-[30px] md:h-[38px] lg:h-[46px] w-auto max-w-[130px] sm:max-w-[160px] lg:max-w-[200px]",
+    categories: ["Consumer Appliances", "Brand Activation"],
+    description:
+      "Award-winning spice grinder demonstration booth with hands-on pod sampling and retail displays at IHS 2025.",
+    route: "case-study/finamill",
+  },
+  {
+    id: 6,
+    imageUrl: dreoHeroImg,
+    mobileImageUrl: dreoMobileHeroImg,
+    brand: "DREO",
+    logoUrl: dreoLogo,
+    logoClass:
+      "h-[20px] min-[390px]:h-[24px] sm:h-[28px] md:h-[34px] lg:h-[42px] w-auto max-w-[110px] sm:max-w-[140px] lg:max-w-[170px]",
+    categories: ["Smart Home & Retail", "Retail Display"],
+    description:
+      "Custom 20x30 retail product booth with sampling zones, interactive displays, and buyer lounge at IHS 2025.",
+    route: "case-study/dreo",
+  },
+  {
+    id: 7,
+    imageUrl: deltaHeroImg,
+    mobileImageUrl: deltaLightMobileHeroImg,
+    brand: "Delta Light",
+    logoUrl: deltaSymbol,
+    logoClass:
+      "h-[34px] min-[390px]:h-[38px] sm:h-[44px] md:h-[54px] lg:h-[64px] w-auto",
+    categories: ["Architectural Lighting", "Rental Exhibit"],
+    description:
+      "Austere architectural rental exhibit engineered with light-blocking ceiling to highlight premium fixtures.",
+    route: "case-study/delta-light",
+  },
+  {
+    id: 8,
     imageUrl: lexusHeroImg,
     brand: "Lexus",
     mobileImageUrl: lexusMobileHeroImg,
@@ -149,7 +292,7 @@ const slides = [
     route: "case-study/lexus",
   },
   {
-    id: 2,
+    id: 9,
     imageUrl: citibankHeroImg,
     mobileImageUrl: citibankMobileHeroImg,
     brand: "CitiBank",
@@ -161,21 +304,9 @@ const slides = [
       "A comprehensive data visualization dashboard to capture the full landscape and enable internal collaboration across teams at CitiBank.",
     route: "case-study/citibank",
   },
+  
   {
-    id: 3,
-    imageUrl: safewayHeroImg,
-    mobileImageUrl: safewayMobileHeroImg,
-    brand: "Safeway",
-    logoUrl: safewayLogo,
-    logoClass:
-      "h-[34px] min-[390px]:h-[38px] sm:h-[44px] md:h-[54px] lg:h-[64px] w-[110px] sm:w-[145px] md:w-[170px] lg:w-[200px]",
-    categories: ["Web & Mobile", "User Experience"],
-    description:
-      "A comprehensive web and mobile platform designed to enhance the grocery shopping experience and drive customer loyalty.",
-    route: "case-study/safeway",
-  },
-  {
-    id: 4,
+    id: 10,
     imageUrl: empireHeroImg,
     mobileImageUrl: empireMobileHeroImg,
     brand: "Empire Cinemas",
@@ -187,47 +318,10 @@ const slides = [
       "A cinema website design bringing movie listings, trailers, showtimes, and seat selection into a connected booking experience.",
     route: "case-study/empire",
   },
+
+
   {
-    id: 5,
-    imageUrl: pwcHeroImg,
-    mobileImageUrl: pwcMobileHeroImg,
-    brand: "PwC",
-    logoUrl: pwcLogo,
-    logoClass:
-      "h-[34px] min-[390px]:h-[38px] sm:h-[44px] md:h-[54px] lg:h-[74px] w-[110px] sm:w-[145px] md:w-[170px] lg:w-[200px]",
-    categories: ["Enterprise UX", "Dashboard Design"],
-    description:
-      "Specialized internal B2B dashboards streamlining tax policy tracking, active engagements, and resource allocation across multidisciplinary teams.",
-    route: "case-study/pwc",
-  },
-  {
-    id: 6,
-    imageUrl: sentralHeroImg,
-    mobileImageUrl: sentralMobileHeroImg,
-    brand: "Sentral Education",
-    logoUrl: sentralLogo,
-    logoClass:
-      "h-[34px] min-[390px]:h-[38px] sm:h-[44px] md:h-[54px] lg:h-[84px] w-[110px] sm:w-[145px] md:w-[170px] lg:w-[200px]",
-    categories: ["EdTech", "Web & Mobile App"],
-    description:
-      "An all-in-one parent portal app designed for real-time push notifications, tracking student homework, and handling instant school fee payments.",
-    route: "case-study/sentral",
-  },
-  {
-    id: 7,
-    imageUrl: lifegiveHeroImg,
-    mobileImageUrl: lifegiveMobileHeroImg,
-    brand: "LifeGive",
-    logoUrl: lifegiveLogo,
-    logoClass:
-      "h-[34px] min-[390px]:h-[38px] sm:h-[44px] md:h-[54px] lg:h-[64px] w-[110px] sm:w-[145px] md:w-[170px] lg:w-[200px]",
-    categories: ["D2C E-Commerce", "Health & Wellness"],
-    description:
-      "A direct-to-consumer e-commerce platform and supplement catalog helping health conscious consumers easily discover plant derived vitamins and minerals.",
-    route: "case-study/lifegive",
-  },
-  {
-    id: 8,
+    id: 11,
     imageUrl: snacksHeroImg,
     mobileImageUrl: snacksMobileHeroImg,
     brand: "Snacks.com",
@@ -240,7 +334,7 @@ const slides = [
     route: "case-study/snacks",
   },
   {
-    id: 9,
+    id: 12,
     imageUrl: zee5HeroImg,
     mobileImageUrl: zee5MobileHeroImg,
     brand: "ZEE5",
@@ -252,45 +346,98 @@ const slides = [
       "A branded retail screen initiative showcasing ZEE5 content to South Asian audiences in North American grocery stores.",
     route: "case-study/zee5",
   },
-  {
-    id: 10,
-    imageUrl: fairviewHeroImg,
-    mobileImageUrl: fairviewMobileHeroImg,
-    brand: "Fairview",
-    logoUrl: fairviewLogo,
-    logoClass:
-      "h-[34px] min-[390px]:h-[38px] sm:h-[44px] md:h-[54px] lg:h-[74px] w-[110px] sm:w-[145px] md:w-[170px] lg:w-[200px]",
-    categories: ["Web & Mobile", "UI/UX Design"],
-    description:
-      "A website design showcasing architectural products, project galleries, and sample requests across desktop and mobile layouts.",
-    route: "case-study/fairview",
-  },
-  {
-    id: 11,
-    imageUrl: shanHeroImg,
-    mobileImageUrl: shanMobileHeroImg,
-    brand: "Shan Foods",
-    logoUrl: shanLogo,
-    logoClass:
-      "h-[34px] min-[390px]:h-[38px] sm:h-[44px] md:h-[54px] lg:h-[64px] w-[110px] sm:w-[145px] md:w-[170px] lg:w-[200px] ",
-    categories: ["Retail Marketing", "Brand Activation"],
-    description:
-      "A comprehensive retail activation campaign across North American big-box retailers, featuring branded sampling stations and trained brand ambassadors.",
-    route: "case-study/shan",
-  },
-  {
-    id: 12,
-    imageUrl: almazaHeroImg,
-    mobileImageUrl: almazaMobileHeroImg,
-    brand: "Almaza",
-    logoUrl: almazaLogo,
-    logoClass:
-      "h-[34px] min-[390px]:h-[38px] sm:h-[44px] md:h-[54px] lg:h-[64px] w-[110px] sm:w-[145px] md:w-[170px] lg:w-[200px]",
-    categories: ["Digital Storytelling", "Brand Website"],
-    description:
-      "An engaging digital brand experience blending rich heritage storytelling, transparent brewing process breakdowns, and user-generated social moments.",
-    route: "case-study/almaza",
-  },
+  // {
+  //   id: 9,
+  //   imageUrl: safewayHeroImg,
+  //   mobileImageUrl: safewayMobileHeroImg,
+  //   brand: "Safeway",
+  //   logoUrl: safewayLogo,
+  //   logoClass:
+  //     "h-[34px] min-[390px]:h-[38px] sm:h-[44px] md:h-[54px] lg:h-[64px] w-[110px] sm:w-[145px] md:w-[170px] lg:w-[200px]",
+  //   categories: ["Web & Mobile", "User Experience"],
+  //   description:
+  //     "A comprehensive web and mobile platform designed to enhance the grocery shopping experience and drive customer loyalty.",
+  //   route: "case-study/safeway",
+  // },
+  //   {
+  //   id: 11,
+  //   imageUrl: sentralHeroImg,
+  //   mobileImageUrl: sentralMobileHeroImg,
+  //   brand: "Sentral Education",
+  //   logoUrl: sentralLogo,
+  //   logoClass:
+  //     "h-[34px] min-[390px]:h-[38px] sm:h-[44px] md:h-[54px] lg:h-[84px] w-[110px] sm:w-[145px] md:w-[170px] lg:w-[200px]",
+  //   categories: ["EdTech", "Web & Mobile App"],
+  //   description:
+  //     "An all-in-one parent portal app designed for real-time push notifications, tracking student homework, and handling instant school fee payments.",
+  //   route: "case-study/sentral",
+  // },
+  
+  // {
+  //   id: 15,
+  //   imageUrl: lifegiveHeroImg,
+  //   mobileImageUrl: lifegiveMobileHeroImg,
+  //   brand: "LifeGive",
+  //   logoUrl: lifegiveLogo,
+  //   logoClass:
+  //     "h-[34px] min-[390px]:h-[38px] sm:h-[44px] md:h-[54px] lg:h-[64px] w-[110px] sm:w-[145px] md:w-[170px] lg:w-[200px]",
+  //   categories: ["D2C E-Commerce", "Health & Wellness"],
+  //   description:
+  //     "A direct-to-consumer e-commerce platform and supplement catalog helping health conscious consumers easily discover plant derived vitamins and minerals.",
+  //   route: "case-study/lifegive",
+  // },
+  //   {
+  //   id: 11,
+  //   imageUrl: pwcHeroImg,
+  //   mobileImageUrl: pwcMobileHeroImg,
+  //   brand: "PwC",
+  //   logoUrl: pwcLogo,
+  //   logoClass:
+  //     "h-[34px] min-[390px]:h-[38px] sm:h-[44px] md:h-[54px] lg:h-[74px] w-[110px] sm:w-[145px] md:w-[170px] lg:w-[200px]",
+  //   categories: ["Enterprise UX", "Dashboard Design"],
+  //   description:
+  //     "Specialized internal B2B dashboards streamlining tax policy tracking, active engagements, and resource allocation across multidisciplinary teams.",
+  //   route: "case-study/pwc",
+  // },
+  // {
+  //   id: 16,
+  //   imageUrl: fairviewHeroImg,
+  //   mobileImageUrl: fairviewMobileHeroImg,
+  //   brand: "Fairview",
+  //   logoUrl: fairviewLogo,
+  //   logoClass:
+  //     "h-[34px] min-[390px]:h-[38px] sm:h-[44px] md:h-[54px] lg:h-[74px] w-[110px] sm:w-[145px] md:w-[170px] lg:w-[200px]",
+  //   categories: ["Web & Mobile", "UI/UX Design"],
+  //   description:
+  //     "A website design showcasing architectural products, project galleries, and sample requests across desktop and mobile layouts.",
+  //   route: "case-study/fairview",
+  // },
+  // {
+  //   id: 17,
+  //   imageUrl: shanHeroImg,
+  //   mobileImageUrl: shanMobileHeroImg,
+  //   brand: "Shan Foods",
+  //   logoUrl: shanLogo,
+  //   logoClass:
+  //     "h-[34px] min-[390px]:h-[38px] sm:h-[44px] md:h-[54px] lg:h-[64px] w-[110px] sm:w-[145px] md:w-[170px] lg:w-[200px] ",
+  //   categories: ["Retail Marketing", "Brand Activation"],
+  //   description:
+  //     "A comprehensive retail activation campaign across North American big-box retailers, featuring branded sampling stations and trained brand ambassadors.",
+  //   route: "case-study/shan",
+  // },
+  // {
+  //   id: 18,
+  //   imageUrl: almazaHeroImg,
+  //   mobileImageUrl: almazaMobileHeroImg,
+  //   brand: "Almaza",
+  //   logoUrl: almazaLogo,
+  //   logoClass:
+  //     "h-[34px] min-[390px]:h-[38px] sm:h-[44px] md:h-[54px] lg:h-[64px] w-[110px] sm:w-[145px] md:w-[170px] lg:w-[200px]",
+  //   categories: ["Digital Storytelling", "Brand Website"],
+  //   description:
+  //     "An engaging digital brand experience blending rich heritage storytelling, transparent brewing process breakdowns, and user-generated social moments.",
+  //   route: "case-study/almaza",
+  // },
 ];
 
 export default function HeroSection({
@@ -477,7 +624,7 @@ export default function HeroSection({
                 onClick={() => {
                   if (!isActive) setCurrentIndex(index);
                 }}
-                className={`hero-slide-card absolute left-1/2 top-1/2 overflow-hidden rounded-none sm:rounded-[22px] border-0 sm:border border-white/40 sm:border-white/50 bg-[#121417] transition-[transform,opacity,filter] duration-700 ease-[cubic-bezier(.22,1,.36,1)] select-none ${isActive
+                className={`hero-slide-card absolute left-1/2 top-1/2 overflow-hidden rounded-none sm:rounded-[22px] border-0 bg-[#121417] transition-[transform,opacity,filter] duration-700 ease-[cubic-bezier(.22,1,.36,1)] select-none ${isActive
                     ? "z-30"
                     : distance === 1
                       ? "z-20 cursor-pointer"
@@ -498,7 +645,8 @@ export default function HeroSection({
                   <img
                     src={isMobile && slide.mobileImageUrl ? slide.mobileImageUrl : slide.imageUrl}
                     alt={`${slide.brand} project visual`}
-                    className="absolute inset-0 h-full w-full object-cover object-center"
+                    className="absolute inset-0 h-full w-full object-cover"
+                    style={{ objectPosition: slide.objectPosition || "center center" }}
                     draggable={false}
                     loading={isActive ? "eager" : "lazy"}
                     fetchPriority={isActive ? "high" : "low"}
@@ -593,10 +741,13 @@ export default function HeroSection({
                       type="button"
                       onClick={(event) => {
                         event.stopPropagation();
+                        try {
+                          sessionStorage.setItem("caseStudyOrigin", "home");
+                        } catch (err) {}
                         if (onCaseStudyClick) {
                           onCaseStudyClick(slide, index);
                         } else if (onNavigate && slide.route) {
-                          onNavigate(slide.route);
+                          onNavigate(slide.route, { from: "home" });
                         } else if (
                           typeof window !== "undefined" &&
                           slide.route
@@ -616,6 +767,23 @@ export default function HeroSection({
                     </button>
                   </>
                 )}
+
+{/* Hero card border - visible in dark mode */}
+<div
+  aria-hidden="true"
+  className="
+    absolute
+    inset-0
+    z-[60]
+    pointer-events-none
+    rounded-none
+    sm:rounded-[22px]
+    border-0
+    sm:border
+    sm:border-white/60
+  "
+/>
+
               </article>
             );
           })}

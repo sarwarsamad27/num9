@@ -101,13 +101,13 @@ function ServicesHero() {
         <div className="flex-1 flex items-center justify-start pl-4 sm:pl-8 md:pl-10 lg:pl-12 pb-10 md:pb-0">
           <div style={{ maxWidth: 360 }}>
             <p
-              className="font-grift font-bold text-slate-900 leading-[1.18] mb-3 tracking-tight"
+              className="font-grift font-bold text-slate-900 dark:text-white leading-[1.18] mb-3 tracking-tight"
               style={{ fontSize: 'clamp(0.9rem, 1.9vw, 1.35rem)' }}
             >
               Building the physical, crafting the digital, creating unforgettable experiences.
             </p>
             <p
-              className="font-grift text-slate-500 leading-relaxed"
+              className="font-grift text-slate-500 dark:text-[#E5E7EB] leading-relaxed"
               style={{ fontSize: 'clamp(0.7rem, 1vw, 0.88rem)' }}
             >
               We bring human-centered design thinking and exceptional client service to solve complex challenges. No one is built like us.

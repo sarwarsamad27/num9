@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { ArrowRight, ChevronDown } from "lucide-react";
 import AppNav from "../components/nav";
 import CaseStudies from "../components/caseStudies";
@@ -15,41 +15,66 @@ import microsoftLogo from "../assets/Microsoft_logo__White.png";
 /* ─── extra logos for clients grid ──────────────────────── */
 import clientMicrosoftLogo from "../assets/Logos/ClientsGrid_Logos/microsoft.png";
 import clientPepsicoLogo from "../assets/Logos/ClientsGrid_Logos/pepsico.png";
+import clientPepsicoLogoWhite from "../assets/Logos/ClientsGrid_Logos/pepsico_white.png";
 import clientNutrienLogo from "../assets/Logos/ClientsGrid_Logos/nutrien.png";
+import clientNutrienLogoWhite from "../assets/Logos/ClientsGrid_Logos/nutrien_white.png";
 import clientCitibankLogo from "../assets/Logos/ClientsGrid_Logos/citibank.png";
+import clientCitibankLogoWhite from "../assets/Logos/ClientsGrid_Logos/citibank_white.png";
 import clientLexusLogo from "../assets/Logos/ClientsGrid_Logos/lexus.png";
 import clientArgoLogo from "../assets/Logos/ClientsGrid_Logos/argo.png";
+import clientArgoLogoWhite from "../assets/Logos/ClientsGrid_Logos/argo_white.png";
 import clientMedimpactLogo from "../assets/Logos/ClientsGrid_Logos/medimpact.png";
+import clientMedimpactLogoWhite from "../assets/Logos/ClientsGrid_Logos/medimpact_white.png";
 import clientJcpenneyLogo from "../assets/Logos/ClientsGrid_Logos/jcpenney.png";
+import clientJcpenneyLogoWhite from "../assets/Logos/ClientsGrid_Logos/jcpenney_white.png";
 import clientEmiratesLogo from "../assets/Logos/ClientsGrid_Logos/emirates.png";
 import clientSafewayLogo from "../assets/Logos/ClientsGrid_Logos/safeway.png";
+import clientSafewayLogoWhite from "../assets/Logos/ClientsGrid_Logos/safeway_white.png";
 import clientYmcaLogo from "../assets/Logos/ClientsGrid_Logos/ymca.png";
 import clientMagellanLogo from "../assets/Logos/ClientsGrid_Logos/magellan.png";
+import clientMagellanLogoWhite from "../assets/Logos/ClientsGrid_Logos/magellan_white.png";
 
 /* ─── new case study logos from clientgridlogo/logo ─────── */
 import clientSnacksLogo from "../assets/Logos/ClientsGrid_Logos/Logos/Snack.com_trimmed.png";
 import clientZee5Logo from "../assets/Logos/ClientsGrid_Logos/Logos/ZEE5-Logo (1)_trimmed.png";
+import clientZee5LogoWhite from "../assets/Logos/ClientsGrid_Logos/zee5_white.png";
 import clientSentralLogo from "../assets/Logos/ClientsGrid_Logos/Logos/Sentral Education Ribbon Logo_trimmed.png";
+import clientSentralLogoWhite from "../assets/Logos/ClientsGrid_Logos/sentral_white.png";
 import clientPwcLogo from "../assets/Logos/ClientsGrid_Logos/Logos/PwC Logo with Layered Warm Blocks_trimmed.png";
+import clientPwcLogoWhite from "../assets/Logos/ClientsGrid_Logos/pwc_white.png";
 import clientEmpireLogo from "../assets/Logos/ClientsGrid_Logos/Logos/Empire Cinemas Crown Emblem_trimmed.png";
+import clientEmpireLogoWhite from "../assets/Logos/ClientsGrid_Logos/empire_white.png";
 import clientAlmazaLogo from "../assets/Logos/ClientsGrid_Logos/Logos/Almaza Gem Crest Logo_trimmed.png";
+import clientAlmazaLogoWhite from "../assets/Logos/ClientsGrid_Logos/almaza_white.png";
 import clientFairviewLogo from "../assets/Logos/ClientsGrid_Logos/Logos/Fairview Geometric Architecture Logo_trimmed.png";
+import clientFairviewLogoWhite from "../assets/Logos/ClientsGrid_Logos/fairview_white.png";
 import clientLifegiftLogo from "../assets/Logos/ClientsGrid_Logos/Logos/LifeGive Oval Leaf Logo_trimmed.png";
+import clientLifegiftLogoWhite from "../assets/Logos/ClientsGrid_Logos/lifegive_white.png";
 
 /* ─── new logos from Updated_Logos ─────────────────────── */
 import clientIcomLogo from "../assets/Logos/Updated_Logos/Clean restored ICOM network logo.webp";
-import clientGenesisLogo from "../assets/Logos/Updated_Logos/GENESIS.Logo.032218_Site_PNG_RevB.webp";
+import clientIcomLogoWhite from "../assets/Logos/Updated_Logos/icom_white.png";
+import clientGenesisLogo from "../assets/Logos/Updated_Logos/genesis_dark.png";
+import clientGenesisLogoWhite from "../assets/Logos/Updated_Logos/genesis_white.png";
 import clientStandardCharteredLogo from "../assets/Logos/Updated_Logos/Standard_Chartered__282021_29.webp";
 import clientSkinnyLogo from "../assets/caseStudies/skinny/Jordan_s_Skinny_Mixes_Logo_f5994884-b437-492f-aa4a-b5debcc1c695_1543x_copy_copy.png";
+import clientSkinnyLogoWhite from "../assets/caseStudies/skinny/skinny_white.png";
 import clientMezanLogo from "../assets/caseStudies/meezan/mezanLogo.png";
 import clientDeltaLogo from "../assets/caseStudies/Delta Light/deltaLogo_transparent.png";
+import clientDeltaLogoWhite from "../assets/caseStudies/Delta Light/deltaLogo_white.png";
 import clientDreoLogo from "../assets/caseStudies/DREO IHS 2025/dreoLogo_trimmed.png";
+import clientDreoLogoWhite from "../assets/caseStudies/DREO IHS 2025/dreoLogo_white.png";
 import clientFinamillLogo from "../assets/caseStudies/Finamill IHS 2025/finamillLogo_trimmed.png";
-import clientKatjesLogo from "../assets/caseStudies/Katjes USA/katjesLogo.svg";
-import clientNakamichiLogo from "../assets/caseStudies/Nakamichi Car Audio/nakamichiLogo.svg";
+import clientKatjesLogo from "../assets/caseStudies/Katjes USA/Katjes.webp";
+import clientNakamichiLogo from "../assets/caseStudies/Nakamichi Car Audio/Nakamichi Logo on Transparent Background.png";
+import clientNakamichiLogoWhite from "../assets/caseStudies/Nakamichi Car Audio/nakamichi_white.png";
 import clientScantechLogo from "../assets/caseStudies/SCANTECH The Battery Show North America 2024/scantechLogo.svg";
-import clientSsstcLogo from "../assets/caseStudies/SSSTC Circleexhibit/ssstcLogo.svg";
-import clientShanLogo from "../assets/Logos/hero_logos/White Shan Logo on Black Oval.png";
+import clientScantechLogoWhite from "../assets/caseStudies/SCANTECH The Battery Show North America 2024/scantechLogo_white.svg";
+import clientSsstcLogo from "../assets/caseStudies/SSSTC Circleexhibit/ssstcLogoUpdatedBlack.png";
+import clientSsstcLogoWhite from "../assets/caseStudies/SSSTC Circleexhibit/ssstcLogoUpdated.png";
+import clientShanLogo from "../assets/shan.png";
+import clientJdotLogo from "../assets/caseStudies/j/logo_black_-_wania_saleem.svg";
+import clientJdotLogoWhite from "../assets/caseStudies/j/logo_white_-_wania_saleem.svg";
 import { INDUSTRY_OPTIONS, CLIENT_INDUSTRIES } from "../data/industries";
 
 /* ─── ImageCard ─────────────────────────────────────────── */
@@ -67,7 +92,7 @@ function ImageCard({
 }) {
   return (
     <div
-      className={`relative overflow-hidden rounded-[16px] group cursor-pointer ${className}`}
+      className={`relative overflow-hidden rounded-[inherit] group cursor-pointer ${className}`}
     >
       <img
         src={img}
@@ -80,7 +105,13 @@ function ImageCard({
 
       <div className="absolute inset-0 bg-gradient-to-t from-black/65 via-black/15 to-transparent" />
 
-      <div className="absolute bottom-0 left-0 right-0 px-5 pb-5 sm:px-6 sm:pb-6">
+      {/* Hero card border - matches home page hero section */}
+      <div
+        aria-hidden="true"
+        className="absolute inset-0 z-20 pointer-events-none rounded-[inherit] border border-black/15 dark:border-white/60"
+      />
+
+      <div className="absolute bottom-0 left-0 right-0 px-5 pb-5 sm:px-6 sm:pb-6 z-30">
         {logo && (
           <div className="h-[52px] sm:h-[58px] xl:h-[64px] flex items-center justify-start mb-2">
             <img
@@ -96,7 +127,10 @@ function ImageCard({
           onClick={(e) => {
             e.preventDefault();
             if (route && onNavigate) {
-              onNavigate(route);
+              try {
+                sessionStorage.setItem("caseStudyOrigin", "our-work");
+              } catch (err) {}
+              onNavigate(route, { from: "our-work" });
             }
           }}
           className="inline-flex items-center gap-1.5 text-white text-[14px] sm:text-[18px] lg:text-[20px] font-medium hover:underline"
@@ -113,19 +147,30 @@ function ImageCard({
 /* ─── ClientsGrid ────────────────────────────────────────── */
 
 const clients = [
+
   {
-    logo: clientDeltaLogo,
-    logoClass: "h-[38px] sm:h-[44px] xl:h-[48px] w-auto max-w-[240px]",
-    name: "Delta Light",
-    desc: "Austere architectural rental exhibit with light-blocking ceiling for high-end lighting fixtures.",
-    route: "case-study/delta-light",
+    logo: clientScantechLogo,
+    darkLogo: clientScantechLogoWhite,
+    logoClass: "h-[46px] sm:h-[50px] xl:h-[56px] w-auto max-w-[280px] xl:max-w-[310px]",
+    name: "SCANTECH",
+    desc: "Imposing 20x40 industrial 3D metrology booth with live battery scanning and illuminated meeting tunnel at The Battery Show 2024.",
+    route: "case-study/scantech",
   },
   {
-    logo: clientDreoLogo,
-    logoClass: "h-[46px] sm:h-[50px] xl:h-[56px] w-auto max-w-[220px]",
-    name: "DREO",
-    desc: "20x30 retail product display booth with live sampling, interactive appliances, and buyer lounge at IHS 2025.",
-    route: "case-study/dreo",
+    logo: clientNakamichiLogo,
+    darkLogo: clientNakamichiLogoWhite,
+    logoClass: "h-[46px] sm:h-[50px] xl:h-[56px] w-auto max-w-[310px] xl:max-w-[340px]",
+    name: "Nakamichi Car Audio",
+    desc: "Disciplined 20x20 product-first exhibition booth with perimeter interaction counters and anti-glare illumination at SEMA 2024.",
+    route: "case-study/nakamichi",
+  },
+  {
+    logo: clientSsstcLogo,
+    darkLogo: clientSsstcLogoWhite,
+    logoClass: "h-[46px] sm:h-[50px] xl:h-[56px] w-auto max-w-[240px]",
+    name: "SSSTC",
+    desc: "High-density 10x10 enterprise storage inline booth with precision product vitrines and tension fabric backwall at Circleexhibit.",
+    route: "case-study/ssstc",
   },
   {
     logo: clientFinamillLogo,
@@ -135,32 +180,27 @@ const clients = [
     route: "case-study/finamill",
   },
   {
+    logo: clientDreoLogo,
+    darkLogo: clientDreoLogoWhite,
+    logoClass: "h-[46px] sm:h-[50px] xl:h-[56px] w-auto max-w-[220px]",
+    name: "DREO",
+    desc: "20x30 retail product display booth with live sampling, interactive appliances, and buyer lounge at IHS 2025.",
+    route: "case-study/dreo",
+  },
+  {
+    logo: clientDeltaLogo,
+    darkLogo: clientDeltaLogoWhite,
+    logoClass: "h-[38px] sm:h-[44px] xl:h-[48px] w-auto max-w-[240px]",
+    name: "Delta Light",
+    desc: "Austere architectural rental exhibit with light-blocking ceiling for high-end lighting fixtures.",
+    route: "case-study/delta-light",
+  },
+  {
     logo: clientKatjesLogo,
     logoClass: "h-[48px] sm:h-[52px] xl:h-[58px] w-auto max-w-[230px]",
     name: "Katjes USA",
     desc: "Multi-year brand activation and experiential event staffing for 100% plant-based European confectionery across North America.",
     route: "case-study/katjes",
-  },
-  {
-    logo: clientNakamichiLogo,
-    logoClass: "h-[46px] sm:h-[50px] xl:h-[56px] w-auto max-w-[310px] xl:max-w-[340px]",
-    name: "Nakamichi Car Audio",
-    desc: "Disciplined 20x20 product-first exhibition booth with perimeter interaction counters and anti-glare illumination at SEMA 2024.",
-    route: "case-study/nakamichi",
-  },
-  {
-    logo: clientScantechLogo,
-    logoClass: "h-[46px] sm:h-[50px] xl:h-[56px] w-auto max-w-[280px] xl:max-w-[310px]",
-    name: "SCANTECH",
-    desc: "Imposing 20x40 industrial 3D metrology booth with live battery scanning and illuminated meeting tunnel at The Battery Show 2024.",
-    route: "case-study/scantech",
-  },
-  {
-    logo: clientSsstcLogo,
-    logoClass: "h-[46px] sm:h-[50px] xl:h-[56px] w-auto max-w-[240px]",
-    name: "SSSTC",
-    desc: "High-density 10x10 enterprise storage inline booth with precision product vitrines and tension fabric backwall at Circleexhibit.",
-    route: "case-study/ssstc",
   },
   {
     logo: clientShanLogo,
@@ -178,6 +218,7 @@ const clients = [
   },
   {
     logo: clientSkinnyLogo,
+    darkLogo: clientSkinnyLogoWhite,
     logoClass: "h-[40px] sm:h-[44px] xl:h-[48px] w-auto max-w-[210px]",
     name: "Skinny Mixes",
     desc: "Experiential marketing and high-impact street sampling campaign launching Skinnyccino across Manhattan.",
@@ -185,6 +226,7 @@ const clients = [
   },
   {
     logo: clientMicrosoftLogo,
+    darkLogo: microsoftLogo,
     logoClass: "h-[34px] sm:h-[36px] xl:h-[40px] w-auto max-w-[210px]",
     name: "Microsoft",
     desc: "Enterprise AI and cloud solutions enabling scalable digital transformation and innovation.",
@@ -192,6 +234,7 @@ const clients = [
   },
   {
     logo: clientPepsicoLogo,
+    darkLogo: clientPepsicoLogoWhite,
     logoClass: "h-[44px] sm:h-[48px] xl:h-[52px] w-auto max-w-[230px]",
     name: "PepsiCo",
     desc: "Retail and consumer engagement solutions powered by data driven digital technologies.",
@@ -199,6 +242,7 @@ const clients = [
   },
   {
     logo: clientNutrienLogo,
+    darkLogo: clientNutrienLogoWhite,
     logoClass: "h-[42px] sm:h-[46px] xl:h-[50px] w-auto max-w-[230px]",
     name: "Nutrien",
     desc: "Technology driven enterprise solutions improving operational efficiency and data based decision making.",
@@ -206,6 +250,7 @@ const clients = [
   },
   {
     logo: clientCitibankLogo,
+    darkLogo: clientCitibankLogoWhite,
     logoClass: "h-[44px] sm:h-[48px] xl:h-[52px] w-auto max-w-[230px]",
     name: "Citibank",
     desc: "Secure financial technology solutions enabling digital banking transformation and customer trust.",
@@ -220,6 +265,7 @@ const clients = [
   },
   {
     logo: clientArgoLogo,
+    darkLogo: clientArgoLogoWhite,
     logoClass: "h-[42px] sm:h-[46px] xl:h-[50px] w-auto max-w-[220px]",
     name: "Argo",
     desc: "Custom software solutions delivering scalable digital products and enterprise level innovation.",
@@ -227,6 +273,7 @@ const clients = [
   },
   {
     logo: clientMedimpactLogo,
+    darkLogo: clientMedimpactLogoWhite,
     logoClass: "h-[44px] sm:h-[48px] xl:h-[52px] w-auto max-w-[220px]",
     name: "MedImpact",
     desc: "Healthcare technology solutions enabling secure, scalable digital health transformation and analytics.",
@@ -234,6 +281,7 @@ const clients = [
   },
   {
     logo: clientJcpenneyLogo,
+    darkLogo: clientJcpenneyLogoWhite,
     logoClass: "h-[42px] sm:h-[46px] xl:h-[50px] w-auto max-w-[230px]",
     name: "JCPenney",
     desc: "Retail technology and digital commerce solutions enhancing customer engagement and operational efficiency.",
@@ -241,6 +289,7 @@ const clients = [
   },
   {
     logo: clientEmiratesLogo,
+    darkLogo: emiratesLogo,
     logoClass: "h-[46px] sm:h-[50px] xl:h-[54px] w-auto max-w-[190px]",
     name: "Emirates",
     desc: "Aviation digital systems and customer experience solutions supporting global travel innovation.",
@@ -248,6 +297,7 @@ const clients = [
   },
   {
     logo: clientSafewayLogo,
+    darkLogo: clientSafewayLogoWhite,
     logoClass: "h-[42px] sm:h-[46px] xl:h-[50px] w-auto max-w-[240px]",
     name: "Safeway",
     desc: "Retail infrastructure and data driven solutions improving supply chain and customer experience.",
@@ -262,6 +312,7 @@ const clients = [
   },
   {
     logo: clientMagellanLogo,
+    darkLogo: clientMagellanLogoWhite,
     logoClass: "h-[44px] sm:h-[48px] xl:h-[52px] w-auto max-w-[230px]",
     name: "Magellan Health",
     desc: "Healthcare and behavioral health technology solutions enabling data driven care and service optimization.",
@@ -276,6 +327,7 @@ const clients = [
   },
   {
     logo: clientZee5Logo,
+    darkLogo: clientZee5LogoWhite,
     logoClass: "h-[46px] sm:h-[50px] xl:h-[54px] w-auto max-w-[190px]",
     name: "ZEE5",
     desc: "Next-generation OTT streaming platform and high-performance digital entertainment discovery architecture.",
@@ -283,6 +335,7 @@ const clients = [
   },
   {
     logo: clientSentralLogo,
+    darkLogo: clientSentralLogoWhite,
     logoClass: "h-[46px] sm:h-[50px] xl:h-[54px] w-auto max-w-[190px]",
     name: "Sentral Education",
     desc: "Integrated K-12 education management platform streamlining school administration and community engagement.",
@@ -290,6 +343,7 @@ const clients = [
   },
   {
     logo: clientPwcLogo,
+    darkLogo: clientPwcLogoWhite,
     logoClass: "h-[46px] sm:h-[50px] xl:h-[54px] w-auto max-w-[210px]",
     name: "PwC",
     desc: "Enterprise workflow dashboards and tax technology solutions accelerating collaborative advisory operations.",
@@ -297,6 +351,7 @@ const clients = [
   },
   {
     logo: clientEmpireLogo,
+    darkLogo: clientEmpireLogoWhite,
     logoClass: "h-[50px] sm:h-[56px] xl:h-[62px] w-auto max-w-[220px]",
     name: "Empire Cinemas",
     desc: "Next-generation cinema ticketing systems and interactive entertainment booking experiences.",
@@ -304,6 +359,7 @@ const clients = [
   },
   {
     logo: clientAlmazaLogo,
+    darkLogo: clientAlmazaLogo,
     logoClass: "h-[44px] sm:h-[48px] xl:h-[52px] w-auto max-w-[230px]",
     name: "Almaza",
     desc: "Heritage beverage brand platforms combining interactive digital storytelling and modern customer loyalty.",
@@ -311,6 +367,7 @@ const clients = [
   },
   {
     logo: clientFairviewLogo,
+    darkLogo: clientFairviewLogoWhite,
     logoClass: "h-[44px] sm:h-[48px] xl:h-[52px] w-auto max-w-[230px]",
     name: "Fairview",
     desc: "Architectural cladding and facade technology platforms showcasing global building innovation.",
@@ -318,6 +375,7 @@ const clients = [
   },
   {
     logo: clientLifegiftLogo,
+    darkLogo: clientLifegiftLogoWhite,
     logoClass: "h-[44px] sm:h-[48px] xl:h-[52px] w-auto max-w-[230px]",
     name: "LifeGive",
     desc: "Health and wellness digital platform empowering lifestyle transformation with organic nutritional systems.",
@@ -325,6 +383,7 @@ const clients = [
   },
   {
     logo: clientIcomLogo,
+    darkLogo: clientIcomLogoWhite,
     logoClass: "h-[44px] sm:h-[48px] xl:h-[52px] w-auto max-w-[230px]",
     name: "ICOM",
     desc: "Global network platform connecting museums and cultural institutions through innovative digital experiences.",
@@ -332,6 +391,7 @@ const clients = [
   },
   {
     logo: clientGenesisLogo,
+    darkLogo: clientGenesisLogoWhite,
     logoClass: "h-[44px] sm:h-[48px] xl:h-[52px] w-auto max-w-[230px]",
     name: "GENESIS Exhibits",
     desc: "Award-winning trade show and exhibit design firm delivering immersive brand environments and experiences.",
@@ -343,6 +403,14 @@ const clients = [
     name: "Standard Chartered",
     desc: "Global banking digital transformation delivering intuitive financial platforms and customer-first innovation.",
     route: "case-study/standard-chartered",
+  },
+  {
+    logo: clientJdotLogo,
+    darkLogo: clientJdotLogoWhite,
+    logoClass: "h-[46px] sm:h-[50px] xl:h-[56px] w-auto max-w-[200px]",
+    name: "Jdot Fragrances",
+    desc: "Celebrity commercial production (DVC) for the global fragrance launch of Ballin' starring NBA legend Kobe Bryant.",
+    route: "case-study/jdot",
   },
 ];
 
@@ -422,19 +490,38 @@ min-[1500px]:px-[42px]
                   mb-[14px] sm:mb-[18px] xl:mb-[22px]
                 "
               >
-                <img
-                  src={client.logo}
-                  alt={client.name}
-                  loading="lazy"
-                  decoding="async"
-                  className={`
-                    block
-                    object-contain
-                    object-left
-                    ${client.name === "Lexus" || client.name === "Delta Light" || client.name === "DREO" ? "dark:invert" : ""}
-                    ${client.logoClass}
-                  `}
-                />
+                {client.darkLogo ? (
+                  <>
+                    <img
+                      src={client.logo}
+                      alt={client.name}
+                      loading="lazy"
+                      decoding="async"
+                      className={`block dark:hidden object-contain object-left ${client.logoClass}`}
+                    />
+                    <img
+                      src={client.darkLogo}
+                      alt={client.name}
+                      loading="lazy"
+                      decoding="async"
+                      className={`hidden dark:block object-contain object-left ${client.logoClass}`}
+                    />
+                  </>
+                ) : (
+                  <img
+                    src={client.logo}
+                    alt={client.name}
+                    loading="lazy"
+                    decoding="async"
+                    className={`
+                      block
+                      object-contain
+                      object-left
+                      ${client.name === "Lexus" || client.name === "Delta Light" || client.name === "DREO" || client.name === "SCANTECH" || client.name === "Jdot Fragrances" || client.name === "J." ? "dark:invert" : ""}
+                      ${client.logoClass}
+                    `}
+                  />
+                )}
               </div>
 
               {/* Description */}
@@ -467,7 +554,10 @@ min-[1500px]:px-[42px]
                     e.preventDefault();
 
                     if (client.route && onNavigate) {
-                      onNavigate(client.route);
+                      try {
+                        sessionStorage.setItem("caseStudyOrigin", "our-work");
+                      } catch (err) {}
+                      onNavigate(client.route, { from: "our-work" });
                     }
                   }}
                   className="
@@ -546,13 +636,13 @@ function OurWorkHero({ onNavigate, industry, setIndustry }) {
         <div className="hidden xl:grid xl:grid-cols-[45%_55%] 2xl:grid-cols-[44%_56%] items-start gap-8 xl:gap-8 2xl:gap-12">
           <div className="relative z-10 flex flex-col justify-between h-full min-h-[520px] xl:min-h-[580px] 2xl:min-h-[720px]">
             <div>
-              <p className="font-grift-semibold text-[14px] xl:text-[18px] 2xl:text-[21px] tracking-[0.31em] text-[#5f5f5f] mb-[7px]">
+              <p className="font-grift-semibold text-[14px] xl:text-[18px] 2xl:text-[21px] tracking-[0.31em] text-[#5f5f5f] dark:text-[#D1D5DB] mb-[7px]">
                 Our Clients
               </p>
               <h1 className="font-grift-semibold text-[44px] xl:text-[54px] 2xl:text-[70px] leading-[1.08] 2xl:leading-[1.12] tracking-[-0.035em] text-black dark:text-white max-w-[620px] mb-4 xl:mb-6 2xl:mb-[34px]">
                 Over 10 Years of<br />Over Delivering<span className="text-[#32c400]">.</span>
               </h1>
-              <p className="font-grift-regular text-[18px] xl:text-[24px] 2xl:text-[35px] leading-[1.4] 2xl:leading-[1.45] tracking-[-0.01em] text-[#5E5B5B] dark:text-[#A1A1AA] max-w-[680px]">
+              <p className="font-grift-regular text-[18px] xl:text-[24px] 2xl:text-[35px] leading-[1.4] 2xl:leading-[1.45] tracking-[-0.01em] text-[#5E5B5B] dark:text-[#E5E7EB] max-w-[680px]">
                 100+ active clients and a 92% retention rate,<br />
                 earned through AI-augmented delivery that<br />
                 compounds value across every engagement.
@@ -624,11 +714,11 @@ function OurWorkHero({ onNavigate, industry, setIndustry }) {
 
         {/* Mobile / Tablet (< xl:) */}
         <div className="xl:hidden">
-          <p className="font-grift-semibold text-[14px] sm:text-[16px] tracking-[0.31em] text-[#5f5f5f] mb-2 sm:mb-3">Our Clients</p>
+          <p className="font-grift-semibold text-[14px] sm:text-[16px] tracking-[0.31em] text-[#5f5f5f] dark:text-[#D1D5DB] mb-2 sm:mb-3">Our Clients</p>
           <h1 className="font-grift-semibold text-[38px] sm:text-[46px] lg:text-[50px] leading-[1.12] tracking-[-0.035em] text-black dark:text-white mb-4 sm:mb-5">
             Over 10 Years of<br />Over Delivering<span className="text-[#32c400]">.</span>
           </h1>
-          <p className="font-grift-medium text-[18px] sm:text-[20px] lg:text-[22px] leading-[1.45] tracking-[-0.01em] text-[#5E5B5B] dark:text-[#A1A1AA] max-w-[1100px]">
+          <p className="font-grift-medium text-[18px] sm:text-[20px] lg:text-[22px] leading-[1.45] tracking-[-0.01em] text-[#5E5B5B] dark:text-[#E5E7EB] max-w-[1100px]">
             100+ active clients and a 92% retention rate, earned through AI-augmented delivery that compounds value across every engagement.
           </p>
 
@@ -674,6 +764,12 @@ function OurWorkHero({ onNavigate, industry, setIndustry }) {
 /* ─── Page ─────────────────────────────────────────── */
 export default function OurWorkPage({ onNavigate, activeDropdown, setActiveDropdown, currentPage }) {
   const [industry, setIndustry] = useState("All industries");
+
+  useEffect(() => {
+    try {
+      sessionStorage.setItem("caseStudyOrigin", "our-work");
+    } catch (err) {}
+  }, []);
 
   return (
     <div className="bg-white dark:bg-[#0B0D0C] min-h-screen text-[#141414] dark:text-[#F3F4F6] font-grift antialiased transition-colors duration-300">

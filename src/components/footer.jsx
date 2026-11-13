@@ -1,6 +1,6 @@
 import React from "react";
 import { ArrowRight, Phone, Mail, Plus, Minus } from "lucide-react";
-import logo from "../assets/Green 9 with Blue NO Badge.webp";
+import logo from "../assets/logoGreen.webp";
 
 // Matched to the supplied 1920px reference with routing integrated to existing routes.
 const Footer = ({ onNavigate }) => {
@@ -187,7 +187,7 @@ const Footer = ({ onNavigate }) => {
               </div>
             </div>
           </div>
-          <div className="mt-16 text-[14px] leading-[1.4] text-black/70 dark:text-[#9CA3AF]">
+          <div className="mt-16 text-[14px] leading-[1.4] text-black/70 dark:text-[#D1D5DB]">
             <div className="flex flex-wrap items-center gap-x-[44px] gap-y-3">
               <a
                 href={getHref("about")}
@@ -211,7 +211,7 @@ const Footer = ({ onNavigate }) => {
                 Do Not Sell My Personal Information
               </a> */}
             </div>
-            <p className="mt-[20px] text-black/60 dark:text-[#777777]">©Number9 2024 2025. All rights reserved.</p>
+            <p className="mt-[20px] text-black/60 dark:text-[#D1D5DB]">©Number9 2024 2025. All rights reserved.</p>
           </div>
         </div>
 
