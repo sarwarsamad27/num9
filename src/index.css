@@ -19,7 +19,6 @@ html.dark .contact-card::before {
   position: absolute;
   inset: 0;
   background: var(--contact-bg-dark) center / cover no-repeat;
-  filter: contrast(1.3) brightness(.8) saturate(2.5);
   pointer-events: none;
 }
 
@@ -69,6 +68,15 @@ html.dark .contact-icon {
   margin-right: 10px;
   vertical-align: middle;
   color: #83c923;
+}
+
+/* Mobile: email + phone sit side by side, so keep the icon compact */
+@media (max-width: 639px) {
+  html.dark .contact-icon {
+    width: 18px;
+    height: 18px;
+    margin-right: 6px;
+  }
 }
 
 @media (min-width: 1280px) {
@@ -666,6 +674,9 @@ textarea {
 html,
 body {
   overflow-x: hidden;
+  /* clip (where supported) stops sideways page drift on mobile swipes without breaking sticky */
+  overflow-x: clip;
+  overscroll-behavior-x: none;
   max-width: 100%;
 }
 
@@ -899,25 +910,3 @@ body {
   }
 }
 
-
-/* Hero slider: active card's overlay content eases in after the card slides to center */
-@keyframes hero-content-in {
-  from {
-    opacity: 0;
-    transform: translateY(18px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-.hero-content-in {
-  animation: hero-content-in 0.6s cubic-bezier(0.22, 1, 0.36, 1) 0.45s backwards;
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .hero-content-in {
-    animation: none;
-  }
-}

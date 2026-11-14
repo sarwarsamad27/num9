@@ -941,7 +941,7 @@ export default function FifthSection({ onNavigate }) {
   const handlePointerDown = (e) => {
     // Only primary mouse button (0) or touch/pen
     if (e.pointerType === 'mouse' && e.button !== 0) return;
-    if (isSliding.current || isLoopResetting) return;
+    if (isLoopResetting) return;
 
     activePointerId.current = e.pointerId;
     isDraggingRef.current = true;
@@ -985,7 +985,8 @@ export default function FifthSection({ onNavigate }) {
     }
 
     dragDeltaX.current = dx;
-    // Drag ke waqt track ko move nahi karna
+    // Track follows the finger for a smooth, direct-feeling swipe
+    setDragOffset(dx);
   };
 
   const handlePointerUp = (e) => {
@@ -1012,6 +1013,7 @@ export default function FifthSection({ onNavigate }) {
       const direction = dx < 0 ? 1 : -1;
 
       setOffset((curr) => curr + direction);
+      releaseSlidingSoon();
     }
 
     if (hasDragged.current) {
@@ -1096,16 +1098,27 @@ export default function FifthSection({ onNavigate }) {
 
 
   // Three copies keep the next and previous cards available at both ends.
+  // Safety net: never leave the carousel locked if transitionend is skipped
+  const slidingTimer = useRef(null);
+  const releaseSlidingSoon = () => {
+    clearTimeout(slidingTimer.current);
+    slidingTimer.current = setTimeout(() => {
+      isSliding.current = false;
+    }, 650);
+  };
+
   const prev = () => {
     if (isSliding.current || isLoopResetting) return;
     isSliding.current = true;
     setOffset((current) => current - 1);
+    releaseSlidingSoon();
   };
 
   const next = () => {
     if (isSliding.current || isLoopResetting) return;
     isSliding.current = true;
     setOffset((current) => current + 1);
+    releaseSlidingSoon();
   };
 
   const carouselContainerRef = useRef(null);
@@ -1385,7 +1398,7 @@ export default function FifthSection({ onNavigate }) {
               onTransitionEnd={handleCarouselTransitionEnd}
               style={{
                 gap: `${rowGap}px`,
-                transform: `translateX(${centerOffset - offset * (cardW + rowGap)}px)`,
+                transform: `translateX(${centerOffset - offset * (cardW + rowGap) + (isDragging ? dragOffset : 0)}px)`,
                 width: 'max-content',
               }}
             >

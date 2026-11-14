@@ -4858,7 +4858,7 @@ export const caseStudiesData = {
       darkLogo: jdotLogoWhite,
       logoAlt: "J. logo",
       showcaseImage: jdotArenaCloudsImg,
-      showcaseVideo: "/videos/jdot-ballin.mp4",
+      showcaseVideo: `${import.meta.env.BASE_URL}videos/jdot-ballin.mp4`,
       showcaseAlt: "J. Fragrances Ballin' stadium arena production environment",
       stats: [
         {
@@ -4899,7 +4899,7 @@ export const caseStudiesData = {
       challenge: {
         heading: "The challenge",
         image: jdotUnboxingImg,
-        video: "/videos/jdot-ballin-reel.mp4",
+        video: `${import.meta.env.BASE_URL}videos/jdot-ballin-reel.mp4`,
         imageAlt: "Custom Ballin' MVP Energy packaging and fragrance bottle presentation",
         leftParagraphs: [
           "Launching a flagship fragrance with an athlete of Kobe Bryant's stature involves navigating tight logistics, managing high-profile VIP talent, and coordinating multiple stakeholder teams.",
@@ -4911,7 +4911,7 @@ export const caseStudiesData = {
       solution: {
         heading: "The solution.",
         image: jdotAthleteImg,
-        video: "/videos/jdot-ballin-reel.mp4",
+        video: `${import.meta.env.BASE_URL}videos/jdot-ballin-reel.mp4`,
         imageAlt: "On-set commercial direction in Boston with NBA legend Kobe Bryant",
         description:
           "Number9 Creative & Media executed a full-service commercial production for the Ballin' DVC, managing the project entirely from creative concept to final video delivery. During pre-production, our agency developed comprehensive shot lists, generated and managed daily call sheets, secured the shooting venues in Boston, arranged top-tier camera equipment, sourced set props, booked professional makeup artists, and coordinated all crew scheduling and on-site logistics. We oversaw all celebrity talent acquisition, successfully negotiating and bringing NBA legend Kobe Bryant on board as the face of the marketing campaign, and custom-designed the athletic jersey he wore during filming.\n\nOn set in Boston, our in-house team directly produced and directed the shoot. While leading the creative direction on camera, we also actively managed communications between J. Fragrances' representatives and Bryant's personal team to ensure all VIP concerns were accommodated. Following the shoot, our post-production department handled all video editing, color grading, and audio production, systematically routing the deliverables through multiple rounds of rigorous review with both the client and the athlete's team to achieve a polished final commercial cut.",

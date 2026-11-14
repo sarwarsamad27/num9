@@ -513,7 +513,7 @@ useEffect(() => {
             // }}
           >
             The challenge
-            <span className="text-[#F2693A]">.</span>
+            <span className="text-[#0F9D15]">.</span>
           </h2>
 
           {/* TWO COLUMNS */}
@@ -870,7 +870,7 @@ useEffect(() => {
               "
             >
               The outcome
-              <span className="text-[#F2693A]">.</span>
+              <span className="text-[#0F9D15]">.</span>
             </h2>
 
             <p

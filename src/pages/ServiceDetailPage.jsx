@@ -5,7 +5,7 @@ import AccelerateBusinessSection from "../components/AccelerateBusinessSection";
 import Footer from "../components/footer";
 import { getServiceDetail } from "../data/serviceDetailData";
 
-import number9Logo from "../assets/logoWhite.webp";
+import number9Logo from "../assets/logoWhite.png";
 
 /* ─── Client Logos for Work Cards ────────────────────────── */
 import clientMicrosoftLogo from "../assets/Logos/ClientsGrid_Logos/microsoft.png";

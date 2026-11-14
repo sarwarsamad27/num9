@@ -1,8 +1,12 @@
 
 import React, { useState, useEffect, useRef } from "react";
 import { ArrowRight, X, Menu } from "lucide-react";
-import logo from "../assets/logoGreen.webp";
-import whiteLogo from "../assets/logoWhite.webp";
+import {
+  logoGreen as logo,
+  logoWhite as whiteLogo,
+  logoGreenSrcSet,
+  logoWhiteSrcSet,
+} from "../assets/logoSources";
 import menuIcon from "../assets/navMenu.png";
 import ThemeToggle from "./ThemeToggle";
 import { useTheme } from "../context/ThemeContext";
@@ -284,6 +288,8 @@ export default function AppNav({
           >
             <img
               src={logo}
+              srcSet={logoGreenSrcSet}
+              sizes="(min-width: 1024px) 58px, (min-width: 640px) 50px, 43px"
               loading="eager"
               fetchPriority="high"
               decoding="async"
@@ -436,6 +442,8 @@ className={`nav-toggle-icon w-6 h-6 object-contain transition-all ${
           >
             <img
               src={whiteLogo}
+              srcSet={logoWhiteSrcSet}
+              sizes="(min-width: 1024px) 58px, (min-width: 640px) 50px, 43px"
               alt="Number 9"
               className="h-12 sm:h-14 lg:h-16 w-auto object-contain block brightness-0 invert transition-transform group-hover:scale-[1.02]"
             />

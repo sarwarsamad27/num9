@@ -38,7 +38,7 @@ export default function ThemeToggle({ variant = "navbar", className = "" }) {
       <div className="relative w-4 h-4 sm:w-[18px] sm:h-[18px] flex items-center justify-center overflow-hidden">
         {/* Sun Icon (Visible in dark mode) */}
         <Sun
-          className={`w-4 h-4 sm:w-[18px] sm:h-[18px] text-amber-400 absolute transition-all duration-300 ease-out ${
+          className={`w-4 h-4 sm:w-[18px] sm:h-[18px] text-current absolute transition-all duration-300 ease-out ${
             isDark
               ? "opacity-100 rotate-0 scale-100"
               : "opacity-0 -rotate-90 scale-50 pointer-events-none"
@@ -47,7 +47,7 @@ export default function ThemeToggle({ variant = "navbar", className = "" }) {
 
         {/* Moon Icon (Visible in light mode) */}
         <Moon
-          className={`w-4 h-4 sm:w-[18px] sm:h-[18px] text-slate-700 group-hover:text-black absolute transition-all duration-300 ease-out ${
+          className={`w-4 h-4 sm:w-[18px] sm:h-[18px] text-current absolute transition-all duration-300 ease-out ${
             isDark
               ? "opacity-0 rotate-90 scale-50 pointer-events-none"
               : "opacity-100 rotate-0 scale-100"

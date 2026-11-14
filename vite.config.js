@@ -11,6 +11,8 @@ export default defineConfig({
     tailwindcss(),
     ViteImageOptimizer({
       test: /\.(jpe?g|png|gif|tiff|webp|svg|avif)$/i,
+      // Preserve original logo and high-resolution contact exports so edges stay crisp.
+      exclude: /(?:logo(Green|White)[^/]*|contact-container-dark[^/]*)\.png$/i,
       includePublic: true,
       logStats: true,
       ansiColors: true,

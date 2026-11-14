@@ -14,7 +14,7 @@ export default function MarqueeSection() {
       <div className="max-w-[1400px] mx-auto text-center px-5 sm:px-6 mb-6 sm:mb-12">
         <h3 className="font-grift-bold font-bold text-[22px] sm:text-[28px] md:text-[34px] lg:text-[40px] text-[#141414] dark:text-white tracking-[-0.03em] leading-[1.2] xl:whitespace-nowrap">
           Yes, we cover everything you need to build, market &amp; grow your brand
-          <span className="text-[#F25C22]">.</span>
+          <span className="text-[#0F9D15]">.</span>
         </h3>
         <p className="font-grift-medium text-[16px] sm:text-[20px] md:text-[24px] lg:text-[27px] xl:text-[30px] text-[#4B5563] dark:text-[#E5E7EB] leading-[1.45] mt-7 sm:mt-8 md:mt-9 lg:mt-10 max-w-[1050px] mx-auto">
           From strategy and creative to technology and activation

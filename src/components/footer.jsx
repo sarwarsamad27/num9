@@ -1,6 +1,6 @@
 import React from "react";
 import { ArrowRight, Phone, Mail, Plus, Minus } from "lucide-react";
-import logo from "../assets/logoGreen.webp";
+import { logoGreen as logo, logoGreenSrcSet } from "../assets/logoSources";
 
 // Matched to the supplied 1920px reference with routing integrated to existing routes.
 const Footer = ({ onNavigate }) => {
@@ -26,9 +26,7 @@ const Footer = ({ onNavigate }) => {
     { label: "Technologies", route: "services" },
     { label: "Industries", route: "services" },
     { label: "Careers", route: "contact" },
-    { label: "Life at Number9", route: "about" },
     { label: "Blog", route: "our-work" },
-    { label: "Press", route: "about" },
     { label: "Contact Us", route: "contact" },
   ];
 
@@ -73,6 +71,8 @@ const Footer = ({ onNavigate }) => {
               >
                 <img
                   src={logo}
+                  srcSet={logoGreenSrcSet}
+                  sizes="(min-width: 640px) 76px, 72px"
                   alt="Number 9"
                   loading="lazy"
                   decoding="async"
@@ -84,7 +84,7 @@ const Footer = ({ onNavigate }) => {
 
             <div>
               <h3 className={headingClass}>
-                Discover Number9<span className="text-[#F15B40]">.</span>
+                Discover Number9<span className="text-[#0F9D15]">.</span>
               </h3>
               <ul className="space-y-[14px]">
                 {discoverLinks.map((item) => (
@@ -108,7 +108,7 @@ const Footer = ({ onNavigate }) => {
                 className="flex items-center justify-between w-full text-left mb-[18px] sm:mb-[25px] sm:pointer-events-none cursor-pointer group"
               >
                 <h3 className="text-[30px] xl:text-[19px] 2xl:text-[20px] font-semibold leading-[1.25] tracking-[-0.025em] text-black dark:text-white whitespace-nowrap">
-                  Resources<span className="text-[#F15B40]">.</span>
+                  Resources<span className="text-[#0F9D15]">.</span>
                 </h3>
                 <span
                   className="sm:hidden flex items-center justify-center w-8 h-8 rounded-full border border-black/20 dark:border-white/20 text-black dark:text-white shrink-0 ml-3 transition-colors group-hover:border-black dark:group-hover:border-white"
@@ -151,7 +151,7 @@ const Footer = ({ onNavigate }) => {
                 className="flex items-center justify-between w-full text-left mb-[18px] sm:mb-[25px] sm:pointer-events-none cursor-pointer group"
               >
                 <h3 className="text-[30px] xl:text-[19px] 2xl:text-[20px] font-semibold leading-[1.25] tracking-[-0.025em] text-black dark:text-white whitespace-nowrap">
-                  Careers<span className="text-[#F15B40]">.</span>
+                  Careers<span className="text-[#0F9D15]">.</span>
                 </h3>
                 <span
                   className="sm:hidden flex items-center justify-center w-8 h-8 rounded-full border border-black/20 dark:border-white/20 text-black dark:text-white shrink-0 ml-3 transition-colors group-hover:border-black dark:group-hover:border-white"
@@ -241,7 +241,7 @@ const Footer = ({ onNavigate }) => {
         >
           <section>
             <h3 className="text-[20px] font-semibold leading-[1.25] tracking-[-0.025em]">
-              Get in touch<span className="text-[#F15B40]">.</span>
+              Get in touch<span className="text-[#0F9D15]">.</span>
             </h3>
             <div className="mt-[22px] flex flex-wrap gap-[8px]">
               <a
@@ -330,7 +330,7 @@ const Footer = ({ onNavigate }) => {
 
           <section>
             <h3 className="text-[20px] font-semibold leading-[1.25] tracking-[-0.025em]">
-              Follow us<span className="text-[#F15B40]">.</span>
+              Follow us<span className="text-[#0F9D15]">.</span>
             </h3>
             <div className="mt-[26px] flex flex-wrap items-center gap-[24px]">
               <SocialIcon label="Instagram">

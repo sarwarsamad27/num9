@@ -2,7 +2,7 @@ import React, { useState, useRef } from "react";
 import ReCaptcha from "./ReCaptcha";
 import { Check, AlertCircle, Mail, Phone } from "lucide-react";
 import contactBg from "../assets/Contact Container.jpg";
-import contactBgDark from "../assets/Contact Container Dark.jpg";
+import contactBgDark from "../assets/contact-container-dark.png";
 import { useTheme } from "../context/ThemeContext";
 const benefits = [
   {
@@ -178,7 +178,7 @@ const WhyWorkWithUs = () => {
         <h2 className="mx-auto text-center text-[29px] sm:text-[34px] lg:text-[38px] xl:text-[40px] font-semibold leading-[1.55] sm:leading-[1.48] tracking-[-0.035em] text-black">
           No need to wonder.
           <br />
-          Working with us is wonderful<span className="text-[#F15B36]">.</span>
+          Working with us is wonderful<span className="text-[#0F9D15]">.</span>
         </h2>
 
         <div className="mx-auto mt-12 sm:mt-16 lg:mt-[70px] w-full max-w-[1000px] grid grid-cols-1 md:grid-cols-2 gap-x-10 lg:gap-x-[54px] gap-y-10 sm:gap-y-12 lg:gap-y-[51px]">
@@ -256,25 +256,25 @@ const WhyWorkWithUs = () => {
                 a call or message away!
               </p>
             </div>
-            <div className="contact-links mt-8 xl:mt-0 grid grid-cols-1 sm:grid-cols-2 gap-5 sm:gap-8 max-w-[390px] mx-auto xl:mx-0">
+            <div className="contact-links mt-8 xl:mt-0 grid grid-cols-2 gap-3 min-[400px]:gap-5 sm:gap-8 max-w-[390px] w-full mx-auto xl:mx-0">
               <div className="min-w-0">
-                <p className="text-[16px] sm:text-[16px] text-black/50 dark:text-[#D1D5DB]">
+                <p className="text-[14px] min-[400px]:text-[16px] text-black/50 dark:text-[#D1D5DB] whitespace-nowrap">
                   <Mail className="contact-icon" aria-hidden="true" /> Email
                 </p>
                 <a
                   href="mailto:info@number9.us"
-                  className="block mt-1 text-[17px] sm:text-[16px] lg:text-[20px] text-black dark:text-white break-all sm:break-normal"
+                  className="block mt-1 text-[14px] min-[400px]:text-[16px] lg:text-[20px] text-black dark:text-white whitespace-nowrap"
                 >
                   info@number9.us
                 </a>
               </div>
               <div className="min-w-0">
-                <p className="text-[16px] sm:text-[16px] text-black/50 dark:text-[#D1D5DB]">
+                <p className="text-[14px] min-[400px]:text-[16px] text-black/50 dark:text-[#D1D5DB] whitespace-nowrap">
                   <Phone className="contact-icon" aria-hidden="true" /> Phone
                 </p>
                 <a
                   href="tel:+14693597107"
-                  className="block mt-1 text-[17px] sm:text-[16px] lg:text-[20px] text-black dark:text-white"
+                  className="block mt-1 text-[14px] min-[400px]:text-[16px] lg:text-[20px] text-black dark:text-white whitespace-nowrap"
                 >
                   +1 469 359 7107
                 </a>

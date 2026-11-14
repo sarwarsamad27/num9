@@ -766,7 +766,7 @@ lg:pl-[85px] lg:pr-[55px]
             "
           >
             {challenge.heading || "The challenge"}
-            <span className="text-[#F2693A]">.</span>
+            <span className="text-[#0F9D15]">.</span>
           </h2>
 
           {/* CHALLENGE COLUMNS (3-col when image present, 2-col fallback) */}
@@ -1179,7 +1179,7 @@ lg:pl-[85px] lg:pr-[55px]
               "
             >
               {outcome.heading || "The outcome"}
-              <span className="text-[#F2693A]">.</span>
+              <span className="text-[#0F9D15]">.</span>
             </h2>
 
             <p

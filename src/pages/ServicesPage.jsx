@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { ChevronDown, Menu, X } from 'lucide-react';
-import logo from '../assets/Black Logo.png';
+import logo from '../assets/logoGreen.png';
 import servicesHeroImg from '../assets/servicesHeroImg.webp';
 import AppNav from '../components/nav';
 import AccelerateBusinessSection from '../components/AccelerateBusinessSection';
@@ -519,7 +519,7 @@ return (
 <div className="max-w-[1400px] mx-auto text-center px-5 sm:px-6 mb-6 sm:mb-10">
 <h2 className="font-grift-bold font-bold text-[30px] sm:text-[28px] md:text-[34px] lg:text-[40px] text-[#141414] dark:text-white tracking-[-0.03em] leading-[1.2] xl:whitespace-nowrap">
 Yes, we cover everything you need to build, market & grow your brand
-<span className="text-[#F25C22]">.</span>
+<span className="text-[#0F9D15]">.</span>
 </h2>
 <p className="font-grift-medium text-[16px] sm:text-[14px] md:text-[14px] lg:text-[17px] xl:text-[20px] text-[#4B5563] dark:text-[#E5E7EB] leading-[1.45] mt-7 sm:mt-8 md:mt-9 lg:mt-10 max-w-[1050px] mx-auto">
 From strategy and creative to technology and activation

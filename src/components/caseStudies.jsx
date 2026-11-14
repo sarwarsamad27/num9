@@ -639,6 +639,7 @@ lg:h-[530px]
           2xl:h-[741px]
           case-studies-carousel-container
           overflow-visible
+          touch-pan-y
 
         "
 

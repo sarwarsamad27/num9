@@ -1,5 +1,5 @@
 import React, { useRef, useEffect, useState } from 'react';
-import logo from '../assets/Black Logo.png';
+import logo from '../assets/logoGreen.png';
 import serviceGradient from '../assets/servicePgBg.jpg';
 import AccelerateBusinessSection from './AccelerateBusinessSection';
 import Footer from './footer';

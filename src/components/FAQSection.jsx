@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 
 const FAQ_CATEGORIES = [
   {
@@ -98,6 +98,25 @@ const FAQ_CATEGORIES = [
 export default function FAQSection({ onNavigate }) {
   const [activeTab, setActiveTab] = useState(FAQ_CATEGORIES[0].id);
   const [openIndex, setOpenIndex] = useState(0);
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const menuRef = useRef(null);
+
+  // Close the mobile category dropdown on outside click / Escape
+  useEffect(() => {
+    if (!isMenuOpen) return;
+    const onPointer = (e) => {
+      if (menuRef.current && !menuRef.current.contains(e.target)) setIsMenuOpen(false);
+    };
+    const onKey = (e) => {
+      if (e.key === "Escape") setIsMenuOpen(false);
+    };
+    document.addEventListener("pointerdown", onPointer);
+    document.addEventListener("keydown", onKey);
+    return () => {
+      document.removeEventListener("pointerdown", onPointer);
+      document.removeEventListener("keydown", onKey);
+    };
+  }, [isMenuOpen]);
 
   const currentCategory =
     FAQ_CATEGORIES.find((cat) => cat.id === activeTab) || FAQ_CATEGORIES[0];
@@ -105,6 +124,7 @@ export default function FAQSection({ onNavigate }) {
   const handleTabChange = (id) => {
     setActiveTab(id);
     setOpenIndex(0); // Open first question of new category by default
+    setIsMenuOpen(false);
   };
 
   const toggleQuestion = (index) => {
@@ -129,8 +149,59 @@ pb-6 sm:pb-8 lg:pb-10
           </h2>
         </div>
 
-        {/* Category Filter Pills */}
-        <div className="flex flex-wrap items-center justify-center gap-2.5 sm:gap-3.5 mb-10 sm:mb-14">
+        {/* Category Dropdown (mobile) */}
+        <div ref={menuRef} className="sm:hidden relative mb-10 max-w-[420px] mx-auto">
+          <button
+            type="button"
+            onClick={() => setIsMenuOpen((v) => !v)}
+            aria-haspopup="listbox"
+            aria-expanded={isMenuOpen}
+            className="w-full flex items-center justify-between gap-3 rounded-full px-5 py-3.5 text-left text-[15px] font-grift-semibold bg-[#15B83E] text-white dark:bg-[#32c400] dark:text-black shadow-md shadow-[#15B83E]/25 dark:shadow-[#32c400]/25 cursor-pointer select-none"
+          >
+            <span className="truncate">{currentCategory.label}</span>
+            <svg
+              className={`w-4 h-4 shrink-0 transition-transform duration-200 ${isMenuOpen ? "rotate-180" : ""}`}
+              viewBox="0 0 20 20"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="2.2"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              aria-hidden="true"
+            >
+              <path d="M5 7.5l5 5 5-5" />
+            </svg>
+          </button>
+
+          {isMenuOpen && (
+            <ul
+              role="listbox"
+              className="absolute z-30 left-0 right-0 mt-2 overflow-hidden rounded-[20px] border border-[#E5E7EB] dark:border-[#27342B] bg-white dark:bg-[#141A16] shadow-xl py-1.5"
+            >
+              {FAQ_CATEGORIES.map((cat) => {
+                const isActive = cat.id === activeTab;
+                return (
+                  <li key={cat.id} role="option" aria-selected={isActive}>
+                    <button
+                      type="button"
+                      onClick={() => handleTabChange(cat.id)}
+                      className={`w-full text-left px-5 py-3 text-[14px] font-grift-medium transition-colors cursor-pointer ${
+                        isActive
+                          ? "text-[#15B83E] dark:text-[#32c400]"
+                          : "text-[#4B5563] hover:bg-[#F3F4F6] dark:text-[#D1D5DB] dark:hover:bg-[#1A241D]"
+                      }`}
+                    >
+                      {cat.label}
+                    </button>
+                  </li>
+                );
+              })}
+            </ul>
+          )}
+        </div>
+
+        {/* Category Filter Pills (tablet & desktop) */}
+        <div className="hidden sm:flex flex-wrap items-center justify-center gap-2.5 sm:gap-3.5 mb-10 sm:mb-14">
           {FAQ_CATEGORIES.map((cat) => {
             const isActive = cat.id === activeTab;
             return (
