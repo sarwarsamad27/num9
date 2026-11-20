@@ -1,0 +1,59 @@
+{
+  "volvo-configurator": [
+    "src/assets/caseStudies/elipse/imported/volvo-configurator-1.webp",
+    "src/assets/caseStudies/elipse/imported/volvo-configurator-2.webp",
+    "src/assets/caseStudies/elipse/imported/volvo-configurator-3.webp",
+    "src/assets/caseStudies/elipse/imported/volvo-configurator-4.webp"
+  ],
+  "byd-shark-6-configurator": [
+    "src/assets/caseStudies/elipse/imported/byd-shark-6-configurator-1.webp"
+  ],
+  "kia-configurator": [
+    "src/assets/caseStudies/elipse/imported/kia-configurator-1.webp",
+    "src/assets/caseStudies/elipse/imported/kia-configurator-2.webp",
+    "src/assets/caseStudies/elipse/imported/kia-configurator-3.webp",
+    "src/assets/caseStudies/elipse/imported/kia-configurator-4.webp"
+  ],
+  "Costa-cart": [
+    "src/assets/caseStudies/elipse/imported/costa-cart-1.webp"
+  ],
+  "tim-barth": [
+    "src/assets/caseStudies/elipse/imported/tim-barth-1.webp",
+    "src/assets/caseStudies/elipse/imported/tim-barth-2.webp",
+    "src/assets/caseStudies/elipse/imported/tim-barth-3.webp",
+    "src/assets/caseStudies/elipse/imported/tim-barth-4.webp"
+  ],
+  "ahmed-foods": [
+    "src/assets/caseStudies/elipse/imported/ahmed-foods-1.webp",
+    "src/assets/caseStudies/elipse/imported/ahmed-foods-2.webp",
+    "src/assets/caseStudies/elipse/imported/ahmed-foods-3.webp",
+    "src/assets/caseStudies/elipse/imported/ahmed-foods-4.webp"
+  ],
+  "malka-foods": [
+    "src/assets/caseStudies/elipse/imported/malka-foods-1.webp",
+    "src/assets/caseStudies/elipse/imported/malka-foods-2.webp",
+    "src/assets/caseStudies/elipse/imported/malka-foods-3.webp"
+  ],
+  "inverex-configurator": [
+    "src/assets/caseStudies/elipse/imported/inverex-configurator-1.webp"
+  ],
+  "anamorphic-animation": [
+    "src/assets/caseStudies/elipse/imported/anamorphic-animation-1.webp",
+    "src/assets/caseStudies/elipse/imported/anamorphic-animation-2.webp",
+    "src/assets/caseStudies/elipse/imported/anamorphic-animation-3.webp",
+    "src/assets/caseStudies/elipse/imported/anamorphic-animation-4.webp"
+  ],
+  "lahore-zoo": [
+    "src/assets/caseStudies/elipse/imported/lahore-zoo-1.webp",
+    "src/assets/caseStudies/elipse/imported/lahore-zoo-2.webp",
+    "src/assets/caseStudies/elipse/imported/lahore-zoo-3.webp",
+    "src/assets/caseStudies/elipse/imported/lahore-zoo-4.webp"
+  ],
+  "cap-configurator": [
+    "src/assets/caseStudies/elipse/imported/cap-configurator-1.webp",
+    "src/assets/caseStudies/elipse/imported/cap-configurator-2.webp"
+  ],
+  "t-shirt-configurator": [
+    "src/assets/caseStudies/elipse/imported/t-shirt-configurator-1.webp"
+  ]
+}

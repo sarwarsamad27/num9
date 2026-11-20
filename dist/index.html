@@ -28,8 +28,7 @@
       (function() {
         try {
           var saved = localStorage.getItem('theme');
-          var prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
-          if (saved === 'dark' || (!saved && prefersDark)) {
+          if (saved === 'dark') {
             document.documentElement.classList.add('dark');
             document.documentElement.setAttribute('data-theme', 'dark');
           } else {
@@ -39,8 +38,8 @@
         } catch (e) {}
       })();
     </script>
-    <script type="module" crossorigin src="/assets/index-Dr1xz752.js"></script>
-    <link rel="stylesheet" crossorigin href="/assets/index-DC3tQ39t.css">
+    <script type="module" crossorigin src="/assets/index-CjQa96ML.js"></script>
+    <link rel="stylesheet" crossorigin href="/assets/index-OxrAvP-y.css">
   </head>
   <body>
     <div id="root"></div>
