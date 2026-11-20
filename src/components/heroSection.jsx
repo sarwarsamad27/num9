@@ -8,29 +8,31 @@ import citibankHeroImg from "../assets/Fintech Dashboard at Sunset 1.webp";
 import safewayHeroImg from "../assets/Fintech Dashboard at Sunset 1 (1).webp";
 
 // Latest Case Studies Assets (SCANTECH, Nakamichi, SSSTC, Finamill, DREO, Delta Light)
-import scantechHeroImg from "../assets/caseStudies/SCANTECH The Battery Show North America 2024/scantech1.avif";
-import scantechMobileHeroImg from "../assets/heroMobileImages/scantechMobile.webp";
+import scantechHeroImg from "../assets/heroImagesUpdated/scantechHero.webp";
+import scantechMobileHeroImg from "../assets/heroImagesUpdated/scantechHero.webp";
 import scantechSymbol from "../assets/caseStudies/SCANTECH The Battery Show North America 2024/scantechLogo_white.png";
 
-import nakamichiHeroImg from "../assets/caseStudies/Nakamichi Car Audio/nakamichi1.avif";
-import nakamichiMobileHeroImg from "../assets/heroMobileImages/nakamichiMobile.webp";
-import nakamichiSymbol from "../assets/caseStudies/Nakamichi Car Audio/Nakamichi Red Geometric Symbol.png";
+import nakamichiHeroImg from "../assets/heroImagesUpdated/nakamichiHero.webp";
+import nakamichiMobileHeroImg from "../assets/heroImagesUpdated/nakamichiHero.webp";
+import nakamichiLogo from "../assets/caseStudies/Nakamichi Car Audio/nakamichi_white.png";
 
-import ssstcHeroImg from "../assets/caseStudies/SSSTC Circleexhibit/ssstc1.webp";
-import ssstcMobileHeroImg from "../assets/heroMobileImages/ssstcMobile.webp";
+import ssstcHeroImg from "../assets/heroImagesUpdated/ssstcHero.webp";
+import ssstcMobileHeroImg from "../assets/heroImagesUpdated/ssstcHero.webp";
 import ssstcSymbol from "../assets/caseStudies/SSSTC Circleexhibit/ssstcIcon.png";
+import ssstcFullLogo from "../assets/caseStudies/SSSTC Circleexhibit/ssstcLogoUpdated.png";
 
-import finamillHeroImg from "../assets/caseStudies/Finamill IHS 2025/finamill1.webp";
-import finamillMobileHeroImg from "../assets/heroMobileImages/finamillMobile.webp";
+import finamillHeroImg from "../assets/heroImagesUpdated/finamillHero.webp";
+import finamillMobileHeroImg from "../assets/heroImagesUpdated/finamillHero.webp";
 import finamillLogo from "../assets/caseStudies/Finamill IHS 2025/finamillWordmark_clean.png";
 
-import dreoHeroImg from "../assets/caseStudies/DREO IHS 2025/dreo1.avif";
-import dreoMobileHeroImg from "../assets/heroMobileImages/dreoMobile.webp";
+import dreoHeroImg from "../assets/heroImagesUpdated/dreoHero.webp";
+import dreoMobileHeroImg from "../assets/heroImagesUpdated/dreoHero.webp";
 import dreoLogo from "../assets/caseStudies/DREO IHS 2025/dreoLogo_trimmed.png";
 
-import deltaHeroImg from "../assets/caseStudies/Delta Light/delta1.jpg";
-import deltaLightMobileHeroImg from "../assets/heroMobileImages/deltaLightMobile.webp";
+import deltaHeroImg from "../assets/heroImagesUpdated/deltaLightHero.webp";
+import deltaLightMobileHeroImg from "../assets/heroImagesUpdated/deltaLightHero.webp";
 import deltaSymbol from "../assets/caseStudies/Delta Light/deltaSymbol.png";
+import deltaFullLogo from "../assets/caseStudies/Delta Light/deltaLogo_white.png";
 
 // Jdot Fragrances Ballin'
 import jdotHeroImg from "../assets/caseStudies/j/Website_Thumb.png";
@@ -87,8 +89,9 @@ const COLORED_LOGOS = new Set([
   shanLogo,
   snacksLogo,
   almazaLogo,
-  nakamichiSymbol,
+  nakamichiLogo,
   ssstcSymbol,
+  ssstcFullLogo,
   finamillLogo,
 ]);
 
@@ -112,48 +115,23 @@ const isColoredLogo = (logoUrl) => {
 
 // Prioritized preload: immediately decode active and adjacent visible slides on load
 const PRIMARY_HERO_IMAGES = [
+  jdotHeroImg,
+  jdotMobileHeroImg,
+  jdotSymbol,
   scantechHeroImg,
   nakamichiHeroImg,
-  almazaHeroImg,
   scantechMobileHeroImg,
   nakamichiMobileHeroImg,
-  almazaMobileHeroImg,
   scantechSymbol,
 ];
 
 const SECONDARY_HERO_IMAGES = [
-  jdotHeroImg,
-  jdotMobileHeroImg,
   ssstcHeroImg,
   finamillHeroImg,
   dreoHeroImg,
   deltaHeroImg,
-  lexusHeroImg,
-  citibankHeroImg,
-  safewayHeroImg,
-  empireHeroImg,
-  lifegiveHeroImg,
-  pwcHeroImg,
-  sentralHeroImg,
-  zee5HeroImg,
-  fairviewHeroImg,
-  shanHeroImg,
   snacksHeroImg,
-  ssstcMobileHeroImg,
-  finamillMobileHeroImg,
-  dreoMobileHeroImg,
-  deltaLightMobileHeroImg,
-  lexusMobileHeroImg,
-  citibankMobileHeroImg,
-  safewayMobileHeroImg,
-  empireMobileHeroImg,
-  pwcMobileHeroImg,
-  sentralMobileHeroImg,
-  lifegiveMobileHeroImg,
   snacksMobileHeroImg,
-  zee5MobileHeroImg,
-  fairviewMobileHeroImg,
-  shanMobileHeroImg,
 ];
 
 if (typeof window !== "undefined") {
@@ -205,9 +183,9 @@ const slides = [
     imageUrl: nakamichiHeroImg,
     mobileImageUrl: nakamichiMobileHeroImg,
     brand: "Nakamichi",
-    logoUrl: nakamichiSymbol,
+    logoUrl: nakamichiLogo,
     logoClass:
-      "h-[32px] min-[390px]:h-[36px] sm:h-[42px] md:h-[50px] lg:h-[60px] w-auto",
+      "h-auto w-[110px] min-[390px]:w-[125px] sm:w-[170px] md:w-[200px] lg:w-[230px]",
     categories: ["Automotive & Audio", "Exhibition Booth"],
     description:
       "Disciplined 20x20 exhibition booth with perimeter interaction counters and precision audio display.",
@@ -221,7 +199,7 @@ const slides = [
     logoUrl: jdotSymbol,
     logoClass:
       "h-[34px] min-[390px]:h-[38px] sm:h-[44px] md:h-[54px] lg:h-[64px] w-auto",
-    categories: ["Commercial Production", "Celebrity Campaign"],
+    categories: [],
     objectPosition: "center 25%",
     description:
       "Producing a high-impact DVC for a global fragrance launch with NBA legend Kobe Bryant.",
@@ -232,9 +210,9 @@ const slides = [
     imageUrl: ssstcHeroImg,
     mobileImageUrl: ssstcMobileHeroImg,
     brand: "SSSTC",
-    logoUrl: ssstcSymbol,
+    logoUrl: ssstcFullLogo,
     logoClass:
-      "h-[32px] min-[390px]:h-[36px] sm:h-[42px] md:h-[50px] lg:h-[60px] w-auto",
+      "h-[24px] min-[390px]:h-[28px] sm:h-[32px] md:h-[40px] lg:h-[50px] w-auto max-w-[60vw]",
     categories: ["Enterprise Storage", "Custom Booth"],
     description:
       "High-impact 10x10 custom inline booth optimizing aisle-facing flow and enterprise technology demos.",
@@ -271,54 +249,15 @@ const slides = [
     imageUrl: deltaHeroImg,
     mobileImageUrl: deltaLightMobileHeroImg,
     brand: "Delta Light",
-    logoUrl: deltaSymbol,
+    logoUrl: deltaFullLogo,
     logoClass:
-      "h-[34px] min-[390px]:h-[38px] sm:h-[44px] md:h-[54px] lg:h-[64px] w-auto",
+      "h-[16px] min-[390px]:h-[18px] sm:h-[22px] md:h-[28px] lg:h-[36px] w-auto max-w-[60vw]",
     categories: ["Architectural Lighting", "Rental Exhibit"],
     description:
       "Austere architectural rental exhibit engineered with light-blocking ceiling to highlight premium fixtures.",
     route: "case-study/delta-light",
   },
-  {
-    id: 8,
-    imageUrl: lexusHeroImg,
-    brand: "Lexus",
-    mobileImageUrl: lexusMobileHeroImg,
-    logoUrl: lexusLogo,
-    logoClass:
-      "h-[34px] min-[390px]:h-[38px] sm:h-[44px] md:h-[54px] lg:h-[64px] w-[110px] sm:w-[145px] md:w-[170px] lg:w-[200px]",
-    categories: ["3D Configurator", "Interactive Experience"],
-    description:
-      "An interactive dealership experience for vehicle customization and multimedia.",
-    route: "case-study/lexus",
-  },
-  {
-    id: 9,
-    imageUrl: citibankHeroImg,
-    mobileImageUrl: citibankMobileHeroImg,
-    brand: "CitiBank",
-    logoUrl: citibankLogo,
-    logoClass:
-      "h-[34px] min-[390px]:h-[38px] sm:h-[44px] md:h-[54px] lg:h-[64px] w-[110px] sm:w-[145px] md:w-[170px] lg:w-[200px]",
-    categories: ["Data Visualization", "Digital Experience"],
-    description:
-      "A comprehensive data visualization dashboard to capture the full landscape and enable internal collaboration across teams at CitiBank.",
-    route: "case-study/citibank",
-  },
   
-  {
-    id: 10,
-    imageUrl: empireHeroImg,
-    mobileImageUrl: empireMobileHeroImg,
-    brand: "Empire Cinemas",
-    logoUrl: empireLogo,
-    logoClass:
-      "h-[34px] min-[390px]:h-[38px] sm:h-[44px] md:h-[54px] lg:h-[74px] w-[110px] sm:w-[145px] md:w-[170px] lg:w-[200px]",
-    categories: ["Web Design", "Ticket Reservation"],
-    description:
-      "A cinema website design bringing movie listings, trailers, showtimes, and seat selection into a connected booking experience.",
-    route: "case-study/empire",
-  },
 
 
   {
@@ -333,19 +272,6 @@ const slides = [
     description:
       "A direct-to-consumer platform for Frito-Lay /PepsiCo, combining customizable snack boxes, flexible ordering, and integrated digital marketing.",
     route: "case-study/snacks",
-  },
-  {
-    id: 12,
-    imageUrl: zee5HeroImg,
-    mobileImageUrl: zee5MobileHeroImg,
-    brand: "ZEE5",
-    logoUrl: zee5Logo,
-    logoClass:
-      "h-[34px] min-[390px]:h-[38px] sm:h-[44px] md:h-[54px] lg:h-[74px] w-[110px] sm:w-[145px] md:w-[170px] lg:w-[200px]",
-    categories: ["Retail Activation", "Affiliate Marketing"],
-    description:
-      "A branded retail screen initiative showcasing ZEE5 content to South Asian audiences in North American grocery stores.",
-    route: "case-study/zee5",
   },
   // {
   //   id: 9,
@@ -447,7 +373,9 @@ export default function HeroSection({
   onNavigate,
 }) {
 
-  const [currentIndex, setCurrentIndex] = useState(0);
+  const [currentIndex, setCurrentIndex] = useState(() =>
+    slides.findIndex((slide) => slide.brand === "J."),
+  );
 
   useEffect(() => {
     // Preload only the upcoming slides
@@ -659,16 +587,23 @@ export default function HeroSection({
                   />
                 )}
 
+                {/* Darken the other brands while preserving the J. artwork. */}
+                {slide.route !== "case-study/jdot" && (
+                  <div
+                    aria-hidden="true"
+                    className="pointer-events-none absolute inset-0 bg-black/30"
+                  />
+                )}
+
                 {/* Smooth black fade on the top and bottom edges of each hero image */}
                 <div
                   aria-hidden="true"
                   className="pointer-events-none absolute inset-0"
                   style={{
-                    background: "linear-gradient(to bottom, rgba(0,0,0,0.97) 0%, rgba(0,0,0,0.76) 12%, rgba(0,0,0,0.37) 27%, transparent 44%, transparent 56%, rgba(0,0,0,0.40) 73%, rgba(0,0,0,0.79) 88%, rgba(0,0,0,0.98) 100%)",
+                    background: "linear-gradient(to bottom, rgba(0,0,0,0.55) 0%, rgba(0,0,0,0.22) 14%, transparent 28%, transparent 72%, rgba(0,0,0,0.22) 86%, rgba(0,0,0,0.55) 100%)",
                   }}
                 />
-                <div className="pointer-events-none absolute inset-0 bg-gradient-to-r from-black/20 to-transparent" />
-
+                
                 {isActive && (
                   <>
                     {/* Top-left brand mark — all screen sizes, aligned with bottom-left glass box */}
@@ -711,7 +646,7 @@ export default function HeroSection({
                       type="button"
                       aria-label="Previous project"
                       onClick={handlePrev}
-                      className="hidden sm:flex absolute z-50 left-3 sm:left-[2.5%] lg:left-[3%] top-1/2 -translate-y-1/2 h-10 w-10 sm:h-11 sm:w-11 md:h-13 md:w-13 lg:h-[70px] lg:w-[70px] items-center justify-center rounded-full border border-white/40 sm:border-white/80 bg-black/45 sm:bg-black/30 text-white backdrop-blur-[3px] transition-colors hover:bg-black/60 active:scale-95"
+                      className="hidden sm:flex absolute z-50 left-3 sm:left-[2.5%] lg:left-[3%] top-1/2 -translate-y-1/2 h-10 w-10 sm:h-11 sm:w-11 md:h-13 md:w-13 lg:h-14 lg:w-14 xl:h-[70px] xl:w-[70px] items-center justify-center rounded-full border border-white/40 sm:border-white/80 bg-black/45 sm:bg-black/30 text-white backdrop-blur-[3px] transition-colors hover:bg-black/60 active:scale-95"
                     >
                       <ChevronLeft
                         className="h-5 w-5 sm:h-6 sm:w-6 lg:h-7 lg:w-7"
@@ -722,7 +657,7 @@ export default function HeroSection({
                       type="button"
                       aria-label="Next project"
                       onClick={handleNext}
-                      className="hidden sm:flex absolute z-50 right-3 sm:right-[2.5%] lg:right-[3%] top-1/2 -translate-y-1/2 h-10 w-10 sm:h-11 sm:w-11 md:h-13 md:w-13 lg:h-[70px] lg:w-[70px] items-center justify-center rounded-full border border-white/40 sm:border-white/80 bg-black/45 sm:bg-black/30 text-white backdrop-blur-[3px] transition-colors hover:bg-black/60 active:scale-95"
+                      className="hidden sm:flex absolute z-50 right-3 sm:right-[2.5%] lg:right-[3%] top-1/2 -translate-y-1/2 h-10 w-10 sm:h-11 sm:w-11 md:h-13 md:w-13 lg:h-14 lg:w-14 xl:h-[70px] xl:w-[70px] items-center justify-center rounded-full border border-white/40 sm:border-white/80 bg-black/45 sm:bg-black/30 text-white backdrop-blur-[3px] transition-colors hover:bg-black/60 active:scale-95"
                     >
                       <ChevronRight
                         className="h-5 w-5 sm:h-6 sm:w-6 lg:h-7 lg:w-7"
@@ -731,12 +666,12 @@ export default function HeroSection({
                     </button>
 
                     {/* Bottom-left glass project details — hidden on mobile to match reference */}
-                    <div className="hidden sm:block absolute z-40 bottom-[5%] sm:bottom-[6%] lg:bottom-[7%] left-[3%] sm:left-[3.3%] w-[38%] md:w-[35%] lg:w-[32%] max-w-[460px] rounded-[14px] lg:rounded-[18px] border border-white/65 bg-[#303030]/65 px-4 py-3 sm:px-5 sm:py-4 lg:px-7 lg:py-6 backdrop-blur-[12px] shadow-[0_12px_30px_rgba(0,0,0,.15)] text-white">
+                    <div className="hidden sm:block absolute z-40 bottom-[5%] sm:bottom-[6%] lg:bottom-[7%] left-[3%] sm:left-[3.3%] w-[38%] md:w-[35%] lg:w-[32%] max-w-[460px] rounded-[14px] lg:rounded-[18px] border border-white/65 bg-[#303030]/65 px-4 py-3 sm:px-5 sm:py-4 lg:px-6 lg:py-4 xl:px-7 xl:py-6 backdrop-blur-[12px] shadow-[0_12px_30px_rgba(0,0,0,.15)] text-white">
                       <div className="font-grift-medium text-[8px] sm:text-[9px] lg:text-[10px] tracking-[0.27em] uppercase text-white/85">
                         Featured Project
                       </div>
-                      <div className="my-1.5 sm:my-2.5 lg:my-4 h-[2px] lg:h-[3px] w-[30px] sm:w-[40px] lg:w-[52px] bg-[#35d20a]" />
-                      <p className="font-grift-medium text-[11px] sm:text-[13px] md:text-[15px] lg:text-[20px] leading-[1.3] lg:leading-[1.36] line-clamp-3 lg:line-clamp-none">
+                      <div className="my-1.5 sm:my-2.5 lg:my-3 xl:my-4 h-[2px] lg:h-[3px] w-[30px] sm:w-[40px] lg:w-[52px] bg-[#35d20a]" />
+                      <p className="font-grift-medium text-[11px] sm:text-[13px] md:text-[15px] lg:text-[clamp(15px,1.1vw,20px)] leading-[1.3] lg:leading-[1.36] line-clamp-3">
                         {slide.description}
                       </p>
                     </div>

@@ -607,11 +607,11 @@ export default function ServiceDetailPage({
       "nakamichi car audio",
       "ssstc",
       "finamill",
+      "mezan global", // kept well apart from Shan so the two never sit side by side
       "dreo",
       "delta light",
       "katjes usa",
       "shan launch event",
-      "mezan global",
       "skinny mixes",
       "lexus",
     ];
@@ -815,7 +815,7 @@ export default function ServiceDetailPage({
 
       {/* ── HERO ─────────────────────────────────────────── */}
       <section className="w-full bg-white dark:bg-[#0B0D0C] transition-colors duration-300">
-        <div className="w-full max-w-[1920px] mx-auto px-5 sm:px-10 lg:px-[5%] pt-6 sm:pt-9 lg:pt-10 pb-8 sm:pb-14 lg:pb-[58px]">
+        <div className="w-full max-w-[1920px] mx-auto px-5 sm:px-10 lg:px-[5%] pt-6 sm:pt-9 lg:pt-10 pb-8 sm:pb-10 lg:pb-10">
 
           {/* Eyebrow Breadcrumb: "01 / THIS IS OUR PROCESS" on mobile, Back to Case Studies on desktop */}
 
@@ -970,7 +970,7 @@ export default function ServiceDetailPage({
 
       {/* ── THE WORK grid ────────────────────────────────── */}
       <section className="w-full bg-white dark:bg-[#0B0D0C] transition-colors duration-300">
-        <div className="w-full max-w-[1920px] mx-auto px-5 sm:px-10 lg:px-[5%] pt-2 sm:pt-6 lg:pt-12 pb-12 lg:pb-16">
+        <div className="w-full max-w-[1920px] mx-auto px-5 sm:px-10 lg:px-[5%] pt-2 sm:pt-4 lg:pt-5 pb-12 lg:pb-16">
 
           {/* Mobile & Tablet Filters — positioned directly above THE WORK heading */}
           <div className="block lg:hidden mb-6 sm:mb-8">

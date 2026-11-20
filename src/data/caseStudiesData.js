@@ -1,3 +1,4 @@
+import { elipseCaseStudies } from "./elipseCaseStudies";
 import lexusHeroBg from "../assets/lexus/2ndimg.webp";
 import lexusLogo from "../assets/Logos/ClientsGrid_Logos/lexus.png";
 import lexusLogoWhite from "../assets/Logos/ClientsGrid_Logos/lexus_white.png";
@@ -197,6 +198,45 @@ import jdot_triptych from "../assets/caseStudiesTriptych/jdot_triptych.webp";
 // Architectural Triptych Quote Graphics for all Case Studies
 import delta_light_triptych from "../assets/caseStudiesTriptych/delta-light_triptych.webp";
 import dreo_triptych from "../assets/caseStudiesTriptych/dreo_triptych.webp";
+import dreoCaseHeroImg from "../assets/caseStudies/DREO IHS 2025/updated/dreoCaseHero.webp";
+import dreoChallengeImg from "../assets/caseStudies/DREO IHS 2025/updated/dreoChallenge.webp";
+import dreoImage01 from "../assets/caseStudies/DREO IHS 2025/updated/dreoImage01.webp";
+import dreoImage02 from "../assets/caseStudies/DREO IHS 2025/updated/dreoImage02.webp";
+import dreoImage03 from "../assets/caseStudies/DREO IHS 2025/updated/dreoImage03.webp";
+import dreoMainHeroImg from "../assets/caseStudies/DREO IHS 2025/updated/dreoMainHero.webp";
+import finamillNewCaseStudyFirst from "../assets/caseStudies/updated/finamill/Case_Study_First.webp";
+import finamillNewCaseStudyThird from "../assets/caseStudies/updated/finamill/Case_Study_Third.webp";
+import finamillNewHeroSectionImage from "../assets/caseStudies/updated/finamill/Hero_Section_Image.webp";
+import finamillNewImage01 from "../assets/caseStudies/updated/finamill/Image_01.webp";
+import finamillNewImage02 from "../assets/caseStudies/updated/finamill/Image_02.webp";
+import finamillNewImage03 from "../assets/caseStudies/updated/finamill/Image_03.webp";
+import finamillNewImage04 from "../assets/caseStudies/updated/finamill/Image_04.webp";
+import katjesNewCaseStudyFirst from "../assets/caseStudies/updated/katjes/Case_Study_First.webp";
+import katjesNewCaseStudyThird from "../assets/caseStudies/updated/katjes/Case_Study_Third.webp";
+import katjesNewImage01 from "../assets/caseStudies/updated/katjes/Image_01.webp";
+import katjesNewImage02 from "../assets/caseStudies/updated/katjes/Image_02.webp";
+import katjesNewImage03 from "../assets/caseStudies/updated/katjes/Image_03.webp";
+import katjesNewImage04 from "../assets/caseStudies/updated/katjes/Image_04.webp";
+import katjesNewImage05 from "../assets/caseStudies/updated/katjes/Image_05.webp";
+import katjesNewImage06 from "../assets/caseStudies/updated/katjes/Image_06.webp";
+import katjesNewImage07 from "../assets/caseStudies/updated/katjes/Image_07.webp";
+import katjesNewImage08 from "../assets/caseStudies/updated/katjes/Image_08.webp";
+import nakamichiNewCaseStudyFirst from "../assets/caseStudies/updated/nakamichi/Case_Study_First.webp";
+import nakamichiNewCaseStudySecond from "../assets/caseStudies/updated/nakamichi/Case_Study_Second.webp";
+import nakamichiNewCaseStudyThird from "../assets/caseStudies/updated/nakamichi/Case_Study_Third.webp";
+import nakamichiNewImage01 from "../assets/caseStudies/updated/nakamichi/image_01.webp";
+import nakamichiNewImage02 from "../assets/caseStudies/updated/nakamichi/Image_02.webp";
+import nakamichiNewMainHeroImage from "../assets/caseStudies/updated/nakamichi/Main_Hero_Image.webp";
+import scantechNewCaseStudyFirst from "../assets/caseStudies/updated/scantech/Case_Study_First.webp";
+import scantechNewCaseStudyThird from "../assets/caseStudies/updated/scantech/Case_Study_Third.webp";
+import scantechNewHeroSectionImage from "../assets/caseStudies/updated/scantech/Hero_Section_Image.webp";
+import scantechNewImage01 from "../assets/caseStudies/updated/scantech/Image_01.webp";
+import scantechNewImage02 from "../assets/caseStudies/updated/scantech/Image_02.webp";
+import scantechNewImage03 from "../assets/caseStudies/updated/scantech/Image_03.webp";
+import scantechNewImage04 from "../assets/caseStudies/updated/scantech/Image_04.webp";
+import ssstcNewCaseStudyFirst from "../assets/caseStudies/updated/ssstc/Case_Study_First.webp";
+import ssstcNewHeroSectionImage from "../assets/caseStudies/updated/ssstc/Hero_Section_Image.webp";
+import ssstcNewImage01 from "../assets/caseStudies/updated/ssstc/Image_01.webp";
 import finamill_triptych from "../assets/caseStudiesTriptych/finamill_triptych.webp";
 import katjes_triptych from "../assets/caseStudiesTriptych/katjes_triptych.webp";
 import nakamichi_triptych from "../assets/caseStudiesTriptych/nakamichi_triptych.webp";
@@ -215,7 +255,7 @@ import jcpenney_triptych from "../assets/caseStudiesTriptych/jcpenney_triptych.w
 import emirates_triptych from "../assets/caseStudiesTriptych/emirates_triptych.webp";
 import safeway_triptych from "../assets/caseStudiesTriptych/safeway_triptych.webp";
 import ymca_triptych from "../assets/caseStudiesTriptych/ymca_triptych.webp";
-import magellan_triptych from "../assets/caseStudiesTriptych/magellan_triptych.webp";
+import magellanMain from "../assets/caseStudies/magellan/magellan-main.webp";
 import snacks_triptych from "../assets/caseStudiesTriptych/snacks_triptych.webp";
 import zee5_triptych from "../assets/caseStudiesTriptych/zee5_triptych.webp";
 import sentral_triptych from "../assets/caseStudiesTriptych/sentral_triptych.webp";
@@ -230,6 +270,7 @@ import standard_chartered_triptych from "../assets/caseStudiesTriptych/standard-
 import shaan_triptych from "../assets/caseStudiesTriptych/shaan_triptych.webp";
 
 export const caseStudiesData = {
+  ...elipseCaseStudies,
   lexus: {
     id: "lexus",
     slug: "lexus",
@@ -428,8 +469,8 @@ export const caseStudiesData = {
       },
       challenge: {
         heading: "The challenge",
-        image: lexusWarehouse,
-        imageAlt: "Lexus interactive dealership platform challenge",
+        image: workLaptop,
+        imageAlt: "Microsoft project challenge",
         leftParagraphs: [
           "Microsoft required unified design patterns and high-performance frontend architecture to reduce engineering friction across diverse product ecosystems.",
           "Internal development teams needed modular tooling and robust design tokens that aligned with stringent accessibility and global localization standards.",
@@ -440,8 +481,8 @@ export const caseStudiesData = {
       },
       solution: {
         heading: "The solution.",
-        image: lexusSolutionImg,
-        imageAlt: "Lexus interactive dealership platform solution",
+        image: workLaptop,
+        imageAlt: "Microsoft project solution",
         description:
           "We engineered an extensible design system and optimized application frameworks that unified interaction patterns across enterprise tools. With comprehensive documentation, accessibility compliance, and optimized bundle delivery, we enabled faster development cycles and cohesive digital experiences.",
         customerInteractions: {
@@ -469,19 +510,19 @@ export const caseStudiesData = {
         ],
         galleryImages: [
           {
-            src: lexusImg1,
-            title: "This is a video title",
-            subtitle: "LEXUS SHORT FILMS",
+            src: workLaptop,
+            title: "Microsoft project showcase",
+            subtitle: "MICROSOFT PROJECT SHOWCASE",
           },
           {
-            src: lexusImg2,
-            title: "This is a video title",
-            subtitle: "LEXUS SHORT FILMS",
+            src: workLaptop,
+            title: "Microsoft project showcase",
+            subtitle: "MICROSOFT PROJECT SHOWCASE",
           },
           {
-            src: lexusImg3,
-            title: "This is a video title",
-            subtitle: "LEXUS SHORT FILMS",
+            src: workLaptop,
+            title: "Microsoft project showcase",
+            subtitle: "MICROSOFT PROJECT SHOWCASE",
           },
         ],
       },
@@ -556,8 +597,8 @@ export const caseStudiesData = {
       },
       challenge: {
         heading: "The challenge",
-        image: lexusWarehouse,
-        imageAlt: "Lexus interactive dealership platform challenge",
+        image: bussinesAcltImage,
+        imageAlt: "PepsiCo project challenge",
         leftParagraphs: [
           "PepsiCo needed to stand out in saturated retail environments through synchronized digital and physical brand experiences.",
           "Regional marketing teams required flexible campaign templates that could be localized quickly without diluting brand prestige.",
@@ -568,8 +609,8 @@ export const caseStudiesData = {
       },
       solution: {
         heading: "The solution.",
-        image: lexusSolutionImg,
-        imageAlt: "Lexus interactive dealership platform solution",
+        image: bussinesAcltImage,
+        imageAlt: "PepsiCo project solution",
         description:
           "We engineered dynamic digital campaign platforms, interactive QR-activated microsites, and automated regional marketing toolkits. Designed for rapid deployment and maximum visual punch, these assets connected in-store displays with engaging digital incentives and loyalty rewards.",
         customerInteractions: {
@@ -597,19 +638,19 @@ export const caseStudiesData = {
         ],
         galleryImages: [
           {
-            src: lexusImg1,
-            title: "This is a video title",
-            subtitle: "LEXUS SHORT FILMS",
+            src: bussinesAcltImage,
+            title: "PepsiCo project showcase",
+            subtitle: "PEPSICO PROJECT SHOWCASE",
           },
           {
-            src: lexusImg2,
-            title: "This is a video title",
-            subtitle: "LEXUS SHORT FILMS",
+            src: bussinesAcltImage,
+            title: "PepsiCo project showcase",
+            subtitle: "PEPSICO PROJECT SHOWCASE",
           },
           {
-            src: lexusImg3,
-            title: "This is a video title",
-            subtitle: "LEXUS SHORT FILMS",
+            src: bussinesAcltImage,
+            title: "PepsiCo project showcase",
+            subtitle: "PEPSICO PROJECT SHOWCASE",
           },
         ],
       },
@@ -683,8 +724,8 @@ export const caseStudiesData = {
       },
       challenge: {
         heading: "The challenge",
-        image: lexusWarehouse,
-        imageAlt: "Lexus interactive dealership platform challenge",
+        image: emiratesBg,
+        imageAlt: "Emirates project challenge",
         leftParagraphs: [
           "Global travelers expect fast, personalized booking and journey management across multiple languages, currencies, and devices.",
           "Presenting luxury inflight cabin amenities and personalized entertainment needed to feel as effortless and inspiring as the actual flight.",
@@ -695,8 +736,8 @@ export const caseStudiesData = {
       },
       solution: {
         heading: "The solution.",
-        image: lexusSolutionImg,
-        imageAlt: "Lexus interactive dealership platform solution",
+        image: emiratesBg,
+        imageAlt: "Emirates project solution",
         description:
           "We designed high-conversion booking workflows, interactive cabin exploration interfaces, and responsive journey dashboards. By emphasizing swift page loads, clear hierarchy, and elegant visual polish, the platform elevated customer satisfaction and accelerated direct digital bookings.",
         customerInteractions: {
@@ -724,19 +765,19 @@ export const caseStudiesData = {
         ],
         galleryImages: [
           {
-            src: lexusImg1,
-            title: "This is a video title",
-            subtitle: "LEXUS SHORT FILMS",
+            src: emiratesBg,
+            title: "Emirates project showcase",
+            subtitle: "EMIRATES PROJECT SHOWCASE",
           },
           {
-            src: lexusImg2,
-            title: "This is a video title",
-            subtitle: "LEXUS SHORT FILMS",
+            src: emiratesBg,
+            title: "Emirates project showcase",
+            subtitle: "EMIRATES PROJECT SHOWCASE",
           },
           {
-            src: lexusImg3,
-            title: "This is a video title",
-            subtitle: "LEXUS SHORT FILMS",
+            src: emiratesBg,
+            title: "Emirates project showcase",
+            subtitle: "EMIRATES PROJECT SHOWCASE",
           },
         ],
       },
@@ -819,8 +860,8 @@ export const caseStudiesData = {
 
       challenge: {
         heading: "The challenge",
-        image: lexusWarehouse,
-        imageAlt: "Lexus interactive dealership platform challenge",
+        image: fintechSunset2,
+        imageAlt: "Citibank project challenge",
         leftParagraphs: [
           "Citi wanted to leverage big data through interactive data visualization dashboards to capture portfolio performance, consumer trends, and risk management metrics without operational UI friction.",
 
@@ -834,8 +875,8 @@ export const caseStudiesData = {
 
       solution: {
         heading: "The solution.",
-        image: lexusSolutionImg,
-        imageAlt: "Lexus interactive dealership platform solution",
+        image: fintechSunset2,
+        imageAlt: "Citibank project solution",
         description:
           "We created an interactive Citibank analytics platform that allows analysts to track portfolio performance, monitor risk metrics, and engage with real-time financial data visualizations. Designed with intuitive navigation, high readability, and an enterprise-focused user experience, the solution simplifies complex banking data while supporting executives with a powerful strategic decision and presentation tool.",
 
@@ -870,19 +911,19 @@ export const caseStudiesData = {
 
         galleryImages: [
           {
-            src: lexusImg1,
-            title: "This is a video title",
-            subtitle: "LEXUS SHORT FILMS",
+            src: fintechSunset2,
+            title: "Citibank project showcase",
+            subtitle: "CITIBANK PROJECT SHOWCASE",
           },
           {
-            src: lexusImg2,
-            title: "This is a video title",
-            subtitle: "LEXUS SHORT FILMS",
+            src: fintechSunset2,
+            title: "Citibank project showcase",
+            subtitle: "CITIBANK PROJECT SHOWCASE",
           },
           {
-            src: lexusImg3,
-            title: "This is a video title",
-            subtitle: "LEXUS SHORT FILMS",
+            src: fintechSunset2,
+            title: "Citibank project showcase",
+            subtitle: "CITIBANK PROJECT SHOWCASE",
           },
         ],
       },
@@ -957,8 +998,8 @@ export const caseStudiesData = {
       },
       challenge: {
         heading: "The challenge",
-        image: lexusWarehouse,
-        imageAlt: "Lexus interactive dealership platform challenge",
+        image: businessStrategy,
+        imageAlt: "Nutrien project challenge",
         leftParagraphs: [
           "Agronomic data was siloed across legacy regional ERPs and field monitoring systems, slowing critical seasonal operations.",
           "Operations managers required rapid visibility into fertilizer inventories, shipping schedules, and regional weather forecasts.",
@@ -969,8 +1010,8 @@ export const caseStudiesData = {
       },
       solution: {
         heading: "The solution.",
-        image: lexusSolutionImg,
-        imageAlt: "Lexus interactive dealership platform solution",
+        image: businessStrategy,
+        imageAlt: "Nutrien project solution",
         description:
           "We built a unified enterprise web platform featuring responsive geographic map overlays, predictive inventory forecasting, and real-time shipping tracking. Optimized for quick glanceability, the platform gave managers complete operational control from any screen.",
         customerInteractions: {
@@ -998,19 +1039,19 @@ export const caseStudiesData = {
         ],
         galleryImages: [
           {
-            src: lexusImg1,
-            title: "This is a video title",
-            subtitle: "LEXUS SHORT FILMS",
+            src: businessStrategy,
+            title: "Nutrien project showcase",
+            subtitle: "NUTRIEN PROJECT SHOWCASE",
           },
           {
-            src: lexusImg2,
-            title: "This is a video title",
-            subtitle: "LEXUS SHORT FILMS",
+            src: businessStrategy,
+            title: "Nutrien project showcase",
+            subtitle: "NUTRIEN PROJECT SHOWCASE",
           },
           {
-            src: lexusImg3,
-            title: "This is a video title",
-            subtitle: "LEXUS SHORT FILMS",
+            src: businessStrategy,
+            title: "Nutrien project showcase",
+            subtitle: "NUTRIEN PROJECT SHOWCASE",
           },
         ],
       },
@@ -1085,8 +1126,8 @@ export const caseStudiesData = {
       },
       challenge: {
         heading: "The challenge",
-        image: lexusWarehouse,
-        imageAlt: "Lexus interactive dealership platform challenge",
+        image: laptopImage,
+        imageAlt: "Argo project challenge",
         leftParagraphs: [
           "Argo needed to build a brand new software suite within an ambitious go-to-market timeline.",
           "The platform had to accommodate complex workflow customization while maintaining effortless simplicity for non-technical users.",
@@ -1097,8 +1138,8 @@ export const caseStudiesData = {
       },
       solution: {
         heading: "The solution.",
-        image: lexusSolutionImg,
-        imageAlt: "Lexus interactive dealership platform solution",
+        image: laptopImage,
+        imageAlt: "Argo project solution",
         description:
           "We partnered closely with Argo leadership to engineer a modern web application powered by clean component architecture, optimized state management, and responsive layouts. The result was a fast, robust product that delighted early adopters and enabled rapid commercialization.",
         customerInteractions: {
@@ -1126,19 +1167,19 @@ export const caseStudiesData = {
         ],
         galleryImages: [
           {
-            src: lexusImg1,
-            title: "This is a video title",
-            subtitle: "LEXUS SHORT FILMS",
+            src: laptopImage,
+            title: "Argo project showcase",
+            subtitle: "ARGO PROJECT SHOWCASE",
           },
           {
-            src: lexusImg2,
-            title: "This is a video title",
-            subtitle: "LEXUS SHORT FILMS",
+            src: laptopImage,
+            title: "Argo project showcase",
+            subtitle: "ARGO PROJECT SHOWCASE",
           },
           {
-            src: lexusImg3,
-            title: "This is a video title",
-            subtitle: "LEXUS SHORT FILMS",
+            src: laptopImage,
+            title: "Argo project showcase",
+            subtitle: "ARGO PROJECT SHOWCASE",
           },
         ],
       },
@@ -1213,8 +1254,8 @@ export const caseStudiesData = {
       },
       challenge: {
         heading: "The challenge",
-        image: lexusWarehouse,
-        imageAlt: "Lexus interactive dealership platform challenge",
+        image: digitalExperience,
+        imageAlt: "MedImpact project challenge",
         leftParagraphs: [
           "Legacy pharmacy benefit systems were complicated for members to navigate, causing confusion around medication costs and claims status.",
           "Healthcare compliance mandated strict data protection, audit trails, and Section 508 / WCAG accessibility standards.",
@@ -1225,8 +1266,8 @@ export const caseStudiesData = {
       },
       solution: {
         heading: "The solution.",
-        image: lexusSolutionImg,
-        imageAlt: "Lexus interactive dealership platform solution",
+        image: digitalExperience,
+        imageAlt: "MedImpact project solution",
         description:
           "We designed an accessible, responsive patient web application featuring clear cost calculators, automated claims tracking, and direct digital prescription management. With streamlined provider workflows, the platform reduced friction across the entire healthcare ecosystem.",
         customerInteractions: {
@@ -1254,19 +1295,19 @@ export const caseStudiesData = {
         ],
         galleryImages: [
           {
-            src: lexusImg1,
-            title: "This is a video title",
-            subtitle: "LEXUS SHORT FILMS",
+            src: digitalExperience,
+            title: "MedImpact project showcase",
+            subtitle: "MEDIMPACT PROJECT SHOWCASE",
           },
           {
-            src: lexusImg2,
-            title: "This is a video title",
-            subtitle: "LEXUS SHORT FILMS",
+            src: digitalExperience,
+            title: "MedImpact project showcase",
+            subtitle: "MEDIMPACT PROJECT SHOWCASE",
           },
           {
-            src: lexusImg3,
-            title: "This is a video title",
-            subtitle: "LEXUS SHORT FILMS",
+            src: digitalExperience,
+            title: "MedImpact project showcase",
+            subtitle: "MEDIMPACT PROJECT SHOWCASE",
           },
         ],
       },
@@ -1341,8 +1382,8 @@ export const caseStudiesData = {
       },
       challenge: {
         heading: "The challenge",
-        image: lexusWarehouse,
-        imageAlt: "Lexus interactive dealership platform challenge",
+        image: tradeShowActivation,
+        imageAlt: "JCPenney project challenge",
         leftParagraphs: [
           "Shoppers encountered high friction in mobile checkout and coupon application, leading to cart abandonment.",
           "The loyalty rewards program needed deeper integration into every product browse and purchase touchpoint.",
@@ -1353,8 +1394,8 @@ export const caseStudiesData = {
       },
       solution: {
         heading: "The solution.",
-        image: lexusSolutionImg,
-        imageAlt: "Lexus interactive dealership platform solution",
+        image: tradeShowActivation,
+        imageAlt: "JCPenney project solution",
         description:
           "We re-engineered the mobile product detail pages, streamlined one-tap coupon redemption, and optimized the buy-online-pickup-in-store (BOPIS) experience. The result was a modern, intuitive shopping experience that drove substantial digital revenue growth.",
         customerInteractions: {
@@ -1382,19 +1423,19 @@ export const caseStudiesData = {
         ],
         galleryImages: [
           {
-            src: lexusImg1,
-            title: "This is a video title",
-            subtitle: "LEXUS SHORT FILMS",
+            src: tradeShowActivation,
+            title: "JCPenney project showcase",
+            subtitle: "JCPENNEY PROJECT SHOWCASE",
           },
           {
-            src: lexusImg2,
-            title: "This is a video title",
-            subtitle: "LEXUS SHORT FILMS",
+            src: tradeShowActivation,
+            title: "JCPenney project showcase",
+            subtitle: "JCPENNEY PROJECT SHOWCASE",
           },
           {
-            src: lexusImg3,
-            title: "This is a video title",
-            subtitle: "LEXUS SHORT FILMS",
+            src: tradeShowActivation,
+            title: "JCPenney project showcase",
+            subtitle: "JCPENNEY PROJECT SHOWCASE",
           },
         ],
       },
@@ -1477,8 +1518,8 @@ export const caseStudiesData = {
 
       challenge: {
         heading: "The challenge",
-        image: lexusWarehouse,
-        imageAlt: "Lexus interactive dealership platform challenge",
+        image: fintechSunset1,
+        imageAlt: "Safeway project challenge",
         leftParagraphs: [
           "Safeway wanted to modernize its legacy digital platforms where users experienced high drop-off rates during checkout and delivery window selection.",
 
@@ -1492,8 +1533,8 @@ export const caseStudiesData = {
 
       solution: {
         heading: "The solution.",
-        image: lexusSolutionImg,
-        imageAlt: "Lexus interactive dealership platform solution",
+        image: fintechSunset1,
+        imageAlt: "Safeway project solution",
         description:
           "We created an interactive Safeway grocery platform that allows customers to browse products, manage prescriptions, and engage with flexible delivery scheduling. Designed with intuitive navigation, high readability, and a convenience-focused user experience, the solution simplifies online shopping while supporting supermarkets with a powerful digital sales and fulfillment tool.",
 
@@ -1528,19 +1569,19 @@ export const caseStudiesData = {
 
         galleryImages: [
           {
-            src: lexusImg1,
-            title: "This is a video title",
-            subtitle: "LEXUS SHORT FILMS",
+            src: fintechSunset1,
+            title: "Safeway project showcase",
+            subtitle: "SAFEWAY PROJECT SHOWCASE",
           },
           {
-            src: lexusImg2,
-            title: "This is a video title",
-            subtitle: "LEXUS SHORT FILMS",
+            src: fintechSunset1,
+            title: "Safeway project showcase",
+            subtitle: "SAFEWAY PROJECT SHOWCASE",
           },
           {
-            src: lexusImg3,
-            title: "This is a video title",
-            subtitle: "LEXUS SHORT FILMS",
+            src: fintechSunset1,
+            title: "Safeway project showcase",
+            subtitle: "SAFEWAY PROJECT SHOWCASE",
           },
         ],
       },
@@ -1623,8 +1664,8 @@ export const caseStudiesData = {
 
       challenge: {
         heading: "The challenge",
-        image: lexusWarehouse,
-        imageAlt: "Lexus interactive dealership platform challenge",
+        image: overlappingCircles,
+        imageAlt: "YMCA project challenge",
         leftParagraphs: [
           "The YMCA needed a modern mobile solution to simplify check-in procedures at facility entry points and reduce front-desk lines.",
 
@@ -1638,8 +1679,8 @@ export const caseStudiesData = {
 
       solution: {
         heading: "The solution.",
-        image: lexusSolutionImg,
-        imageAlt: "Lexus interactive dealership platform solution",
+        image: overlappingCircles,
+        imageAlt: "YMCA project solution",
         description:
           "We created an interactive YMCA mobile application that allows members to display digital membership passes, verify entry status, and engage with facility updates. Designed with intuitive navigation, high readability, and a community-focused mobile experience, the solution simplifies front-desk entry while supporting facilities with a powerful digital member management tool.",
 
@@ -1674,19 +1715,19 @@ export const caseStudiesData = {
 
         galleryImages: [
           {
-            src: lexusImg1,
-            title: "This is a video title",
-            subtitle: "LEXUS SHORT FILMS",
+            src: overlappingCircles,
+            title: "YMCA project showcase",
+            subtitle: "YMCA PROJECT SHOWCASE",
           },
           {
-            src: lexusImg2,
-            title: "This is a video title",
-            subtitle: "LEXUS SHORT FILMS",
+            src: overlappingCircles,
+            title: "YMCA project showcase",
+            subtitle: "YMCA PROJECT SHOWCASE",
           },
           {
-            src: lexusImg3,
-            title: "This is a video title",
-            subtitle: "LEXUS SHORT FILMS",
+            src: overlappingCircles,
+            title: "YMCA project showcase",
+            subtitle: "YMCA PROJECT SHOWCASE",
           },
         ],
       },
@@ -1703,7 +1744,7 @@ export const caseStudiesData = {
       subheading: "MAGELLAN HEALTH CASE STUDY - HEALTHCARE & BEHAVIORAL HEALTH",
       titleLine1: "Data-Driven Care",
       titleLine2: "Optimization",
-      bgImage: businessStrategy,
+      bgImage: magellanMain,
       accentColor: "#3FC000",
       tags: [
         "Behavioral Health",
@@ -1744,7 +1785,7 @@ export const caseStudiesData = {
         "Outcome Analytics",
       ],
       quoteSection: {
-        graphicImage: magellan_triptych,
+        graphicImage: magellanMain,
         graphicAlt: "Magellan Health clinical optimization",
         quote:
           '"Delivering compassionate, effective behavioral healthcare at scale demands both technological sophistication and deep clinical empathy. Number9 delivered an intuitive, data-driven platform that empowers our providers and ensures patients receive timely, tailored support."',
@@ -1761,8 +1802,8 @@ export const caseStudiesData = {
       },
       challenge: {
         heading: "The challenge",
-        image: lexusWarehouse,
-        imageAlt: "Lexus interactive dealership platform challenge",
+        image: magellanMain,
+        imageAlt: "Magellan Health project challenge",
         leftParagraphs: [
           "Siloed clinical records and disparate behavioral health assessments slowed care coordination between primary physicians and behavioral specialists.",
           "Complex authorization protocols and regulatory hurdles imposed heavy administrative burdens on healthcare providers and care managers.",
@@ -1773,8 +1814,8 @@ export const caseStudiesData = {
       },
       solution: {
         heading: "The solution.",
-        image: lexusSolutionImg,
-        imageAlt: "Lexus interactive dealership platform solution",
+        image: magellanMain,
+        imageAlt: "Magellan Health project solution",
         description:
           "We developed an enterprise clinical optimization platform featuring automated care pathway triage, unified provider dashboards, and low-friction patient onboarding. Secure data integrations provided real-time insights into treatment efficacy and patient health trajectories.",
         customerInteractions: {
@@ -1802,19 +1843,19 @@ export const caseStudiesData = {
         ],
         galleryImages: [
           {
-            src: lexusImg1,
-            title: "This is a video title",
-            subtitle: "LEXUS SHORT FILMS",
+            src: magellanMain,
+            title: "Magellan Health project showcase",
+            subtitle: "MAGELLAN HEALTH PROJECT SHOWCASE",
           },
           {
-            src: lexusImg2,
-            title: "This is a video title",
-            subtitle: "LEXUS SHORT FILMS",
+            src: magellanMain,
+            title: "Magellan Health project showcase",
+            subtitle: "MAGELLAN HEALTH PROJECT SHOWCASE",
           },
           {
-            src: lexusImg3,
-            title: "This is a video title",
-            subtitle: "LEXUS SHORT FILMS",
+            src: magellanMain,
+            title: "Magellan Health project showcase",
+            subtitle: "MAGELLAN HEALTH PROJECT SHOWCASE",
           },
         ],
       },
@@ -1896,8 +1937,8 @@ export const caseStudiesData = {
 
       challenge: {
         heading: "The challenge",
-        image: lexusWarehouse,
-        imageAlt: "Lexus interactive dealership platform challenge",
+        image: shanBg,
+        imageAlt: "Shaan Foods USA project challenge",
         leftParagraphs: [
           "Shaan Foods needed to expand its footprint in North American retail channels like Costco and Sam's Club by engaging consumers directly and increasing product trial rates.",
 
@@ -1911,8 +1952,8 @@ export const caseStudiesData = {
 
       solution: {
         heading: "The solution.",
-        image: lexusSolutionImg,
-        imageAlt: "Lexus interactive dealership platform solution",
+        image: shanBg,
+        imageAlt: "Shaan Foods USA project solution",
         description:
           "We created an interactive Shaan Foods retail activation platform that allows shoppers to taste authentic recipes, explore spice products, and engage with live cooking demonstrations. Designed with intuitive presentation, high visibility, and a culture-focused consumer experience, the solution simplifies in-store discovery while supporting retailers with a powerful promotional and sales tool.",
 
@@ -1947,19 +1988,19 @@ export const caseStudiesData = {
 
         galleryImages: [
           {
-            src: lexusImg1,
-            title: "This is a video title",
-            subtitle: "LEXUS SHORT FILMS",
+            src: shanBg,
+            title: "Shaan Foods USA project showcase",
+            subtitle: "SHAAN FOODS USA PROJECT SHOWCASE",
           },
           {
-            src: lexusImg2,
-            title: "This is a video title",
-            subtitle: "LEXUS SHORT FILMS",
+            src: shanBg,
+            title: "Shaan Foods USA project showcase",
+            subtitle: "SHAAN FOODS USA PROJECT SHOWCASE",
           },
           {
-            src: lexusImg3,
-            title: "This is a video title",
-            subtitle: "LEXUS SHORT FILMS",
+            src: shanBg,
+            title: "Shaan Foods USA project showcase",
+            subtitle: "SHAAN FOODS USA PROJECT SHOWCASE",
           },
         ],
       },
@@ -2043,8 +2084,8 @@ export const caseStudiesData = {
 
       challenge: {
         heading: "The challenge",
-        image: lexusWarehouse,
-        imageAlt: "Lexus interactive dealership platform challenge",
+        image: zee5Bg,
+        imageAlt: "ZEE5 project challenge",
         leftParagraphs: [
           "ZEE5 needed an effective offline strategy to capture diaspora audiences in North America who frequented community grocery stores.",
 
@@ -2058,8 +2099,8 @@ export const caseStudiesData = {
 
       solution: {
         heading: "The solution.",
-        image: lexusSolutionImg,
-        imageAlt: "Lexus interactive dealership platform solution",
+        image: zee5Bg,
+        imageAlt: "ZEE5 project solution",
         description:
           "We created an interactive ZEE5 digital signage platform that allows shoppers to view content trailers, explore streaming options, and engage with local store cross-promotions. Designed with intuitive navigation, high visual contrast, and an entertainment-focused user experience, the solution simplifies media discovery while supporting grocery partners with a powerful promotional and presentation tool.",
 
@@ -2094,19 +2135,19 @@ export const caseStudiesData = {
 
         galleryImages: [
           {
-            src: lexusImg1,
-            title: "This is a video title",
-            subtitle: "LEXUS SHORT FILMS",
+            src: zee5Bg,
+            title: "ZEE5 project showcase",
+            subtitle: "ZEE5 PROJECT SHOWCASE",
           },
           {
-            src: lexusImg2,
-            title: "This is a video title",
-            subtitle: "LEXUS SHORT FILMS",
+            src: zee5Bg,
+            title: "ZEE5 project showcase",
+            subtitle: "ZEE5 PROJECT SHOWCASE",
           },
           {
-            src: lexusImg3,
-            title: "This is a video title",
-            subtitle: "LEXUS SHORT FILMS",
+            src: zee5Bg,
+            title: "ZEE5 project showcase",
+            subtitle: "ZEE5 PROJECT SHOWCASE",
           },
         ],
       },
@@ -2188,8 +2229,8 @@ export const caseStudiesData = {
 
       challenge: {
         heading: "The challenge",
-        image: lexusWarehouse,
-        imageAlt: "Lexus interactive dealership platform challenge",
+        image: snacksBg,
+        imageAlt: "Snacks.com custom variety box and e-commerce platform",
         leftParagraphs: [
           "Frito-Lay wanted to establish a direct-to-consumer channel allowing fans to build custom variety packs of their favorite snacks on recurring delivery schedules.",
 
@@ -2203,8 +2244,8 @@ export const caseStudiesData = {
 
       solution: {
         heading: "The solution.",
-        image: lexusSolutionImg,
-        imageAlt: "Lexus interactive dealership platform solution",
+        image: snacksBg,
+        imageAlt: "Snacks.com direct-to-consumer shopping experience on laptop and tablet",
         description:
           "We created an interactive Frito-Lay e-commerce platform that allows customers to build custom snack boxes, select delivery frequencies, and engage with social media campaigns. Designed with intuitive navigation, high visual engagement, and a flavor-focused user experience, the solution simplifies direct ordering while supporting brand growth with a powerful digital sales and presentation tool.",
 
@@ -2237,21 +2278,25 @@ export const caseStudiesData = {
           "Integrated digital web experiences with 3PL logistics to create a seamless home delivery journey.",
         ],
 
+        galleryFit: "natural",
         galleryImages: [
           {
-            src: lexusImg1,
-            title: "This is a video title",
-            subtitle: "LEXUS SHORT FILMS",
+            src: snacksBg,
+            position: "15% center",
+            title: "Custom Variety Box",
+            subtitle: "SNACKS.COM BUILD-YOUR-OWN",
           },
           {
-            src: lexusImg2,
-            title: "This is a video title",
-            subtitle: "LEXUS SHORT FILMS",
+            src: snacksBg,
+            position: "center center",
+            title: "D2C E-Commerce Platform",
+            subtitle: "FRITO-LAY / PEPSICO",
           },
           {
-            src: lexusImg3,
-            title: "This is a video title",
-            subtitle: "LEXUS SHORT FILMS",
+            src: snacksBg,
+            position: "85% center",
+            title: "Mobile & Tablet Shopping",
+            subtitle: "RESPONSIVE EXPERIENCE",
           },
         ],
       },
@@ -2334,8 +2379,8 @@ export const caseStudiesData = {
 
       challenge: {
         heading: "The challenge",
-        image: lexusWarehouse,
-        imageAlt: "Lexus interactive dealership platform challenge",
+        image: sentralBg,
+        imageAlt: "Sentral Education project challenge",
         leftParagraphs: [
           "Schools needed a centralized communication channel to bridge the gap between busy parents and teachers, eliminating lost paperwork and opaque homework tracking.",
 
@@ -2349,8 +2394,8 @@ export const caseStudiesData = {
 
       solution: {
         heading: "The solution.",
-        image: lexusSolutionImg,
-        imageAlt: "Lexus interactive dealership platform solution",
+        image: sentralBg,
+        imageAlt: "Sentral Education project solution",
         description:
           "We created an interactive Sentral educational platform that allows parents to track student homework, communicate with teachers, and engage with instant school fee payments. Designed with intuitive navigation, high readability, and a family-focused user experience, the solution simplifies school communication while supporting institutions with a powerful digital administration and presentation tool.",
 
@@ -2384,19 +2429,19 @@ export const caseStudiesData = {
         ],
         galleryImages: [
           {
-            src: lexusImg1,
-            title: "This is a video title",
-            subtitle: "LEXUS SHORT FILMS",
+            src: sentralBg,
+            title: "Sentral Education project showcase",
+            subtitle: "SENTRAL EDUCATION PROJECT SHOWCASE",
           },
           {
-            src: lexusImg2,
-            title: "This is a video title",
-            subtitle: "LEXUS SHORT FILMS",
+            src: sentralBg,
+            title: "Sentral Education project showcase",
+            subtitle: "SENTRAL EDUCATION PROJECT SHOWCASE",
           },
           {
-            src: lexusImg3,
-            title: "This is a video title",
-            subtitle: "LEXUS SHORT FILMS",
+            src: sentralBg,
+            title: "Sentral Education project showcase",
+            subtitle: "SENTRAL EDUCATION PROJECT SHOWCASE",
           },
         ],
       },
@@ -2478,8 +2523,8 @@ export const caseStudiesData = {
 
       challenge: {
         heading: "The challenge",
-        image: lexusWarehouse,
-        imageAlt: "Lexus interactive dealership platform challenge",
+        image: pwcDashboard,
+        imageAlt: "PwC project challenge",
         leftParagraphs: [
           "Professional teams at PwC required an intuitive internal workspace to manage complex tax policies, track open engagements, and monitor task completion deadlines across large teams without administrative bottlenecks.",
 
@@ -2493,8 +2538,8 @@ export const caseStudiesData = {
 
       solution: {
         heading: "The solution.",
-        image: lexusSolutionImg,
-        imageAlt: "Lexus interactive dealership platform solution",
+        image: pwcDashboard,
+        imageAlt: "PwC project solution",
         description:
           "We created an interactive PwC enterprise dashboard that allows advisors to track tax policies, manage active engagements, and engage with real-time workflow analytics. Designed with intuitive navigation, high readability, and a data-focused user experience, the solution simplifies complex corporate operations while supporting advisors with a powerful workflow management and presentation tool.",
 
@@ -2529,19 +2574,19 @@ export const caseStudiesData = {
 
         galleryImages: [
           {
-            src: lexusImg1,
-            title: "This is a video title",
-            subtitle: "LEXUS SHORT FILMS",
+            src: pwcDashboard,
+            title: "PwC project showcase",
+            subtitle: "PWC PROJECT SHOWCASE",
           },
           {
-            src: lexusImg2,
-            title: "This is a video title",
-            subtitle: "LEXUS SHORT FILMS",
+            src: pwcDashboard,
+            title: "PwC project showcase",
+            subtitle: "PWC PROJECT SHOWCASE",
           },
           {
-            src: lexusImg3,
-            title: "This is a video title",
-            subtitle: "LEXUS SHORT FILMS",
+            src: pwcDashboard,
+            title: "PwC project showcase",
+            subtitle: "PWC PROJECT SHOWCASE",
           },
         ],
       },
@@ -2625,8 +2670,8 @@ export const caseStudiesData = {
 
       challenge: {
         heading: "The challenge",
-        image: lexusWarehouse,
-        imageAlt: "Lexus interactive dealership platform challenge",
+        image: empireBg,
+        imageAlt: "Empire Cinemas project challenge",
         leftParagraphs: [
           "Empire Cinemas needed a complete website redesign that matched the excitement of the big screen while simplifying the user journey from browsing showtimes to selecting seats and completing ticket checkout.",
 
@@ -2640,8 +2685,8 @@ export const caseStudiesData = {
 
       solution: {
         heading: "The solution.",
-        image: lexusSolutionImg,
-        imageAlt: "Lexus interactive dealership platform solution",
+        image: empireBg,
+        imageAlt: "Empire Cinemas project solution",
         description:
           "We created an interactive Empire Cinemas ticketing platform that allows moviegoers to browse showtimes, reserve seats, and engage with blockbuster video trailers. Designed with intuitive navigation, high visual contrast, and a cinematic-focused user experience, the solution simplifies online booking while supporting theatres with a powerful digital sales and presentation tool.",
 
@@ -2676,19 +2721,19 @@ export const caseStudiesData = {
 
         galleryImages: [
           {
-            src: lexusImg1,
-            title: "This is a video title",
-            subtitle: "LEXUS SHORT FILMS",
+            src: empireBg,
+            title: "Empire Cinemas project showcase",
+            subtitle: "EMPIRE CINEMAS PROJECT SHOWCASE",
           },
           {
-            src: lexusImg2,
-            title: "This is a video title",
-            subtitle: "LEXUS SHORT FILMS",
+            src: empireBg,
+            title: "Empire Cinemas project showcase",
+            subtitle: "EMPIRE CINEMAS PROJECT SHOWCASE",
           },
           {
-            src: lexusImg3,
-            title: "This is a video title",
-            subtitle: "LEXUS SHORT FILMS",
+            src: empireBg,
+            title: "Empire Cinemas project showcase",
+            subtitle: "EMPIRE CINEMAS PROJECT SHOWCASE",
           },
         ],
       },
@@ -2772,8 +2817,8 @@ export const caseStudiesData = {
 
       challenge: {
         heading: "The challenge",
-        image: lexusWarehouse,
-        imageAlt: "Lexus interactive dealership platform challenge",
+        image: almazaBg,
+        imageAlt: "Almaza project challenge",
         leftParagraphs: [
           "Almaza needed an interactive digital platform to showcase its multi-decade heritage, educate consumers on its brewing craftsmanship, and encourage community-driven social engagement.",
 
@@ -2787,8 +2832,8 @@ export const caseStudiesData = {
 
       solution: {
         heading: "The solution.",
-        image: lexusSolutionImg,
-        imageAlt: "Lexus interactive dealership platform solution",
+        image: almazaBg,
+        imageAlt: "Almaza project solution",
         description:
           "We created an interactive Almaza brand website that allows consumers to explore heritage timelines, view brewing processes, and engage with social media storytelling. Designed with intuitive navigation, high visual richness, and a heritage-focused user experience, the solution simplifies brand discovery while supporting marketing teams with a powerful digital storytelling and presentation tool.",
 
@@ -2823,19 +2868,19 @@ export const caseStudiesData = {
 
         galleryImages: [
           {
-            src: lexusImg1,
-            title: "This is a video title",
-            subtitle: "LEXUS SHORT FILMS",
+            src: almazaBg,
+            title: "Almaza project showcase",
+            subtitle: "ALMAZA PROJECT SHOWCASE",
           },
           {
-            src: lexusImg2,
-            title: "This is a video title",
-            subtitle: "LEXUS SHORT FILMS",
+            src: almazaBg,
+            title: "Almaza project showcase",
+            subtitle: "ALMAZA PROJECT SHOWCASE",
           },
           {
-            src: lexusImg3,
-            title: "This is a video title",
-            subtitle: "LEXUS SHORT FILMS",
+            src: almazaBg,
+            title: "Almaza project showcase",
+            subtitle: "ALMAZA PROJECT SHOWCASE",
           },
         ],
       },
@@ -2919,8 +2964,8 @@ export const caseStudiesData = {
 
       challenge: {
         heading: "The challenge",
-        image: lexusWarehouse,
-        imageAlt: "Lexus interactive dealership platform challenge",
+        image: fairviewBg,
+        imageAlt: "Fairview project challenge",
         leftParagraphs: [
           "Fairview needed to modernize its digital product catalog to help architects and facade engineers easily search, filter, and compare high-performance architectural panels.",
 
@@ -2934,8 +2979,8 @@ export const caseStudiesData = {
 
       solution: {
         heading: "The solution.",
-        image: lexusSolutionImg,
-        imageAlt: "Lexus interactive dealership platform solution",
+        image: fairviewBg,
+        imageAlt: "Fairview project solution",
         description:
           "We created an interactive Fairview architectural platform that allows professionals to browse cladding products, view completed project showcases, and engage with rapid sample requests. Designed with intuitive navigation, high technical readability, and an industry-focused user experience, the solution simplifies material specification while supporting manufacturers with a powerful digital sales and presentation tool.",
 
@@ -2970,19 +3015,19 @@ export const caseStudiesData = {
 
         galleryImages: [
           {
-            src: lexusImg1,
-            title: "This is a video title",
-            subtitle: "LEXUS SHORT FILMS",
+            src: fairviewBg,
+            title: "Fairview project showcase",
+            subtitle: "FAIRVIEW PROJECT SHOWCASE",
           },
           {
-            src: lexusImg2,
-            title: "This is a video title",
-            subtitle: "LEXUS SHORT FILMS",
+            src: fairviewBg,
+            title: "Fairview project showcase",
+            subtitle: "FAIRVIEW PROJECT SHOWCASE",
           },
           {
-            src: lexusImg3,
-            title: "This is a video title",
-            subtitle: "LEXUS SHORT FILMS",
+            src: fairviewBg,
+            title: "Fairview project showcase",
+            subtitle: "FAIRVIEW PROJECT SHOWCASE",
           },
         ],
       },
@@ -3065,8 +3110,8 @@ export const caseStudiesData = {
 
       challenge: {
         heading: "The challenge",
-        image: lexusWarehouse,
-        imageAlt: "Lexus interactive dealership platform challenge",
+        image: lifeGiveBg,
+        imageAlt: "LifeGive project challenge",
         leftParagraphs: [
           "LifeGive needed to modernize its digital store to help wellness consumers easily explore health categories like vitamins, destress formulas, weight management, and detox solutions.",
 
@@ -3080,8 +3125,8 @@ export const caseStudiesData = {
 
       solution: {
         heading: "The solution.",
-        image: lexusSolutionImg,
-        imageAlt: "Lexus interactive dealership platform solution",
+        image: lifeGiveBg,
+        imageAlt: "LifeGive project solution",
         description:
           "We created an interactive LifeGive e-commerce platform that allows customers to explore wellness categories, review vegan supplement benefits, and engage with rapid slide-out checkout. Designed with intuitive navigation, high visual clarity, and a health-focused user experience, the solution simplifies online supplement shopping while supporting brand growth with a powerful digital sales and presentation tool.",
 
@@ -3116,19 +3161,19 @@ export const caseStudiesData = {
 
         galleryImages: [
           {
-            src: lexusImg1,
-            title: "This is a video title",
-            subtitle: "LEXUS SHORT FILMS",
+            src: lifeGiveBg,
+            title: "LifeGive project showcase",
+            subtitle: "LIFEGIVE PROJECT SHOWCASE",
           },
           {
-            src: lexusImg2,
-            title: "This is a video title",
-            subtitle: "LEXUS SHORT FILMS",
+            src: lifeGiveBg,
+            title: "LifeGive project showcase",
+            subtitle: "LIFEGIVE PROJECT SHOWCASE",
           },
           {
-            src: lexusImg3,
-            title: "This is a video title",
-            subtitle: "LEXUS SHORT FILMS",
+            src: lifeGiveBg,
+            title: "LifeGive project showcase",
+            subtitle: "LIFEGIVE PROJECT SHOWCASE",
           },
         ],
       },
@@ -3776,7 +3821,7 @@ export const caseStudiesData = {
       subheading: "DREO — IHS Trade Show Retail Product Display Booth",
       titleLine1: "Product Discovery",
       titleLine2: "Engineered",
-      bgImage: dreoImg1,
+      bgImage: dreoCaseHeroImg,
       accentColor: "#0066FF",
       tags: [
         "Brand Activation",
@@ -3796,7 +3841,7 @@ export const caseStudiesData = {
       logo: dreoLogo,
       darkLogo: dreoLogoWhite,
       logoAlt: "DREO logo",
-      showcaseImage: dreoImg2,
+      showcaseImage: dreoImage02,
       showcaseAlt: "DREO 20x30 retail product display booth at IHS trade show in Las Vegas",
       stats: [
         {
@@ -3837,7 +3882,7 @@ export const caseStudiesData = {
       },
       challenge: {
         heading: "The challenge",
-        image: dreoImg4,
+        image: dreoChallengeImg,
         imageAlt: "DREO booth layout and aisle flow",
         leftParagraphs: [
           "In a competitive trade show environment, retail and consumer product booths must make their offer instantly understandable before attendees step fully into the space.",
@@ -3848,7 +3893,7 @@ export const caseStudiesData = {
       },
       solution: {
         heading: "The solution.",
-        image: dreoImg1,
+        image: dreoImage01,
         imageAlt: "DREO retail product display and buyer conversation area",
         description:
           "Number9 Creative & Media executed a turn-key custom booth design and fabrication strategy for DREO's 20x30 footprint. We engineered a layout focusing on product visibility, sample display, and shopper-friendly flow. By positioning highly visible retail display shelves, counters, and impactful brand graphics facing the open aisles, we ensured quick product recognition for passing attendees.\n\nBeyond the spatial design, our team managed the complete show-site setup in Las Vegas. We meticulously aligned the booth structure, lighting, retail displays, and final cleanup, ensuring the space was perfectly ready from an aisle-facing perspective before the show floor opened.",
@@ -3881,19 +3926,19 @@ export const caseStudiesData = {
         ],
         closing:
           "By seamlessly integrating strategic retail layout planning, bold branded graphics, and end-to-end show logistics, Number9 Creative & Media transformed a 20x30 space into a powerful, high-converting trade show asset for DREO.",
-        galleryFit: "cover",
+        galleryFit: "natural",
         galleryImages: [
           {
-            src: dreoImg1,
+            src: dreoImage03,
             images: [
               {
-                src: dreoImg1,
+                src: dreoImage03,
                 position: "center center",
                 title: "20x30 Retail Display",
                 subtitle: "DREO IHS 2025",
               },
               {
-                src: dreoImg2,
+                src: dreoMainHeroImg,
                 position: "center center",
                 title: "Product Sampling Shelves",
                 subtitle: "RETAIL MERCHANDISING",
@@ -3903,16 +3948,16 @@ export const caseStudiesData = {
             subtitle: "DREO IHS 2025",
           },
           {
-            src: dreoImg3,
+            src: dreoImage01,
             images: [
               {
-                src: dreoImg3,
+                src: dreoImage01,
                 position: "center center",
                 title: "Interactive Demonstration",
                 subtitle: "SMART APPLIANCES",
               },
               {
-                src: dreoImg4,
+                src: dreoImage02,
                 position: "center center",
                 title: "Buyer Conversation Lounge",
                 subtitle: "B2B RETAIL MEETINGS",
@@ -3922,16 +3967,16 @@ export const caseStudiesData = {
             subtitle: "SMART APPLIANCES",
           },
           {
-            src: dreoImg2,
+            src: dreoMainHeroImg,
             images: [
               {
-                src: dreoImg2,
+                src: dreoMainHeroImg,
                 position: "center center",
                 title: "Brand Presentation Architecture",
                 subtitle: "PREMIUM EXHIBIT PRESENCE",
               },
               {
-                src: dreoImg1,
+                src: dreoImage03,
                 position: "center center",
                 title: "Smart Home Innovation",
                 subtitle: "TRADE SHOW EXCELLENCE",
@@ -3954,7 +3999,7 @@ export const caseStudiesData = {
       subheading: "Finamill — IHS 2025 Custom Retail & Sampling Exhibit",
       titleLine1: "Culinary Sampling",
       titleLine2: "Experience",
-      bgImage: finamillImg1,
+      bgImage: finamillNewCaseStudyFirst,
       accentColor: "#E31B23",
       tags: [
         "Custom Booth Design and Fabrication",
@@ -3971,7 +4016,7 @@ export const caseStudiesData = {
         "Number9 Creative & Media teamed up with Finamill to engineer a 20x30 experiential retail booth for the IHS 2025 trade show. Our custom booth design and fabrication experts created an open-concept space dedicated to active product sampling, dynamic retail shelving, and high-impact brand messaging. By maximizing aisle-facing visibility, this brand activation successfully converted passing floor traffic into hands-on product discovery and high-value buyer conversations.",
       logo: finamillLogo,
       logoAlt: "Finamill logo",
-      showcaseImage: finamillImg2,
+      showcaseImage: finamillNewImage04,
       showcaseAlt: "Finamill 20x30 experiential retail booth at IHS 2025",
       stats: [
         {
@@ -4012,7 +4057,7 @@ export const caseStudiesData = {
       },
       challenge: {
         heading: "The challenge",
-        image: finamillImg4,
+        image: finamillNewCaseStudyThird,
         imageAlt: "Finamill retail shelving and display walls",
         leftParagraphs: [
           "Consumer packaged goods and food brands face a unique hurdle on busy trade show floors: the product experience must be immediately obvious to attendees walking the aisles.",
@@ -4023,7 +4068,7 @@ export const caseStudiesData = {
       },
       solution: {
         heading: "The solution.",
-        image: finamillImg5,
+        image: finamillNewImage01,
         imageAlt: "Finamill buyer consultation counter and illuminated displays",
         description:
           "Number9 Creative & Media executed a turn-key custom booth design and fabrication strategy to bring Finamill's vision to life. We developed a highly navigable 20x30 layout prioritizing product visibility and shopper-friendly flow. By positioning interactive sampling zones alongside prominent retail display shelves at the booth's perimeter, we captured the attention of aisle traffic immediately, ensuring the brand's core offer was recognized at a glance.\n\nFurthermore, our team handled all trade show logistics and show-site setup in Las Vegas. We meticulously aligned the architectural structure, lighting, and branded surfaces, verifying that the entire space functioned perfectly from an aisle-facing perspective long before the event doors opened to attendees.",
@@ -4056,19 +4101,19 @@ export const caseStudiesData = {
         ],
         closing:
           "By seamlessly blending interactive product sampling with strategic retail design and flawless on-site execution, Number9 Creative & Media delivered a powerful, high-converting trade show asset for Finamill.",
-        galleryFit: "cover",
+        galleryFit: "natural",
         galleryImages: [
           {
-            src: finamillImg1,
+            src: finamillNewImage02,
             images: [
               {
-                src: finamillImg1,
+                src: finamillNewImage02,
                 position: "center center",
                 title: "20x30 Culinary Showcase",
                 subtitle: "FINAMILL IHS 2025",
               },
               {
-                src: finamillImg2,
+                src: finamillNewHeroSectionImage,
                 position: "center center",
                 title: "Live Grinding Demo Station",
                 subtitle: "INTERCHANGEABLE PODS",
@@ -4078,16 +4123,16 @@ export const caseStudiesData = {
             subtitle: "FINAMILL IHS 2025",
           },
           {
-            src: finamillImg3,
+            src: finamillNewImage03,
             images: [
               {
-                src: finamillImg3,
+                src: finamillNewImage03,
                 position: "center center",
                 title: "Retail Packaging Shelving",
                 subtitle: "RETAIL PRODUCT DISPLAY",
               },
               {
-                src: finamillImg4,
+                src: finamillNewImage04,
                 position: "center center",
                 title: "Branded Graphics & Aisle Flow",
                 subtitle: "IHS LAS VEGAS",
@@ -4097,16 +4142,16 @@ export const caseStudiesData = {
             subtitle: "RETAIL PRODUCT DISPLAY",
           },
           {
-            src: finamillImg5,
+            src: finamillNewHeroSectionImage,
             images: [
               {
-                src: finamillImg5,
+                src: finamillNewHeroSectionImage,
                 position: "center center",
                 title: "Executive Buyer Meetings",
                 subtitle: "COMMERCIAL PARTNERSHIPS",
               },
               {
-                src: finamillImg1,
+                src: finamillNewImage01,
                 position: "center center",
                 title: "Finamill Culinary Innovation",
                 subtitle: "TRADE SHOW EXCELLENCE",
@@ -4129,7 +4174,7 @@ export const caseStudiesData = {
       subheading: "KATJES USA CASE STUDY — SWEETS & SNACKS TRADE SHOW",
       titleLine1: "Confectionery Brand",
       titleLine2: "Activation",
-      bgImage: katjesImg1,
+      bgImage: katjesNewCaseStudyFirst,
       accentColor: "#E6007E",
       tags: [
         "Brand Activation",
@@ -4148,7 +4193,7 @@ export const caseStudiesData = {
       logo: katjesLogo,
       darkLogo: katjesLogoWhite,
       logoAlt: "Katjes USA logo",
-      showcaseImage: katjesImg2,
+      showcaseImage: katjesNewImage01,
       showcaseAlt: "Katjes USA trade show sampling activation and brand ambassadors",
       stats: [
         {
@@ -4188,7 +4233,7 @@ export const caseStudiesData = {
       },
       challenge: {
         heading: "The confectionery expo challenge",
-        image: katjesImg4,
+        image: katjesNewCaseStudyThird,
         imageAlt: "Katjes trade show booth and sampling station",
         leftParagraphs: [
           "The Sweets & Snacks Expo is a hyper-saturated, sugar-fueled environment where thousands of candy manufacturers compete aggressively for buyer attention.",
@@ -4200,7 +4245,7 @@ export const caseStudiesData = {
       },
       solution: {
         heading: "Consistent multi-year activation & staffing",
-        image: katjesImg5,
+        image: katjesNewImage02,
         imageAlt: "Katjes brand ambassadors engaging attendees",
         description:
           "Number9 deployed a dedicated, high-energy event staffing model that supported Katjes consistently year after year.\n\nThe relationship spanned four consecutive years of Sweets & Snacks coverage: three days at Chicago's McCormick Place in 2022 and 2023, followed by three days each in Indianapolis in 2024 and 2025, alongside deployments at the KeHE Summer Show in Salt Lake City and Natural Products Expo West in Anaheim.\n\nBrand ambassadors were thoroughly trained in Katjes' brand narrative—highlighting zero animal gelatin, clean ingredients, and European heritage.\n\nTeams managed high-volume sampling trays, tracked visitor responses, collected retailer badges, and replenished stock seamlessly during peak expo hours.",
@@ -4233,19 +4278,19 @@ export const caseStudiesData = {
         ],
         closing:
           "By pairing European candy excellence with reliable, magnetic on-site staffing, Number9 helped Katjes win the hearts and palates of American retail.",
-        galleryFit: "cover",
+        galleryFit: "natural",
         galleryImages: [
           {
-            src: katjesImg1,
+            src: katjesNewImage03,
             images: [
               {
-                src: katjesImg1,
+                src: katjesNewImage03,
                 position: "center center",
                 title: "Plant-Based Candy Sampling",
                 subtitle: "SWEETS & SNACKS EXPO",
               },
               {
-                src: katjesImg2,
+                src: katjesNewImage04,
                 position: "center center",
                 title: "Brand Ambassadors in Action",
                 subtitle: "EXPERIENTIAL STAFFING",
@@ -4255,16 +4300,16 @@ export const caseStudiesData = {
             subtitle: "SWEETS & SNACKS EXPO",
           },
           {
-            src: katjesImg3,
+            src: katjesNewImage05,
             images: [
               {
-                src: katjesImg3,
+                src: katjesNewImage05,
                 position: "center center",
                 title: "European Candy Excellence",
                 subtitle: "KATJES USA",
               },
               {
-                src: katjesImg4,
+                src: katjesNewImage06,
                 position: "center center",
                 title: "Multi-City Trade Show Tour",
                 subtitle: "CHICAGO & INDIANAPOLIS",
@@ -4274,16 +4319,16 @@ export const caseStudiesData = {
             subtitle: "KATJES USA",
           },
           {
-            src: katjesImg5,
+            src: katjesNewImage07,
             images: [
               {
-                src: katjesImg5,
+                src: katjesNewImage07,
                 position: "center center",
                 title: "Retailer Engagement",
                 subtitle: "PRODUCT DISCOVERY",
               },
               {
-                src: katjesImg6,
+                src: katjesNewImage08,
                 position: "center center",
                 title: "High-Volume Sampling Operations",
                 subtitle: "ZERO GELATIN GUMMIES",
@@ -4306,7 +4351,7 @@ export const caseStudiesData = {
       subheading: "Nakamichi Car Audio — SEMA Show 2024 Trade Show Booth",
       titleLine1: "Precision Audio",
       titleLine2: "Showcase",
-      bgImage: nakamichiImg1,
+      bgImage: nakamichiNewCaseStudyFirst,
       accentColor: "#E21836",
       tags: [
         "Custom Booth Design and Fabrication",
@@ -4325,7 +4370,7 @@ export const caseStudiesData = {
       logo: nakamichiLogo,
       darkLogo: nakamichiLogoWhite,
       logoAlt: "Nakamichi Car Audio logo",
-      showcaseImage: nakamichiImg2,
+      showcaseImage: nakamichiNewCaseStudySecond,
       showcaseAlt: "Nakamichi Car Audio 20x20 trade show booth at SEMA Show 2024",
       stats: [
         {
@@ -4366,7 +4411,7 @@ export const caseStudiesData = {
       },
       challenge: {
         heading: "The challenge",
-        image: nakamichiImg4,
+        image: nakamichiNewCaseStudyThird,
         imageAlt: "SEMA show floor and Nakamichi booth entrance",
         leftParagraphs: [
           "Showcasing small-scale car audio tech at an event like SEMA is inherently difficult. Attendees are bombarded with oversized automotive displays, aggressive lighting, and massive graphic walls, making compact electronics incredibly easy to miss.",
@@ -4377,7 +4422,7 @@ export const caseStudiesData = {
       },
       solution: {
         heading: "The solution.",
-        image: nakamichiImg5,
+        image: nakamichiNewImage01,
         imageAlt: "Nakamichi interactive perimeter display counters",
         description:
           "Rather than competing with the venue’s visual noise, Number9 Creative & Media employed a strategy of disciplined restraint. We designed a highly curated layout that relied on clean structural geometry and striking hero graphics to establish immediate brand authority. By pushing interactive display counters to the perimeter, we captured aisle traffic instantly, allowing visitors to inspect head units and components without clogging the booth's interior.\n\nTo support this architectural approach, our logistics team executed a flawless on-site installation in Las Vegas. We prioritized specialized illumination—ensuring uniform color temperatures that highlighted screen details and printed specs—while strictly managing the unpack order and fixture stability. This rigorous attention to show-floor setup guaranteed a pristine, secure, and highly functional opening-day presentation.",
@@ -4410,19 +4455,19 @@ export const caseStudiesData = {
         ],
         closing:
           "By combining architectural restraint, smart perimeter flow, and exacting installation standards, Number9 Creative & Media turned a challenging 20x20 footprint into an authoritative, highly readable brand destination for Nakamichi Car Audio.",
-        galleryFit: "cover",
+        galleryFit: "natural",
         galleryImages: [
           {
-            src: nakamichiImg1,
+            src: nakamichiNewMainHeroImage,
             images: [
               {
-                src: nakamichiImg1,
+                src: nakamichiNewMainHeroImage,
                 position: "center center",
                 title: "20x20 Automotive Electronics",
                 subtitle: "NAKAMICHI SEMA 2024",
               },
               {
-                src: nakamichiImg2,
+                src: nakamichiNewImage02,
                 position: "center center",
                 title: "Perimeter Interaction Counters",
                 subtitle: "TACTILE DISPLAY",
@@ -4432,16 +4477,16 @@ export const caseStudiesData = {
             subtitle: "NAKAMICHI SEMA 2024",
           },
           {
-            src: nakamichiImg3,
+            src: nakamichiNewImage01,
             images: [
               {
-                src: nakamichiImg3,
+                src: nakamichiNewImage01,
                 position: "center center",
                 title: "Controlled Lighting Architecture",
                 subtitle: "ANTI-GLARE DISPLAY",
               },
               {
-                src: nakamichiImg4,
+                src: nakamichiNewMainHeroImage,
                 position: "center center",
                 title: "Multi-Angle Brand Consistency",
                 subtitle: "HERO GRAPHIC WALL",
@@ -4451,16 +4496,16 @@ export const caseStudiesData = {
             subtitle: "ANTI-GLARE DISPLAY",
           },
           {
-            src: nakamichiImg5,
+            src: nakamichiNewImage02,
             images: [
               {
-                src: nakamichiImg5,
+                src: nakamichiNewImage02,
                 position: "center center",
                 title: "Clean Walk-Up Presentation",
                 subtitle: "SEMA SHOW FLOOR",
               },
               {
-                src: nakamichiImg6,
+                src: nakamichiNewImage01,
                 position: "center center",
                 title: "High-End Car Audio Systems",
                 subtitle: "PREMIUM FINISHES",
@@ -4483,7 +4528,7 @@ export const caseStudiesData = {
       subheading: "SCANTECH — The Battery Show North America Trade Show Booth",
       titleLine1: "High-Tech Exhibit",
       titleLine2: "Engineered",
-      bgImage: scantechImg1,
+      bgImage: scantechNewCaseStudyFirst,
       accentColor: "#0072CE",
       tags: [
         "Custom Booth Design and Fabrication",
@@ -4501,7 +4546,7 @@ export const caseStudiesData = {
       logo: scantechLogo,
       darkLogo: scantechLogoWhite,
       logoAlt: "SCANTECH logo",
-      showcaseImage: scantechImg2,
+      showcaseImage: scantechNewImage01,
       showcaseAlt: "SCANTECH 20x40 industrial product booth at The Battery Show North America in Detroit",
       stats: [
         {
@@ -4541,7 +4586,7 @@ export const caseStudiesData = {
       },
       challenge: {
         heading: "The challenge",
-        image: scantechImg4,
+        image: scantechNewCaseStudyThird,
         imageAlt: "SCANTECH illuminated meeting tunnel and structural graphics",
         leftParagraphs: [
           "Exhibiting at major energy industry events requires a delicate balance between showcasing massive machinery and providing comfortable spaces for high-level technical discourse.",
@@ -4552,7 +4597,7 @@ export const caseStudiesData = {
       },
       solution: {
         heading: "The solution.",
-        image: scantechImg5,
+        image: scantechNewImage02,
         imageAlt: "SCANTECH Battery Gigafactory graphics and equipment display",
         description:
           "To solve this complex spatial puzzle, Number9 Creative & Media architected a custom booth design centered around a striking illuminated meeting tunnel and large-scale technical graphics. We mapped the 20x40 layout into distinct functional zones: high-visibility perimeter equipment displays to capture aisle traffic, and interior technical display walls featuring wall-mounted screens to support in-depth application explanations.\n\nOur experiential fabrication team also managed the rigorous on-site installation at Huntington Place in Detroit. We ensured that the heavy black exhibit structures, overhead brand signage, and Battery Gigafactory wall graphics were safely rigged and perfectly aligned, delivering an organized, ready-to-present environment for SCANTECH’s technical team well before the show floor opened.",
@@ -4585,19 +4630,19 @@ export const caseStudiesData = {
         ],
         closing:
           "By integrating architectural ingenuity, precise industrial merchandising, and flawless event logistics, Number9 Creative & Media transformed a 20x40 space into an authoritative, highly functional technical showcase for SCANTECH.",
-        galleryFit: "cover",
+        galleryFit: "natural",
         galleryImages: [
           {
-            src: scantechImg1,
+            src: scantechNewImage03,
             images: [
               {
-                src: scantechImg1,
+                src: scantechNewImage03,
                 position: "center center",
                 title: "20x40 Industrial Architecture",
                 subtitle: "SCANTECH BATTERY SHOW 2024",
               },
               {
-                src: scantechImg2,
+                src: scantechNewHeroSectionImage,
                 position: "center center",
                 title: "Live 3D Metrology Station",
                 subtitle: "MICRON PRECISION DEMOS",
@@ -4607,16 +4652,16 @@ export const caseStudiesData = {
             subtitle: "SCANTECH BATTERY SHOW 2024",
           },
           {
-            src: scantechImg3,
+            src: scantechNewImage04,
             images: [
               {
-                src: scantechImg3,
+                src: scantechNewImage04,
                 position: "center center",
                 title: "Illuminated Meeting Tunnel",
                 subtitle: "ENGINEERING CONSULTATION",
               },
               {
-                src: scantechImg4,
+                src: scantechNewImage01,
                 position: "center center",
                 title: "Gigafactory Wall Graphics",
                 subtitle: "TECHNICAL STORYTELLING",
@@ -4626,16 +4671,16 @@ export const caseStudiesData = {
             subtitle: "ENGINEERING CONSULTATION",
           },
           {
-            src: scantechImg5,
+            src: scantechNewHeroSectionImage,
             images: [
               {
-                src: scantechImg5,
+                src: scantechNewHeroSectionImage,
                 position: "center center",
                 title: "Overhead Truss Branding",
                 subtitle: "HUNTINGTON PLACE DETROIT",
               },
               {
-                src: scantechImg1,
+                src: scantechNewImage02,
                 position: "center center",
                 title: "Automated Inspection Systems",
                 subtitle: "BATTERY CELL QUALITY",
@@ -4658,7 +4703,7 @@ export const caseStudiesData = {
       subheading: "SSSTC — Circle Exhibit 2023 Trade Show Booth Design",
       titleLine1: "Enterprise Storage",
       titleLine2: "Showcase",
-      bgImage: ssstcImg1,
+      bgImage: ssstcNewCaseStudyFirst,
       accentColor: "#00A86B",
       tags: [
         "Brand Activation",
@@ -4677,7 +4722,7 @@ export const caseStudiesData = {
       logo: ssstcLogo,
       darkLogo: ssstcLogoWhite,
       logoAlt: "SSSTC logo",
-      showcaseImage: ssstcImg2,
+      showcaseImage: ssstcNewImage01,
       showcaseAlt: "SSSTC 10x10 small inline booth at Circle Exhibit 2023",
       stats: [
         {
@@ -4729,7 +4774,7 @@ export const caseStudiesData = {
       },
       solution: {
         heading: "The solution.",
-        image: ssstcImg2,
+        image: ssstcNewHeroSectionImage,
         imageAlt: "SSSTC compact product counter and display pedestal",
         description:
           "Number9 Creative & Media delivered a turn-key custom booth design and fabrication solution tailored specifically for SSSTC's 10x10 exhibition space. Our agency engineered a compact layout featuring a streamlined product display point and high-impact branded backwall graphics. By ensuring the messaging on the backwall was easily readable from the aisle, we effectively drew attendees into the space while supporting deeper product details and meeting counters on the interior.\n\nBeyond design and fabrication, our team managed the comprehensive show-site setup in Las Vegas. We meticulously aligned the booth structure, installed backwall graphics, optimized display lighting, and integrated the technology product displays. By ensuring the booth was fully ready for visitors from an aisle-facing perspective before the show opened, Number9 provided a highly efficient, organized marketing event environment.",
@@ -4762,19 +4807,19 @@ export const caseStudiesData = {
         ],
         closing:
           "By integrating strategic spatial design, bold branded graphics, and seamless on-site logistics, Number9 Creative & Media transformed a 10x10 inline space into a powerful, high-functioning trade show marketing asset for SSSTC.",
-        galleryFit: "cover",
+        galleryFit: "natural",
         galleryImages: [
           {
-            src: ssstcImg1,
+            src: ssstcNewHeroSectionImage,
             images: [
               {
-                src: ssstcImg1,
+                src: ssstcNewHeroSectionImage,
                 position: "center center",
                 title: "10x10 Small Inline Booth",
                 subtitle: "SSSTC CIRCLEEXHIBIT 2023",
               },
               {
-                src: ssstcImg2,
+                src: ssstcNewImage01,
                 position: "center center",
                 title: "Compact Enterprise SSD Showcase",
                 subtitle: "SOLID STATE STORAGE",

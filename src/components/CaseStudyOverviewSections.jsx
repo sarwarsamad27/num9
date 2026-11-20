@@ -377,6 +377,11 @@ export default function CaseStudyOverviewSections({
                   p-6 sm:p-8 lg:p-12
                 "
               >
+                {!overview.logo && overview.brandLabel && (
+                  <span className="font-grift-semibold text-center text-[28px] sm:text-[36px] lg:text-[44px] leading-tight text-[#171717] dark:text-white">
+                    {overview.brandLabel}
+                  </span>
+                )}
                 {overview.logo && (
                   overview.darkLogo ? (
                     <>
@@ -462,7 +467,7 @@ export default function CaseStudyOverviewSections({
                 bg-[#F8F9FA] dark:bg-[#151816]
                 shadow-[0_8px_30px_rgba(0,0,0,0.06)] dark:shadow-[0_8px_30px_rgba(0,0,0,0.35)]
               "
-              style={{ aspectRatio: overview.showcaseVideo ? "16 / 9" : "2.65 / 1" }}
+              style={overview.showcaseVideo ? { aspectRatio: "16 / 9" } : undefined}
             >
               {overview.showcaseVideo ? (
                 <ShowcaseVideo
@@ -476,7 +481,7 @@ export default function CaseStudyOverviewSections({
                   alt={overview.showcaseAlt || `${caseStudy.name || 'Brand'} showcase`}
                   loading="lazy"
                   decoding="async"
-                  className="w-full h-full object-cover object-center block"
+                  className="w-full h-auto object-contain object-center block"
                 />
               )}
             </div>
@@ -561,7 +566,7 @@ export default function CaseStudyOverviewSections({
       {/* ======================================
           SECTION 02 — BRAND EXPERIENCE / QUOTE
       ====================================== */}
-      <section
+      {quoteSection.quote && <section
         className="
           relative
           w-full
@@ -690,7 +695,7 @@ export default function CaseStudyOverviewSections({
             </div>
           </div>
         </div>
-      </section>
+      </section>}
     </div>
   );
 }

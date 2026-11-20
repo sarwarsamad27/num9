@@ -149,6 +149,14 @@ function ImageCard({
 const clients = [
 
   {
+    logo: clientJdotLogo,
+    darkLogo: clientJdotLogoWhite,
+    logoClass: "h-[46px] sm:h-[50px] xl:h-[56px] w-auto max-w-[200px]",
+    name: "J.",
+    desc: "Celebrity commercial production (DVC) for the global fragrance launch of Ballin' starring NBA legend Kobe Bryant.",
+    route: "case-study/jdot",
+  },
+  {
     logo: clientScantechLogo,
     darkLogo: clientScantechLogoWhite,
     logoClass: "h-[46px] sm:h-[50px] xl:h-[56px] w-auto max-w-[280px] xl:max-w-[310px]",
@@ -180,6 +188,13 @@ const clients = [
     route: "case-study/finamill",
   },
   {
+    logo: clientMezanLogo,
+    logoClass: "h-[36px] sm:h-[40px] xl:h-[44px] w-auto max-w-[210px]",
+    name: "Mezan Global",
+    desc: "Complete trade show exhibition design, logistics, product sampling, and on-site brand experience at the Summer Fancy Food Show.",
+    route: "case-study/mezan",
+  },
+  {
     logo: clientDreoLogo,
     darkLogo: clientDreoLogoWhite,
     logoClass: "h-[46px] sm:h-[50px] xl:h-[56px] w-auto max-w-[220px]",
@@ -208,13 +223,6 @@ const clients = [
     name: "Shan Foods",
     desc: "Global food brand marketing campaign and experiential product launch blending cultural heritage with modern culinary storytelling.",
     route: "case-study/shan",
-  },
-  {
-    logo: clientMezanLogo,
-    logoClass: "h-[36px] sm:h-[40px] xl:h-[44px] w-auto max-w-[210px]",
-    name: "Mezan Global",
-    desc: "Complete trade show exhibition design, logistics, product sampling, and on-site brand experience at the Summer Fancy Food Show.",
-    route: "case-study/mezan",
   },
   {
     logo: clientSkinnyLogo,
@@ -403,14 +411,6 @@ const clients = [
     name: "Standard Chartered",
     desc: "Global banking digital transformation delivering intuitive financial platforms and customer-first innovation.",
     route: "case-study/standard-chartered",
-  },
-  {
-    logo: clientJdotLogo,
-    darkLogo: clientJdotLogoWhite,
-    logoClass: "h-[46px] sm:h-[50px] xl:h-[56px] w-auto max-w-[200px]",
-    name: "J.",
-    desc: "Celebrity commercial production (DVC) for the global fragrance launch of Ballin' starring NBA legend Kobe Bryant.",
-    route: "case-study/jdot",
   },
 ];
 

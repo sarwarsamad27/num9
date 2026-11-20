@@ -2,6 +2,7 @@
 // Each key maps to a URL segment: service/ui-ux-design → serviceDetailData['ui-ux-design']
 // Add new service entries here to make them available as pages automatically.
 
+import { additionalElipseWorks, elipseWorkLinks } from "./elipseCaseStudies";
 import img1 from "../assets/Fintech Dashboard at Sunset 1.webp";
 import img2 from "../assets/Fintech Dashboard at Sunset 1 (1).webp";
 import img3 from "../assets/Metallic Blue Lexus in a Warehouse 1.webp";
@@ -23,14 +24,14 @@ import img18 from "../assets/homeHeroSectionImages/LifeGive Mediterranean Supple
 import empireCinemasImg from "../assets/homeHeroSectionImages/Empire Cinemas Grand Lobby 1 (1).webp";
 import skinnyServiceImg from "../assets/caseStudies/skinny/Updated_Image (2).png";
 import mezanServiceImg from "../assets/caseStudies/meezan/mezanHeroBg.jpg";
-import deltaServiceImg from "../assets/caseStudies/Delta Light/delta3.jpg";
-import dreoServiceImg from "../assets/caseStudies/DREO IHS 2025/dreo3.webp";
-import finamillServiceImg from "../assets/caseStudies/Finamill IHS 2025/finamill3.webp";
+import deltaServiceImg from "../assets/heroImagesUpdated/deltaLightHero.webp";
+import dreoServiceImg from "../assets/heroImagesUpdated/dreoHero.webp";
+import finamillServiceImg from "../assets/heroImagesUpdated/finamillHero.webp";
 import katjesServiceImg from "../assets/caseStudies/Katjes USA/katjes-3.avif";
-import nakamichiServiceImg from "../assets/caseStudies/Nakamichi Car Audio/nakamichi3.webp";
-import scantechServiceImg from "../assets/caseStudies/SCANTECH The Battery Show North America 2024/scantech3.webp";
-import ssstcServiceImg from "../assets/caseStudies/SSSTC Circleexhibit/ssstc3.webp";
-import jdotServiceImg from "../assets/caseStudies/j/jdotHero.webp";
+import nakamichiServiceImg from "../assets/heroImagesUpdated/nakamichiHero.webp";
+import scantechServiceImg from "../assets/heroImagesUpdated/scantechHero.webp";
+import ssstcServiceImg from "../assets/heroImagesUpdated/ssstcHero.webp";
+import jdotServiceImg from "../assets/caseStudies/j/Website_Thumb.png";
 
 import ahmedFoodsVideoImg from "../assets/caseStudies/elipse/digitalVideo/ahmedFoods.webp";
 import bikeVideoImg from "../assets/caseStudies/elipse/digitalVideo/bike.webp";
@@ -934,7 +935,12 @@ export function getServiceDetail(slug, customTitle) {
     return {
       ...found,
       heading,
-      works: found.works || [],
+      works: [
+        ...(found.works || []),
+        ...(normalizedSlug === "interactive-digital-experiences" ? additionalElipseWorks : []),
+      ].map(work => elipseWorkLinks[work.title]
+        ? { ...work, link: elipseWorkLinks[work.title] }
+        : work),
     };
   }
 

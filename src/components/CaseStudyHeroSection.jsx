@@ -83,7 +83,7 @@ export default function CaseStudyHeroSection({
             fetchPriority="high"
             decoding="async"
             className={`
-              h-full w-full object-cover
+              h-full w-full object-contain
               ${hero.objectPosition ? "" : "object-[58%_center] sm:object-center lg:object-[center_35%]"}
               brightness-[0.6]
             `}

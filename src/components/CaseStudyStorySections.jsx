@@ -4,6 +4,7 @@ import React, {
   useRef,
   useState,
 } from "react";
+import { ArrowRight } from "lucide-react";
 import { caseStudiesData } from "../data/caseStudiesData";
 
 /* =========================================
@@ -123,23 +124,23 @@ function GalleryRowItem({ item, index, caseStudyName, fit = "contain" }) {
               }`}
           >
             {src && fit === "natural" ? (
-              // Fills the row edge to edge; focal point kept centered
+              // Preserve the full image inside each gallery row.
               <img
                 src={src}
                 alt={currentSubtitle || `${caseStudyName || "Project"} outcome visual`}
                 loading="lazy"
                 decoding="async"
-                className="w-full h-full object-cover"
+                className="w-full h-full object-contain"
                 style={{ objectPosition: imgObj.position || "center center" }}
               />
             ) : src && fit === "cover" ? (
-              // Fill the whole row (no side gaps); focal point keeps faces in frame
+              // Legacy cover galleries also display the full image.
               <img
                 src={src}
                 alt={currentSubtitle || `${caseStudyName || "Project"} outcome visual`}
                 loading="lazy"
                 decoding="async"
-                className="w-full h-full object-cover"
+                className="w-full h-full object-contain"
                 style={{ objectPosition: imgObj.position || "center 30%" }}
               />
             ) : src ? (
@@ -266,7 +267,7 @@ function GalleryVideoRow({ src, poster, index, total, label, fit = "contain" }) 
         autoPlay
         preload={shouldLoad ? "auto" : "none"}
         onLoadedMetadata={handleLoadedMetadata}
-        className={`absolute inset-0 z-10 w-full h-full ${fit === "cover" ? "object-cover object-center" : "object-contain"}`}
+        className={`absolute inset-0 z-10 w-full h-full ${fit === "cover" ? "object-contain object-center" : "object-contain"}`}
       />
     </div>
   );
@@ -281,7 +282,7 @@ export default function CaseStudyStorySections({
   onNavigate,
   onSubmit,
 }) {
-  const story = caseStudy?.storySection || caseStudiesData.lexus.storySection;
+  const story = caseStudy?.storySection || {};
 
   const sectionRef = useRef(null);
   const challengeRef = useRef(null);
@@ -605,6 +606,29 @@ export default function CaseStudyStorySections({
   const services = story.services || { items: [] };
   const outcome = story.outcome || { bullets: [], galleryImages: [] };
 
+  // Short solution copy: one image stretched to the text + button height.
+  // Long copy: pair it with a second image so the column isn't one tall crop.
+  const solutionIsLong = String(solution.description || "").length > 300;
+  const solutionExtraImages = (() => {
+    if (!solution.image || solution.video || !solutionIsLong) return [];
+    const seen = new Set([solution.image]);
+    const pool = [];
+    const add = (src) => {
+      if (src && !seen.has(src)) {
+        seen.add(src);
+        pool.push(src);
+      }
+    };
+    (outcome.galleryImages || []).forEach((item) => {
+      const list = Array.isArray(item.images) && item.images.length ? item.images : [item];
+      list.forEach((img) => add(img?.src || item?.src));
+    });
+    add(challenge.image);
+    add(caseStudy?.hero?.bgImage);
+    // Always pair the main image with a second one, reusing it as a last resort.
+    return [pool[0] || solution.image];
+  })();
+
   return (
     <div
       ref={sectionRef}
@@ -813,7 +837,7 @@ lg:pl-[85px] lg:pr-[55px]
                     className={`
       w-full
       max-w-[382px]
-      aspect-[382/452]
+      ${challenge.video ? "aspect-[382/452]" : ""}
       overflow-hidden
       rounded-[18px]
       grid
@@ -835,7 +859,7 @@ lg:pl-[85px] lg:pr-[55px]
                         alt={challenge.imageAlt || `${caseStudy.name} challenge`}
                         loading="lazy"
                         decoding="async"
-                        className="block w-full h-full object-cover object-center"
+                        className="block w-full h-auto object-contain object-center"
                       />
                     )}
                   </div>
@@ -938,7 +962,7 @@ lg:pl-[85px] lg:pr-[55px]
     lg:grid-cols-[minmax(0,0.85fr)_minmax(0,1.35fr)]
     gap-[45px] lg:gap-[80px] xl:gap-[90px]
     items-start
-    ${solution.video ? "lg:items-stretch" : ""}
+    ${solution.video || solution.image ? "lg:items-stretch" : ""}
   `}
 >
   {/* LEFT — SOLUTION CONTENT */}
@@ -968,6 +992,31 @@ lg:pl-[85px] lg:pr-[55px]
     >
       {solution.description}
     </p>
+
+    <a
+      href="/contact"
+      onClick={(e) => {
+        e.preventDefault();
+        if (onNavigate) onNavigate("contact");
+        else window.location.href = "/contact";
+      }}
+      className="
+        mt-[28px] sm:mt-[34px]
+        inline-flex items-center justify-center gap-[14px]
+        h-[48px] sm:h-[54px] lg:h-[60px]
+        px-[26px] sm:px-[32px]
+        rounded-[6px]
+        bg-[#12C619] hover:bg-[#0fae15]
+        font-grift-medium
+        text-[17px] sm:text-[19px] lg:text-[21px]
+        text-white
+        transition-colors
+        cursor-pointer
+      "
+    >
+      Book a Call
+      <ArrowRight className="h-[20px] w-[20px] lg:h-[22px] lg:w-[22px]" />
+    </a>
   </div>
 
   {/* RIGHT — IMAGE */}
@@ -975,13 +1024,14 @@ lg:pl-[85px] lg:pr-[55px]
     {solution.image ? (
       <div className="w-full max-w-[760px] flex flex-col items-center lg:h-full">
         <div
-          className="
+          className={`
             w-full
             aspect-[760/450]
             overflow-hidden
             rounded-[20px]
             border border-white/10
-          "
+            ${solution.video ? "" : "lg:aspect-auto lg:flex-1 lg:min-h-[220px] lg:basis-0"}
+          `}
         >
           <img
             src={solution.image}
@@ -991,6 +1041,32 @@ lg:pl-[85px] lg:pr-[55px]
             className="w-full h-full object-cover object-center"
           />
         </div>
+
+        {/* Second image: stacked on mobile; on desktop both images share the
+            height so the column ends exactly where the text + button end. */}
+        {solutionExtraImages.map((src, i) => (
+          <div
+            key={i}
+            className="
+              w-full
+              aspect-[760/450]
+              mt-[20px] sm:mt-[24px] xl:mt-[28px]
+              lg:aspect-auto lg:flex-1 lg:basis-0 lg:min-h-[220px]
+              overflow-hidden
+              rounded-[20px]
+              border border-white/10
+            "
+          >
+            <img
+              src={src}
+              alt=""
+              aria-hidden="true"
+              loading="lazy"
+              decoding="async"
+              className="w-full h-full object-cover object-center"
+            />
+          </div>
+        ))}
 
         {/* Optional vertical reel filling the space beside the long solution copy */}
         {solution.video && (

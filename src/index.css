@@ -3,8 +3,14 @@
 @custom-variant dark (&:where(.dark, .dark *));
 
 /* Contact card: the dark design has a black canvas and luminous green accents. */
-.contact-icon {
-  display: none;
+html .contact-card {
+  border-width: 2px;
+  border-radius: 32px;
+}
+
+html .contact-form-panel,
+html .contact-details {
+  min-width: 0;
 }
 
 html.dark .contact-card {
@@ -17,7 +23,8 @@ html.dark .contact-card {
 html.dark .contact-card::before {
   content: "";
   position: absolute;
-  inset: 0;
+  /* Clip the PNG's baked-in green frame; the card supplies the single outline. */
+  inset: -24px;
   background: var(--contact-bg-dark) center / cover no-repeat;
   pointer-events: none;
 }
@@ -53,6 +60,9 @@ html.dark .contact-form-panel select option {
 
 html.dark .contact-form-panel button[type="submit"] {
   background: linear-gradient(#54df00, #28bf00);
+}
+
+html .contact-form-panel button[type="submit"] {
   min-width: 104px;
   height: 42px;
 }
@@ -61,7 +71,7 @@ html.dark .contact-form-panel button[type="submit"]:hover {
   background: #43d000;
 }
 
-html.dark .contact-icon {
+html .contact-icon {
   display: inline-block;
   width: 22px;
   height: 22px;
@@ -70,9 +80,13 @@ html.dark .contact-icon {
   color: #83c923;
 }
 
+html:not(.dark) .contact-icon {
+  visibility: hidden;
+}
+
 /* Mobile: email + phone sit side by side, so keep the icon compact */
 @media (max-width: 639px) {
-  html.dark .contact-icon {
+  html .contact-icon {
     width: 18px;
     height: 18px;
     margin-right: 6px;
@@ -80,48 +94,48 @@ html.dark .contact-icon {
 }
 
 @media (min-width: 1280px) {
-  html.dark .contact-section-layout {
+  html .contact-section-layout {
     max-width: 1440px;
   }
 
-  html.dark .contact-card {
+  html .contact-card {
     grid-template-columns: .95fr 1.05fr;
     padding: 36px 32px 36px 44px;
     min-height: 543px;
   }
 
-  html.dark .contact-details {
+  html .contact-details {
     padding: 20px 28px 10px 0;
   }
 
-  html.dark .contact-details h2 {
+  html .contact-details h2 {
     font-size: clamp(40px, 3.65vw, 54px);
     line-height: 1.15;
     letter-spacing: -.035em;
   }
 
-  html.dark .contact-details > div > p {
+  html .contact-details > div > p {
     font-size: 14px;
     line-height: 1.65;
     margin-top: 26px;
   }
 
-  html.dark .contact-links {
+  html .contact-links {
     max-width: 440px;
     gap: 32px;
   }
 
-  html.dark .contact-links > div + div {
-    border-left: 1px solid #203014;
+  html .contact-links > div + div {
+    border-left: 1px solid var(--border-subtle);
     padding-left: 32px;
   }
 
-  html.dark .contact-links a {
+  html .contact-links a {
     font-size: 18px;
     white-space: nowrap;
   }
 
-  html.dark .contact-form-panel {
+  html .contact-form-panel {
     padding: 28px;
   }
 }
